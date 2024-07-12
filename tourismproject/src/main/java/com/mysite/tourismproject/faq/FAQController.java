@@ -11,5 +11,4 @@ public class FAQController {
 		return "faq/faq";
 	}
 
-
 }
