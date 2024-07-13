@@ -8,7 +8,7 @@ public class MainController {
 
 	@GetMapping("/main")
 	public String pictures() {
-		return "main/main";
+		return "/main";
 	}
 
 }

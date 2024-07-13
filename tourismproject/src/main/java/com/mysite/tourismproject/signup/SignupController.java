@@ -12,10 +12,18 @@ public class SignupController {
 		return "signup/signup";
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 13d8f1745f1fd35f575683990487d1a742ac04f1
 	@GetMapping("/signin")
 	public String signin() {
 		return "signup/signin";
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13d8f1745f1fd35f575683990487d1a742ac04f1
 
 	
 	
