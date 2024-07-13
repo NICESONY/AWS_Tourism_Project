@@ -66,8 +66,8 @@
     <main class="main" id="top">
       <div class="row vh-100 g-0">
         <div class="col-lg-6 position-relative d-none d-lg-block">
-          <div class="bg-holder" ><img src="/images/logo11.jpg"  height ="800px">
-          </div>
+          <div class="bg-holder" ><img src="/images/logo1.png"   height ="800px">
+          </div>	
           <!--/.bg-holder-->
 
         </div>
@@ -78,41 +78,38 @@
                 </div>
               </a>
               <div class="text-center mb-7">
-                <h3 class="text-body-highlight">Sign Up</h3>
-                <p class="text-body-tertiary">Create your account today</p>
+                <h3 class="text-body-highlight">Sign In</h3>
+                <p class="text-body-tertiary">Get access to your account</p>
               </div>
-              <button class="btn btn-phoenix-secondary w-100 mb-3"><span class="fab fa-google text-danger me-2 fs-9"></span>Sign up with google</button>
-              <button class="btn btn-phoenix-secondary w-100"><span class="fab fa-facebook text-primary me-2 fs-9"></span>Sign up with facebook</button>
-              <div class="position-relative mt-4">
-                <hr class="bg-body-secondary" />
+              <button class="btn btn-phoenix-secondary w-100 mb-3"><span class="fab fa-google text-danger me-2 fs-9"></span>Sign in with google</button>
+              <button class="btn btn-phoenix-secondary w-100"><span class="fab fa-facebook text-primary me-2 fs-9"></span>Sign in with facebook</button>
+              <div class="position-relative">
+                <hr class="bg-body-secondary mt-5 mb-4" />
                 <div class="divider-content-center">or use email</div>
               </div>
-              <form>
-                <div class="mb-3 text-start">
-                  <label class="form-label" for="name">Name</label>
-                  <input class="form-control" id="name" type="text" placeholder="Name" />
+              <div class="mb-3 text-start">
+                <label class="form-label" for="email">Email address</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="email" type="email" placeholder="name@example.com" /><span class="fas fa-user text-body fs-9 form-icon"></span>
                 </div>
-                <div class="mb-3 text-start">
-                  <label class="form-label" for="email">Email address</label>
-                  <input class="form-control" id="email" type="email" placeholder="name@example.com" />
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="password">Password</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="password" type="password" placeholder="Password" /><span class="fas fa-key text-body fs-9 form-icon"></span>
                 </div>
-                <div class="row g-3 mb-3">
-                  <div class="col-md-6">
-                    <label class="form-label" for="password">Password</label>
-                    <input class="form-control form-icon-input" id="password" type="password" placeholder="Password" />
+              </div>
+              <div class="row flex-between-center mb-7">
+                <div class="col-auto">
+                  <div class="form-check mb-0">
+                    <input class="form-check-input" id="basic-checkbox" type="checkbox" checked="checked" />
+                    <label class="form-check-label mb-0" for="basic-checkbox">Remember me</label>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="confirm_password">Confirm Password</label>
-                    <input class="form-control form-icon-input" id="confirm_password" type="password" placeholder="Confirm Password" />
-                  </div>
                 </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" id="termsService" type="checkbox" />
-                  <label class="form-label fs-9 text-transform-none" for="termsService">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
-                </div>
-                <button class="btn btn-primary w-100 mb-3">Sign up</button>
-                <div class="text-center"><a class="fs-9 fw-bold" href="/signin">Sign in to an existing account</a></div>
-              </form>
+                <div class="col-auto"><a class="fs-9 fw-semibold" href="/pages/authentication/simple/forgot-password.html">Forgot Password?</a></div>
+              </div>
+              <button class="btn btn-primary w-100 mb-3">Sign In</button>
+              <div class="text-center"><a class="fs-9 fw-bold" href="/signup">Create an account</a></div>
             </div>
           </div>
         </div>
@@ -171,8 +168,8 @@
             </div>
           </div>
         </div>
-      <!--   <button class="btn p-0 border border-translucent btn-support-chat"><span class="fs-8 btn-text text-primary text-nowrap">Chat demo</span><span class="fa-solid fa-circle text-success fs-9 ms-2"></span><span class="fa-solid fa-chevron-down text-primary fs-7"></span></button>
- -->      </div>
+<!--         <button class="btn p-0 border border-translucent btn-support-chat"><span class="fs-8 btn-text text-primary text-nowrap">Chat demo</span> --><span class="fa-solid fa-circle text-success fs-9 ms-2"></span><span class="fa-solid fa-chevron-down text-primary fs-7"></span></button>
+      </div>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->

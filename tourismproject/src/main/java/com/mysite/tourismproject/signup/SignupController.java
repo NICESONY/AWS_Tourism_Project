@@ -11,6 +11,13 @@ public class SignupController {
 	public String signup() {
 		return "signup/signup";
 	}
+	
+	
+	@GetMapping("/signin")
+	public String signin() {
+		return "signup/signin";
+	}
+
 
 	
 	
