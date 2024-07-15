@@ -79,7 +79,7 @@
                         <div class="form-group">
                             <label for="productMenu">상품/메뉴</label>
                             <div id="productMenuContainer">
-                                <input type="text" class="form-control mb-2" id="productMenu" placeholder="상품/메뉴/가격 정보를 입력해주세요">
+                                <input type="text" class="form-control mb-2" id="productMenu0" placeholder="상품/메뉴/가격 정보를 입력해주세요">
                             </div>
                             <button type="button" class="btn btn-secondary btn-sm" onclick="addProductMenu()">추가</button>
                         </div>
@@ -95,12 +95,15 @@
     </div>
 
 <script>
+	var customid = 0;
         function addProductMenu() {
+        	customid++;
             const container = document.getElementById('productMenuContainer');
             const newInput = document.createElement('input');
             newInput.type = 'text';
             newInput.className = 'form-control mb-2';
             newInput.placeholder = '상품/메뉴/가격 정보를 입력해주세요';
+            newInput.id=`productMenu${customid}`;
             container.appendChild(newInput);
         }
     </script>
