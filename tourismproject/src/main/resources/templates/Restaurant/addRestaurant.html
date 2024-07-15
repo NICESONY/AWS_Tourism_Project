@@ -76,9 +76,12 @@
                             <label for="businessType">전화번호</label>
                             <input type="text" class="form-control" id="businessType" placeholder="예) 01015881588">
                         </div>
-                      <div class="form-group">
-                            <label for="businessType">상품/메뉴</label>
-                            <input type="text" class="form-control" id="businessType" placeholder="상품/메뉴/가격 정보를 입력해주세요">
+                        <div class="form-group">
+                            <label for="productMenu">상품/메뉴</label>
+                            <div id="productMenuContainer">
+                                <input type="text" class="form-control mb-2" id="productMenu" placeholder="상품/메뉴/가격 정보를 입력해주세요">
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="addProductMenu()">추가</button>
                         </div>
                       
                     </form>	
@@ -91,7 +94,18 @@
         </div>
     </div>
 
+<script>
+        function addProductMenu() {
+            const container = document.getElementById('productMenuContainer');
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.className = 'form-control mb-2';
+            newInput.placeholder = '상품/메뉴/가격 정보를 입력해주세요';
+            container.appendChild(newInput);
+        }
+    </script>
     <!-- Bootstrap JS and dependencies -->
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
