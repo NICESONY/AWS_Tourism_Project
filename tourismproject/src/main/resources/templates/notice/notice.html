@@ -1,10 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-공지사항 페이지 입니다
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>공지사항</title>
+
+
+    <!-- ===============================================-->
+    <!-- 브라우저 탭 아이콘   -->
+    <!-- ===============================================-->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/img/favicons/Favicon48x48.ico">
+
+    <meta name="theme-color" content="#ffffff">
+    <script src="/vendors/simplebar/simplebar.min.js"></script>
+    <script src="/assets/js/config.js"></script>
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="../../vendors/prism/prism-okaidia.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="../../assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="../../assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="../../assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <script>
+      var phoenixIsRTL = window.config.config.phoenixIsRTL;
+      if (phoenixIsRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+  </head>
+
+
+  <body>
+
+<div layout:fragment="content" class="container my-3">
+
+<!-- 상단 메뉴 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand ms-2" href="/">고객 센터</a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/faq">FAQ</a>
+            </li>
+          
+	          <li class="nav-item">
+	            <a class="nav-link" href="/question">질문 게시판</a>
+	            </li>
+            
+	             <li class="nav-item">
+	              <a class="nav-link active" aria-current="page" href="/notice">공지사항</a>
+	              </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+           <div class="content">
+        <nav class="mb-2" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">고객 센터</li>
+            <li class="breadcrumb-item active">공지사항</li>
+          </ol>
+        </nav>
+        <h2 class="mb-5">공지사항</h2>
+                    
+                    <a class="btn btn-primary mb-3" href="/customer_question_create">공지 작성</a>
+                    
+                    <div id="tableExample4" data-list='{"valueNames":["id","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
+                        <div class="row justify-content-end g-0">
+                          <div class="col-auto px-3">
+
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table table-sm fs-9 mb-0">
+                          
+                          <!-- 테이블 목차 -->
+                            <thead>
+                              <tr class="bg-body-highlight">
+                                <th class="sort border-top border-translucent ps-3" data-sort="id">번호</th>
+                                <th class="border-top border-translucent" data-sort="title">제목</th>
+                                <th class="border-top border-translucent" data-sort="author">작성자</th>
+                                <th class="sort border-top border-translucent text-end pe-8" data-sort="createdate">작성일</th>                                
+                              </tr>
+                            </thead>
+                          
+						          <tbody>
+							        <tr th:each="notice, loop : ${noticeList}">
+							          <td class="id" th:text="${loop.count}"></td>
+							          <td class="title"><a th:href="@{|/notice/detail/${notice.id}|}" th:text="${notice.subject}"></a></td>
+							          <td class="author" th:text="${notice.author}"></td>
+							          <td class="createdate" th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd')}"></td>
+							        </tr>
+						          </tbody>
+                               
+                          </table>
+                        </div>
+                        
+                        
+                        
+                        <div class="d-flex justify-content-center mt-3">
+                          <button class="page-link disabled" data-list-pagination="prev" disabled=""><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg><!-- <span class="fas fa-chevron-left"></span> Font Awesome fontawesome.com --></button>
+                          <ul class="mb-0 pagination"><li class="active"><button class="page" type="button" data-i="1" data-page="5">1</button></li><li><button class="page" type="button" data-i="2" data-page="5">2</button></li></ul>
+                          <button class="page-link pe-0" data-list-pagination="next"><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg><!-- <span class="fas fa-chevron-right"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                      </div>
+                                          
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../../vendors/popper/popper.min.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../../vendors/is/is.min.js"></script>
+    <script src="../../vendors/fontawesome/all.min.js"></script>
+    <script src="../../vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../../vendors/list.js/list.min.js"></script>
+    <script src="../../vendors/feather-icons/feather.min.js"></script>
+    <script src="../../vendors/dayjs/dayjs.min.js"></script>
+    <script src="../../vendors/prism/prism.js"></script>
+    <script src="../../assets/js/phoenix.js"></script>
+    <script src="../../vendors/list.js/list.min.js"></script>   
+
 </body>
 </html>
