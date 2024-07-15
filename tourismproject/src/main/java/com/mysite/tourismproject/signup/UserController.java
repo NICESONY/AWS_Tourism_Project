@@ -1,74 +1,68 @@
 package com.mysite.tourismproject.signup;
 
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
 
-    
-    
     @GetMapping("/signup")
-    public String signup(UserCreateForm userCreateForm) {
-        return "signup";
+    public String signupForm(UserCreateForm userCreateForm) {
+        return "signup/signup"; // 템플릿 경로와 일치해야 함
     }
 
-    
-    // 건너오면 여기서 검증을 한다. 만약 에러가 있으면 에러를 발생 시킨다.
     @PostMapping("/signup")
     public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "signup";
+            return "signup/signup"; // 템플릿 경로와 일치해야 함
         }
 
-        
-        // 다시 검증 : 패스워드가 일치하는지를 검증한다.
         if (!userCreateForm.getPassword1().equals(userCreateForm.getPassword2())) {
-            bindingResult.rejectValue("password2", "passwordInCorrect", 
-                    "2개의 패스워드가 일치하지 않습니다.");// 에러메시지를 갗이 보내고 표시해준다.
-            return "signup";
+            bindingResult.rejectValue("password2", "passwordInCorrect", "2개의 패스워드가 일치하지 않습니다.");
+            return "signup/signup"; // 템플릿 경로와 일치해야 함
         }
 
-        
-        // 이상이 없으면 진짜 DB에 넣게 된다.
-        userService.create(userCreateForm.getUsername(), 
-                userCreateForm.getEmail(), userCreateForm.getPassword1());
-
-        
         try {
-            userService.create(userCreateForm.getUsername(), 
-                    userCreateForm.getEmail(), userCreateForm.getPassword1());
-        }catch(DataIntegrityViolationException e) {
-            e.printStackTrace();
-            bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
-            return "signup";
-        }catch(Exception e) {
-            e.printStackTrace();
+            userService.create(userCreateForm.getUsername(), userCreateForm.getEmail(), userCreateForm.getPassword1(), userCreateForm.getResidence());
+        } catch(DataIntegrityViolationException e) {
             bindingResult.reject("signupFailed", e.getMessage());
-            return "signup";
+            return "signup/signup"; // 템플릿 경로와 일치해야 함
+        } catch(Exception e) {
+            bindingResult.reject("signupFailed", e.getMessage());
+            return "signup/signup"; // 템플릿 경로와 일치해야 함
         }
-        
-        
-        return "redirect:/signup/signup";
+
+        return "redirect:/";
     }
-    
+
     @GetMapping("/signin")
     public String signin() {
-        return "signin";
+        return "signup/signin"; // 여기도 템플릿 경로와 일치해야 함
+    
+        
     }
-
     
     
     
+    
+    
+    @GetMapping("/")
+    public String index(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        if (userDetails != null) {
+            model.addAttribute("username", userDetails.getUsername());
+        }
+        return "index"; // 메인 템플릿 경로
+    }
 }

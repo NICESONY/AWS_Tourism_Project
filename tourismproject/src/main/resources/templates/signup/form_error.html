@@ -1,13 +1,12 @@
-<!-- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Form Errors</title>
 </head>
 <body>
-<div th:fragment="formErrorsFragment" class="alert alert-danger" 
-    role="alert" th:if="${#fields.hasAnyErrors()}">
-    <div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
-</div>
+    <div th:fragment="formErrorsFragment" class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+        <div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>
+    </div>
 </body>
-</html> -->
+</html>
