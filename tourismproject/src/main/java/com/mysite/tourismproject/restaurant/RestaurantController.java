@@ -15,7 +15,4 @@ public class RestaurantController {
 	public String Restaurantmenu2() {
 		return "Restaurant/Restaurant";
 	}
-
-	
-
 }

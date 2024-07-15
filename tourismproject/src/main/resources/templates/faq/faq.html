@@ -1,10 +1,238 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-FAQ 페이지입니다
-</body>
+<html data-navigation-type="default" data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>FAQ</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="/vendors/simplebar/simplebar.min.js"></script>
+    <script src="/assets/js/config.js"></script>
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <script>
+      var phoenixIsRTL = window.config.config.phoenixIsRTL;
+      if (phoenixIsRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+    <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+  </head>
+
+
+  <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="bg-primary-subtle py-2">
+        <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
+          <div class="dropdown">
+            <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
+            <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
+              <li><a class="dropdown-item" href="#!">Become a Host</a></li>
+              <li><a class="dropdown-item" href="#!">Blog</a></li>
+              <li><a class="dropdown-item" href="#!">Career</a></li>
+              <li><a class="dropdown-item" href="#!">Support</a></li>
+              <li><a class="dropdown-item" href="#!">+01 123 581321</a></li>
+            </ul>
+          </div>
+          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Become a Host</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Blog</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Career</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:example@gmail.com"> <span class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+01123581321"> <span class="fa-brands fa-whatsapp me-2"></span>+01 123 581321</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
+        <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a class="navbar-brand flex-1 flex-lg-grow-0 me-lg-13" href="/">
+            <div class="d-flex align-items-center"><img src="/images/logo.png" alt="phoenix" width="70" />
+              <p class="logo-text ms-2">맛 탐정단</p>
+            </div>
+          </a>
+          <div class="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
+            <div class="theme-control-toggle fa-icon-wait">
+              <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggleSm" />
+              <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label>
+              <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label>
+            </div><a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a><a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a><a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#!"><span data-feather="user" style="width: 20px; height: 20px"></span></a>
+          </div>
+          
+           <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        회원관리<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/signup">회원가입</a></li>
+                        <li><a class="dropdown-item" href="/signin">로그인</a></li>
+                        
+                      </ul>
+                    </div>
+                    
+                    
+            <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        탐정노트(메뉴)<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
+                        <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
+                        <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
+                        <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
+                        <li><a class="dropdown-item" href="/space">장소추가</a></li>
+                        <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
+                       
+                       <li>
+                          <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="/bestpick">지역주민 Best Pick</a></li> 
+                        <li><a class="dropdown-item" href="/mbti">MBTI "P" 맞춤 여행지 추천</a></li> 
+                        <li><a class="dropdown-item" href="/">충청남도 추천 할인 관광지</a></li> 
+
+                      </ul>
+                    </div>
+          
+          <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        고객관리<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/faq">FAQ</a></li>
+                        <li><a class="dropdown-item" href="/question">Q&A</a></li>
+                        <li><a class="dropdown-item" href="/notice">공지사항</a></li>
+                        
+<!--                         <li>
+                          <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+                      </ul>
+                    </div>
+                    
+                    
+            <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        마이페이지<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/">계정관리</a></li>
+                        <li><a class="dropdown-item" href="/">회원탈퇴</a></li>
+                        <li><a class="dropdown-item" href="/">리뷰관리</a></li>
+                        <li><a class="dropdown-item" href="/">질문관리</a></li>
+                        <li><a class="dropdown-item" href="/">타임라인 히스토리</a></li>
+ 
+
+                      </ul>
+                    </div>
+                  
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+</div>
+
+    <!-- ===============================================-->
+    <!--  메인  -->
+    <!-- ===============================================-->
+
+           <div class="content">
+        <nav class="mb-2" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+			<li class="breadcrumb-item">고객 센터</li>
+            <li class="breadcrumb-item active">FAQ</li>
+          </ol>
+        </nav>
+        <h2 class="mb-5">FAQ</h2>
+        <h5 class="mb-3">무엇이 궁금하신가요??</h5>
+
+        <div class="accordion">
+          <div class="accordion-item border-top">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">방문자 인증은 어떻게 하나요?</button>
+            </h2>
+            <div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body pt-0">리뷰 작성시 '방문자 인증'은 빙문하신 장소에 발급받은 '영수증' 또는 모바일 뱅킹의 '거래 내역'을 첨부해 주세요</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">충청남도 외의 다른 지역의 장소를 리뷰해도 되나요?</button>
+            </h2>
+            <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body pt-0">저희 사이트의 리뷰 시스템은 '충청남도 권역'(대전시, 세종시, 충청남도 및 그 외의 부속도서들)의 장소만을 대상으로 하고 있습니다. 충청남도 권역이 아닌 다른 지역의 장소 리뷰는 관리자의 의해 경고 없이 '삭제'조치될 수 있는 점 안내드립니다.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">리뷰에 기재된 장소와 실제 장소가 달라요!</button>
+            </h2>
+            <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body pt-0">리뷰에 기재된 장소가 실제 장소와 다르거나, 해당 장소에 존재하지 않는 경우 <a href="mailto:phoenix@email.com">Email: phoenix@support.com.</a> 주소로 메일을 보내주시기 바랍니다.</div></div>
+            </div>
+          </div>
+        
+        <div class="text-center py-11">
+          <h3 class="text-body-emphasis">원하는 답을 찾지 못하셨나요?</h3>
+          <p class="text-body">궁금한 점을 보내주세요</p>
+          <a class="btn btn-sm btn-outline-primary btn-support-chat" href="/question"><span class="fas fa-comment me-2"></span>문의 등록</a>
+        </div>
+        
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="/vendors/popper/popper.min.js"></script>
+    <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/vendors/anchorjs/anchor.min.js"></script>
+    <script src="/vendors/is/is.min.js"></script>
+    <script src="/vendors/fontawesome/all.min.js"></script>
+    <script src="/vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="/vendors/list.js/list.min.js"></script>
+    <script src="/vendors/feather-icons/feather.min.js"></script>
+    <script src="/vendors/dayjs/dayjs.min.js"></script>
+    <script src="/assets/js/phoenix.js"></script>
+
+  </body>
+
 </html>
