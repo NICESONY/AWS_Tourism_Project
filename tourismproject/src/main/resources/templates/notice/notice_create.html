@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- 섬머노트 css -->
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>공지사항</title>
+    <title>게시물 작성</title>
 
 
     <!-- ===============================================-->
@@ -160,7 +165,6 @@
 
                       </ul>
                     </div>
-          
         </ul>
       </div>
     </div>
@@ -172,53 +176,49 @@
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item">고객 센터</li>
-            <li class="breadcrumb-item active">공지사항</li>
+            <li class="breadcrumb-item">공지사항</li>
+            <li class="breadcrumb-item active">공지작성</li>
           </ol>
         </nav>
-        <h2 class="mb-5">공지사항</h2>
-                    
-                    <a class="btn btn-primary mb-3" href="/notice_create">공지 작성</a>
-                    
-                    <div id="tableExample4" data-list='{"valueNames":["id","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
-                        <div class="row justify-content-end g-0">
-                          <div class="col-auto px-3">
+        <h2 class="mb-5">공지작성</h2>
+        
+        <form>
+  <div class="row mb-3">
 
-                          </div>
-                        </div>
-                        <div class="table-responsive">
-                          <table class="table table-sm fs-9 mb-0">
-                          
-                          <!-- 테이블 목차 -->
-                            <thead>
-                              <tr class="bg-body-highlight">
-                                <th class="sort border-top border-translucent ps-3" data-sort="id">번호</th>
-                                <th class="border-top border-translucent" data-sort="title">제목</th>
-                                <th class="border-top border-translucent" data-sort="author">작성자</th>
-                                <th class="sort border-top border-translucent text-end pe-8" data-sort="createdate">작성일</th>                                
-                              </tr>
-                            </thead>
-                          
-						          <tbody>
-							        <tr th:each="notice, loop : ${noticeList}">
-							          <td class="id" th:text="${loop.count}"></td>
-							          <td class="title"><a th:href="@{|/notice/detail/${notice.id}|}" th:text="${notice.subject}"></a></td>
-							          <td class="author" th:text="${notice.author}"></td>
-							          <td class="createdate" th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd')}"></td>
-							        </tr>
-						          </tbody>
-                               
-                          </table>
-                        </div>
-                        
-                        
-                        
-                        <div class="d-flex justify-content-center mt-3">
-                          <button class="page-link disabled" data-list-pagination="prev" disabled=""><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg><!-- <span class="fas fa-chevron-left"></span> Font Awesome fontawesome.com --></button>
-                          <ul class="mb-0 pagination"><li class="active"><button class="page" type="button" data-i="1" data-page="5">1</button></li><li><button class="page" type="button" data-i="2" data-page="5">2</button></li></ul>
-                          <button class="page-link pe-0" data-list-pagination="next"><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg><!-- <span class="fas fa-chevron-right"></span> Font Awesome fontawesome.com --></button>
-                        </div>
-                      </div>
-                                          
+    <label class="col-sm-2 col-form-label" for="inputtitle">제목</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="inputitle" type="text" />
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+  
+    <label class="col-sm-2 col-form-label" for="inputcontent">내용</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="summernote" type="text" />
+    </div>
+  </div>
+  
+      <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 300,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
+
+  <button class="btn btn-primary" type="submit">게시</button>
+</form>
+
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
@@ -234,7 +234,7 @@
     <script src="../../vendors/dayjs/dayjs.min.js"></script>
     <script src="../../vendors/prism/prism.js"></script>
     <script src="../../assets/js/phoenix.js"></script>
-    <script src="../../vendors/list.js/list.min.js"></script>   
+    <script src="../../vendors/list.js/list.min.js"></script>
 
 </body>
 </html>
