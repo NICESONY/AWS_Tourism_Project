@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신규 장소 등록</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .modal-header, .modal-footer {
+            border: none;
+        }
+        .modal-header {
+            background-color: #f1f1f1;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .form-control {
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">신규 장소 등록</h5>
+                </div>
+                <div class="modal-body">
+                    <p>사진을 제보해 주시면 레벨 점수를 드립니다.</p>
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-primary">사진추가</button>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="placeName">장소명 <span>(필수)</span></label>
+                            <input type="text" class="form-control" id="placeName" placeholder="업체의 명칭을 입력해주세요.">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">위치 <span>(필수)</span></label>
+                            <input type="text" class="form-control" id="location" placeholder="충남 천안시 서북구 부대동 888">
+                            <small class="form-text text-muted">상세 정보를 입력하세요. (예: 동, 층, 호)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessType">업종</label>
+                            <input type="text" class="form-control" id="businessType" placeholder="예) 음식점, 카페, 약국 등">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessType">전화번호</label>
+                            <input type="text" class="form-control" id="businessType" placeholder="예) 01015881588">
+                        </div>
+                      <div class="form-group">
+                            <label for="businessType">상품/메뉴</label>
+                            <input type="text" class="form-control" id="businessType" placeholder="상품/메뉴/가격 정보를 입력해주세요">
+                        </div>
+                      
+                    </form>	
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary">등록하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

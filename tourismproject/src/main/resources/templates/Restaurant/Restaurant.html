@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Layout</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
      <style>
         body {
             background-color: rgba(0, 0, 0, 0.15);
@@ -23,6 +25,10 @@
         }
         .Restaurant-button-stn:hover {
             background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-dialog-centered.modal-dialog-scrollable {
+            max-width: 90%; /* 최대 너비 설정 */
+            max-height: 90%; /* 최대 높이 설정 */
         }
     </style>
     
@@ -173,35 +179,69 @@
                         <img src="/assets/img/generic/34.png" alt="Sample Image" class="rounded img-fluid w-100 fit-cover mb-5 mb-md-6 mb-xl-3">
                   
                                     <div class="d-flex">
-                                        <!-- 사진 모두 보기 버튼 -->
-    <button type="button" onclick="location.href='/Restaurant'"class="btn btn-secondary Restaurant-button-stn" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable">
+                                        <!-- 다른 가게 보기 버튼 -->
+    
+		<!-- Button to trigger the second modal -->
+    <button type="button" style="margin-right:5px"class="btn btn-secondary" data-toggle="modal" data-target="#modal2">
         사진 모두 보기
     </button>
-
-    <!-- Second Modal: Vertically centered scrollable -->
-    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	<!-- Vertically centered scrollable modal -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalScrollableLabel">Scrollable Modal</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <p>This is a vertically centered scrollable modal.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, eu congue mi. Aenean sit amet massa odio. In in ligula at metus dignissim tristique non eget leo. Vivamus vehicula quam nec elit aliquet, sed commodo magna ultricies. Integer scelerisque justo sed ex commodo, eget viverra leo efficitur. Maecenas vel ex ac risus lacinia dapibus. Quisque vitae arcu in tortor malesuada convallis. Integer nec turpis at est ultricies pharetra ut a ex. Aenean gravida malesuada nulla, et feugiat nisl. Vestibulum volutpat, lacus sit amet viverra fermentum, nulla orci tincidunt dolor, sed interdum enim nisi in metus. Cras in urna erat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, eu congue mi. Aenean sit amet massa odio. In in ligula at metus dignissim tristique non eget leo. Vivamus vehicula quam nec elit aliquet, sed commodo magna ultricies. Integer scelerisque justo sed ex commodo, eget viverra leo efficitur. Maecenas vel ex ac risus lacinia dapibus. Quisque vitae arcu in tortor malesuada convallis. Integer nec turpis at est ultricies pharetra ut a ex. Aenean gravida malesuada nulla, et feugiat nisl. Vestibulum volutpat, lacus sit amet viverra fermentum, nulla orci tincidunt dolor, sed interdum enim nisi in metus. Cras in urna erat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, eu congue mi. Aenean sit amet massa odio. In in ligula at metus dignissim tristique non eget leo. Vivamus vehicula quam nec elit aliquet, sed commodo magna ultricies. Integer scelerisque justo sed ex commodo, eget viverra leo efficitur. Maecenas vel ex ac risus lacinia dapibus. Quisque vitae arcu in tortor malesuada convallis. Integer nec turpis at est ultricies pharetra ut a ex. Aenean gravida malesuada nulla, et feugiat nisl. Vestibulum volutpat, lacus sit amet viverra fermentum, nulla orci tincidunt dolor, sed interdum enim nisi in metus. Cras in urna erat.</p>
+                    <div class="container">
+                        <div class="row">
+                            <!-- Repeat the image blocks for more images -->
+                            <div class="col-12 col-sm-6 col-md-4"style="margin-bottom:5px;">
+                                <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+                                    <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 1" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4"style="margin-bottom:5px;">
+                                <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+                                    <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 2" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4"style="margin-bottom:5px;">
+                                <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+                                    <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 3" />
+                                </div>
+                            </div>
+                             <div class="col-12 col-sm-6 col-md-4"style="margin-bottom:5px;">
+                                <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+                                    <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 1" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4"style="margin-bottom:5px;">
+                                <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+                                    <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 2" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4"style="margin-bottom:5px;">
+                                <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+                                    <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 3" />
+                                </div>
+                            </div>
+                            <!-- Add more images as needed -->
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
-            </div>
-        </div>
-    </div>
-                    
-                    <button class="Restaurant-button-stn">사진 추가</button>
-                  </div>
+            </div></div></div>
+        	
+    
+                        <!-- 사진 추가 -->
+                    <button type="file" name="file1"class="Restaurant-button-stn">사진 추가</button>
+         </div>
              
                                     <p>
 
@@ -236,5 +276,10 @@
             </div>
         </div>
     </div>
+    <!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
