@@ -11,5 +11,9 @@ public class QuestionController {
 		return "question/question";
 	}
 
+	@GetMapping("/question_create")
+	public String question_create() {
+		return "question/question_create";
+	}
 
 }
