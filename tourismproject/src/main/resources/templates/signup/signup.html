@@ -82,40 +82,46 @@
                 <p class="text-body-tertiary">Create your account today</p>
               </div>
               <button class="btn btn-phoenix-secondary w-100 mb-3"><span class="fab fa-google text-danger me-2 fs-9"></span>Sign up with google</button>
-              <button class="btn btn-phoenix-secondary w-100"><span class="fab fa-facebook text-primary me-2 fs-9"></span>Sign up with facebook</button>
+              <button class="btn btn-phoenix-secondary w-100"><img src="images/naver.png" height="15px">Sign up with naver</button>
               <div class="position-relative mt-4">
                 <hr class="bg-body-secondary" />
                 <div class="divider-content-center">or use email</div>
               </div>
-              <form>
+              
+              
+              <form action="@{/signup}" objdct="${userCreateForm}" method="post">
                 <div class="mb-3 text-start">
-                  <label class="form-label" for="name">Name</label>
-                  <input class="form-control" id="name" type="text" placeholder="아름" />
+                  <label for="username" class="form-label">사용자</label>
+            	  <input type="text" field="*{username}" class="form-control" placeholder="이름">
                 </div>
                  <div class="row g-3 mb-3">
-                  <label class="form-label" for="email">Email address</label>
-                  <input class="form-control" id="email" type="email" placeholder="name@example.com" />
+      			  <div replace="~{form_errors :: formErrorsFragment}"></div>
+      			  <label for = "email" class="form-label">EMAIL ADDRESS</label>
+      			  <input type="email" field="*{email}" class="form-control" placeholder="name@example.com" />	
                 </div>
                    <div class="mb-3 text-start">
-                  <label class="form-label" for="거주지">거주지</label>
-                  <input class="form-control" id="거주지" type="거주지" placeholder="거주지" />
+                  <label class="form-label" for="residence">거주지</label>
+                  <input class="form-control" id="residence" type="residence" placeholder="거주지" />
                 </div>
                  <div class="row g-3 mb-3">
                   <div class="col-md-6">
-                    <label class="form-label" for="password">Password</label>
-                    <input class="form-control form-icon-input" id="password" type="비밀번호" placeholder="비밀번호" />
+                    <label class="form-label" for="password1">Password</label>
+                    <input class="form-control form-icon-input" field="*{password1}" type="password" placeholder="비밀번호" />
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label" for="confirm_password"> Confirm Password</label>
-                    <input class="form-control form-icon-input" id="confirm_password" type="password" placeholder="비밀번호 확인" />
+                    <label for="password2" class="form-label">비밀번호 확인</label>
+            		<input type="password" field="*{password2}" class="form-control">
                   </div>
+                   <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                  <button class="btn btn-primary w-100 mb-3">Sign up</button>
+                </div>
+                </form>
+                
+                
                 </div>
                 <div class="form-check mb-3">
-                  <input class="form-check-input" id="termsService" type="checkbox" />
-                  <label class="form-label fs-9 text-transform-none" for="termsService">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
                 </div>
-                <button class="btn btn-primary w-100 mb-3">Sign up</button>
-                <div class="text-center"><a class="fs-9 fw-bold" href="/signin">Sign in to an existing account</a></div>
+        
               </form>
             </div>
           </div>
