@@ -28,6 +28,14 @@
     <script src="/assets/js/config.js"></script>
 
 
+
+
+
+
+
+    
+    
+
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
@@ -64,7 +72,7 @@
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
-    <main class="main" id="top">
+<main class="main" id="top">
       <div class="bg-primary-subtle py-2">
         <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
           <div class="dropdown">
@@ -93,15 +101,91 @@
             </div>
           </a>
           <div class="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
-          
             <div class="theme-control-toggle fa-icon-wait">
               <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggleSm" />
               <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label>
               <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label>
-            </div><a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a><a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a><a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#!"><span data-feather="user" style="width: 20px; height: 20px"></span></a>
+            
+            
+            
+            </div><a class="btn btn-link text-body-tertiary p-0" href="/여기는 지도임"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
+            
+            
+            <a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a>
+            
+            
+            
+            
+            
+            
+       <div class="dropdown">
+  <a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span data-feather="user" style="width: 20px; height: 20px"></span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border" aria-labelledby="navbarDropdownUser">
+    <div class="card position-relative border-0">
+      <div class="card-body p-0">
+        <div class="text-center pt-4 pb-3">
+          <div class="avatar avatar-xl ">
+            <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
           </div>
+          <h6 class="mt-2 text-body-emphasis" th:text="${#authentication.name != 'anonymousUser'} ? ${#authentication.name} : 'Guest'"></h6>
+        </div>
+        <div class="mb-3 mx-3">
+          <input class="form-control form-control-sm" id="statusUpdateInput" type="text" placeholder="Update your status" />
+        </div>
+      </div>
+      <div class="overflow-auto scrollbar" style="height: 10rem;">
+        <ul class="nav d-flex flex-column mb-2 pb-1">
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user"></span><span>Profile</span></a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body" data-feather="pie-chart"></span>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="lock"></span>Posts &amp; Activity</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="settings"></span>Settings &amp; Privacy </a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="help-circle"></span>Help Center</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="globe"></span>Language</a></li>
+        </ul>
+      </div>
+      <div class="card-footer p-0 border-top border-translucent">
+        <ul class="nav d-flex flex-column my-3">
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user-plus"></span>Add another account</a></li>
+        </ul>
+        <hr />
+        <div th:if="${#authentication.name == 'anonymousUser'}">
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signin"> 
+              <span class="me-2" data-feather="log-in"></span>Sign in
+            </a>
+          </div>
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signup">
+              <span class="me-2" data-feather="user-plus"></span>Sign up
+            </a>
+          </div>
+        </div>
+        <div th:if="${#authentication.name != 'anonymousUser'}">
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" th:href="@{/signup/signout}"> 
+              <span class="me-2" data-feather="log-out"></span>Log out
+            </a>
+          </div>
+        </div>
+        <div class="my-2 text-center fw-bold fs-10 text-body-quaternary">
+          <a class="text-body-quaternary me-1" href="#!">Privacy policy</a>&bull;
+          <a class="text-body-quaternary mx-1" href="#!">Terms</a>&bull;
+          <a class="text-body-quaternary ms-1" href="#!">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
           
-          <div></div>
+          
+          </div>
           
            <div class="btn-group position-static text-nowrap" role="group">
                       <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
@@ -122,7 +206,7 @@
                         <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
                         <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
                         <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
-                        <li><a class="dropdown-item" href="/space">장소추가</a></li>
+                        <li><a class="dropdown-item" href="/Restaurant/addRestaurant">장소추가</a></li>
                         <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
                        
                        <li>
@@ -164,15 +248,10 @@
 
                       </ul>
                     </div>
-                  
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-</div>
+                    
+                     </div>
+                     
+        
 
     <!-- ===============================================-->
     <!--  메인  -->

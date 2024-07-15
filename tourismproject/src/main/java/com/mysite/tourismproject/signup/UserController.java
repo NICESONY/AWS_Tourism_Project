@@ -57,7 +57,7 @@ public class UserController {
     
     
     
-    
+
     @GetMapping("/")
     public String index(@AuthenticationPrincipal UserDetails userDetails, Model model) {
         if (userDetails != null) {
