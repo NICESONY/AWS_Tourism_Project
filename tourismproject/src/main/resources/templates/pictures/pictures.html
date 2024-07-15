@@ -1,10 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>이미지 업로드</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .file-input {
+            display: none;
+        }
+        .file-label {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .file-label:hover {
+            background-color: #0056b3;
+        }
+        .preview {
+            margin-top: 10px;
+            max-width: 300px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-사진 추가 picture
+    <div class="container mt-5">
+        <h2>이미지 업로드</h2>
+        <form th:action="@{/Pictures/create}" method="post" enctype="multipart/form-data">
+            <input type="file" class="file-input" name="file1" id="fileInput" accept="image/*">
+            <div class="button-container">
+                <label for="fileInput" class="file-label">사진 선택</label>
+                <button type="submit" class="btn btn-primary">저장하기</button>
+            </div>
+            <div id="previewContainer">
+                <p>사진 추가 picture</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewContainer = document.getElementById('previewContainer');
+
+                    // 기존의 미리보기 이미지가 있으면 제거
+                    const existingImg = document.getElementById('imagePreview');
+                    if (existingImg) {
+                        previewContainer.removeChild(existingImg);
+                    }
+
+                    // 새로운 이미지 태그 생성
+                    const img = document.createElement('img');
+                    img.id = 'imagePreview';
+                    img.src = e.target.result;
+                    img.className = 'preview';
+                    img.alt = 'Image preview...';
+
+                    // 미리보기 컨테이너에 이미지 추가
+                    previewContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
