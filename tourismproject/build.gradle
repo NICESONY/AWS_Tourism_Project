@@ -50,6 +50,10 @@ dependencies {
     
     //valdation 의존성 추가
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+    
+   	// mail 발송하는 것
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	
 }
 
