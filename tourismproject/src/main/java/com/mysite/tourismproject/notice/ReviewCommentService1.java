@@ -1,4 +1,4 @@
-package com.mysite.tourismproject.review;
+package com.mysite.tourismproject.notice;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -9,18 +9,18 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class ReviewCommentService {
+public class ReviewCommentService1 {
 	
-	private final ReviewCommentRepository cr;
-	private final ReviewNoticeService ns;
+	private final ReviewCommentRepository1 cr;
+	private final NoticeService ns;
 	
 	public void create(String content, Integer id) {
-		ReviewComment comm = new ReviewComment();
+		ReviewComment1 comm = new ReviewComment1();
 		comm.setContent(content);
 		comm.setDate(LocalDateTime.now());
 		
 		
-		comm.setReview(ns.getreviewByid(id));
+		comm.setNotice(ns.getreviewByid(id));
 		
 		cr.save(comm);
 	}
@@ -31,13 +31,13 @@ public class ReviewCommentService {
 	}
 	
 	
-	public ReviewComment getComment(Integer id) {
-		Optional<ReviewComment> op = cr.findById(id);
+	public ReviewComment1 getComment(Integer id) {
+		Optional<ReviewComment1> op = cr.findById(id);
 		return op.get();
 	}
 	
 	
-	public void update(ReviewComment c) {
+	public void update(ReviewComment1 c) {
 		cr.save(c);
 	}
 }

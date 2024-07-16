@@ -1,4 +1,4 @@
-package com.mysite.tourismproject.review;
+package com.mysite.tourismproject.notice;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -14,29 +14,29 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor 
 @Service 
-public class ReviewNoticeService {
+public class NoticeService {
 
-    private final ReviewNoticeRepository nr;
+    private final NoticeRepository nr;
     private final S3Service s3Service;
 
-    public void createnotice(ReviewNotice review, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
+    public void createnotice(Notice notice, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
         s3Service.uploadFile(file1, file1.getOriginalFilename());
         s3Service.uploadFile(file2, file2.getOriginalFilename());
         s3Service.uploadFile(file3, file3.getOriginalFilename());
 
-        review.setImage1(file1.getOriginalFilename());
-        review.setImage2(file2.getOriginalFilename());
-        review.setImage3(file3.getOriginalFilename());
-        review.setDate(LocalDateTime.now());
-        this.nr.save(review);
+        notice.setImage1(file1.getOriginalFilename());
+        notice.setImage2(file2.getOriginalFilename());
+        notice.setImage3(file3.getOriginalFilename());
+        notice.setDate(LocalDateTime.now());
+        this.nr.save(notice);
     }
 
-    public List<ReviewNotice> findallnotice(){
+    public List<Notice> findallnotice(){
         return nr.findAll();
     }
 
-    public ReviewNotice getreviewByid(Integer id) {
-        Optional<ReviewNotice> op = this.nr.findById(id);
+    public Notice getreviewByid(Integer id) {
+        Optional<Notice> op = this.nr.findById(id);
         return op.get();
     }
 
@@ -44,26 +44,26 @@ public class ReviewNoticeService {
         nr.deleteById(id);
     }
 
-    public void update(ReviewNotice review, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException{
+    public void update(Notice notice, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException{
         // 이미지 1만 변화가 있는 경우
         if (!file1.isEmpty()) { 
             s3Service.uploadFile(file1, file1.getOriginalFilename()); 
-            review.setImage1(file1.getOriginalFilename());
+            notice.setImage1(file1.getOriginalFilename());
         }
 
         //이미지 2만 변화가 있는 경우
         if (!file2.isEmpty()) { 
             s3Service.uploadFile(file2, file2.getOriginalFilename()); 
-            review.setImage2(file2.getOriginalFilename());
+            notice.setImage2(file2.getOriginalFilename());
         }
 
         //이미지 3만 변화가 있는 경우
         if (!file3.isEmpty()) { 
             s3Service.uploadFile(file3, file3.getOriginalFilename()); 
-            review.setImage3(file3.getOriginalFilename());
+            notice.setImage3(file3.getOriginalFilename());
         }
 
         // 기타 변화 없는 경우
-        nr.save(review);
+        nr.save(notice);
     }
 }

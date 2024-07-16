@@ -37,7 +37,7 @@ public class ReviewNotice {
     private String image3;
     
     // 공지글은 여러개의 댓글을 가질 수 있으니까
-    @OneToMany(mappedBy = "notice", cascade = CascadeType.REMOVE) 
+    @OneToMany(mappedBy = "review", cascade = CascadeType.REMOVE) 
     private List<ReviewComment> commentList;
     
     

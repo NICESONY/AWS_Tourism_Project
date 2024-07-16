@@ -1,4 +1,4 @@
-package com.mysite.tourismproject.review;
+package com.mysite.tourismproject.notice;
 
 import java.time.LocalDateTime;
 
@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class ReviewComment {
+public class ReviewComment1 {
 
 	@Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
@@ -27,5 +27,5 @@ public class ReviewComment {
     private LocalDateTime date; 
 
     @ManyToOne 
-    private ReviewNotice review; 
+    private Notice notice; 
 }

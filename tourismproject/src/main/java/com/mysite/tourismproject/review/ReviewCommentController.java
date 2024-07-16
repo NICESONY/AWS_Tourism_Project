@@ -14,15 +14,15 @@ import lombok.RequiredArgsConstructor;
 public class ReviewCommentController {
 	
 	private final ReviewCommentService cs;
+		
 	
-	// private final NoticeService1 ns;
 	
 	@PostMapping("/comment/create/{id}")
 	public String commentCreate(@RequestParam("content") String content, 
 								@PathVariable("id") Integer id) {
 		cs.create(content ,id);
 		
-		return "redirect:/notice/detail/"+ id;
+		return "redirect:/review/detail/"+ id;
 	}
 	
 	@GetMapping("/comment/delete/{nid}/{cid}")
@@ -30,7 +30,7 @@ public class ReviewCommentController {
 								@PathVariable("cid") Integer cid) {
 		
 		cs.delete(cid);	
-		return "redirect:/notice/detail/"+ nid;
+		return "redirect:/review/detail/"+ nid;
 	}
 	
 	
@@ -47,6 +47,6 @@ public class ReviewCommentController {
 		ReviewComment c = cs.getComment(id);
 		c.setContent(s);
 		cs.update(c);
-		return "redirect:/notice/detail/" + c.getNotice().getId();
+		return "redirect:/review/detail/" + c.getReview().getId();
 	}
 }
