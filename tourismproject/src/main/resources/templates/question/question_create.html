@@ -186,15 +186,17 @@
   <div class="row mb-3">
 
     <label class="col-sm-2 col-form-label" for="inputtitle">제목</label>
+
     <div class="col-sm-10">
+
       <input class="form-control" id="inputitle" type="text" />
     </div>
   </div>
-  
   <div class="row mb-3">
-  
+
     <label class="col-sm-2 col-form-label" for="inputcontent">내용</label>
     <div class="col-sm-10">
+
       <input class="form-control" id="summernote" type="text" />
     </div>
   </div>
@@ -215,26 +217,36 @@
         ]
       });
     </script>
-
-  <button class="btn btn-primary" type="submit">등록</button>
+		<table class="table">
+  		<tbody>
+            <tr th:each="question, loop : ${questionList}">
+                <td th:text="${loop.count}"></td>
+                <td>
+                    <a th:href="@{|/question/${question.id}|}" th:text="${question.subject}"></a>
+                </td>
+                <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+            </tr>
+        </tbody>
+        </table>
+     <a href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
 </form>
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="../../vendors/popper/popper.min.js"></script>
-    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="../../vendors/anchorjs/anchor.min.js"></script>
-    <script src="../../vendors/is/is.min.js"></script>
-    <script src="../../vendors/fontawesome/all.min.js"></script>
-    <script src="../../vendors/lodash/lodash.min.js"></script>
+    <script src="/vendors/popper/popper.min.js"></script>
+    <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/vendors/anchorjs/anchor.min.js"></script>
+    <script src="/vendors/is/is.min.js"></script>
+    <script src="/vendors/fontawesome/all.min.js"></script>
+    <script src="/vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../../vendors/list.js/list.min.js"></script>
-    <script src="../../vendors/feather-icons/feather.min.js"></script>
-    <script src="../../vendors/dayjs/dayjs.min.js"></script>
-    <script src="../../vendors/prism/prism.js"></script>
-    <script src="../../assets/js/phoenix.js"></script>
-    <script src="../../vendors/list.js/list.min.js"></script>
+    <script src="/vendors/list.js/list.min.js"></script>
+    <script src="/vendors/feather-icons/feather.min.js"></script>
+    <script src="/vendors/dayjs/dayjs.min.js"></script>
+    <script src="/vendors/prism/prism.js"></script>
+    <script src="/assets/js/phoenix.js"></script>
+    <script src="/vendors/list.js/list.min.js"></script>
 
 </body>
 </html>
