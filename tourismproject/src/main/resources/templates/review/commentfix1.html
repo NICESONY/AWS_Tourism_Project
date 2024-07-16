@@ -1,0 +1,12 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+
+    <h5 class="border-bottom my-3 py-2" 
+       > 댓글 수정</h5>
+    <form th:action="@{|/comment/update/${comment.id}|}" method="post" class="my-3">
+
+        <textarea name="content" id="content" rows="10" class="form-control" th:text="${comment.content}"></textarea>
+        <input type="submit" value="댓글 수정" class="btn btn-success my-2">
+    </form>
+</div>
+</html>
