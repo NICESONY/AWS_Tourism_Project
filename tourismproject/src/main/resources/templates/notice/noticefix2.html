@@ -1,0 +1,53 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+    <h5 class="my-3 border-bottom pb-2">공지사항 수정</h5>
+
+    <form th:action="@{/notice/update}" method="post"  enctype="multipart/form-data">
+
+    	<input type="hidden" name="id" th:value="${notice.id}">
+	
+    	<input type="hidden" name = "image1"  th:value ="${notice.image1}">
+     	<input type="hidden" name = "image2"  th:value ="${notice.image2}">   
+     	<input type="hidden" name = "image3"  th:value ="${notice.image3}">	
+   	
+    	<input type="hidden" name="date" th:value="${notice.date}">
+        <div class="mb-3">
+            <label for="subject" class="form-label">제목</label>
+            <input type="text" name="title" id="subject" class="form-control" th:value="${notice.title}">
+        </div>
+        
+        
+        <div class="mb-3">
+            <label for="author" class="form-label">작성자</label>
+            <input type="text" name="author" id="author" class="form-control" th:value="${review.author}">
+        </div>
+        
+        
+        
+        
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea name="content" id="content" class="form-control" rows="10" th:text="${review.content}"></textarea>
+        </div>   
+        
+        <div class="mb-3">
+        <input type="file" name = "file1">
+        [[${review.image1}]]
+        </div>
+       
+       <div class="mb-3">
+        <input type="file" name = "file2">
+        [[${review.image2}]]
+        </div>
+        
+
+       <div class="mb-3">
+        <input type="file" name = "file3">
+        [[${review.image3}]]
+        </div>
+    
+        
+        <input type="submit" value="수정하기" class="btn btn-primary my-2">
+    </form>
+</div>
+</html>
