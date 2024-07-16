@@ -1,10 +1,382 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>맛탐정단</title>
+<style>
+
+
+.search-keyword {
+	text-align: center; /* 텍스트 가운데 정렬 */
+	margin-bottom: 10px; /* 아래 여백 추가 */
+}
+
+.control1 {
+	width: 300px; /* 입력 필드 너비 */
+	padding: 10px; /* 내부 여백 */
+	border: 1px solid #ccc; /* 테두리 설정 */
+	border-radius: 5px; /* 모서리 둥글게 */
+	font-size: 16px; /* 폰트 사이즈 */
+}
+
+.button1 {
+	background-color: #4CAF50; /* 배경색 */
+	color: white; /* 글자색 */
+	border: none; /* 테두리 없음 */
+	padding: 10px 20px; /* 내부 여백 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	text-decoration: none; /* 밑줄 없음 */
+	display: inline-block; /* 인라인 블록 요소로 처리 */
+	font-size: 16px; /* 폰트 사이즈 */
+	cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+	border-radius: 5px; /* 모서리 둥글게 */
+}
+
+/* 상단 네비게이션 바 스타일 */
+nav {
+	background-color: #00BFFF; /* 배경색 */
+	color: white; /* 글자색 */
+	text-align: center; /* 텍스트 가운데 정렬 */
+	padding: 10px 0; /* 상하 여백 */
+}
+
+nav ul {
+	list-style-type: none; /* 리스트 스타일 제거 */
+	margin: 0; /* 마진 제거 */
+	padding: 0; /* 패딩 제거 */
+}
+
+nav ul li {
+	display: inline; /* 인라인 요소로 배치 */
+	margin-right: 20px; /* 우측 여백 */
+}
+
+nav ul li a {
+	color: white; /* 링크 색상 */
+	text-decoration: none; /* 밑줄 제거 */
+	padding: 10px 15px; /* 내부 여백 */
+	display: inline-block; /* 인라인 블록 요소로 처리 */
+}
+
+nav ul li a:hover {
+	background-color: #555; /* 호버시 배경색 */
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-menu {
+	display: none; /* 기본적으로 숨김 */
+	position: absolute; /* 절대 위치 */
+	background-color: #333; /* 배경색 */
+	padding: 10px; /* 내부 여백 */
+	z-index: 1; /* 스택 순서 */
+}
+
+.dropdown-menu a {
+	color: white; /* 링크 색상 */
+	display: block; /* 블록 요소로 표시 */
+	padding: 5px 10px; /* 내부 여백 */
+	text-decoration: none; /* 밑줄 제거 */
+}
+
+.dropdown-menu a:hover {
+	background-color: #555; /* 호버시 배경색 */
+}
+
+nav ul li:hover .dropdown-menu {
+	display: block; /* 호버 시 드롭다운 메뉴 표시 */
+}
+
+/* Adjust styles for different dropdown menus */
+.dropdown-QnA,
+.dropdown-mysite,
+.dropdown-another {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: #333;
+    padding: 10px;
+    z-index: 1;
+}
+
+.dropdown-QnA a,
+.dropdown-mysite a,
+.dropdown-another a {
+    color: white;
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.dropdown-QnA a:hover,
+.dropdown-mysite a:hover,
+.dropdown-another a:hover {
+    background-color: #555;
+}
+
+/* Show dropdowns on hover */
+nav ul li:hover .dropdown-QnA,
+nav ul li:hover .dropdown-mysite,
+nav ul li:hover .dropdown-another {
+    display: block;
+}
+
+
+/* 전체적인 스타일 */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2; /* 배경색 */
+	text-align: center; /* 가운데 정렬 */
+}
+
+/* 검색 폼 스타일 */
+form {
+	display: inline-block; /* 인라인 블록 요소로 표시하여 가운데 정렬 */
+	text-align: left; /* 텍스트 왼쪽 정렬 */
+	background-color: #fff; /* 배경색 */
+	padding: 20px;
+	border: 1px solid #ccc; /* 테두리 설정 */
+	border-radius: 10px; /* 모서리 둥글게 */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+	margin: 50px auto; /* 위아래 여백을 auto로 설정하여 중앙 정렬 */
+	max-width: 600px; /* 최대 너비 설정 */
+}
+
+form h2 {
+	font-size: 24px; /* 제목 폰트 크기 */
+	margin-bottom: 20px; /* 아래 여백 */
+}
+
+.hotelName, .date {
+	margin-bottom: 10px; /* 아래 여백 */
+}
+
+label {
+	display: block; /* 블록 요소로 표시 */
+	margin-bottom: 5px; /* 아래 여백 */
+	font-weight: bold; /* 폰트 굵기 */
+}
+
+input[type="text"], input[type="date"] {
+	width: calc(50% - 10px); /* 입력 필드 너비 */
+	padding: 10px; /* 내부 여백 */
+	margin-right: 10px; /* 우측 여백 */
+	border: 1px solid #ccc; /* 테두리 설정 */
+	border-radius: 5px; /* 모서리 둥글게 */
+	font-size: 16px; /* 폰트 크기 */
+	box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
+}
+
+button[type="button"] {
+	background-color: #4CAF50; /* 배경색 */
+	color: white; /* 글자색 */
+	border: none; /* 테두리 없음 */
+	padding: 10px 20px; /* 내부 여백 */
+	border-radius: 5px; /* 모서리 둥글게 */
+	font-size: 16px; /* 폰트 크기 */
+	cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+}
+
+        #gallerywrapper {
+            width: 640px;
+            height: 450px;
+            margin: 0 auto;
+            position: relative;
+            font-family: verdana, arial, sans-serif;
+        }
+
+        #gallerywrapper #gallery {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 450px;
+            width: 640px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #gallerywrapper #gallery div {
+            width: 640px;
+            height: 900px;
+            padding-top: 10px;
+            position: relative;
+        }
+
+        #gallerywrapper #gallery div img {
+            clear: both;
+            display: block;
+            margin: 0 auto;
+            border: 0;
+        }
+
+        #gallerywrapper #gallery div h3 {
+            padding: 10px 0 0 0;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        #gallerywrapper #gallery div p {
+            padding: 5px 0;
+            margin: 0;
+            font-size: 8px;
+            line-height: 10px;
+        }
+
+        #gallery .previous {
+            display: inline;
+            float: left;
+            margin-left: 80px;
+            text-decoration: none;
+        }
+
+        #gallery .next {
+            display: inline;
+            float: right;
+            margin-right: 80px;
+            text-decoration: none;
+        }
+
+
+</style>
+
 </head>
+
+
+
 <body>
-hotel 
+
+
+	<h1>
+
+		<a class="logo"></a> <img src="">
+		<form class="search-keyword" role="search">
+			<input class="control1" type="search" placeholder="Search">
+			<button class="button1" type="submit">Search</button>
+		</form>
+		<div class="hotelcontainer">
+			<nav>
+				<div>
+					<ul>
+						<li><a class="menu" href="#" role="button"
+							aria-expanded="false">menu</a>
+							<ul class="dropdown-menu" aria-hidden="true">
+								<li><a class="dropdown-menu1" href="/hotel">여행</a></li>
+								<li><a class="dropdown-menu1" href="/hotel">리뷰 작성</a></li>
+								<li><a class="dropdown-menu1" href="/hotel">호텔</a></li>
+								<li><a class="dropdown-menu1" href="/hotel">즐길거리</a></li>
+								<li><a class="dropdown-menu1" href="/hotel">음식점</a></li>
+								<li><a class="dropdown-menu1" href="/hotel">사진 추가</a></li>
+								<li><a class="dropdown-menu1" href="/hotel">장소 추가</a></li>
+							</ul></li>
+						
+							<li><a class="QnA" href="#" role="button"
+								aria-expanded="false">고객센터</a>
+								<ul class="dropdown-QnA" aria-hidden="true">
+									<li><a href="/hotel">FAQ</a></li>
+									<li><a href="/hotel">QnA</a></li>
+									<li><a href="/hotel">공지사항</a></li>
+								</ul></li>
+
+							<li><a class="mysite" href="#" role="button"
+								aria-expanded="false">회원 관리</a>
+								<ul class="dropdown-mysite" aria-hidden="true">
+							<li><a class="login" href="login-in">로그인</a></li>
+							<li><a class="login" href="login-in"></a></li>
+							<li><a class="login" href="login-in"></a></li>
+							<li><a class="login" href="login-in"></a></li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</h1>
+
+	<h2>호 텔 / 숙 소</h2>
+
+
+	<form action="/hotels" method="post">
+		<div class="hotelName">
+			<label for="hotel">호텔 이름:</label> <input type="text" id="hotel-name"
+				name="hotel-name" placeholder="호텔 이름 입력">
+		</div>
+
+		<div class="date">
+			<label for="checkin-date">체크인 날짜</label> <input type="date"
+				id="checkin-date" name="checkin-date"> <label
+				for="checkout-date">체크아웃 날짜</label> <input type="date"
+				id="checkout-date" name="checkout-date">
+		</div>
+		<div class="rooms">
+			<label for="rooms">인원수: </label> <input type="button"> <select>
+				<option value="">1명</option>
+				<option value="">2명</option>
+				<option value="">3명</option>
+			</select>
+		</div>
+		<button type="button" onclick="search-hotel()">검색</button>
+	</form>
+
+    <div id="gallerywrapper">
+        <div id="gallery">
+            <div id="pic1">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/63/c6/ab/1-1-2.jpg?w=300&h=300&" height="350" width="500" alt="Image 1">
+                <h3>보령</h3>
+                <p>보령은 한국의 서해안에 위치한 작은 시입니다. 이곳은 유명한 먹거리와 아름다운 해변으로 유명합니다.
+                 보령에서는 매년 해마다 유쾌한 축제가 열리며, 이곳에서만 즐길 수 있는 특별한 경험을 누릴 수 있습니다.
+                  이곳에서는 수많은 해변과 산책로, 그리고 역사적인 유적지를 방문할 수 있습니다. 보령은 국내외에서 많은 관광객들이 찾는 곳이며,
+                   이곳에서 즐길 수 있는 많은 경험들이 있습니다</p>
+                <a class="previous" href="#pic8">&lt;</a>
+                <a class="next" href="#pic2">&gt;</a>
+            </div>
+            <div id="pic2">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/56/80/8b/caption.jpg?w=300&h=300&" height="350" width="500" alt="Image 2">
+                <h3>천안</h3>
+                <p>천안은 대한민국 충청남도의 중심지로, 서울과 대전의 중간에 위치해 있습니다. 이 도시는 교통이 편리하고 역사적인 유산과 자연경관이 풍부합니다. 천안에는 많은 호텔이 있습니다.</p>
+                <a class="previous" href="#pic1">&lt;</a>
+                <a class="next" href="#pic3">&gt;</a>
+            </div>
+            <div id="pic3">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/14/da/f9/hyeonchungsa-shrine.jpg?w=300&h=300&" height="350" width="500" alt="Image 3">
+                <h3>부여</h3>
+                <p>부여는 대한민국 충청남도에 위치한 작은 도시입니다. 이 곳은 2000년 전통을 자랑하는 역사적인 장소로, 백제의 옛 수도였습니다. 부여는 한국에서 가장 아름다운 도시 중 하나로 여겨지며, 자연 경관과 역사적인 유산으로 유명합니다. 또한, 부여는 한국에서 가장 인기있는 골프장 중 하나인 부여 골프장이 있어 골퍼들에게 유명합니다.</p>
+                <a class="previous" href="#pic2">&lt;</a>
+                <a class="next" href="#pic4">&gt;</a>
+            </div>
+            <div id="pic4">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e9/92/0d/caption.jpg?w=300&h=300&" height="350" width="500" alt="Image 4">
+                <h3>아산</h3>
+                <p>아산은 충청남도에 위치한 도시로, 유네스코 세계문화유산인 온양온천과 가까운 거리에 위치해 있습니다. 또한, 아산은 대한민국에서 가장 중요한 물류와 산업 중심지 중 하나입니다. 여행자들은 아산의 다양한 명소와 맛집을 즐길 수 있습니다.</p>
+                <a class="previous" href="#pic3">&lt;</a>
+                <a class="next" href="#pic5">&gt;</a>
+            </div>
+            <div id="pic5">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/1e/46/f0/caption.jpg?w=300&h=300&" height="350" width="500" alt="Image 5">
+                <h3>태안</h3>
+                <p>태안은 대한민국 충청남도에 위치한 시입니다. 이곳은 아름다운 해변과 자연 경관으로 유명합니다. 태안에는 많은 해변과 섬이 있어서 해양 여행을 즐기기에 최적의 장소입니다. 또한, 태안에는 국립공원과 자연 보호구역이 있어서 자연을 즐기기에도 좋습니다. 태안은 한국의 자연 경관을 즐기기에 최적의 장소 중 하나입니다.</p>
+                <a class="previous" href="#pic4">&lt;</a>
+                <a class="next" href="#pic6">&gt;</a>
+            </div>
+            <div id="pic6">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/e0/31/ba/caption.jpg?w=300&h=300&" height="350" width="500" alt="Image 6">
+                <h3>예산</h3>
+                <p>예산은 한국의 충청남도에 위치한 작은 도시입니다. 이곳은 조용하고 평화로운 분위기를 자랑하며, 도심에서 벗어나 조용한 여행을 즐길 수 있는 곳입니다. 예산에서는 다양한 체험 프로그램을 즐길 수 있습니다.</p>
+                <a class="previous" href="#pic5">&lt;</a>
+                <a class="next" href="#pic7">&gt;</a>
+            </div>
+            <div id="pic7">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/b7/de/c4/spring-water-falling.jpg?w=300&h=300&" height="350" width="500" alt="Image 7">
+                <h3>공주</h3>
+                <p>공주는 한국의 중부 지방에 위치한 작은 도시입니다. 이곳은 한국의 역사와 문화를 체험할 수 있는 곳으로 유명합니다. 공주는 백제 왕국의 옛 수도이며, 백제 문화 유적지로 유명합니다. 공주는 국내외 관광객들에게 많은 사랑을 받는 도시입니다. 이곳에서는 역사와 문화를 경험할 수 있습니다.</p>
+                <a class="previous" href="#pic6">&lt;</a>
+                <a class="next" href="#pic8">&gt;</a>
+            </div>
+            <div id="pic8">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/ec/de/e7/solmoe-holy-ground.jpg?w=300&h=300&" height="350" width="500" alt="Image 8">
+                <h3>당진</h3>
+                <p>당진시는 대한민국 충청남도에 위치한 아름다운 도시입니다. 이곳은 대한민국에서 가장 큰 화력발전소 중 하나인 당진화력발전소가 있어서 대한민국의 전력 생산에 큰 역할을 합니다. 또한 이곳은 수도권과 충청 지방을 연결하는 중요한 교통의 요지입니다. 당진시는 산과 바다, 호수 등 다양한 자연 경관을 자랑하며, 지역적인 특산품인 당진배와 당진굴비 등이 유명합니다.</p>
+                <a class="previous" href="#pic7">&lt;</a>
+                <a class="next" href="#pic1">&gt;</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
