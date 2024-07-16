@@ -177,9 +177,9 @@
         </nav>
         <h2 class="mb-5">공지사항</h2>
                     
-                    <a class="btn btn-primary mb-3" href="/notice_create">공지 작성</a>
+                    <a class="btn btn-primary mb-3" href="noticecreate">공지 작성</a>
                     
-                    <div id="tableExample4" data-list='{"valueNames":["id","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
+                    <div id="tableExample4" data-list='{"valueNames":["id/","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
                         <div class="row justify-content-end g-0">
                           <div class="col-auto px-3">
 
@@ -193,17 +193,17 @@
                               <tr class="bg-body-highlight">
                                 <th class="sort border-top border-translucent ps-3" data-sort="id">번호</th>
                                 <th class="border-top border-translucent" data-sort="title">제목</th>
-                                <th class="border-top border-translucent" data-sort="author">작성자</th>
+                                <!-- <th class="border-top border-translucent" data-sort="author">작성자</th> -->
                                 <th class="sort border-top border-translucent text-end pe-8" data-sort="createdate">작성일</th>                                
                               </tr>
                             </thead>
                           
 						          <tbody>
-							        <tr th:each="notice, loop : ${noticeList}">
+							        <tr th:each="notice, loop : ${notices}">
 							          <td class="id" th:text="${loop.count}"></td>
-							          <td class="title"><a th:href="@{|/notice/detail/${notice.id}|}" th:text="${notice.subject}"></a></td>
-							          <td class="author" th:text="${notice.author}"></td>
-							          <td class="createdate" th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd')}"></td>
+							          <td class="title"><a th:href="@{|/notice/noticedetail/${id}|}" th:text="${title}"></a></td>
+							          <!-- <td class="author" th:text="${notice.author}"></td> -->
+							          <td class="createdate" th:text="${#temporals.format(createDate, 'yyyy-MM-dd')}"></td>
 							        </tr>
 						          </tbody>
                                

@@ -25,4 +25,8 @@ public class Notice {
 
     private LocalDateTime createDate; 
     
+    
+    
+    
+    
 }
