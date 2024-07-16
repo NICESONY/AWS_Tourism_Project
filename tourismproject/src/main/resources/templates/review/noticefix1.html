@@ -1,39 +1,49 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container">
-    <h5 class="my-3 border-bottom pb-2">notice 수정</h5>
+    <h5 class="my-3 border-bottom pb-2">맛 탐정단의 리뷰 수정</h5>
 
-    <form th:action="@{/notice/update}" method="post"  enctype="multipart/form-data">
+    <form th:action="@{/review/update}" method="post"  enctype="multipart/form-data">
 
-    	<input type="hidden" name="id" th:value="${notice.id}">
+    	<input type="hidden" name="id" th:value="${review.id}">
 	
-    	<input type="hidden" name = "image1"  th:value ="${notice.image1}">
-     	<input type="hidden" name = "image2"  th:value ="${notice.image2}">   
-     	<input type="hidden" name = "image3"  th:value ="${notice.image3}">	
+    	<input type="hidden" name = "image1"  th:value ="${review.image1}">
+     	<input type="hidden" name = "image2"  th:value ="${review.image2}">   
+     	<input type="hidden" name = "image3"  th:value ="${review.image3}">	
    	
-    	<input type="hidden" name="date" th:value="${notice.date}">
+    	<input type="hidden" name="date" th:value="${review.date}">
         <div class="mb-3">
             <label for="subject" class="form-label">제목</label>
-            <input type="text" name="title" id="subject" class="form-control" th:value="${notice.title}">
+            <input type="text" name="title" id="subject" class="form-control" th:value="${review.title}">
         </div>
+        
+        
+        <div class="mb-3">
+            <label for="author" class="form-label">작성자</label>
+            <input type="text" name="author" id="author" class="form-control" th:value="${review.author}">
+        </div>
+        
+        
+        
+        
         <div class="mb-3">
             <label for="content" class="form-label">내용</label>
-            <textarea name="content" id="content" class="form-control" rows="10" th:text="${notice.content}"></textarea>
+            <textarea name="content" id="content" class="form-control" rows="10" th:text="${review.content}"></textarea>
         </div>   
         
         <div class="mb-3">
         <input type="file" name = "file1">
-        [[${notice.image1}]]
+        [[${review.image1}]]
         </div>
        
        <div class="mb-3">
         <input type="file" name = "file2">
-        [[${notice.image2}]]
+        [[${review.image2}]]
         </div>
         
 
        <div class="mb-3">
         <input type="file" name = "file3">
-        [[${notice.image3}]]
+        [[${review.image3}]]
         </div>
     
         

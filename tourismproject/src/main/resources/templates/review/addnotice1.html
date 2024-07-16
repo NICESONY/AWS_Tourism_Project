@@ -2,8 +2,8 @@
 <div layout:fragment="content" class="container">
 
 
-    <h5 class="my-3 border-bottom pb-2">notice 등록</h5>
-    <form th:action="@{/notice/create}" method="post" enctype="multipart/form-data">
+    <h5 class="my-3 border-bottom pb-2">맛 탐정단 리뷰 작성</h5>
+    <form th:action="@{/review/create}" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="subject" class="form-label">제목</label>
             <input type="text" name="title" id="subject" class="form-control">
@@ -33,9 +33,4 @@
 </div>
 </html>
 
-<!-- 
-nctype="multopart/form-data">
-     <div>
-        <input type="file" name = "file1">
-        </div>
-         -->
+

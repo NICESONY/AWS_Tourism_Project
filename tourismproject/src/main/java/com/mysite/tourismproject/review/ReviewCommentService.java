@@ -20,7 +20,7 @@ public class ReviewCommentService {
 		comm.setDate(LocalDateTime.now());
 		
 		
-		comm.setNotice(ns.getnoticeByid(id));
+		comm.setReview(ns.getreviewByid(id));
 		
 		cr.save(comm);
 	}

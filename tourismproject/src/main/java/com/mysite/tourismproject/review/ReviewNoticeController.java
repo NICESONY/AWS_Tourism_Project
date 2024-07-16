@@ -36,25 +36,25 @@ public class ReviewNoticeController {
 	
 	
 	
-	@GetMapping("/notice/add")
+	@GetMapping("/review/add")
 	public String addnotice() {
 		return "review/addnotice1";
 	}
 	
 	
 	
-	@PostMapping("/notice/create")
-	public String createnotice(@ModelAttribute ReviewNotice notice,
+	@PostMapping("/review/create")
+	public String createnotice(@ModelAttribute ReviewNotice review,
 							@RequestParam("file1") MultipartFile file1,
 							@RequestParam("file2") MultipartFile file2,
 							@RequestParam("file2") MultipartFile file3) throws IOException
 	
 	{
 		
-		ns.createnotice(notice, file1, file2, file3);
+		ns.createnotice(review, file1, file2, file3);
 		
 		
-		return "review/review";
+		return "redirect:/review";
 	}
 	
 	
@@ -62,10 +62,10 @@ public class ReviewNoticeController {
 	
 	
 	
-	@GetMapping("/notice/detail/{id}")
+	@GetMapping("/review/detail/{id}")
 	public String shownotice(Model model, 
 							@PathVariable("id") Integer id) {
-		model.addAttribute("notice",ns.getnoticeByid(id));
+		model.addAttribute("review",ns.getreviewByid(id));
 		model.addAttribute("downpath", "https://" + downpath);
 		
 		return "review/noticedetail1";
@@ -74,26 +74,25 @@ public class ReviewNoticeController {
 	
 	
 	
-	
-	@GetMapping("/notice/detail/delete/{id}")
+	@GetMapping("/review/detail/delete/{id}")
 	public String deleteNotice(@PathVariable("id") Integer id) {
 		ns.deleteNotice(id);
-		return "review/review";
+		return "redirect:/review";
 	}
 	
 	
 	
 	@GetMapping("/update/{id}")
 	public String updateNotice(Model model,@PathVariable("id") Integer id) {
-		model.addAttribute("notice",ns.getnoticeByid(id));
+		model.addAttribute("review",ns.getreviewByid(id));
 		return "review/noticefix1";
 	}
 	
 	
 	
 	
-	@PostMapping("/notice/update")
-	public String update(@ModelAttribute ReviewNotice notice,
+	@PostMapping("/review/update")
+	public String update(@ModelAttribute ReviewNotice review,
 			@RequestParam("file1") MultipartFile file1,
 			@RequestParam("file2") MultipartFile file2,
 			@RequestParam("file3") MultipartFile file3
@@ -101,7 +100,7 @@ public class ReviewNoticeController {
 	
 {
 
-		ns.update(notice, file1, file2, file3);
-		return "review/review";
+		ns.update(review, file1, file2, file3);
+		return "redirect:/review";
 	}
 }

@@ -27,5 +27,5 @@ public class ReviewComment {
     private LocalDateTime date; 
 
     @ManyToOne 
-    private ReviewNotice notice; 
+    private ReviewNotice review; 
 }
