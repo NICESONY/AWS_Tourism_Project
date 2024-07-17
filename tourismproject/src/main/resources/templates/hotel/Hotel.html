@@ -1,9 +1,245 @@
+
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>맛탐정단</title>
+<html data-navigation-type="default" data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>호텔 페이지</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="/vendors/simplebar/simplebar.min.js"></script>
+    <script src="/assets/js/config.js"></script>
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <script>
+      var phoenixIsRTL = window.config.config.phoenixIsRTL;
+      if (phoenixIsRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+    <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+  </head>
+
+
+  <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="bg-primary-subtle py-2">
+       <!--  <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
+          <div class="dropdown"> -->
+            <!-- <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
+ --><!--             <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
+              <li><a class="dropdown-item" href="#!">Become a Host</a></li>
+              <li><a class="dropdown-item" href="#!">Blog</a></li>
+              <li><a class="dropdown-item" href="#!">Career</a></li>
+              <li><a class="dropdown-item" href="#!">Support</a></li>
+              <li><a class="dropdown-item" href="#!">+01 123 581321</a></li>
+            </ul> -->
+          </div>
+ <!--          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Become a Host</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Blog</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Career</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:example@gmail.com"> <span class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
+            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+01123581321"> <span class="fa-brands fa-whatsapp me-2"></span>+01 123 581321</a></li>
+          </ul> -->
+<!--         </div>
+      </div> -->
+      <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
+        <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a class="navbar-brand flex-1 flex-lg-grow-0 me-lg-13" href="/">
+            <div class="d-flex align-items-center"><img src="/images/logo.png" alt="phoenix" width="70" />
+              <p class="logo-text ms-2">맛 탐정단</p>
+            </div>
+          </a>
+          <div class="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
+            <div class="theme-control-toggle fa-icon-wait">
+              <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggleSm" />
+              <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label>
+              <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label>
+            
+            
+            
+            </div><a class="btn btn-link text-body-tertiary p-0" href="/여기는 지도임"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
+            
+            
+            <a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a>
+            
+            
+            
+            
+            
+            
+       <div class="dropdown">
+  <a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span data-feather="user" style="width: 20px; height: 20px"></span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border" aria-labelledby="navbarDropdownUser">
+    <div class="card position-relative border-0">
+      <div class="card-body p-0">
+        <div class="text-center pt-4 pb-3">
+          <div class="avatar avatar-xl ">
+            <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
+          </div>
+          <h6 class="mt-2 text-body-emphasis" th:text="${#authentication.name != 'anonymousUser'} ? ${#authentication.name} : 'Guest'"></h6>
+        </div>
+        <div class="mb-3 mx-3">
+          <input class="form-control form-control-sm" id="statusUpdateInput" type="text" placeholder="Update your status" />
+        </div>
+      </div>
+      <div class="overflow-auto scrollbar" style="height: 10rem;">
+        <ul class="nav d-flex flex-column mb-2 pb-1">
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user"></span><span>Profile</span></a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body" data-feather="pie-chart"></span>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="lock"></span>Posts &amp; Activity</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/notice"> <span class="me-2 text-body" data-feather="settings"></span>공지사항 </a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="help-circle"></span>Help Center</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/faq"> <span class="me-2 text-body" data-feather="globe"></span>Language</a></li>
+        </ul>
+      </div>
+      <div class="card-footer p-0 border-top border-translucent">
+        <ul class="nav d-flex flex-column my-3">
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user-plus"></span>Add another account</a></li>
+        </ul>
+        <hr />
+        <div th:if="${#authentication.name == 'anonymousUser'}">
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signin"> 
+              <span class="me-2" data-feather="log-in"></span>Sign in
+            </a>
+          </div>
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signup">
+              <span class="me-2" data-feather="user-plus"></span>Sign up
+            </a>
+          </div>
+        </div>
+        <div th:if="${#authentication.name != 'anonymousUser'}">
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" th:href="@{/signup/signout}"> 
+              <span class="me-2" data-feather="log-out"></span>Log out
+            </a>
+          </div>
+        </div>
+        <div class="my-2 text-center fw-bold fs-10 text-body-quaternary">
+          <a class="text-body-quaternary me-1" href="#!">Privacy policy</a>&bull;
+          <a class="text-body-quaternary mx-1" href="#!">Terms</a>&bull;
+          <a class="text-body-quaternary ms-1" href="#!">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+          
+          
+          </div>
+          
+           <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        회원관리<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/signup">회원가입</a></li>
+                        <li><a class="dropdown-item" href="/signin">로그인</a></li>
+                        
+                      </ul>
+                    </div>
+                    
+                    
+            <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        탐정노트(메뉴)<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
+                        <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
+                        <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
+                        <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
+                        <li><a class="dropdown-item" href="/Restaurant/addRestaurant">장소추가</a></li>
+                        <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
+                       
+                       <li>
+                          <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="/bestpick">지역주민 Best Pick</a></li> 
+                        <li><a class="dropdown-item" href="/mbti">MBTI "P" 맞춤 여행지 추천</a></li> 
+                        <li><a class="dropdown-item" href="/">충청남도 추천 할인 관광지</a></li> 
+
+                      </ul>
+                    </div>
+          
+          <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        고객관리<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/faq">FAQ</a></li>
+                        <li><a class="dropdown-item" href="/question_list">Q&A</a></li>
+                        <li><a class="dropdown-item" href="/notice">공지사항</a></li>
+                        
+<!--                         <li>
+                          <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+                      </ul>
+                    </div>
+                    
+                    
+            <div class="btn-group position-static text-nowrap" role="group">
+                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        마이페이지<span class="fas fa-angle-down ms-2"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/">계정관리</a></li>
+                        <li><a class="dropdown-item" href="/">회원탈퇴</a></li>
+                        <li><a class="dropdown-item" href="/">리뷰관리</a></li>
+                        <li><a class="dropdown-item" href="/">질문관리</a></li>
+                        <li><a class="dropdown-item" href="/">타임라인 히스토리</a></li>
+ 
+
+                      </ul>
+                    </div>
+          
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -244,5 +480,31 @@
         
         
 
-    </main>
+   
 
+  </main>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="/vendors/popper/popper.min.js"></script>
+    <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/vendors/anchorjs/anchor.min.js"></script>
+    <script src="/vendors/is/is.min.js"></script>
+    <script src="/vendors/fontawesome/all.min.js"></script>
+    <script src="/vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="/vendors/list.js/list.min.js"></script>
+    <script src="/vendors/feather-icons/feather.min.js"></script>
+    <script src="/vendors/dayjs/dayjs.min.js"></script>
+    <script src="/assets/js/phoenix.js"></script>
+    <script src="/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/vendors/isotope-packery/packery-mode.pkgd.min.js"></script>
+    <script src="/vendors/bigpicture/BigPicture.js"></script>
+    <script src="/vendors/typed.js/typed.umd.js"></script>
+    <script src="/vendors/swiper/swiper-bundle.min.js"></script>
+
+  </body>
+
+</html>
