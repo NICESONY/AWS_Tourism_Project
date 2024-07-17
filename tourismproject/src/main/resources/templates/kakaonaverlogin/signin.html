@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/signin" method="post">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                Please, Check your ID or Password...
+            </div>
+        </div>
+	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	<p>ID : <input type="text" name="username">
+	<p>PW : <input type="password" name="password">
+	<p><input type="submit" value="Sign in">
+</form>
+</body>
+</html>

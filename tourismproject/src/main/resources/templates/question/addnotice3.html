@@ -1,21 +1,36 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container">
-    <h5 class="my-3 border-bottom pb-2">question 등록</h5>
+
+
+    <h5 class="my-3 border-bottom pb-2">맛 탐정단 리뷰 작성</h5>
     <form th:action="@{/question/create}" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="subject" class="form-label">제목</label>
-            <input type="text" name="subject" id="subject" class="form-control">
+            <input type="text" name="title" id="subject" class="form-control">
         </div>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
             <label for="author" class="form-label">작성자</label>
             <input type="text" name="author" id="author" class="form-control">
-        </div> -->
+        </div>
         <div class="mb-3">
             <label for="content" class="form-label">내용</label>
             <textarea name="content" id="content" class="form-control" rows="10"></textarea>
         </div>
         
+        <div class="mb-3">
+        <input type="file" name = "file1">
+        </div>
+                
+       <div class="mb-3">
+        <input type="file" name = "file2">
+        </div>       
+        
+      <div class="mb-3">
+        <input type="file" name = "file3">
+        </div>               
         <input type="submit" value="저장하기" class="btn btn-primary my-2">
     </form>
 </div>
 </html>
+
+

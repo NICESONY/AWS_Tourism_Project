@@ -1,0 +1,53 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+    <h5 class="my-3 border-bottom pb-2">Q & A 수정</h5>
+
+    <form th:action="@{/question/update3}" method="post"  enctype="multipart/form-data">
+
+    	<input type="hidden" name="id" th:value="${question.id}">
+	
+    	<input type="hidden" name = "image1"  th:value ="${question.image1}">
+     	<input type="hidden" name = "image2"  th:value ="${question.image2}">   
+     	<input type="hidden" name = "image3"  th:value ="${question.image3}">	
+   	
+    	<input type="hidden" name="date" th:value="${question.date}">
+        <div class="mb-3">
+            <label for="subject" class="form-label">제목</label>
+            <input type="text" name="title" id="subject" class="form-control" th:value="${question.title}">
+        </div>
+        
+        
+        <div class="mb-3">
+            <label for="author" class="form-label">작성자</label>
+            <input type="text" name="author" id="author" class="form-control" th:value="${question.author}">
+        </div>
+        
+        
+        
+        
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea name="content" id="content" class="form-control" rows="10" th:text="${question.content}"></textarea>
+        </div>   
+        
+        <div class="mb-3">
+        <input type="file" name = "file1">
+        [[${question.image1}]]
+        </div>
+       
+       <div class="mb-3">
+        <input type="file" name = "file2">
+        [[${question.image2}]]
+        </div>
+        
+
+       <div class="mb-3">
+        <input type="file" name = "file3">
+        [[${question.image3}]]
+        </div>
+    
+        
+        <input type="submit" value="수정하기" class="btn btn-primary my-2">
+    </form>
+</div>
+</html>

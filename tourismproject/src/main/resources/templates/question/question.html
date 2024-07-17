@@ -6,16 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- 섬머노트 css -->
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>게시물 작성</title>
+    <title>리뷰작성 페이지</title>
 
 
     <!-- ===============================================-->
@@ -70,26 +65,26 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <div class="bg-primary-subtle py-2">
-        <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
-          <div class="dropdown">
-            <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
-            <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
+       <!--  <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
+          <div class="dropdown"> -->
+            <!-- <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
+ --><!--             <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
               <li><a class="dropdown-item" href="#!">Become a Host</a></li>
               <li><a class="dropdown-item" href="#!">Blog</a></li>
               <li><a class="dropdown-item" href="#!">Career</a></li>
               <li><a class="dropdown-item" href="#!">Support</a></li>
               <li><a class="dropdown-item" href="#!">+01 123 581321</a></li>
-            </ul>
+            </ul> -->
           </div>
-          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
+ <!--          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Become a Host</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Blog</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Career</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:example@gmail.com"> <span class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+01123581321"> <span class="fa-brands fa-whatsapp me-2"></span>+01 123 581321</a></li>
-          </ul>
-        </div>
-      </div>
+          </ul> -->
+<!--         </div>
+      </div> -->
       <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
         <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a class="navbar-brand flex-1 flex-lg-grow-0 me-lg-13" href="/">
             <div class="d-flex align-items-center"><img src="/images/logo.png" alt="phoenix" width="70" />
@@ -101,7 +96,84 @@
               <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggleSm" />
               <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label>
               <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label>
-            </div><a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a><a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a><a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#!"><span data-feather="user" style="width: 20px; height: 20px"></span></a>
+            
+            
+            
+            </div><a class="btn btn-link text-body-tertiary p-0" href="/여기는 지도임"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
+            
+            
+            <a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a>
+            
+            
+            
+            
+            
+            
+       <div class="dropdown">
+  <a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span data-feather="user" style="width: 20px; height: 20px"></span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border" aria-labelledby="navbarDropdownUser">
+    <div class="card position-relative border-0">
+      <div class="card-body p-0">
+        <div class="text-center pt-4 pb-3">
+          <div class="avatar avatar-xl ">
+            <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
+          </div>
+          <h6 class="mt-2 text-body-emphasis" th:text="${#authentication.name != 'anonymousUser'} ? ${#authentication.name} : 'Guest'"></h6>
+        </div>
+        <div class="mb-3 mx-3">
+          <input class="form-control form-control-sm" id="statusUpdateInput" type="text" placeholder="Update your status" />
+        </div>
+      </div>
+      <div class="overflow-auto scrollbar" style="height: 10rem;">
+        <ul class="nav d-flex flex-column mb-2 pb-1">
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user"></span><span>Profile</span></a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body" data-feather="pie-chart"></span>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="lock"></span>Posts &amp; Activity</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/notice"> <span class="me-2 text-body" data-feather="settings"></span>공지사항 </a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="help-circle"></span>Help Center</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/faq"> <span class="me-2 text-body" data-feather="globe"></span>Language</a></li>
+        </ul>
+      </div>
+      <div class="card-footer p-0 border-top border-translucent">
+        <ul class="nav d-flex flex-column my-3">
+          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user-plus"></span>Add another account</a></li>
+        </ul>
+        <hr />
+        <div th:if="${#authentication.name == 'anonymousUser'}">
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signin"> 
+              <span class="me-2" data-feather="log-in"></span>Sign in
+            </a>
+          </div>
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signup">
+              <span class="me-2" data-feather="user-plus"></span>Sign up
+            </a>
+          </div>
+        </div>
+        <div th:if="${#authentication.name != 'anonymousUser'}">
+          <div class="px-3">
+            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" th:href="@{/signup/signout}"> 
+              <span class="me-2" data-feather="log-out"></span>Log out
+            </a>
+          </div>
+        </div>
+        <div class="my-2 text-center fw-bold fs-10 text-body-quaternary">
+          <a class="text-body-quaternary me-1" href="#!">Privacy policy</a>&bull;
+          <a class="text-body-quaternary mx-1" href="#!">Terms</a>&bull;
+          <a class="text-body-quaternary ms-1" href="#!">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+          
+          
           </div>
           
            <div class="btn-group position-static text-nowrap" role="group">
@@ -123,7 +195,7 @@
                         <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
                         <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
                         <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
-                        <li><a class="dropdown-item" href="/space">장소추가</a></li>
+                        <li><a class="dropdown-item" href="/Restaurant/addRestaurant">장소추가</a></li>
                         <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
                        
                        <li>
@@ -141,7 +213,7 @@
                         고객관리<span class="fas fa-angle-down ms-2"></span></button>
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/faq">FAQ</a></li>
-                        <li><a class="dropdown-item" href="/question_list">Q&A</a></li>
+                        <li><a class="dropdown-item" href="/question">Q&A</a></li>
                         <li><a class="dropdown-item" href="/notice">공지사항</a></li>
                         
 <!--                         <li>
@@ -164,7 +236,7 @@
  
 
                       </ul>
-                    </div>
+          
         </ul>
       </div>
     </div>
@@ -174,63 +246,66 @@
            <div class="content">
         <nav class="mb-2" aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <!--           <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item">고객 센터</li>
-            <li class="breadcrumb-item">질문 게시판</li>
-            <li class="breadcrumb-item active">질문작성</li>
+            <li class="breadcrumb-item active">공지사항</li> -->
           </ol>
         </nav>
-        <h2 class="mb-5">질문작성</h2>
-        
-        <form>
-  <div class="row mb-3">
+        <h2 class="mb-5"> Q & A</h2>
+                    
+                    <a class="btn btn-primary mb-3" href="/question/add">Q & A</a>
+                    
+                    <div id="tableExample4" data-list='{"valueNames":["id","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
+                        <div class="row justify-content-end g-0">
+                          <div class="col-auto px-3">
 
-    <label class="col-sm-2 col-form-label" for="inputtitle">제목</label>
-
-    <div class="col-sm-10">
-
-      <input class="form-control" id="inputitle" type="text" />
-    </div>
-  </div>
-  <div class="row mb-3">
-
-    <label class="col-sm-2 col-form-label" for="inputcontent">내용</label>
-    <div class="col-sm-10">
-
-      <input class="form-control" id="summernote" type="text" />
-    </div>
-  </div>
-  
-      <script>
-      $('#summernote').summernote({
-        placeholder: 'Hello stand alone ui',
-        tabsize: 2,
-        height: 300,
-        toolbar: [
-          ['style', ['style']],
-          ['font', ['bold', 'underline', 'clear']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['table', ['table']],
-          ['insert', ['link', 'picture', 'video']],
-          ['view', ['fullscreen', 'codeview', 'help']]
-        ]
-      });
-    </script>
-		<table class="table">
-  		<tbody>
-            <tr th:each="question, loop : ${questionList}">
-                <td th:text="${loop.count}"></td>
-                <td>
-                    <a th:href="@{|/question/${question.id}|}" th:text="${question.subject}"></a>
-                </td>
-                <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
-            </tr>
-        </tbody>
-        </table>
-     <a href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
-</form>
-
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table table-sm fs-9 mb-0">
+                          
+                          <!-- 테이블 목차 -->
+                            <thead>
+                              <tr class="bg-body-highlight">
+                                <th class="sort border-top border-translucent ps-3" data-sort="id">번호</th>
+                                <th class="border-top border-translucent" data-sort="title">제목</th>
+                                <th class="border-top border-translucent" data-sort="author">작성자</th>
+                               
+                                <th class="border-top border-translucent">작성일</th>                                
+                              </tr>
+                              
+                              
+	                    </thead>
+	                  
+	        <tbody>
+	       <tr th:each="question, loop : ${noticeList}">
+	       						<td th:text="${loop.count}"></td>
+	         
+	         <td>
+	           					 <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.title}"></a>
+	        										</td>
+	        										
+	        										
+	        					  <td>
+	           					 <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.author}"></a>
+	        										</td>
+	         
+	        <td th:text="${#temporals.format(question.date, 'yyyy-MM-dd HH:mm')}"></td>
+	       </tr>
+	        </tbody>
+	                       
+	                  </table>
+	                </div>
+	                
+                        
+                        
+                        <div class="d-flex justify-content-center mt-3">
+                          <button class="page-link disabled" data-list-pagination="prev" disabled=""><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg><!-- <span class="fas fa-chevron-left"></span> Font Awesome fontawesome.com --></button>
+                          <ul class="mb-0 pagination"><li class="active"><button class="page" type="button" data-i="1" data-page="5">1</button></li><li><button class="page" type="button" data-i="2" data-page="5">2</button></li></ul>
+                          <button class="page-link pe-0" data-list-pagination="next"><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg><!-- <span class="fas fa-chevron-right"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                      </div>
+                                          
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
@@ -246,7 +321,7 @@
     <script src="/vendors/dayjs/dayjs.min.js"></script>
     <script src="/vendors/prism/prism.js"></script>
     <script src="/assets/js/phoenix.js"></script>
-    <script src="/vendors/list.js/list.min.js"></script>
+    <script src="/vendors/list.js/list.min.js"></script>   
 
 </body>
 </html>

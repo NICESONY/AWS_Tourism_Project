@@ -34,7 +34,7 @@ public class ReviewCommentController1 {
 	}
 	
 	
-	@GetMapping("/comment2/update/{id}")
+	@GetMapping("/comment2/update2/{id}")
 	public String commentFixnotice(Model model, @PathVariable("id") Integer id) {
 		model.addAttribute("comment2",cs.getComment(id));
 		return "notice/commentfix2";
@@ -42,7 +42,7 @@ public class ReviewCommentController1 {
 	
 	
 	
-	@PostMapping("/comment2/update/{id}")
+	@PostMapping("/comment2/update2/{id}")
 	public String commentUpdatenotice(@RequestParam("content") String s,@PathVariable("id") Integer id) {
 		ReviewComment1 c = cs.getComment(id);
 		c.setContent(s);

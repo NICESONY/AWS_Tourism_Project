@@ -1,5 +1,5 @@
 package com.mysite.tourismproject.customer;
 
-public class Customer {
+public class Customer1 {
 
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<span sec:authorize="isAnonymous()">Signin First...<a href="/signin">Sign in</a></span>
+<span sec:authorize="isAuthenticated()">Welcome...<span th:text="${#authentication.name}"></span>
+<span th:text="${#authentication.authorities}"></span>
+<a href="/signout">Sign out</a>
+</span>
+
+<form action="/signup" method="post">
+	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	<p>ID : <input type="text" name="username">
+	<p>PW : <input type="password" name="password">
+	<p>Mail : <input type="text" name="cemail">
+	<p><input type="submit" value="Sign up">
+</form>
+
+
+
+<a href= "/naver">naver login</a>
+
+
+</body>
+</html>

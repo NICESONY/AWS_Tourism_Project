@@ -1,0 +1,28 @@
+<!-- <html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+
+<a href="/" class = "btn btn-primary my-3">메인</a>
+
+<table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일시</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="notice, loop : ${noticeList}">
+                <td th:text="${loop.count}"></td>
+                <td>
+                    <a th:href="@{|/notice/detail/${notice.id}|}" th:text="${notice.title}"></a>
+                </td>
+                <td th:text="${#temporals.format(notice.date, 'yyyy-MM-dd HH:mm')}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+<a href="/notice/add" class = "btn btn-primary">생성</a><br>
+
+</div>
+</html> -->

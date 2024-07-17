@@ -3,7 +3,7 @@
 
 
 	<a href="/notice" class = "btn btn-secondary my-3">공지사항 게시판</a>
-	<a th:href="@{|/update/${notice.id}|}" class = "btn btn-success my-3">수정</a>
+	<a th:href="@{|/update2/${notice.id}|}" class = "btn btn-success my-3">수정</a>
 	<a th:href="@{|delete/${notice.id}|}" class = "btn btn-danger my-3">삭제</a>
     <!-- 질문 -->
     <h2 class="border-bottom py-2" th:text="${notice.title}"></h2>
@@ -37,7 +37,7 @@
                     <div th:text="${#temporals.format(comment2.date, 'yyyy-MM-dd HH:mm')}"></div>
                     
                 </div>
-                <a th:href="@{|/comment2/update/${comment2.id}|}" class="ms-2 btn btn-success">수정</a>
+                <a th:href="@{|/comment2/update2/${comment2.id}|}" class="ms-2 btn btn-success">수정</a>
                 <a th:href="@{|/comment2/delete/${notice.id}/${comment2.id}|}" class="ms-2 btn btn-danger">삭제</a>
                 	  
             </div>

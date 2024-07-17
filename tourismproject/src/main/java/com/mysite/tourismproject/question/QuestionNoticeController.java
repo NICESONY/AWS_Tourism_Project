@@ -1,4 +1,4 @@
-package com.mysite.tourismproject.notice;
+package com.mysite.tourismproject.question;
 
 import java.io.IOException;
 
@@ -17,9 +17,9 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class NoticeController {
+public class QuestionNoticeController {
 	
-	private final NoticeService ns;
+	private final QuestionNoticeService ns;
 	
 	
 	
@@ -28,70 +28,71 @@ public class NoticeController {
 	
 	
 	
-	@GetMapping("/notice")
+	@GetMapping("/question")
 	public String showNotices(Model model) {
 		model.addAttribute("noticeList", ns.findallnotice());
-		return "notice/notice";
+		return "question/question";
 	}
 	
 	
 	
-	@GetMapping("/notice/add")
+	@GetMapping("/question/add")
 	public String addnotice() {
-		return "notice/addnotice2";
+		return "question/addnotice3";
 	}
 	
 	
 	
-	@PostMapping("/notice/create")
-	public String createnotice(@ModelAttribute Notice notice,
+	@PostMapping("/question/create")
+	public String createnotice(@ModelAttribute QuestionNotice question,
 							@RequestParam("file1") MultipartFile file1,
 							@RequestParam("file2") MultipartFile file2,
 							@RequestParam("file2") MultipartFile file3) throws IOException
 	
 	{
 		
-		ns.createnotice(notice, file1, file2, file3);
+		ns.createnotice(question, file1, file2, file3);
 		
 		
-		return "redirect:/notice";
+		return "redirect:/question";
 	}
 	
 	
 	
 	
 	
-	@GetMapping("/notice/detail/{id}")
+	
+	@GetMapping("/question/detail/{id}")
 	public String shownotice(Model model, 
 							@PathVariable("id") Integer id) {
-		model.addAttribute("notice",ns.getreviewByid(id));
+		model.addAttribute("question",ns.getquestionByid(id));
 		model.addAttribute("downpath", "https://" + downpath);
 		
-		return "notice/noticedetail2";
+		return "question/noticedetail3";
 	}
 	
 	
 	
 	
-	@GetMapping("/notice/detail/delete/{id}")
+	@GetMapping("/question/detail/delete/{id}")
 	public String deleteNotice(@PathVariable("id") Integer id) {
 		ns.deleteNotice(id);
-		return "redirect:/notice";
+		return "redirect:/question";
 	}
 	
 	
 	
-	@GetMapping("/update2/{id}")
+	@GetMapping("/update3/{id}")
 	public String updateNotice(Model model,@PathVariable("id") Integer id) {
-		model.addAttribute("notice",ns.getreviewByid(id));
-		return "notice/noticefix2";
+		model.addAttribute("question",ns.getquestionByid(id));
+		return "question/noticefix3";
 	}
 	
 	
 	
 	
-	@PostMapping("/notice/update2")
-	public String update(@ModelAttribute Notice notice,
+	@PostMapping("/question/update3")
+	public String update(@ModelAttribute QuestionNotice question,
 			@RequestParam("file1") MultipartFile file1,
 			@RequestParam("file2") MultipartFile file2,
 			@RequestParam("file3") MultipartFile file3
@@ -99,7 +100,7 @@ public class NoticeController {
 	
 {
 
-		ns.update(notice, file1, file2, file3);
-		return "redirect:/notice";
+		ns.update(question, file1, file2, file3);
+		return "redirect:/question";
 	}
 }

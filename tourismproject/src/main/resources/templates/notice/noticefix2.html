@@ -2,7 +2,7 @@
 <div layout:fragment="content" class="container">
     <h5 class="my-3 border-bottom pb-2">공지사항 수정</h5>
 
-    <form th:action="@{/notice/update}" method="post"  enctype="multipart/form-data">
+    <form th:action="@{/notice/update2}" method="post"  enctype="multipart/form-data">
 
     	<input type="hidden" name="id" th:value="${notice.id}">
 	
@@ -19,7 +19,7 @@
         
         <div class="mb-3">
             <label for="author" class="form-label">작성자</label>
-            <input type="text" name="author" id="author" class="form-control" th:value="${review.author}">
+            <input type="text" name="author" id="author" class="form-control" th:value="${notice.author}">
         </div>
         
         
@@ -27,23 +27,23 @@
         
         <div class="mb-3">
             <label for="content" class="form-label">내용</label>
-            <textarea name="content" id="content" class="form-control" rows="10" th:text="${review.content}"></textarea>
+            <textarea name="content" id="content" class="form-control" rows="10" th:text="${notice.content}"></textarea>
         </div>   
         
         <div class="mb-3">
         <input type="file" name = "file1">
-        [[${review.image1}]]
+        [[${notice.image1}]]
         </div>
        
        <div class="mb-3">
         <input type="file" name = "file2">
-        [[${review.image2}]]
+        [[${notice.image2}]]
         </div>
         
 
        <div class="mb-3">
         <input type="file" name = "file3">
-        [[${review.image3}]]
+        [[${notice.image3}]]
         </div>
     
         
