@@ -1,13 +1,9 @@
 package com.mysite.tourismproject.signup;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import com.mysite.tourismproject.question.QuestionController;
 
 import lombok.RequiredArgsConstructor;
 
