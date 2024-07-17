@@ -1,32 +1,20 @@
 package com.mysite.tourismproject.restaurant;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @Controller
 public class RestaurantController {
-	
-	
-	@GetMapping("/Restaurant")
+	@GetMapping("/restaurantmenu")
+	public String Restaurantmenu() {
+		return "restaurant/menu2";
+	}
+	@GetMapping("/restaurant/restaurant")
 	public String Restaurant() {
-		return "Restaurant/menu2";
+		return "restaurant/restaurant";
 	}
-	@GetMapping("/Restaurant/menu2")
-	public String Restaurantmenu2() {
-		return "Restaurant/Restaurant";
-	}
-	@GetMapping("/Restaurant/addRestaurant")
+	@GetMapping("/restaurant/addrestaurant")
 	public String addRestaurant() {
-		return "Restaurant/addRestaurant";
+		return "restaurant/addrestaurant";
 	}
-	/*@PostMapping("/notice/create")
-	public String createnotice(@ModelAttribute Notice1 notice,
-			@RequestParam("file1") MultipartFile file1) throws IOException {
-		
-		ns.createnotice(notice, file1);
-		
-		return "redirect:/";
-	}*/
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Picture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Upload Picture</h2>
+        <form th:action="@{/locations/{locationId}/pictures/upload(locationId=${locationId})}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file1">Select Picture</label>
+                <input type="file" class="form-control-file" id="file1" name="file1">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+        <a th:href="@{/locations/{locationId}/pictures(locationId=${locationId})}" class="btn btn-secondary">Back to Pictures</a>
+    </div>
+</body>
+</html>
