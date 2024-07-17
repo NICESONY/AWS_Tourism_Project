@@ -56,6 +56,173 @@
       }
     </script>
     <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+       <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #81F7F3;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        header .right-menu {
+            display: flex;
+            gap: 20px;
+        }
+         main {
+            padding: 1em;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        } 
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .search-section {
+            margin: 20px 0;
+        }
+        .search-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-section input, .search-section select, .search-section button {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        .search-section button {
+            background-color: #81F79F;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-section button:hover {
+            background-color: #45a049;
+        }
+        .section {
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .section .card {
+            background: #e2e2e2;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            align-items: center;
+            width: 300px;
+        }
+        .section .card img {
+            width: 70%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .section .card .details {
+            text-align: left;
+        }
+        .section .card .details h3 {
+            margin: 10px 0 5px 0;
+        }
+        /* Gallery CSS */
+        #gallerywrapper {
+            width: 640px;
+            height: 450px;
+            margin: 0 auto;
+            position: relative;
+            font-family: verdana, arial, sans-serif;
+        }
+        #gallerywrapper #gallery {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 350px;
+            width: 640px;
+            overflow: hidden;
+            text-align: center;
+        }
+        #gallerywrapper #gallery div {
+            width: 440px;
+            height: 700px;
+            padding-top: 10px;
+            position: relative;
+        }
+        #gallerywrapper #gallery div img {
+            clear: both;
+            display: block;
+            margin: 0 auto;
+            border: 0;
+        }
+        #gallerywrapper #gallery div h3 {
+            padding: 10px 0 0 0;
+            margin: 0;
+            font-size: 18px;
+        }
+        #gallerywrapper #gallery div p {
+            padding: 5px 0;
+            margin: 0;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        #gallery .previous {
+            display: inline;
+            float: left;
+            margin-left: 100px;
+            text-decoration: none;
+        }
+        #gallery .next {
+            display: inline;
+            float: right;
+            margin-right: 100px;
+            text-decoration: none;
+        }
+        .video-section {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .video-card {
+            background: #e2e2e2;
+            padding: 15px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        .video-card video {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .video-card h3 {
+            margin: 10px 0 5px 0;
+        }
+    </style>
+    
   </head>
 
 
@@ -238,174 +405,11 @@
 
                       </ul>
                     </div>
+                    </nav>
+                    </div>
           
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #81F7F3;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
-        header nav {
-            display: flex;
-            gap: 20px;
-        }
-        header nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        header .right-menu {
-            display: flex;
-            gap: 20px;
-        }
-/*         main {
-            padding: 1em;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        } */
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .search-section {
-            margin: 20px 0;
-        }
-        .search-section form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        .search-section input, .search-section select, .search-section button {
-            padding: 10px;
-            font-size: 16px;
-            width: 80%;
-            max-width: 400px;
-            box-sizing: border-box;
-        }
-        .search-section button {
-            background-color: #81F79F;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .search-section button:hover {
-            background-color: #45a049;
-        }
-        .section {
-            text-align: left;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .section .card {
-            background: #e2e2e2;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            align-items: center;
-            width: 300px;
-        }
-        .section .card img {
-            width: 70%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .section .card .details {
-            text-align: left;
-        }
-        .section .card .details h3 {
-            margin: 10px 0 5px 0;
-        }
-        /* Gallery CSS */
-        #gallerywrapper {
-            width: 640px;
-            height: 450px;
-            margin: 0 auto;
-            position: relative;
-            font-family: verdana, arial, sans-serif;
-        }
-        #gallerywrapper #gallery {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 350px;
-            width: 640px;
-            overflow: hidden;
-            text-align: center;
-        }
-        #gallerywrapper #gallery div {
-            width: 440px;
-            height: 700px;
-            padding-top: 10px;
-            position: relative;
-        }
-        #gallerywrapper #gallery div img {
-            clear: both;
-            display: block;
-            margin: 0 auto;
-            border: 0;
-        }
-        #gallerywrapper #gallery div h3 {
-            padding: 10px 0 0 0;
-            margin: 0;
-            font-size: 18px;
-        }
-        #gallerywrapper #gallery div p {
-            padding: 5px 0;
-            margin: 0;
-            font-size: 12px;
-            line-height: 18px;
-        }
-        #gallery .previous {
-            display: inline;
-            float: left;
-            margin-left: 100px;
-            text-decoration: none;
-        }
-        #gallery .next {
-            display: inline;
-            float: right;
-            margin-right: 100px;
-            text-decoration: none;
-        }
-        .video-section {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .video-card {
-            background: #e2e2e2;
-            padding: 15px;
-            border-radius: 5px;
-            width: 300px;
-            text-align: center;
-        }
-        .video-card video {
-            width: 100%;
-            border-radius: 5px;
-        }
-        .video-card h3 {
-            margin: 10px 0 5px 0;
-        }
-    </style>
-
+ 
 
    
         <h1>즐길거리</h1>
