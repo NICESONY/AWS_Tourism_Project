@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Location List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Location List</h2>
+        <ul>
+            <li th:each="location : ${locations}">
+                <a th:href="@{/locations/{id}(id=${location.id})}" th:text="${location.name}">Location Name</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

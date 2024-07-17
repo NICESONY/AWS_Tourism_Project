@@ -6,16 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- 섬머노트 css -->
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>게시물 작성</title>
+    <title>궁남지</title>
 
 
     <!-- ===============================================-->
@@ -35,6 +30,8 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
+    <link href="/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
+    <link href="/vendors/nouislider/nouislider.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -59,16 +56,23 @@
         userLinkRTL.setAttribute('disabled', true);
       }
     </script>
-    <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+        <style>
+#mapwrap{position:relative;overflow:hidden;}
+.category, .category *{margin-left:0;padding:0;color:#000;}   
+.category {position:absolute;overflow:hidden;top:10px;left:450px;width:155px;height:50px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
+.category .menu_selected {background:#FF5F4A;color:#fff;border-left:1px solid #915B2F;border-right:1px solid #915B2F;margin:0 -1px;} 
+.category li{list-style:none;float:left;width:50px;height:45px;padding-top:5px;cursor:pointer;} 
+.category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;} 
+.category .ico_coffee {background-position:-10px 0;}  
+.category .ico_store {background-position:-10px -36px;}   
+.category .ico_carpark {background-position:-10px -72px;} 
+</style>
+    
   </head>
 
 
-  <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
-
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
+  <body>  <main class="main" id="top">
       <div class="bg-primary-subtle py-2">
         <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
           <div class="dropdown">
@@ -124,13 +128,13 @@
                         <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
                         <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
                         <li><a class="dropdown-item" href="/space">장소추가</a></li>
-                        <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
+                        <li><a class="dropdown-item" href="#">맛 탐정단 리뷰작성</a></li>
                        
                        <li>
                           <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="/bestpick">지역주민 Best Pick</a></li> 
-                        <li><a class="dropdown-item" href="/mbti">MBTI "P" 맞춤 여행지 추천</a></li> 
+                        <li><a class="dropdown-item" href="/">지역주민 Best Pick</a></li> 
+                        <li><a class="dropdown-item" href="/">MBTI "P" 맞춤 여행지 추천</a></li> 
                         <li><a class="dropdown-item" href="/">충청남도 추천 할인 관광지</a></li> 
 
                       </ul>
@@ -141,7 +145,7 @@
                         고객관리<span class="fas fa-angle-down ms-2"></span></button>
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/faq">FAQ</a></li>
-                        <li><a class="dropdown-item" href="/question_list">Q&A</a></li>
+                        <li><a class="dropdown-item" href="/question">Q&A</a></li>
                         <li><a class="dropdown-item" href="/notice">공지사항</a></li>
                         
 <!--                         <li>
@@ -165,73 +169,226 @@
 
                       </ul>
                     </div>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-           <div class="content">
-        <nav class="mb-2" aria-label="breadcrumb">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item">고객 센터</li>
-            <li class="breadcrumb-item">질문 게시판</li>
-            <li class="breadcrumb-item active">질문작성</li>
-          </ol>
+          
+          <button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mt-3 mt-lg-0">
+            </ul>
+          </div>
         </nav>
-        <h2 class="mb-5">질문작성</h2>
+      </div>
+		
+      	<div id="mapwrap"> 
+    <!-- 지도가 표시될 div -->
+    <div class="container" id="map" style="width:1200px; height:500px;"></div>
+    <!-- 지도 위에 표시될 마커 카테고리 -->
+    <div class="category">
+        <ul>
+            <li id="coffeeMenu" onclick="changeMarker('coffee')">
+                <span class="ico_comm ico_coffee"></span>
+                카페
+            </li>
+            <li id="storeMenu" onclick="changeMarker('store')">
+                <span class="ico_comm ico_store"></span>
+                음식점
+            </li>
+            <li id="carparkMenu" onclick="changeMarker('carpark')">
+                <span class="ico_comm ico_carpark"></span>
+                주차장
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7ddc033ad4639fdc8816cff8106a8887"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+    mapOption = { 
+        center: new kakao.maps.LatLng(36.2696047, 126.912228), // 지도의 중심좌표 
+        level: 5 // 지도의 확대 레벨 
+    }; 
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 커피숍 마커가 표시될 좌표 배열입니다
+var cafePositions = [ 
+    new kakao.maps.LatLng(),
+    new kakao.maps.LatLng(),
+    new kakao.maps.LatLng()                
+];
+
+// 편의점 마커가 표시될 좌표 배열입니다
+var restaurantPositions = [
+    new kakao.maps.LatLng(),
+    new kakao.maps.LatLng(),
+    new kakao.maps.LatLng() 
+];
+
+// 주차장 마커가 표시될 좌표 배열입니다
+var carparkPositions = [
+    new kakao.maps.LatLng(),
+    new kakao.maps.LatLng(),
+    new kakao.maps.LatLng()                   
+];    
+
+var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+    cafeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
+    restaurantMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
+    carparkMarkers = []; // 주차장 마커 객체를 가지고 있을 배열입니다
+
+    
+createCafeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
+createRestaurantMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
+createCarparkMarkers(); // 주차장 마커를 생성하고 주차장 마커 배열에 추가합니다
+
+changeMarker('coffee'); // 지도에 커피숍 마커가 보이도록 설정합니다    
+
+
+// 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
+function createMarkerImage(src, size, options) {
+    var markerImage = new kakao.maps.MarkerImage(src, size, options);
+    return markerImage;            
+}
+
+// 좌표와 마커이미지를 받아 마커를 생성하여 리턴하는 함수입니다
+function createMarker(position, image) {
+    var marker = new kakao.maps.Marker({
+        position: position,
+        image: image
+    });
+    
+    return marker;  
+}   
+   
+// 커피숍 마커를 생성하고 커피숍 마커 배열에 추가하는 함수입니다
+function createCafeMarkers() {
+    
+    for (var i = 0; i < cafePositions.length; i++) {  
         
-        <form>
-  <div class="row mb-3">
+        var imageSize = new kakao.maps.Size(22, 26),
+            imageOptions = {  
+                spriteOrigin: new kakao.maps.Point(10, 0),    
+                spriteSize: new kakao.maps.Size(36, 98)  
+            };     
+        
+        // 마커이미지와 마커를 생성합니다
+        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
+            marker = createMarker(cafePositions[i], markerImage);  
+        
+        // 생성된 마커를 커피숍 마커 배열에 추가합니다
+        cafeMarkers.push(marker);
+    }     
+}
 
-    <label class="col-sm-2 col-form-label" for="inputtitle">제목</label>
+// 커피숍 마커들의 지도 표시 여부를 설정하는 함수입니다
+function setCafeMarkers(map) {        
+    for (var i = 0; i < cafeMarkers.length; i++) {  
+        cafeMarkers[i].setMap(map);
+    }        
+}
 
-    <div class="col-sm-10">
+// 편의점 마커를 생성하고 음식점 마커 배열에 추가하는 함수입니다
+function createRestaurantMarkers() {
+    for (var i = 0; i < restaurantPositions.length; i++) {
+        
+        var imageSize = new kakao.maps.Size(22, 26),
+            imageOptions = {   
+                spriteOrigin: new kakao.maps.Point(10, 36),    
+                spriteSize: new kakao.maps.Size(36, 98)  
+            };       
+     
+        // 마커이미지와 마커를 생성합니다
+        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
+            marker = createMarker(restaurantPositions[i], markerImage);  
 
-      <input class="form-control" id="inputitle" type="text" />
-    </div>
-  </div>
-  <div class="row mb-3">
+        // 생성된 마커를 편의점 마커 배열에 추가합니다
+        restaurantMarkers.push(marker);    
+    }        
+}
 
-    <label class="col-sm-2 col-form-label" for="inputcontent">내용</label>
-    <div class="col-sm-10">
+// 음식점 마커들의 지도 표시 여부를 설정하는 함수입니다
+function setRestaurantMarkers(map) {        
+    for (var i = 0; i < restaurantMarkers.length; i++) {  
+    	restaurantMarkers[i].setMap(map);
+    }        
+}
 
-      <input class="form-control" id="summernote" type="text" />
-    </div>
-  </div>
-  
-      <script>
-      $('#summernote').summernote({
-        placeholder: 'Hello stand alone ui',
-        tabsize: 2,
-        height: 300,
-        toolbar: [
-          ['style', ['style']],
-          ['font', ['bold', 'underline', 'clear']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['table', ['table']],
-          ['insert', ['link', 'picture', 'video']],
-          ['view', ['fullscreen', 'codeview', 'help']]
-        ]
-      });
-    </script>
-		<table class="table">
-  		<tbody>
-            <tr th:each="question, loop : ${questionList}">
-                <td th:text="${loop.count}"></td>
-                <td>
-                    <a th:href="@{|/question/${question.id}|}" th:text="${question.subject}"></a>
-                </td>
-                <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
-            </tr>
-        </tbody>
-        </table>
-     <a href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
-</form>
+// 주차장 마커를 생성하고 주차장 마커 배열에 추가하는 함수입니다
+function createCarparkMarkers() {
+    for (var i = 0; i < carparkPositions.length; i++) {
+        
+        var imageSize = new kakao.maps.Size(22, 26),
+            imageOptions = {   
+                spriteOrigin: new kakao.maps.Point(10, 72),    
+                spriteSize: new kakao.maps.Size(36, 98)  
+            };       
+     
+        // 마커이미지와 마커를 생성합니다
+        var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),    
+            marker = createMarker(carparkPositions[i], markerImage);  
 
-    <!-- ===============================================-->
+        // 생성된 마커를 주차장 마커 배열에 추가합니다
+        carparkMarkers.push(marker);        
+    }                
+}
+
+// 주차장 마커들의 지도 표시 여부를 설정하는 함수입니다
+function setCarparkMarkers(map) {        
+    for (var i = 0; i < carparkMarkers.length; i++) {  
+        carparkMarkers[i].setMap(map);
+    }        
+}
+
+// 카테고리를 클릭했을 때 type에 따라 카테고리의 스타일과 지도에 표시되는 마커를 변경합니다
+function changeMarker(type){
+    
+    var cafeMenu = document.getElementById('cafeMenu');
+    var restaurantMenu = document.getElementById('restaurantMenu');
+    var carparkMenu = document.getElementById('carparkMenu');
+    
+    // 커피숍 카테고리가 클릭됐을 때
+    if (type === 'cafe') {
+    
+        // 커피숍 카테고리를 선택된 스타일로 변경하고
+        cafeMenu.className = 'menu_selected';
+        
+        // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
+        restaurantMenu.className = '';
+        carparkMenu.className = '';
+        
+        // 커피숍 마커들만 지도에 표시하도록 설정합니다
+        setCafeMarkers(map);
+        setRestaurantMarkers(null);
+        setCarparkMarkers(null);
+        
+    } else if (type === 'restaurant') { // 음식점 카테고리가 클릭됐을 때
+    
+        // 음식점 카테고리를 선택된 스타일로 변경하고
+        cafeMenu.className = '';
+        restaurantMenu.className = 'menu_selected';
+        carparkMenu.className = '';
+        
+        // 음식점 마커들만 지도에 표시하도록 설정합니다
+        setCafeMarkers(null);
+        setRestaurantMarkers(map);
+        setCarparkMarkers(null);
+        
+    } else if (type === 'carpark') { // 주차장 카테고리가 클릭됐을 때
+     
+        // 주차장 카테고리를 선택된 스타일로 변경하고
+        cafeMenu.className = '';
+        restaurantMenu.className = '';
+        carparkMenu.className = 'menu_selected';
+        
+        // 주차장 마커들만 지도에 표시하도록 설정합니다
+        setCafeMarkers(null);
+        setRestaurantMarkers(null);
+        setCarparkMarkers(map);  
+    }    
+} 
+</script>
+      	
+	<!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script src="/vendors/popper/popper.min.js"></script>
@@ -244,9 +401,10 @@
     <script src="/vendors/list.js/list.min.js"></script>
     <script src="/vendors/feather-icons/feather.min.js"></script>
     <script src="/vendors/dayjs/dayjs.min.js"></script>
-    <script src="/vendors/prism/prism.js"></script>
     <script src="/assets/js/phoenix.js"></script>
-    <script src="/vendors/list.js/list.min.js"></script>
+    <script src="/vendors/flatpickr/flatpickr.min.js"></script>
+    <script src="/vendors/nouislider/nouislider.min.js"></script>
 
-</body>
+  </body>
+
 </html>

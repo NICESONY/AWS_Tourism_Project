@@ -269,34 +269,34 @@
                               <tr class="bg-body-highlight">
                                 <th class="sort border-top border-translucent ps-3" data-sort="id">번호</th>
                                 <th class="border-top border-translucent" data-sort="title">제목</th>
-                                <th class="border-top border-translucent" data-sort="author">author</th>
+                                <th class="border-top border-translucent" data-sort="author">작성자</th>
                                
                                 <th class="border-top border-translucent">작성일</th>                                
                               </tr>
                               
                               
-                            </thead>
-                          
-						          <tbody>
-							        <tr th:each="review, loop : ${noticeList}">
-               						<td th:text="${loop.count}"></td>
-							          
-							          <td>
-                   					 <a th:href="@{|/review/detail/${review.id}|}" th:text="${review.title}"></a>
-                										</td>
-                										
-                										
-                					  <td>
-                   					 <a th:href="@{|/review/detail/${review.id}|}" th:text="${review.author}"></a>
-                										</td>
-							          
-							         <td th:text="${#temporals.format(review.date, 'yyyy-MM-dd HH:mm')}"></td>
-							        </tr>
-						          </tbody>
-                               
-                          </table>
-                        </div>
-                        
+	                    </thead>
+	                  
+	        <tbody>
+	       <tr th:each="review, loop : ${noticeList}">
+	       						<td th:text="${loop.count}"></td>
+	         
+	         <td>
+	           					 <a th:href="@{|/review/detail/${review.id}|}" th:text="${review.title}"></a>
+	        										</td>
+	        										
+	        										
+	        					  <td>
+	           					 <a th:href="@{|/review/detail/${review.id}|}" th:text="${review.author}"></a>
+	        										</td>
+	         
+	        <td th:text="${#temporals.format(review.date, 'yyyy-MM-dd HH:mm')}"></td>
+	       </tr>
+	        </tbody>
+	                       
+	                  </table>
+	                </div>
+	                
                         
                         
                         <div class="d-flex justify-content-center mt-3">

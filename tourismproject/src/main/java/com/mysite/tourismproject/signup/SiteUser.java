@@ -30,4 +30,5 @@ public class SiteUser {
     
     
     private String residence;
+    
 }

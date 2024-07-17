@@ -45,7 +45,6 @@ dependencies {
 	// 스프링 시큐리티를 위한 기능 제공
 	implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
     
     
     //valdation 의존성 추가
@@ -54,6 +53,9 @@ dependencies {
     
    	// mail 발송하는 것
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	
+	// 구글 로그인
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	
 }
 
