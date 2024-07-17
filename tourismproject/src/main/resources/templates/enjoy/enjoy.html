@@ -1,10 +1,248 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛탐정단</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #81F7F3;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        header .right-menu {
+            display: flex;
+            gap: 20px;
+        }
+        main {
+            padding: 1em;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .search-section {
+            margin: 20px 0;
+        }
+        .search-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-section input, .search-section select, .search-section button {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        .search-section button {
+            background-color: #81F79F;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-section button:hover {
+            background-color: #45a049;
+        }
+        .section {
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .section .card {
+            background: #e2e2e2;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            align-items: center;
+            width: 300px;
+        }
+        .section .card img {
+            width: 70%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .section .card .details {
+            text-align: left;
+        }
+        .section .card .details h3 {
+            margin: 10px 0 5px 0;
+        }
+        /* Gallery CSS */
+        #gallerywrapper {
+            width: 640px;
+            height: 450px;
+            margin: 0 auto;
+            position: relative;
+            font-family: verdana, arial, sans-serif;
+        }
+        #gallerywrapper #gallery {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 350px;
+            width: 640px;
+            overflow: hidden;
+            text-align: center;
+        }
+        #gallerywrapper #gallery div {
+            width: 440px;
+            height: 700px;
+            padding-top: 10px;
+            position: relative;
+        }
+        #gallerywrapper #gallery div img {
+            clear: both;
+            display: block;
+            margin: 0 auto;
+            border: 0;
+        }
+        #gallerywrapper #gallery div h3 {
+            padding: 10px 0 0 0;
+            margin: 0;
+            font-size: 18px;
+        }
+        #gallerywrapper #gallery div p {
+            padding: 5px 0;
+            margin: 0;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        #gallery .previous {
+            display: inline;
+            float: left;
+            margin-left: 100px;
+            text-decoration: none;
+        }
+        #gallery .next {
+            display: inline;
+            float: right;
+            margin-right: 100px;
+            text-decoration: none;
+        }
+        .video-section {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .video-card {
+            background: #e2e2e2;
+            padding: 15px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        .video-card video {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .video-card h3 {
+            margin: 10px 0 5px 0;
+        }
+    </style>
 </head>
 <body>
-즐길거리 enjoy
-</body>
-</html>
+    <header>
+        <nav>
+            <a href="#">홈</a>
+            <a href="#">여행지</a>
+            <a href="#">추천 코스</a>
+        </nav>
+        <div class="right-menu">
+            <a href="#">고객센터</a>
+            <a href="#">로그인</a>
+        </div>
+    </header>
+    <main>
+        <h1>즐길거리</h1>
+        <div class="search-section">
+            <form onsubmit="searchActivities(event)">
+                <input type="text" id="location" placeholder="여행지 이름을 입력하세요" required>
+                <input type="number" id="distance" placeholder="거리 (km)" min="1" required>
+                <select id="facility-type" required>
+                    <option value="">시설 종류 선택</option>
+                    <option value="arboretum">수목원</option>
+                    <option value="gallery">갤러리</option>
+                    <option value="theme-park">테마파크</option>
+                    <option value="flower-garden">정원</option>
+                    
+                    
+                </select>
+                <button type="submit">검색</button>
+            </form>
+        </div>
+
+
+        <div id="gallerywrapper">
+            <div id="gallery">
+                <div id="pic1">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/96/2548096_image2_1.jpg" alt="Image 1">
+                    <a class="previous" href="#pic5">&lt;</a>
+                    <a class="next" href="#pic2">&gt;</a>
+                    <h3>Image 1</h3>
+                    <p>금산 하늘 물빛 정원</p>
+                </div>
+                <div id="pic2">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/97/1600297_image2_1.jpg" alt="Image 2">
+                    <a class="previous" href="#pic1">&lt;</a>
+                    <a class="next" href="#pic3">&gt;</a>
+                    <h3>논산 수락 계곡</h3>
+                    <p>Text of image 2.</p>
+                </div>
+                <div id="pic3">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/32/218932_image2_1.jpg" alt="Image 3">
+                    <a class="previous" href="#pic2">&lt;</a>
+                    <a class="next" href="#pic4">&gt;</a>
+                    <h3>보령 성주산자연휴양림</h3>
+                    <p>Text of image 3.</p>
+                </div>
+                <div id="pic4">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/52/2671452_image2_1.jpg" alt="Image 4">
+                    <a class="previous" href="#pic3">&lt;</a>
+                    <a class="next" href="#pic5">&gt;</a>
+                    <h3>부여 정림사지 오층석탑</h3>
+                    <p>Text of image 4.</p>
+                </div>
+                <div id="pic5">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/84/2495084_image2_1.jpg" alt="Image 5">
+                    <a class="previous" href="#pic4">&lt;</a>
+                    <a class="next" href="#pic1">&gt;</a>
+                    <h3>소노벨 천안 오션어드벤처</h3>
+                    <p>Text of image 5.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+
+    </main>
+
