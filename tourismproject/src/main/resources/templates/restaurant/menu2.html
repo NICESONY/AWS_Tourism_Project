@@ -306,7 +306,9 @@
 						</div>
 					</div>
 					<div class="row g-3 mb-6">
-						<div class="col-sm-6 col-lg-4 col-xl-3">
+					                    <!-- 반복을 통해 각 장소 정보를 출력 -->
+					
+						<div class="col-sm-6 col-lg-4 col-xl-3" th:each="restaurant : ${restaurants}">
 							<div
 								class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
 								<img class="img-fluid" src="/assets/img/hotels/1.png" alt="" />
@@ -318,10 +320,14 @@
 								<div
 									class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
 									<a class="stretched-link fs-7 text-white fw-bold"
-										href="restaurant/restaurant">봉구스 밥버거 공주대점</a>
+										th:href="@{|/restaurant/detail/${restaurant.id}|}" th:text="${restaurant.locationname}">장소 이름</a>
+						   
+									
 									<p class="mb-2 text-secondary-lighter">
 										<span class="fa-solid fa-map-marker-alt me-2"></span>천안시 서북구
 										공대길 10
+										<span th:text="${restaurant.description}">설명</span>
+										
 									</p>
 									<div class="d-flex align-items-center gap-3">
 										<span
