@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.validation.Valid;
@@ -55,6 +57,37 @@ public class UserController {
     }
     
     
+    
+	
+	@GetMapping("/admin/main")
+	public String admin(Model model ) {
+		model.addAttribute("admins", userService.readlist());
+		return "signup/main";
+	}
+	
+	
+	
+	@GetMapping("/admin/readdetail/{id}")
+	public String detail(Model model,@PathVariable ("id") Integer id) {
+		
+		model.addAttribute("admin", userService.readdetail(id));
+		
+		return "signup/readdetail";
+	}
+	
+	
+	
+	
+	@PostMapping("admin/update")
+	public String update(@ModelAttribute SiteUser siteuser) {
+		userService.update(siteuser);
+		return "redirect:/signup/readdetail/" + siteuser.getId();
+	}
+	
+	
+	
+	
+	
     
     
 
