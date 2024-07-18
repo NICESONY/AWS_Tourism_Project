@@ -22,7 +22,10 @@ public class UserService {
     public SiteUser create(String username, 
     					   String email, 
     					   String password, 
-    					   String residence) throws DataIntegrityViolationException {
+    					   String residence
+   
+    					   
+    					   ) throws DataIntegrityViolationException {
 
     	
     	
@@ -41,6 +44,9 @@ public class UserService {
         user.setUsername(username);
         user.setEmail(email);
         user.setResidence(residence);
+        user.setRole("ROLE_USER");
+
+  
 
         // 주입된 PasswordEncoder를 사용하여 비밀번호 암호화
         user.setPassword(passwordEncoder.encode(password));

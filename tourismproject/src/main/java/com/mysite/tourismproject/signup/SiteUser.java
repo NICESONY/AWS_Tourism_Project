@@ -29,10 +29,12 @@ public class SiteUser {
     private String email;
     
     
-    
     private String role; 
     
     
     private String residence;
+    
+    
+    private boolean enabled;
     
 }

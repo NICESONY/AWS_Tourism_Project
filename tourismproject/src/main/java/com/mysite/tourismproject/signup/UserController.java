@@ -37,7 +37,12 @@ public class UserController {
         }
 
         try {
-            userService.create(userCreateForm.getUsername(), userCreateForm.getEmail(), userCreateForm.getPassword1(), userCreateForm.getResidence());
+            userService.create(userCreateForm.getUsername(), 
+            				   userCreateForm.getEmail(), 
+            				   userCreateForm.getPassword1(), 
+            				   userCreateForm.getResidence());
+            				   
+            
         } catch(DataIntegrityViolationException e) {
             bindingResult.reject("signupFailed", e.getMessage());
             return "signup/signup"; // 템플릿 경로와 일치해야 함
@@ -46,7 +51,7 @@ public class UserController {
             return "signup/signup"; // 템플릿 경로와 일치해야 함
         }
 
-        return "redirect:/";
+        return "redirect:/signin";
     }
 
     @GetMapping("/signin")
@@ -78,7 +83,7 @@ public class UserController {
 	
 	
 	
-	@PostMapping("admin/update")
+	@PostMapping("/admin/update")
 	public String update(@ModelAttribute SiteUser siteuser) {
 		userService.update(siteuser);
 		return "redirect:/signup/readdetail/" + siteuser.getId();
@@ -87,8 +92,6 @@ public class UserController {
 	
 	
 	
-	
-    
     
 
     @GetMapping("/")
