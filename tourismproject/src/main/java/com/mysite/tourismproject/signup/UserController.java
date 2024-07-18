@@ -57,20 +57,14 @@ public class UserController {
     @GetMapping("/signin")
     public String signin() {
         return "signup/signin"; // 여기도 템플릿 경로와 일치해야 함
-    
-        
     }
-    
-    
-    
+      
 	
 	@GetMapping("/admin/main")
 	public String admin(Model model ) {
 		model.addAttribute("admins", userService.readlist());
 		return "signup/main";
 	}
-	
-	
 	
 	@GetMapping("/readdetail/{id}")
 	public String detail(Model model,@PathVariable ("id") Integer id) {
@@ -79,9 +73,7 @@ public class UserController {
 		
 		return "signup/readdetail";
 	}
-	
-	
-	
+
 	
 	@PostMapping("/admin/update")
 	public String update(@ModelAttribute SiteUser siteuser) {
@@ -89,10 +81,6 @@ public class UserController {
 		return "redirect:/readdetail/" + siteuser.getId();
 	}
 	
-	
-	
-	
-    
 
     @GetMapping("/")
     public String index(@AuthenticationPrincipal UserDetails userDetails, Model model) {
