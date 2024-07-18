@@ -19,12 +19,16 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
+                .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
                 .requestMatchers(new AntPathRequestMatcher("/**")).permitAll())
             .formLogin((formLogin) -> formLogin
                 .loginPage("/signup/signin")
                 .defaultSuccessUrl("/")
                 
                 .permitAll())
+            
+            
+            
             .logout((logout) -> logout
                 .logoutRequestMatcher(new AntPathRequestMatcher("/signup/signout"))
                 .logoutSuccessUrl("/")

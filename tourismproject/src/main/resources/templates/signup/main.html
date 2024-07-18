@@ -19,7 +19,7 @@
     <tbody>
         <tr th:each="admin, loop : ${admins}">
             <td th:text="${admin.id}"></td>
-            <td><a th:href="@{|/signup/readdetail/${admin.id}|}" th:text="${admin.id}"></a></td>
+            <td><a th:href="@{|/readdetail/${admin.id}|}" th:text="${admin.id}"></a></td>
             <td th:text="${admin.username}"></td>
             <td th:text="${admin.role}"></td>
             <td th:text="${admin.email}"></td>

@@ -72,7 +72,7 @@ public class UserController {
 	
 	
 	
-	@GetMapping("/admin/readdetail/{id}")
+	@GetMapping("/readdetail/{id}")
 	public String detail(Model model,@PathVariable ("id") Integer id) {
 		
 		model.addAttribute("admin", userService.readdetail(id));
@@ -86,7 +86,7 @@ public class UserController {
 	@PostMapping("/admin/update")
 	public String update(@ModelAttribute SiteUser siteuser) {
 		userService.update(siteuser);
-		return "redirect:/signup/readdetail/" + siteuser.getId();
+		return "redirect:/readdetail/" + siteuser.getId();
 	}
 	
 	
