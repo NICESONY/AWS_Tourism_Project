@@ -1,5 +1,8 @@
 package com.mysite.tourismproject.signup;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -47,5 +50,22 @@ public class UserService {
         
         
     }
+    
+	public List<SiteUser> readlist() {
+		return userRepository.findAll();
+	}
+    
+	
+	public SiteUser readdetail(Integer id) {
+		Optional<SiteUser> oc = userRepository.findById(id);
+		return oc.get();
+	}
+	
+	public void update(SiteUser siteuser) {
+		userRepository.save(siteuser);
+
+	}
+	
+    
     
 }

@@ -1,6 +1,4 @@
-package com.mysite.naverkakaoexam;
-
-
+package com.mysite.tourismproject.admin;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.Column;
@@ -11,7 +9,7 @@ import jakarta.persistence.Id;
 import lombok.Data;
 @Data
 @Entity
-public class Customer {
+public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cid;
@@ -22,7 +20,7 @@ public class Customer {
 	private String role;           // for SpringSecurity Policy
 	@Column(unique = true)
 	private String cemail;
-	private String cphone;
+	//private String cphone;
 	private String caddr;
 	private LocalDateTime cdate;
 }

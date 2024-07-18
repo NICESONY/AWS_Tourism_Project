@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>admin/readlist</title>
+</head>
+<body>
+<form action="/admin/update" method="post" id="myForm">
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+<input type="hidden" name="id" th:value="${admin.id}">
+
+
+
+
+<p>아이디 : <input type="text" name="username" th:value="${admin.username}" readonly>
+
+
+
+
+<p>권한 : 
+
+
+ <select name="role" id="role" onchange="this.form.submit()">
+     <option th:value="${admin.role}" SELECTED>[[${admin.role}]]</option> 
+    <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+    <option value="ROLE_MANAGER">ROLE_MANAGER</option>
+    <option value="ROLE_USER">ROLE_USER</option>
+
+  </select>
+
+
+
+<p>메일 : <input type="text" name="email" th:value="${admin.email}">
+<p>주소 : <input type="text" name="residence" th:value="${admin.residence}">
+
+<p><input type="submit" value="수정">
+</form>
+
+<!--  
+<script>
+document.getElementById("role").addEventListener('change', function() {
+	if (this.value) {
+		document.getElementById('myForm').submit();
+	}
+});
+</script>
+-->
+</body>
+</html>
