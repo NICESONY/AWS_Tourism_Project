@@ -1,12 +1,8 @@
-
-
 <!DOCTYPE html>
 
 <html data-navigation-type="default" data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
 
   <head>
-  
-  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,8 +30,6 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
-    <link href="/vendors/nouislider/nouislider.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -45,8 +39,6 @@
     <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
     <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
     <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
-
-    
     <script>
       var phoenixIsRTL = window.config.config.phoenixIsRTL;
       if (phoenixIsRTL) {
@@ -62,6 +54,7 @@
         userLinkRTL.setAttribute('disabled', true);
       }
     </script>
+    <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
     
     <style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
@@ -121,6 +114,15 @@
 #pagination {margin:10px auto;text-align: center;}
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
+
+/* 새로운 중앙 정렬 스타일 추가 */
+.center-container {
+    width: 1500px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
 </style>
     
   </head>
@@ -128,7 +130,7 @@
 
   <body>  
   
-  	v<main class="main" id="top">
+  	<main class="main" id="top">
       <div class="bg-primary-subtle py-2">
         <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
           <div class="dropdown">
@@ -236,12 +238,14 @@
 
 
       
-      		<div class="site_name" style="width:1500px;height:60px;position:relative;overflow:hidden;margin: 0 auto;">
+      		<div class="site_name center-container">
       		<br>
-		<h2>궁남지 소개</h2>
-	</div>
+      		<br>
+			<h2>궁남지 소개</h2>
+			<br>
+			</div>
       
-					<div id="placecard" class="card mb-3" style="width:1500px;height:300px;position:relative;overflow:hidden;margin: 0 auto;">
+					<div id="placecard" class="card mb-3 center-container">
 			  <div class="row g-0">
 			    <div class="col-md-4">
 			      <img src="/assets/img/sites/1.jpg" class="img-fluid rounded-start" alt="...">
@@ -257,12 +261,16 @@
 			  </div>
 			</div>
 	
-		<div class="map_name" style="width:1500px;height:60px;position:relative;overflow:hidden;margin: 0 auto;">
+		<div class="map_name center-container">
 		<br>
 		<h2>궁남지 장소 검색</h2>
-	</div>
+		<br>
+		<p><h4>이런 키워드로 검색해보세요!</h4>
+		<p><h5>"궁남지 숙소", "궁남지 카페", "부여 맛집", "부여 관광" 등...</h5>
+		<br>
+		</div>
 	
-	<div class="map_wrap">
+	<div class="map_wrap center-container">
     <div id="map" style="width:1200px;height:500px;position:relative;overflow:hidden;"></div>
 		
     <div id="menu_wrap" class="bg_white">
@@ -280,6 +288,188 @@
     </div>
 </div>
 
+        
+			<div class="gallery_name center-container">
+			<br>
+			<br>
+			<h2>궁남지의 매력</h2>
+			</div>
+			
+	<section class="pb-10 pt-0 center-container">
+
+        <div class="container-medium text-center mb-11 position-relative">
+        
+        
+        
+			<h3 class="mb-2 text-body-emphasis"></h3>
+
+          <p class="text-body-tertiary mb-0"></p>
+        </div>
+        <div class="container-fluid px-sm-0">
+          <div class="swiper-theme-container swiper-slide-nav-top">
+            <div class="swiper-nav">
+              <div class="swiper-button-next"><span class="fas fa-chevron-right text-primary" data-fa-transform="shrink-3"></span></div>
+              <div class="swiper-button-prev"><span class="fas fa-chevron-left text-primary" data-fa-transform="shrink-3"></span></div>
+            </div>
+            <div class="swiper theme-slider" data-swiper='{"loop":true,"centeredSlides":true,"autoplay":true,"centeredSlidesBounds":true,"spaceBetween":16,"slidesPerView":1,"speed":1500,"breakpoints":{"576":{"slidesPerView":"auto"}}}'>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/1.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">17 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">22 Tour Package</h6>
+                        </div> -->
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                    
+                    
+                  </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/2.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">15 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">24 Tour Package</h6>
+                        </div> -->
+                     
+                     
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                    
+                    
+                    
+                  </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/3.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">44 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">123 Tour Package</h6>
+                        </div> -->
+                      
+                      
+                      
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                    
+                    
+                    
+                    
+                  </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/4.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">55 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">41 Tour Package</h6>
+                        </div> -->
+                      
+                      
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/1.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">17 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">22 Tour Package</h6>
+                        </div> -->
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                    
+                    
+                  </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/2.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">15 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">24 Tour Package</h6>
+                        </div> -->
+                     
+                     
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                    
+                    
+                    
+                  </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/3.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">44 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">123 Tour Package</h6>
+                        </div> -->
+                      
+                      
+                      
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                    
+                    
+                    
+                    
+                  </a></div>
+                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/4.jpg" alt="" height="220" />
+                    <div class="img-backdrop-faded">
+                      <div class="image-reveal-content mb-3">
+<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">55 Hotels</h6>
+                        </div>
+                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
+                          <h6 class="mb-0 text-secondary-lighter fw-semibold">41 Tour Package</h6>
+                        </div> -->
+                      
+                      
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0 text-white"></h4>
+                      </div>
+                    </div>
+                </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7ddc033ad4639fdc8816cff8106a8887&libraries=services"></script>
 <script>
@@ -501,7 +691,7 @@ function removeAllChildNods(el) {
 }
 </script>
       	
-	<!-- ===============================================-->
+    <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script src="/vendors/popper/popper.min.js"></script>
@@ -515,8 +705,12 @@ function removeAllChildNods(el) {
     <script src="/vendors/feather-icons/feather.min.js"></script>
     <script src="/vendors/dayjs/dayjs.min.js"></script>
     <script src="/assets/js/phoenix.js"></script>
-    <script src="/vendors/flatpickr/flatpickr.min.js"></script>
-    <script src="/vendors/nouislider/nouislider.min.js"></script>
+    <script src="/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/vendors/isotope-packery/packery-mode.pkgd.min.js"></script>
+    <script src="/vendors/bigpicture/BigPicture.js"></script>
+    <script src="/vendors/typed.js/typed.umd.js"></script>
+    <script src="/vendors/swiper/swiper-bundle.min.js"></script>
 
   </body>
 
