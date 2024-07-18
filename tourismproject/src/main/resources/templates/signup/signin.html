@@ -56,61 +56,62 @@
                 </div>
                 <!--/.bg-holder-->
             </div>
-            <div class="col-lg-6">
-                <div class="row flex-center h-100 g-0 px-4 px-sm-0">
-                    <div class="col col-sm-6 col-lg-7 col-xl-6">
-                        <a class="d-flex flex-center text-decoration-none mb-4" href="/">
-                            <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block">
-                                <img src="/images/logo.png" width="58" />
-                            </div>
-                        </a>
-                        <div class="text-center mb-7">
-                            <h3 class="text-body-highlight">Sign In</h3>
-                            <p class="text-body-tertiary">Get access to your account</p>
+        <div class="col-lg-6">
+            <div class="row flex-center h-100 g-0 px-4 px-sm-0">
+                <div class="col col-sm-6 col-lg-7 col-xl-6">
+                    <a class="d-flex flex-center text-decoration-none mb-4" href="/">
+                        <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block">
+                            <img src="/images/logo.png" width="58" />
                         </div>
-                        <button class="btn btn-phoenix-secondary w-100 mb-3">
-                            <span class="fab fa-google text-danger me-2 fs-9"></span>Sign in with Google
-                        </button>
-                        <button class="btn btn-phoenix-secondary w-100">
-                            <img src="/images/naver.png" height="15px"/>Sign in with naver
-                        </button>
-                        <div class="position-relative">
-                            <hr class="bg-body-secondary mt-5 mb-4" />
-                            <div class="divider-content-center">or use email</div>
+                    </a>
+                    <div class="text-center mb-7">
+                        <h3 class="text-body-highlight">Sign In</h3>
+                        <p class="text-body-tertiary">Get access to your account</p>
+                    </div>
+                    <button class="btn btn-phoenix-secondary w-100 mb-3">
+                        <span class="fab fa-google text-danger me-2 fs-9"></span>Sign in with Google
+                    </button>
+                    <a href="/naver">
+                    <button class="btn btn-phoenix-secondary w-100">
+                        <img src="/images/naver.png" height="15px"/>Sign in with naver
+                    </button></a>
+                    <div class="position-relative">
+                        <hr class="bg-body-secondary mt-5 mb-4" />
+                        <div class="divider-content-center">or use email</div>
+                    </div>
+                    
+                    
+                    
+                    <form th:action="@{/signup/signin}" method="post">
+                        <div th:if="${param.error}">
+                            <div class="alert alert-danger">
+                                사용자ID 또는 비밀번호를 확인해 주세요.
+                            </div>
                         </div>
-                        
-                        
-                        
-                        <form th:action="@{/signup/signin}" method="post">
-                            <div th:if="${param.error}">
-                                <div class="alert alert-danger">
-                                    사용자ID 또는 비밀번호를 확인해 주세요.
-                                </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label" for="username">Username</label>
+                            <div class="form-icon-container">
+                                <input class="form-control form-icon-input" name="username" id="username" type="text" placeholder="username" />
+                                <span class="fas fa-user text-body fs-9 form-icon"></span>
                             </div>
-                            <div class="mb-3 text-start">
-                                <label class="form-label" for="username">Username</label>
-                                <div class="form-icon-container">
-                                    <input class="form-control form-icon-input" name="username" id="username" type="text" placeholder="username" />
-                                    <span class="fas fa-user text-body fs-9 form-icon"></span>
-                                </div>
-                            </div>
-                            <div class="mb-3 text-start">
-                                <label class="form-label" for="password">Password</label>
-                                <div class="form-icon-container">
-                                    <input class="form-control form-icon-input" name="password" id="password" type="password" placeholder="Password" />
-                                    <span class="fas fa-key text-body fs-9 form-icon"></span>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
-                        </form>
-                        <div class="text-center">
-                            <a class="fs-9 fw-bold" href="/signup">Create an account</a>
                         </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label" for="password">Password</label>
+                            <div class="form-icon-container">
+                                <input class="form-control form-icon-input" name="password" id="password" type="password" placeholder="Password" />
+                                <span class="fas fa-key text-body fs-9 form-icon"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
+                    </form>
+                    <div class="text-center">
+                        <a class="fs-9 fw-bold" href="/signup">Create an account</a>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
     <!-- End of Main Content -->
 
     <!-- JavaScripts -->
