@@ -1,7 +1,9 @@
 package com.mysite.tourismproject.restaurant;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,9 +30,22 @@ public class RestaurantController {
 	
 	@GetMapping("")
 	public String Restaurant(Model model) {
-		List<Restaurant>restaurants = restaurantService.readlist();
-        model.addAttribute("restaurants", restaurants);
-		return "restaurant/menu2";
+	    List<Restaurant> restaurantList = restaurantService.readlist();
+	    Map<Integer, Picture> firstPictures = new HashMap<>();
+	    
+	    for (Restaurant restaurant : restaurantList) {
+	        List<Picture> pictures = pictureService.findPicturesByRestaurantId(restaurant.getId());
+	        if (!pictures.isEmpty()) {
+	            firstPictures.put(restaurant.getId(), pictures.get(0)); // 첫 번째 사진만 추가
+	        } else {
+	            firstPictures.put(restaurant.getId(), null); // 사진이 없는 경우 null 추가
+	        }
+	    }
+	    
+	    model.addAttribute("firstPictures", firstPictures);
+	    model.addAttribute("restaurants", restaurantList);
+	    model.addAttribute("downpath", "https://" + downpath);
+	    return "restaurant/menu2";
 	}
 	@GetMapping("/menu2")
 	public String Restaurantmenu2() {

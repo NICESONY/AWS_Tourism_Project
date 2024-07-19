@@ -29,4 +29,4 @@ public class Restaurant {
 
     @ElementCollection
     private List<String> productmenu = new ArrayList<>();
-}
+ }
