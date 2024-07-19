@@ -350,13 +350,13 @@
                                 <h5 class="me-1"><strong>상세정보</strong></h5>
                             </div>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong th:text="${restaurant.location}"></strong><br>
+                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong th:if="${not #strings.isEmpty(restaurant.location)}"th:text="${restaurant.location}"></strong><br>
                             </p>
                             <p class="text-body-secondary">
                                 <img src="/images/restaurant/globe.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">www.bongousse.net<br>
                             </p>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/phone.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong th:text="${restaurant.cphone}"></strong><br>
+                                <img src="/images/restaurant/phone.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong  th:if="${not #strings.isEmpty(restaurant.cphone)}"th:text="${restaurant.cphone}"></strong><br>
                             </p>
                             <p class="text-body-secondary" style="margin-bottom:10px;">
                                 <img src="/images/restaurant/clock.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">영업시간<br>
