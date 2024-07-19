@@ -1,5 +1,6 @@
 package com.mysite.tourismproject.restaurant;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.mysite.tourismproject.picture.Picture;
 import com.mysite.tourismproject.picture.PictureService;
@@ -47,10 +49,12 @@ public class RestaurantController {
 	                            @RequestParam(name = "worktime", required = false) String worktime,
 	                            @RequestParam(name = "category", required = false) List<String> category,
 	                            @RequestParam(name = "price", required = false) List<String> price,
-	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu) {
+	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu,
+	                			@RequestParam("file1") MultipartFile file1) throws IOException {
 	    Restaurant restaurant = new Restaurant();
 	    restaurant.setLocationname(locationname);
 	    restaurant.setLocation(location);
+	    
 	    if (cphone != null && !cphone.isEmpty()) {
 	        restaurant.setCphone(cphone);
 	    }
@@ -67,7 +71,12 @@ public class RestaurantController {
 	        restaurant.setPrice(price);
 	    }
 	    restaurantService.locationcreate(restaurant);
-	    return "redirect:/restaurant";
+	    if (!file1.isEmpty()) {
+	        Picture picture = new Picture();
+	        picture.setRestaurantId(restaurant.getId());
+	        pictureService.createpicture(picture, file1);
+	    }
+	    return "redirect:/restaurant/detail/"+restaurant.getId();
 	}
 	@GetMapping("/detail/{rid}")
     public String getRestaurantPictures(Model model, @PathVariable("rid") Integer rid) {
