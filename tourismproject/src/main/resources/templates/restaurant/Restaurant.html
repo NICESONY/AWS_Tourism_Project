@@ -292,7 +292,7 @@
                                                     <!-- Repeat the image blocks for more images -->
                                                     <div  th:if="${not #strings.isEmpty(restaurant.id)}" class="container mt-5">
         <h2>이미지 업로드</h2>
-         <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
+     <!--      <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         
             <input type="file" name="file1" class="file-input" id="file1" accept="image/*">
@@ -304,7 +304,7 @@
             <div id="previewContainer">
                 <p>사진 추가 picture</p>
             </div>
-        </form> 
+        </form> -->
     </div>
     <script>
         document.getElementById('file1').addEventListener('change', function(event) {
@@ -313,20 +313,17 @@
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     const previewContainer = document.getElementById('previewContainer');
-
                     // 기존의 미리보기 이미지가 있으면 제거
                     const existingImg = document.getElementById('imagePreview');
                     if (existingImg) {
                         previewContainer.removeChild(existingImg);
                     }
-
                     // 새로운 이미지 태그 생성
                     const img = document.createElement('img');
                     img.id = 'imagePreview';
                     img.src = e.target.result;
                     img.className = 'preview';
                     img.alt = 'Image preview...';
-
                     // 미리보기 컨테이너에 이미지 추가
                     previewContainer.appendChild(img);
                 };
@@ -350,7 +347,7 @@
                                 <h5 class="me-1"><strong>상세정보</strong></h5>
                             </div>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong th:if="${not #strings.isEmpty(restaurant.location)}"th:text="${restaurant.location}"></strong><br>
+                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong  th:if="${not #strings.isEmpty(restaurant.location)}"th:text="${restaurant.location}"></strong><br>
                             </p>
                             <p class="text-body-secondary">
                                 <img src="/images/restaurant/globe.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">www.bongousse.net<br>
@@ -360,10 +357,10 @@
                             </p>
                             <p class="text-body-secondary" style="margin-bottom:10px;">
                                 <img src="/images/restaurant/clock.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">영업시간<br>
-                                <h5  th:if="${not #strings.isEmpty(restaurant.worktime)}"th:text="${restaurant.worktime}"></h5>
+                                <h5 th:if="${not #strings.isEmpty(restaurant.worktime)}" th:text="${restaurant.worktime}"></h5>
                             </p>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br><strong th:if="${not #strings.isEmpty(restaurant.category)}"th:text="${restaurant.category}"></strong><br>
+                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br><strong th:if="${not #strings.isEmpty(restaurant.category)}" th:text="${restaurant.category}"></strong><br>
                             </p>
                             <hr>
                         </div>
@@ -385,7 +382,6 @@
         </div>
     </div>
 </div>
-
             </div>
         </div>
     </div>

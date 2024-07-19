@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mysite.tourismproject.picture.Picture;
 import com.mysite.tourismproject.picture.PictureService;
-
 @RequestMapping("/restaurant")
 @Controller
 public class RestaurantController {
@@ -50,11 +49,12 @@ public class RestaurantController {
 	                            @RequestParam(name = "category", required = false) List<String> category,
 	                            @RequestParam(name = "price", required = false) List<String> price,
 	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu,
-	                			@RequestParam("file1") MultipartFile file1) throws IOException {
+	                			@RequestParam("file1") MultipartFile file1
+	                            ) throws IOException {
 	    Restaurant restaurant = new Restaurant();
 	    restaurant.setLocationname(locationname);
 	    restaurant.setLocation(location);
-	    
+
 	    if (cphone != null && !cphone.isEmpty()) {
 	        restaurant.setCphone(cphone);
 	    }
