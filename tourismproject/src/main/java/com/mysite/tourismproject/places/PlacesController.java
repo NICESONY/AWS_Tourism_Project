@@ -11,4 +11,13 @@ public class PlacesController {
 		return "places/gungnamji";
 	}
 	
+	@GetMapping("/youngmok")
+	public String youngmok() {
+		return "places/youngmok";
+	}
+	
+	@GetMapping("/sapgyo")
+	public String sapgyo() {
+		return "places/sapgyo";
+	}
 }
