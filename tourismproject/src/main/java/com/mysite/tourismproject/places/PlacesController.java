@@ -20,4 +20,24 @@ public class PlacesController {
 	public String sapgyo() {
 		return "places/sapgyo";
 	}
+	@GetMapping("/yedangho")
+	public String yedangho() {
+		return "places/yedangho";
+	}
+	@GetMapping("/gakwonsa")
+	public String gakwonsa() {
+		return "places/gakwonsa";
+	}
+	@GetMapping("/independence")
+	public String independence() {
+		return "places/independence";
+	}
+	@GetMapping("/yesanmarket")
+	public String yesanmarket() {
+		return "places/yesanmarket";
+	}
+	@GetMapping("/waterpark")
+	public String waterpark() {
+		return "places/waterpark";
+	}
 }
