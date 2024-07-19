@@ -1,6 +1,7 @@
 package com.mysite.tourismproject.signup;
 
-import java.time.LocalDateTime;
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,56 +17,32 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+
 @Service
 public class UserSecurityService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+	@Autowired
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<SiteUser> tsiteUser = userRepository.findByUsername(username);
-        if (tsiteUser.isEmpty()) {
+        Optional<SiteUser> tcustomer = userRepository.findByUsername(username);
+        if (tcustomer.isEmpty()) {
             throw new UsernameNotFoundException("You need to Sign up first...");
         }
-        SiteUser siteUser = tsiteUser.get();
+        SiteUser siteuser = tcustomer.get();
         List<GrantedAuthority> authorities = new ArrayList<>();
-        if("ROLE_USER".equals(siteUser.getRole())) {
-        	authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        } else if ("ROLD_MANAGER".equals(siteUser.getRole())) {
-        	authorities.add(new SimpleGrantedAuthority("ROLE_MANAGER"));
-        } else {
-        	authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-        }
-        /*authorities.add(new SimpleGrantedAuthority("ROLE_" + siteUser.getRole()));*/
-        return new User(siteUser.getUsername(), siteUser.getPassword(), authorities);
+        authorities.add(new SimpleGrantedAuthority(siteuser.getRole()));
+        return new User(siteuser.getUsername(), siteuser.getPassword(), authorities);
     }
-    
-    public void create(SiteUser siteUser) {
-		siteUser.setEnabled(true);
-		siteUser.setRole("ROLE_USER"); // ROLE_ADMIN, ROLE_MANAGER, ROLE_PAID...
-		siteUser.setDate(LocalDateTime.now());
-		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		siteUser.setPassword(passwordEncoder.encode(siteUser.getPassword()));
-		userRepository.save(siteUser);
-	}
-    
-	public List<SiteUser> readlist() {
-		return userRepository.findAll();
-	}
-	
-	public void update(SiteUser siteUser) {
-		userRepository.save(siteUser);
 
-	}
+
 	
 	public SiteUser authen() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

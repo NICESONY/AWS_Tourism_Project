@@ -203,10 +203,10 @@
                     <div class="card h-100">
                         <div class="card-body pb-3">
                             <div class="d-flex align-items-center mb-3" style="justify-content: center;">
-                                <h4 class="me-1"><strong>봉구스 밥버거 공주대점</strong></h4>
+                                <h4 class="me-1"><strong  th:if="${not #strings.isEmpty(restaurant.locationname)}" th:text="${restaurant.locationname}"></strong></h4>
                             </div>
                             <!-- 음식점 사진 -->
-                            <img src="/assets/img/generic/34.png" alt="Sample Image" class="rounded img-fluid w-100 fit-cover mb-5 mb-md-6 mb-xl-3">
+                            <img  th:if="${not #lists.isEmpty(pictures)}" th:src="|${downpath}/${pictures[0].image1}|" alt="Sample Image" height="100px">
                             <div class="button-group">
                                 <!-- 다른 가게 보기 버튼 -->
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal2">
@@ -230,11 +230,13 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <!-- Repeat the image blocks for more images -->
-                                                     <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;"th:each="picture : ${pictures}">
-                                                        <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-   															<img class="img-fluid" th:src="|${downpath}/${picture.image1}|">
-                                                        </div>
-                                                    </div> 
+                                                     <div th:if="${not #lists.isEmpty(pictures)}">
+   															 <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;" th:each="picture : ${pictures}">
+        														<div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+															            <img class="img-fluid" th:src="|${downpath}/${picture.image1}|" />
+															        </div>
+																    </div>
+																</div>
                                                     <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;">
                                                         <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
                                                             <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 2" />
@@ -288,21 +290,21 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <!-- Repeat the image blocks for more images -->
-                                                    <div class="container mt-5">
+                                                    <div  th:if="${not #strings.isEmpty(restaurant.id)}" class="container mt-5">
         <h2>이미지 업로드</h2>
-       <!--  <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
+         <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         
             <input type="file" name="file1" class="file-input" id="file1" accept="image/*">
             <div class="button-container">
                 <label for="file1" class="file-label">사진 선택</label>
-                <input type="hidden" name="restaurantId" th:value="${restaurantId}">
+                <input th:if="${not #strings.isEmpty(restaurant.id)}"type="hidden" name="restaurantId" th:value="${restaurant.id}">
                 <input type="submit" value="저장하기" class="btn btn-primary my-2">
             </div>
             <div id="previewContainer">
                 <p>사진 추가 picture</p>
             </div>
-        </form> -->
+        </form> 
     </div>
     <script>
         document.getElementById('file1').addEventListener('change', function(event) {
@@ -348,41 +350,42 @@
                                 <h5 class="me-1"><strong>상세정보</strong></h5>
                             </div>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">충남 천안시 서북구 공대길 10 (우)31080<br>
+                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong th:text="${restaurant.location}"></strong><br>
                             </p>
                             <p class="text-body-secondary">
                                 <img src="/images/restaurant/globe.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">www.bongousse.net<br>
                             </p>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/phone.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">041-908-9119<br>
+                                <img src="/images/restaurant/phone.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong th:text="${restaurant.cphone}"></strong><br>
                             </p>
                             <p class="text-body-secondary" style="margin-bottom:10px;">
                                 <img src="/images/restaurant/clock.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">영업시간<br>
-                                <h6>09:00~20:00</h6>
+                                <h5 th:text="${restaurant.worktime}"></h5>
                             </p>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br>#한식#양식#일식<br>
+                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br><strong th:text="${restaurant.category}"></strong><br>
                             </p>
                             <hr>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-xxl-6 mb-xxl-3">
-                    <div class="card h-100">
-                        <div class="card-body pb-3">
-                            <div class="d-flex align-items-center mb-3" style="justify-content: center;">
-                                <h5 class="me-1"><strong>메뉴</strong></h5>
-                            </div>
-                            <p class="text-body-secondary">해봉이 밥버거<br><strong>4,200원</strong><br></p>
-                            <hr>
-                            <p class="text-body-secondary">에햄 밥버거<br><strong>3,800원</strong><br></p>
-                            <hr>
-                            <p class="text-body-secondary">닭갈비 밥버거<br><strong>3,500원</strong><br></p>
-                            <hr>
-                            <p class="text-body-secondary">마요떡갈비 밥버거<br><strong>3,800원</strong><br></p>
-                        </div>
-                    </div>
+             <div class="col-12 col-md-6 col-xxl-6 mb-xxl-3">
+    <div class="card h-100">
+        <div class="card-body pb-3">
+            <div class="d-flex align-items-center mb-3" style="justify-content: center;">
+                <h5 class="me-1"><strong>메뉴</strong></h5>
+            </div>
+            <div class="text-body-secondary">
+                  <div  th:if="${not #lists.isEmpty(restaurant.productmenu)}" th:each="productmenu, stat : ${restaurant.productmenu}">
+                    <span th:text="${productmenu}"></span><p>
+                    <strong th:text="${restaurant.price[stat.index]} + '원'"></strong>
+                    <br>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             </div>
         </div>
     </div>

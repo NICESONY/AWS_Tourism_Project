@@ -44,10 +44,10 @@ public class PictureController {
 		picture.setRestaurantId(restaurantId);
 		ps.createpicture(picture, file1);
 		
-		return "redirect:/picture";
+		return "redirect:/restaurant/detail/" + restaurantId;
 	}
 	
-	@GetMapping("/detail/{restaurantId}")
+	@GetMapping("/details/{restaurantId}")
 	public String showRestaurantPictures(Model model, 
 							@PathVariable("restaurantId") Integer restaurantId) {
 		List<Picture> pictures = ps.findPicturesByRestaurantId(restaurantId);
