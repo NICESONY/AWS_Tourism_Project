@@ -360,10 +360,10 @@
                             </p>
                             <p class="text-body-secondary" style="margin-bottom:10px;">
                                 <img src="/images/restaurant/clock.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">영업시간<br>
-                                <h5 th:text="${restaurant.worktime}"></h5>
+                                <h5  th:if="${not #strings.isEmpty(restaurant.worktime)}"th:text="${restaurant.worktime}"></h5>
                             </p>
                             <p class="text-body-secondary">
-                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br><strong th:text="${restaurant.category}"></strong><br>
+                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br><strong th:if="${not #strings.isEmpty(restaurant.category)}"th:text="${restaurant.category}"></strong><br>
                             </p>
                             <hr>
                         </div>
