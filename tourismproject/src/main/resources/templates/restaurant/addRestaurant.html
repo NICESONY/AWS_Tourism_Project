@@ -62,12 +62,43 @@
                         
                         <div class="form-group">
                             <label for="locationname">장소명 <span>(필수)</span></label>
-                            <input type="text" class="form-control" id="locationname"name="locationname" placeholder="업체의 명칭을 입력해주세요.">
+                            <input type="text" class="form-control" id="locationname"name="locationname" placeholder="음식점의 이름을 입력해주세요.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">위치 <span>(필수)</span></label>
+                            <input type="text" class="form-control" name="location"id="location" placeholder="충남 천안시 서북구 부대동 888">
+                            <small class="form-text text-muted">상세 정보를 입력하세요. (예: 동, 층, 호)</small>
                         </div>
                         <div class="form-group">
-                            <label for="description">설명</label>
-                            <input type="text" class="form-control" id="description"name="description" placeholder="예) 음식점, 카페, 약국 등">
+                            <label for="cphone">전화번호</label>
+                            <input type="text" class="form-control" id="cphone"name="cphone" placeholder="예) 01015881588">
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="worktime">영업시간</label>
+                            <input type="text" class="form-control" id="worktime"name="worktime" placeholder="예) 09:00~20:00">
+                        </div>
+                        
+                           <div class="form-group">
+                            <label for="productmenu">상품/메뉴</label>
+                            <div id="productMenuContainer">
+                                <div class="product-menu-group mb-2">
+                                    <input type="text" class="form-control" id="productmenu" name="productmenu" placeholder="상품/메뉴">
+                                    <input type="text" class="form-control" id="price" name="price" placeholder="가격">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="addProductMenu()">추가</button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">카테고리</label>
+                            <div id="categoryContainer">
+                                <input type="text" class="form-control mb-2" id="category"name="category" placeholder="#한식#양식#일식">
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="addCategory()">추가</button>
+                        </div>
+                        
                         <div class="modal-footer">
                     <a href="/"><button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button></a>
                     <button type="submit" class="btn btn-primary">등록하기</button>
@@ -80,17 +111,29 @@
     </div>
 
 <script>
-/*	var customid = 0;
-        function addProductMenu() {
-        	customid++;
-            const container = document.getElementById('productMenuContainer');
-            const newInput = document.createElement('input');
-            newInput.type = 'text';
-            newInput.className = 'form-control mb-2';
-            newInput.placeholder = '상품/메뉴/가격 정보를 입력해주세요';
-            newInput.id=`productMenu${customid}`;
-            container.appendChild(newInput);
-        }*/
+var customid = 0;
+function addProductMenu() {
+    customid++;
+    const container = document.getElementById('productMenuContainer');
+    const newGroup = document.createElement('div');
+    newGroup.className = 'product-menu-group mb-2';
+    newGroup.innerHTML = `
+        <input type="text" class="form-control" name="productmenu" placeholder="상품/메뉴">
+        <input type="text" class="form-control" name="price" placeholder="가격">
+    `;
+    container.appendChild(newGroup);
+}
+var categoryId = 0;
+function addCategory(){
+    categoryId++;
+    const container = document.getElementById('categoryContainer');
+    const newInput = document.createElement('input');
+    newInput.type = 'text';
+    newInput.className = 'form-control mb-2';
+    newInput.placeholder = '#한식#양식#일식';
+    newInput.name = 'category';
+    container.appendChild(newInput);
+}
     </script>
     <!-- Bootstrap JS and dependencies -->
     

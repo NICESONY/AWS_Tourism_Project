@@ -25,7 +25,7 @@
             <tr th:each="picture, loop : ${pictureList}">
                 <td th:text="${loop.count}"></td>
                 <td>
-                    <a th:href="@{|/picture/detail/${picture.id}|}" th:text="${picture.image1}"></a>
+                    <a th:href="@{|/picture/details/${picture.id}|}" th:text="${picture.image1}"></a>
                 </td>
                 <td th:text="${#temporals.format(picture.date, 'yyyy-MM-dd HH:mm')}"></td>
             </tr>

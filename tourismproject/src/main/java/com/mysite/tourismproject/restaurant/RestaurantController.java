@@ -24,6 +24,7 @@ public class RestaurantController {
 	private PictureService pictureService;
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
+	
 	@GetMapping("")
 	public String Restaurant(Model model) {
 		List<Restaurant>restaurants = restaurantService.readlist();
@@ -38,24 +39,51 @@ public class RestaurantController {
 	public String addRestaurant() {
 		return "restaurant/addrestaurant";
 	}
+	
 	@PostMapping("/addrestaurant")
 	public String addRestaurant(@RequestParam("locationname") String locationname,
-            @RequestParam("description") String description) {
-		Restaurant restaurant = new Restaurant();
-		restaurant.setLocationname(locationname);
-		restaurant.setDescription(description);
-		restaurantService.locationcreate(restaurant);
-		return "redirect:/restaurant/addrestaurant";
+	                            @RequestParam("location") String location,
+	                            @RequestParam(name = "cphone", required = false) String cphone,
+	                            @RequestParam(name = "worktime", required = false) String worktime,
+	                            @RequestParam(name = "category", required = false) List<String> category,
+	                            @RequestParam(name = "price", required = false) List<String> price,
+	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu) {
+	    Restaurant restaurant = new Restaurant();
+	    restaurant.setLocationname(locationname);
+	    restaurant.setLocation(location);
+	    if (cphone != null && !cphone.isEmpty()) {
+	        restaurant.setCphone(cphone);
+	    }
+	    if (worktime != null && !worktime.isEmpty()) {
+	        restaurant.setWorktime(worktime);
+	    }
+	    if (category != null && !category.isEmpty()) {
+	        restaurant.setCategory(category);
+	    }
+	    if (productmenu != null && !productmenu.isEmpty()) {
+	        restaurant.setProductmenu(productmenu);
+	    }
+	    if (price != null && !price.isEmpty()) {
+	        restaurant.setPrice(price);
+	    }
+	    restaurantService.locationcreate(restaurant);
+	    return "redirect:/restaurant";
 	}
-	@GetMapping("/detail/{id}")
-    public String getRestaurantPictures(Model model, @PathVariable("id") Integer id
-    		) {
-		List<Picture> pictures = pictureService.findPicturesByRestaurantId(id);
-		//model.addAttribute("restaurant", restaurantService.findById(id));
+	@GetMapping("/detail/{rid}")
+    public String getRestaurantPictures(Model model, @PathVariable("rid") Integer rid) {
+        Restaurant restaurant = restaurantService.findById(rid);
+        List <Restaurant> restaurants = restaurantService.readlist();
+        for(Restaurant sbrestaurant :restaurants) {
+            if(rid == sbrestaurant.getId()) {
+            	model.addAttribute("restaurantId", restaurant.getId());
+            }
+        }
+        List<Picture> pictures = pictureService.findPicturesByRestaurantId(rid);
+        model.addAttribute("restaurant", restaurant);
         model.addAttribute("pictures", pictures);
-        //model.addAttribute("restaurantId", id);
-		model.addAttribute("downpath","https://"+downpath);
-
+        model.addAttribute("downpath", "https://" + downpath);
         return "restaurant/restaurant";
     }
+	
+	
 }

@@ -8,17 +8,20 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RestaurantService {
-	@Autowired
-	private RestaurantRepository restaurantRepository;
 	
-	public void locationcreate(Restaurant restaurant) {
-		restaurantRepository.save(restaurant);
-	}
+	 @Autowired
+	    private RestaurantRepository restaurantRepository;
+	    
+	    public void locationcreate(Restaurant restaurant) {
+	        restaurantRepository.save(restaurant);
+	       
+	    }
+	    
 	public List<Restaurant> readlist(){
 		return restaurantRepository.findAll();
 	}
 	public Restaurant findById(Integer id) {
-		Optional<Restaurant>restaurant = restaurantRepository.findById(id);
-		return restaurant.get();
+		Optional<Restaurant>or = restaurantRepository.findById(id);
+		return or.get();
 	}
 }
