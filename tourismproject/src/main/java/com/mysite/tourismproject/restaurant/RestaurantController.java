@@ -36,8 +36,14 @@ public class RestaurantController {
 	    for (Restaurant restaurant : restaurantList) {
 	        List<Picture> pictures = pictureService.findPicturesByRestaurantId(restaurant.getId());
 	        if (!pictures.isEmpty()) {
-	            firstPictures.put(restaurant.getId(), pictures.get(0)); // 첫 번째 사진만 추가
-	        } else {
+	        	for(Picture pict : pictures) {
+	        		if(pict != null) {
+	                    firstPictures.put(restaurant.getId(), pict);
+	        			break;
+	        		}
+	        	}
+	        }
+	        else {
 	            firstPictures.put(restaurant.getId(), null); // 사진이 없는 경우 null 추가
 	        }
 	    }
