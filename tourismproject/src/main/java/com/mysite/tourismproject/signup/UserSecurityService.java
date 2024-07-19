@@ -61,7 +61,7 @@ public class UserSecurityService implements UserDetailsService {
 			if (tcustomer.isEmpty()) {
 				return 1;//db에 없음, 회원 가입으로
 			}
-			
+			   
 			SiteUser siteUser = tcustomer.get();
 			List<GrantedAuthority> authorities = new ArrayList<>();
 			if ("ROLE_USER".equals(siteUser.getRole())) {
