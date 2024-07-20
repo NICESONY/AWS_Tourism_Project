@@ -3,7 +3,7 @@
 
 # AWS_2024_Chungcheongnam_do_Tourism-Promotion-Project
 
-### [팀 Notion 주소]([https://www.notion.so/f3d6e978ae3b4bdd8afca531ee8710cc?v=ed1589332923409e9f296fc121567a19&pvs=13](https://www.notion.so/2e6123d460324bec94bc1d1b3248fc97?v=57c20d1ab7534c3e85f7dd53947b1dd3))
+### [팀 Notion 주소]([https://www.notion.so/2e6123d460324bec94bc1d1b3248fc97?v=57c20d1ab7534c3e85f7dd53947b1dd3])
 
 ![프로필](https://github.com/NICESONY/AWS_2024_Chungcheongnam_do_Tourism-Promotion-Project/assets/106459423/cf661580-5813-4b2d-9c21-b74023c7d6d1)
 
