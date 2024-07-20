@@ -11,5 +11,8 @@ public class EnjoyController {
 	public String enjoy() {
 		return "enjoy/enjoy";
 	}
-
+	@GetMapping("/enjoy/enjoy_map")
+	public String enjoy_map() {
+		return "enjoy/enjoy_map";
+	}
 }
