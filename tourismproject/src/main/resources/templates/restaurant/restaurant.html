@@ -324,7 +324,7 @@
                 <!-- 페이지의 왼쪽 부분 -->
                 <div class="px-5 px-lg-6 py-4">
                   <img class="img-fluid d-block mx-auto"th:if="${not #lists.isEmpty(pictures)}" th:src="|${downpath}/${pictures[0].image1}|" alt="" style="max-height: 280px;min-height: 150px;" />
-            <img class="img-fluid d-block mx-auto" th:unless="${not #lists.isEmpty(pictures)}" src="" alt="" style="max-height: 280px;min-height: 150px;" />
+            <img class="img-fluid d-block mx-auto" th:unless="${not #lists.isEmpty(pictures)}" src="/images/naver.png" alt="" style="max-height: 280px;min-height: 150px;" />
             
             <div class="row gx-0 gy-3 border-bottom px-5 px-lg-6 py-4 p-xl-0">
               <div class="col-12 col-xl-7">
