@@ -67,33 +67,33 @@
   </head>
 
 
-  <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
+   <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
 
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
-<main class="main" id="top">
+    <main class="main" id="top">
       <div class="bg-primary-subtle py-2">
-        <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
-          <div class="dropdown">
-            <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
-            <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
+       <!--  <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
+          <div class="dropdown"> -->
+            <!-- <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
+ --><!--             <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
               <li><a class="dropdown-item" href="#!">Become a Host</a></li>
               <li><a class="dropdown-item" href="#!">Blog</a></li>
               <li><a class="dropdown-item" href="#!">Career</a></li>
               <li><a class="dropdown-item" href="#!">Support</a></li>
               <li><a class="dropdown-item" href="#!">+01 123 581321</a></li>
-            </ul>
+            </ul> -->
           </div>
-          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
+ <!--          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Become a Host</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Blog</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Career</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:example@gmail.com"> <span class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
             <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+01123581321"> <span class="fa-brands fa-whatsapp me-2"></span>+01 123 581321</a></li>
-          </ul>
-        </div>
-      </div>
+          </ul> -->
+<!--         </div>
+      </div> -->
       <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
         <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a class="navbar-brand flex-1 flex-lg-grow-0 me-lg-13" href="/">
             <div class="d-flex align-items-center"><img src="/images/logo.png" alt="phoenix" width="70" />
@@ -108,7 +108,7 @@
             
             
             
-            </div><a class="btn btn-link text-body-tertiary p-0" href="/여기는 지도임"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
+            </div><a class="btn btn-link text-body-tertiary p-0" href="/map"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
             
             
             <a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a>
@@ -140,15 +140,18 @@
           <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user"></span><span>Profile</span></a></li>
           <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body" data-feather="pie-chart"></span>Dashboard</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="lock"></span>Posts &amp; Activity</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="settings"></span>Settings &amp; Privacy </a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/notice"> <span class="me-2 text-body" data-feather="settings"></span>공지사항 </a></li>
           <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="help-circle"></span>Help Center</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="globe"></span>Language</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/faq"> <span class="me-2 text-body" data-feather="globe"></span>Language</a></li>
         </ul>
       </div>
       <div class="card-footer p-0 border-top border-translucent">
+        
         <ul class="nav d-flex flex-column my-3">
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user-plus"></span>Add another account</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/admin/main"> <span class="me-2 text-body" data-feather="user-plus"></span>관리자 페이지</a></li>
         </ul>
+        
+        
         <hr />
         <div th:if="${#authentication.name == 'anonymousUser'}">
           <div class="px-3">
@@ -181,8 +184,6 @@
 
 
 
-
-
           
           
           </div>
@@ -204,9 +205,9 @@
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
                         <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
-                        <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
+                        <li><a class="dropdown-item" href="/restaurant">음식점</a></li>
                         <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
-                        <li><a class="dropdown-item" href="/Restaurant/addRestaurant">장소추가</a></li>
+                        <li><a class="dropdown-item" href="/restaurant/addrestaurant">장소추가</a></li>
                         <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
                        
                        <li>
@@ -248,7 +249,6 @@
 
                       </ul>
                     </div>
-                    
                      </div>
                      
         
