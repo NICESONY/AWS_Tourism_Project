@@ -103,7 +103,7 @@
          .file-input111 {
             display: none;
         }
-        .button-container {
+        .button-container111 {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -248,7 +248,7 @@
                   <div class="row g-2 align-items-center">
                     <div class="col-auto col-12 col-lg-auto d-flex flex-1">
                       <!-- 사진 추가 버튼 -->
-                      <button class="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" type="button" data-bs-toggle="modal"  data-bs-target="#modal3"aria-haspopup="true" aria-expanded="false">
+                      <button class="	 d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" type="button" data-bs-toggle="modal"  data-bs-target="#modal3"aria-haspopup="true" aria-expanded="false">
                         사진 추가 <span class="fa-solid fa-plus ms-2"></span>
                       </button>
                       <button type="button" class="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal2">
@@ -422,24 +422,24 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <!-- Repeat the image blocks for more images -->
-                                                    <div  th:if="${not #strings.isEmpty(restaurant.id)}" class="container mt-5">
+                                                     <div class="container mt-5">
         <h2>이미지 업로드</h2>
-           <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
+            <form th:if="${not #strings.isEmpty(restaurant.id)}" action="/picture/create" method="post" enctype="multipart/form-data"> 
                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         
-            <input type="file" name="file1" class="file-input111" id="file1" accept="image/*">
+            <input type="file" name="file111" class="file-input111" id="file111" accept="image/*">
             <div class="button-container111">
-                <label for="file1" class="file-label111">사진 선택</label>
+                <label for="file111" class="file-label111">사진 선택</label>
                 <input th:if="${not #strings.isEmpty(restaurant.id)}"type="hidden" name="restaurantId" th:value="${restaurant.id}">
                 <input type="submit" value="저장하기" class="btn btn-primary my-2">
             </div>
             <div id="previewContainer">
                 
             </div>
-        </form> 
+        </form>  
     
     <script>
-        document.getElementById('file1').addEventListener('change', function(event) {
+        document.getElementById('file111').addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();

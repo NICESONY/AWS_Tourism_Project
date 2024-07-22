@@ -39,10 +39,10 @@ public class PictureController {
 	
 	@PostMapping("/create")
 	public String createpicture(@ModelAttribute Picture picture,
-			@RequestParam("file1") MultipartFile file1,
+			@RequestParam("file111") MultipartFile file111,
 			@RequestParam("restaurantId") Integer restaurantId) throws IOException {
 		picture.setRestaurantId(restaurantId);
-		ps.createpicture(picture, file1);
+		ps.createpicture(picture, file111);
 		
 		return "redirect:/restaurant/detail/" + restaurantId;
 	}
