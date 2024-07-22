@@ -1,527 +1,1652 @@
 
 
 <!DOCTYPE html>
-<html data-navigation-type="default" data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>bestpick</title>
-
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="/vendors/simplebar/simplebar.min.js"></script>
-    <script src="/assets/js/config.js"></script>
-
-
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-    <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-    <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
-    <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
-    <script>
-      var phoenixIsRTL = window.config.config.phoenixIsRTL;
-      if (phoenixIsRTL) {
-        var linkDefault = document.getElementById('style-default');
-        var userLinkDefault = document.getElementById('user-style-default');
-        linkDefault.setAttribute('disabled', true);
-        userLinkDefault.setAttribute('disabled', true);
-        document.querySelector('html').setAttribute('dir', 'rtl');
-      } else {
-        var linkRTL = document.getElementById('style-rtl');
-        var userLinkRTL = document.getElementById('user-style-rtl');
-        linkRTL.setAttribute('disabled', true);
-        userLinkRTL.setAttribute('disabled', true);
-      }
-    </script>
-    <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
-  </head>
-
-
-  <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
-
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-      <div class="bg-primary-subtle py-2">
-       <!--  <div class="container-medium d-flex align-items-center justify-content-between"><a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html"><span class="fa-solid fa-arrow-right-to-bracket me-2" data-fa-transform="down-1"></span>Agent Login</a>
-          <div class="dropdown"> -->
-            <!-- <button class="btn btn-sm p-0 d-md-none fs-8" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h"></span></button>
- --><!--             <ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
-              <li><a class="dropdown-item" href="#!">Become a Host</a></li>
-              <li><a class="dropdown-item" href="#!">Blog</a></li>
-              <li><a class="dropdown-item" href="#!">Career</a></li>
-              <li><a class="dropdown-item" href="#!">Support</a></li>
-              <li><a class="dropdown-item" href="#!">+01 123 581321</a></li>
-            </ul> -->
-          </div>
- <!--          <ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
-            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Become a Host</a></li>
-            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Blog</a></li>
-            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="#!">Career</a></li>
-            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="mailto:example@gmail.com"> <span class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support</a></li>
-            <li><a class="lh-1 text-body-tertiary fw-semibold fs-9" href="tel:+01123581321"> <span class="fa-brands fa-whatsapp me-2"></span>+01 123 581321</a></li>
-          </ul> -->
-<!--         </div>
-      </div> -->
-      <div class="bg-body-emphasis sticky-top" data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
-        <nav class="navbar navbar-landing navbar-expand-lg container-medium"><a class="navbar-brand flex-1 flex-lg-grow-0 me-lg-13" href="/">
-            <div class="d-flex align-items-center"><img src="/images/logo.png" alt="phoenix" width="70" />
-              <p class="logo-text ms-2">맛 탐정단</p>
-            </div>
-          </a>
-          <div class="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
-            <div class="theme-control-toggle fa-icon-wait">
-              <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggleSm" />
-              <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label>
-              <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label>
-            
-            
-            
-            </div><a class="btn btn-link text-body-tertiary p-0" href="/map"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
-            
-            
-            <a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a>
-            
-            
-            
-            
-            
-            
-       <div class="dropdown">
-  <a class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span data-feather="user" style="width: 20px; height: 20px"></span>
-  </a>
-  <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border" aria-labelledby="navbarDropdownUser">
-    <div class="card position-relative border-0">
-      <div class="card-body p-0">
-        <div class="text-center pt-4 pb-3">
-          <div class="avatar avatar-xl ">
-            <img class="rounded-circle " src="assets/img/team/72x72/57.webp" alt="" />
-          </div>
-          <h6 class="mt-2 text-body-emphasis" th:text="${#authentication.name != 'anonymousUser'} ? ${#authentication.name} : 'Guest'"></h6>
-        </div>
-        <div class="mb-3 mx-3">
-          <input class="form-control form-control-sm" id="statusUpdateInput" type="text" placeholder="Update your status" />
-        </div>
-      </div>
-      <div class="overflow-auto scrollbar" style="height: 10rem;">
-        <ul class="nav d-flex flex-column mb-2 pb-1">
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user"></span><span>Profile</span></a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body" data-feather="pie-chart"></span>Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="lock"></span>Posts &amp; Activity</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="/notice"> <span class="me-2 text-body" data-feather="settings"></span>공지사항 </a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="help-circle"></span>Help Center</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="/faq"> <span class="me-2 text-body" data-feather="globe"></span>Language</a></li>
-        </ul>
-      </div>
-      <div class="card-footer p-0 border-top border-translucent">
-        
-        <ul class="nav d-flex flex-column my-3">
-          <li class="nav-item"><a class="nav-link px-3" href="/admin/main"> <span class="me-2 text-body" data-feather="user-plus"></span>관리자 페이지</a></li>
-        </ul>
-        
-        
-        <hr />
-        <div th:if="${#authentication.name == 'anonymousUser'}">
-          <div class="px-3">
-            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signin"> 
-              <span class="me-2" data-feather="log-in"></span>Sign in
-            </a>
-          </div>
-          <div class="px-3">
-            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="/signup">
-              <span class="me-2" data-feather="user-plus"></span>Sign up
-            </a>
-          </div>
-        </div>
-        <div th:if="${#authentication.name != 'anonymousUser'}">
-          <div class="px-3">
-            <a class="btn btn-phoenix-secondary d-flex flex-center w-100" th:href="@{/signup/signout}"> 
-              <span class="me-2" data-feather="log-out"></span>Log out
-            </a>
-          </div>
-        </div>
-        <div class="my-2 text-center fw-bold fs-10 text-body-quaternary">
-          <a class="text-body-quaternary me-1" href="#!">Privacy policy</a>&bull;
-          <a class="text-body-quaternary mx-1" href="#!">Terms</a>&bull;
-          <a class="text-body-quaternary ms-1" href="#!">Cookies</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<html data-navigation-type="default"
+	data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
 
 
 
-          
-          
-          </div>
-          
-           <div class="btn-group position-static text-nowrap" role="group">
-                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
-                        회원관리<span class="fas fa-angle-down ms-2"></span></button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/signup">회원가입</a></li>
-                        <li><a class="dropdown-item" href="/signin">로그인</a></li>
-                        
-                      </ul>
-                    </div>
-                    
-                    
-            <div class="btn-group position-static text-nowrap" role="group">
-                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
-                        탐정노트(메뉴)<span class="fas fa-angle-down ms-2"></span></button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
-                        <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
-                        <li><a class="dropdown-item" href="/restaurant">음식점</a></li>
-                        <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
-                        <li><a class="dropdown-item" href="/restaurant/addrestaurant">장소추가</a></li>
-                        <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
-                       
-                       <li>
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+<!-- ===============================================-->
+
+<!--    Document Title-->
+
+<!-- ===============================================-->
+
+<title>Phoenix</title>
+
+
+
+
+
+<!-- ===============================================-->
+
+<!--    Favicons-->
+
+<!-- ===============================================-->
+
+<link rel="apple-touch-icon" sizes="180x180"
+	href="/assets/img/favicons/apple-touch-icon.png">
+
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/assets/img/favicons/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/assets/img/favicons/favicon-16x16.png">
+
+<link rel="shortcut icon" type="image/x-icon"
+	href="/assets/img/favicons/favicon.ico">
+
+<link rel="manifest" href="/assets/img/favicons/manifest.json">
+
+<meta name="msapplication-TileImage"
+	content="/assets/img/favicons/mstile-150x150.png">
+
+<meta name="theme-color" content="#ffffff">
+
+<script src="/vendors/simplebar/simplebar.min.js"></script>
+
+<script src="/assets/js/config.js"></script>
+
+
+
+
+
+<!-- ===============================================-->
+
+<!--    Stylesheets-->
+
+<!-- ===============================================-->
+
+<link href="/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
+
+<link href="/vendors/nouislider/nouislider.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
+	rel="stylesheet">
+
+<link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+<link href="/assets/css/theme-rtl.min.css" type="text/css"
+	rel="stylesheet" id="style-rtl">
+
+<link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet"
+	id="style-default">
+
+<link href="/assets/css/user-rtl.min.css" type="text/css"
+	rel="stylesheet" id="user-style-rtl">
+
+<link href="/assets/css/user.min.css" type="text/css" rel="stylesheet"
+	id="user-style-default">
+
+
+
+
+
+<script ///사진 이미지 뷰어
+	src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<script>
+	var phoenixIsRTL = window.config.config.phoenixIsRTL;
+
+	if (phoenixIsRTL) {
+
+		var linkDefault = document.getElementById('style-default');
+
+		var userLinkDefault = document.getElementById('user-style-default');
+
+		linkDefault.setAttribute('disabled', true);
+
+		userLinkDefault.setAttribute('disabled', true);
+
+		document.querySelector('html').setAttribute('dir', 'rtl');
+
+	} else {
+
+		var linkRTL = document.getElementById('style-rtl');
+
+		var userLinkRTL = document.getElementById('user-style-rtl');
+
+		linkRTL.setAttribute('disabled', true);
+
+		userLinkRTL.setAttribute('disabled', true);
+
+	}
+</script>
+
+<style>
+.grid {
+	width: 80%
+}
+
+.grid-sizer, .grid-item {
+	width: 23%;
+}
+
+.grid-item {
+	margin-bottom: 15px;
+	border-radius: 20px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.grid-item img {
+	display: block;
+	min-width: 100%;
+	max-width: 100%;
+	object-fit: cover;
+}
+</style>
+
+<script>
+	var msnry = new Masonry('.grid', {
+
+		itemSelector : '.grid-item',
+
+		columnWidth : '.grid-sizer',
+
+		percentPosition : true,
+
+		gutter : 20,
+
+	});
+
+	imagesLoaded('.grid').on('progress', function() {
+
+		msnry.layout();
+
+	});
+</script>
+
+</head>
+
+
+
+
+
+<body>
+
+	<main class="main" id="top">
+
+		<div class="bg-primary-subtle py-2">
+
+			<div
+				class="container-medium d-flex align-items-center justify-content-between">
+
+				<a class="btn btn-link p-0 text-body"
+					href="/pages/authentication/card/sign-in.html"><span
+					class="fa-solid fa-arrow-right-to-bracket me-2"
+					data-fa-transform="down-1"></span>Agent Login</a>
+
+				<div class="dropdown">
+
+					<button class="btn btn-sm p-0 d-md-none fs-8" type="button"
+						data-bs-toggle="dropdown" data-boundary="window"
+						aria-haspopup="true" aria-expanded="false"
+						data-bs-reference="parent">
+
+						<span class="fas fa-ellipsis-h"></span>
+
+					</button>
+
+					<ul class="dropdown-menu dropdown-menu-end" style="z-index: 9999">
+
+						<li><a class="dropdown-item" href="#!">Become a Host</a></li>
+
+						<li><a class="dropdown-item" href="#!">Blog</a></li>
+
+						<li><a class="dropdown-item" href="#!">Career</a></li>
+
+						<li><a class="dropdown-item" href="#!">Support</a></li>
+
+						<li><a class="dropdown-item" href="#!">+01 123 581321</a></li>
+
+					</ul>
+
+				</div>
+
+				<ul class="d-none d-md-flex gap-5 list-unstyled mb-0">
+
+					<li><a class="lh-1 text-body-tertiary fw-semibold fs-9"
+						href="#!">Become a Host</a></li>
+
+					<li><a class="lh-1 text-body-tertiary fw-semibold fs-9"
+						href="#!">Blog</a></li>
+
+					<li><a class="lh-1 text-body-tertiary fw-semibold fs-9"
+						href="#!">Career</a></li>
+
+					<li><a class="lh-1 text-body-tertiary fw-semibold fs-9"
+						href="mailto:example@gmail.com"> <span
+							class="fa-regular fa-envelope me-2" data-fa-transform="down-1"></span>Support
+
+					</a></li>
+
+					<li><a class="lh-1 text-body-tertiary fw-semibold fs-9"
+						href="tel:+01123581321"> <span
+							class="fa-brands fa-whatsapp me-2"></span>+01 123 581321
+
+					</a></li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="bg-body-emphasis sticky-top"
+			data-navbar-shadow-on-scroll="data-navbar-shadow-on-scroll">
+
+			<nav class="navbar navbar-landing navbar-expand-lg container-medium">
+
+				<a class="navbar-brand flex-1 flex-lg-grow-0 me-lg-13" href="/">
+
+					<div class="d-flex align-items-center">
+
+						<img src="/images/logo.png" alt="phoenix" width="70" />
+
+						<p class="logo-text ms-2">맛 탐정단</p>
+
+					</div>
+
+				</a>
+
+				<div
+					class="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
+
+					<div class="theme-control-toggle fa-icon-wait">
+
+						<input class="form-check-input ms-0 theme-control-toggle-input"
+							type="checkbox" data-theme-control="phoenixTheme" value="dark"
+							id="themeControlToggleSm" /> <label
+							class="mb-0 theme-control-toggle-label theme-control-toggle-light"
+							for="themeControlToggleSm" data-bs-toggle="tooltip"
+							data-bs-placement="left" title="Switch theme"><span
+							class="icon" data-feather="moon"></span></label> <label
+							class="mb-0 theme-control-toggle-label theme-control-toggle-dark"
+							for="themeControlToggleSm" data-bs-toggle="tooltip"
+							data-bs-placement="left" title="Switch theme"><span
+							class="icon" data-feather="sun"></span></label>
+
+					</div>
+
+					<a class="btn btn-link text-body-tertiary p-0" href="#!"><span
+						data-feather="map-pin" style="width: 18px; height: 18px"></span></a><a
+						class="btn btn-link text-body-tertiary p-0" href="#!"><span
+						data-feather="bell" style="width: 20px; height: 20px"></span></a><a
+						class="btn btn-link text-body-tertiary p-0 me-2 me-lg-0" href="#!"><span
+						data-feather="user" style="width: 20px; height: 20px"></span></a>
+
+				</div>
+
+
+
+				<div class="btn-group position-static text-nowrap" role="group">
+
+					<button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0"
+						type="button" data-bs-toggle="dropdown" data-boundary="window"
+						aria-haspopup="true" aria-expanded="false"
+						data-bs-reference="parent">
+
+						회원관리<span class="fas fa-angle-down ms-2"></span>
+
+					</button>
+
+					<ul class="dropdown-menu dropdown-menu-end">
+
+						<li><a class="dropdown-item" href="/signup">회원가입</a></li>
+
+						<li><a class="dropdown-item" href="/signin">로그인</a></li>
+
+
+
+					</ul>
+
+				</div>
+
+
+
+
+
+				<div class="btn-group position-static text-nowrap" role="group">
+
+					<button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0"
+						type="button" data-bs-toggle="dropdown" data-boundary="window"
+						aria-haspopup="true" aria-expanded="false"
+						data-bs-reference="parent">
+
+						탐정노트(메뉴)<span class="fas fa-angle-down ms-2"></span>
+
+					</button>
+
+					<ul class="dropdown-menu dropdown-menu-end">
+
+						<li><a class="dropdown-item" href="/Hotel">호텔</a></li>
+
+						<li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
+
+						<li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
+
+						<li><a class="dropdown-item" href="/pictures">사진추가</a></li>
+
+						<li><a class="dropdown-item" href="/space">장소추가</a></li>
+
+						<li><a class="dropdown-item" href="#">맛 탐정단 리뷰작성</a></li>
+
+
+
+						<li>
+
+							<hr class="dropdown-divider" />
+
+						</li>
+
+						<li><a class="dropdown-item" href="/">지역주민 Best Pick</a></li>
+
+						<li><a class="dropdown-item" href="/">MBTI "P" 맞춤 여행지 추천</a></li>
+
+						<li><a class="dropdown-item" href="/">충청남도 추천 할인 관광지</a></li>
+
+
+
+					</ul>
+
+				</div>
+
+
+
+				<div class="btn-group position-static text-nowrap" role="group">
+
+					<button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0"
+						type="button" data-bs-toggle="dropdown" data-boundary="window"
+						aria-haspopup="true" aria-expanded="false"
+						data-bs-reference="parent">
+
+						고객관리<span class="fas fa-angle-down ms-2"></span>
+
+					</button>
+
+					<ul class="dropdown-menu dropdown-menu-end">
+
+						<li><a class="dropdown-item" href="/faq">FAQ</a></li>
+
+						<li><a class="dropdown-item" href="/question">Q&A</a></li>
+
+						<li><a class="dropdown-item" href="/notice">공지사항</a></li>
+
+
+
+						<!--                         <li>
+
                           <hr class="dropdown-divider" />
-                        </li>
-                        <li><a class="dropdown-item" href="/bestpick">지역주민 Best Pick</a></li> 
-                        <li><a class="dropdown-item" href="/mbti">MBTI "P" 맞춤 여행지 추천</a></li> 
-                        <li><a class="dropdown-item" href="/">충청남도 추천 할인 관광지</a></li> 
 
-                      </ul>
-                    </div>
-          
-          <div class="btn-group position-static text-nowrap" role="group">
-                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
-                        고객관리<span class="fas fa-angle-down ms-2"></span></button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/faq">FAQ</a></li>
-                        <li><a class="dropdown-item" href="/question">Q&A</a></li>
-                        <li><a class="dropdown-item" href="/notice">공지사항</a></li>
-                        
-<!--                         <li>
-                          <hr class="dropdown-divider" />
                         </li>
+
                         <li><a class="dropdown-item" href="#">Separated link</a></li> -->
-                      </ul>
-                    </div>
-                    
-                    
-            <div class="btn-group position-static text-nowrap" role="group">
-                      <button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
-                        마이페이지<span class="fas fa-angle-down ms-2"></span></button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/">계정관리</a></li>
-                        <li><a class="dropdown-item" href="/">회원탈퇴</a></li>
-                        <li><a class="dropdown-item" href="/">리뷰관리</a></li>
-                        <li><a class="dropdown-item" href="/">질문관리</a></li>
-                        <li><a class="dropdown-item" href="/">타임라인 히스토리</a></li>
- 
 
-                      </ul>
-                    </div>
-          
-          <button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mt-3 mt-lg-0">
-            </ul>
-          </div>
-        </nav>
-      </div>
+					</ul>
 
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-     
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-0">
-
-       
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+				</div>
 
 
-      
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-0">
 
-        <div class="container-medium">
-          <div class="py-6">
-            <div class="d-flex">
-              <select class="form-select w-sm-auto me-4" id="hotelSort" name="Hotel sort">
-                <option>Sort by</option>
-                <option>Best reviewed and lowest price</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </select>
-              <button class="btn btn-phoenix-secondary text-nowrap px-3 px-md-4 ms-auto me-2"><span class="fa-solid fa-map me-md-2"></span><span class="d-none d-md-inline-block">Show in map</span></button>
-              <button class="btn btn-phoenix-secondary text-nowrap px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#hotelFilterOffcanvas" aria-controls="hotelFilterOffcanvas"><span class="fa-solid fa-filter me-md-2"></span><span class="d-none d-md-inline-block">Filters</span></button>
-            </div>
-          </div>
-          <div class="row g-3 mb-6">
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838528.jpg" height="400" width="500" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">반야사</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 논산시 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838268.jpg" height="400" width="400" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">꽃지해수욕장</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 태안 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040703/thm_photo_040703_0_1670982192.jpg" height="400" width="500" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">궁남로 궁남지</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 부여군 부여읍 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838342.jpg" height="400" width="300" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">안면암</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 태안 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838098.jpg" height="400" width="500" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">예당호</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 예산 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706836983.jpg" height="400" width="400" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">종합운동장</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 천안 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706836885.jpg" height="400" width="500" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">간월암</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>충남 서산 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"><img class="img-fluid" src="https://tour.chungnam.go.kr/Upl/_board/photo_040702/thm_photo_040702_0_1639486657.jpg" height="300" width="300" alt="" />
-                <div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-                  <button class="btn btn-wish"><span class="far fa-heart" data-fa-transform="down-1"></span></button>
-                </div>
-                <div class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end"><a class="stretched-link fs-7 text-white fw-bold" href="#!">은행나무길</a>
-                  <p class="mb-2 text-secondary-lighter"><span class="fa-solid fa-map-marker-alt me-2"></span>아산 곡교천 </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
+				<div class="btn-group position-static text-nowrap" role="group">
 
-            
-     
-  
-    </main>
-    <!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
+					<button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0"
+						type="button" data-bs-toggle="dropdown" data-boundary="window"
+						aria-haspopup="true" aria-expanded="false"
+						data-bs-reference="parent">
+
+						마이페이지<span class="fas fa-angle-down ms-2"></span>
+
+					</button>
+
+					<ul class="dropdown-menu dropdown-menu-end">
+
+						<li><a class="dropdown-item" href="/">계정관리</a></li>
+
+						<li><a class="dropdown-item" href="/">회원탈퇴</a></li>
+
+						<li><a class="dropdown-item" href="/">리뷰관리</a></li>
+
+						<li><a class="dropdown-item" href="/">질문관리</a></li>
+
+						<li><a class="dropdown-item" href="/">타임라인 히스토리</a></li>
 
 
-    <div class="offcanvas offcanvas-end settings-panel border-0" id="settings-offcanvas" tabindex="-1" aria-labelledby="settings-offcanvas">
-      <div class="offcanvas-header align-items-start border-bottom flex-column border-translucent">
-        <div class="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
-          <div>
-            <h5 class="mb-2 me-2 lh-sm"><span class="fas fa-palette me-2 fs-8"></span>Theme Customizer</h5>
-            <p class="mb-0 fs-9">Explore different styles according to your preferences</p>
-          </div>
-          <button class="btn p-1 fw-bolder" type="button" data-bs-dismiss="offcanvas" aria-label="Close"><span class="fas fa-times fs-8"> </span></button>
-        </div>
-        <button class="btn btn-phoenix-secondary w-100" data-theme-control="reset"><span class="fas fa-arrows-rotate me-2 fs-10"></span>Reset to default</button>
-      </div>
-      <div class="offcanvas-body scrollbar px-card" id="themeController">
-        <div class="setting-panel-item mt-0">
-          <h5 class="setting-panel-item-title">Color Scheme</h5>
-          <div class="row gx-2">
-            <div class="col-4">
-              <input class="btn-check" id="themeSwitcherLight" name="theme-color" type="radio" value="light" data-theme-control="phoenixTheme" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="themeSwitcherLight"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="/assets/img/generic/default-light.png" alt=""/></span><span class="label-text">Light</span></label>
-            </div>
-            <div class="col-4">
-              <input class="btn-check" id="themeSwitcherDark" name="theme-color" type="radio" value="dark" data-theme-control="phoenixTheme" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="themeSwitcherDark"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="/assets/img/generic/default-dark.png" alt=""/></span><span class="label-text"> Dark</span></label>
-            </div>
-            <div class="col-4">
-              <input class="btn-check" id="themeSwitcherAuto" name="theme-color" type="radio" value="auto" data-theme-control="phoenixTheme" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="themeSwitcherAuto"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype mb-0" src="/assets/img/generic/auto.png" alt=""/></span><span class="label-text"> Auto</span></label>
-            </div>
-          </div>
-        </div>
-        <div class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
-          <div class="d-flex justify-content-between align-items-center">
-            <h5 class="setting-panel-item-title mb-1">RTL </h5>
-            <div class="form-check form-switch mb-0">
-              <input class="form-check-input ms-auto" type="checkbox" data-theme-control="phoenixIsRTL" />
-            </div>
-          </div>
-          <p class="mb-0 text-body-tertiary">Change text direction</p>
-        </div>
-        <div class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
-          <div class="d-flex justify-content-between align-items-center">
-            <h5 class="setting-panel-item-title mb-1">Support Chat </h5>
-            <div class="form-check form-switch mb-0">
-              <input class="form-check-input ms-auto" type="checkbox" data-theme-control="phoenixSupportChat" />
-            </div>
-          </div>
-          <p class="mb-0 text-body-tertiary">Toggle support chat</p>
-        </div>
-        <div class="setting-panel-item">
-          <h5 class="setting-panel-item-title">Navigation Type</h5>
-          <div class="row gx-2">
-            <div class="col-6">
-              <input class="btn-check" id="navbarPositionVertical" name="navigation-type" type="radio" value="vertical" data-theme-control="phoenixNavbarPosition" data-page-url="/documentation/layouts/vertical-navbar.html" disabled="disabled" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarPositionVertical"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none" src="/assets/img/generic/default-light.png" alt=""/><img class="img-fluid img-prototype d-light-none" src="/assets/img/generic/default-dark.png" alt=""/></span><span class="label-text">Vertical</span></label>
-            </div>
-            <div class="col-6">
-              <input class="btn-check" id="navbarPositionHorizontal" name="navigation-type" type="radio" value="horizontal" data-theme-control="phoenixNavbarPosition" data-page-url="/documentation/layouts/horizontal-navbar.html" disabled="disabled" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarPositionHorizontal"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none" src="/assets/img/generic/top-default.png" alt=""/><img class="img-fluid img-prototype d-light-none" src="/assets/img/generic/top-default-dark.png" alt=""/></span><span class="label-text"> Horizontal</span></label>
-            </div>
-            <div class="col-6">
-              <input class="btn-check" id="navbarPositionCombo" name="navigation-type" type="radio" value="combo" data-theme-control="phoenixNavbarPosition" disabled="disabled" data-page-url="/documentation/layouts/combo-navbar.html" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarPositionCombo"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none" src="/assets/img/generic/nav-combo-light.png" alt=""/><img class="img-fluid img-prototype d-light-none" src="/assets/img/generic/nav-combo-dark.png" alt=""/></span><span class="label-text"> Combo</span></label>
-            </div>
-            <div class="col-6">
-              <input class="btn-check" id="navbarPositionTopDouble" name="navigation-type" type="radio" value="dual-nav" data-theme-control="phoenixNavbarPosition" disabled="disabled" data-page-url="/documentation/layouts/dual-nav.html" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarPositionTopDouble"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none" src="/assets/img/generic/dual-light.png" alt=""/><img class="img-fluid img-prototype d-light-none" src="/assets/img/generic/dual-dark.png" alt=""/></span><span class="label-text"> Dual nav</span></label>
-            </div>
-          </div>
-          <p class="text-warning-dark font-medium"> <span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You can't update navigation type in this page</p>
-        </div>
-        <div class="setting-panel-item">
-          <h5 class="setting-panel-item-title">Vertical Navbar Appearance</h5>
-          <div class="row gx-2">
-            <div class="col-6">
-              <input class="btn-check" id="navbar-style-default" type="radio" name="config.name" value="default" data-theme-control="phoenixNavbarVerticalStyle" disabled="disabled" />
-              <label class="btn d-block w-100 btn-navbar-style fs-9" for="navbar-style-default"> <img class="img-fluid img-prototype d-dark-none" src="/assets/img/generic/default-light.png" alt="" /><img class="img-fluid img-prototype d-light-none" src="/assets/img/generic/default-dark.png" alt="" /><span class="label-text d-dark-none"> Default</span><span class="label-text d-light-none">Default</span></label>
-            </div>
-            <div class="col-6">
-              <input class="btn-check" id="navbar-style-dark" type="radio" name="config.name" value="darker" data-theme-control="phoenixNavbarVerticalStyle" disabled="disabled" />
-              <label class="btn d-block w-100 btn-navbar-style fs-9" for="navbar-style-dark"> <img class="img-fluid img-prototype d-dark-none" src="/assets/img/generic/vertical-darker.png" alt="" /><img class="img-fluid img-prototype d-light-none" src="/assets/img/generic/vertical-lighter.png" alt="" /><span class="label-text d-dark-none"> Darker</span><span class="label-text d-light-none">Lighter</span></label>
-            </div>
-          </div>
-          <p class="text-warning-dark font-medium"> <span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You can't update vertical navbar appearance in this page</p>
-        </div>
-        <div class="setting-panel-item">
-          <h5 class="setting-panel-item-title">Horizontal Navbar Shape</h5>
-          <div class="row gx-2">
-            <div class="col-6">
-              <input class="btn-check" id="navbarShapeDefault" name="navbar-shape" type="radio" value="default" data-theme-control="phoenixNavbarTopShape" data-page-url="/documentation/layouts/horizontal-navbar.html" disabled="disabled" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarShapeDefault"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none mb-0" src="/assets/img/generic/top-default.png" alt=""/><img class="img-fluid img-prototype d-light-none mb-0" src="/assets/img/generic/top-default-dark.png" alt=""/></span><span class="label-text">Default</span></label>
-            </div>
-            <div class="col-6">
-              <input class="btn-check" id="navbarShapeSlim" name="navbar-shape" type="radio" value="slim" data-theme-control="phoenixNavbarTopShape" data-page-url="/documentation/layouts/horizontal-navbar.html#horizontal-navbar-slim" disabled="disabled" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarShapeSlim"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none mb-0" src="/assets/img/generic/top-slim.png" alt=""/><img class="img-fluid img-prototype d-light-none mb-0" src="/assets/img/generic/top-slim-dark.png" alt=""/></span><span class="label-text"> Slim</span></label>
-            </div>
-          </div>
-          <p class="text-warning-dark font-medium"> <span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You can't update horizontal navbar shape in this page</p>
-        </div>
-        <div class="setting-panel-item">
-          <h5 class="setting-panel-item-title">Horizontal Navbar Appearance</h5>
-          <div class="row gx-2">
-            <div class="col-6">
-              <input class="btn-check" id="navbarTopDefault" name="navbar-top-style" type="radio" value="default" data-theme-control="phoenixNavbarTopStyle" disabled="disabled" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarTopDefault"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none mb-0" src="/assets/img/generic/top-default.png" alt=""/><img class="img-fluid img-prototype d-light-none mb-0" src="/assets/img/generic/top-style-darker.png" alt=""/></span><span class="label-text">Default</span></label>
-            </div>
-            <div class="col-6">
-              <input class="btn-check" id="navbarTopDarker" name="navbar-top-style" type="radio" value="darker" data-theme-control="phoenixNavbarTopStyle" disabled="disabled" />
-              <label class="btn d-inline-block btn-navbar-style fs-9" for="navbarTopDarker"> <span class="mb-2 rounded d-block"><img class="img-fluid img-prototype d-dark-none mb-0" src="/assets/img/generic/navbar-top-style-light.png" alt=""/><img class="img-fluid img-prototype d-light-none mb-0" src="/assets/img/generic/top-style-lighter.png" alt=""/></span><span class="label-text d-dark-none">Darker</span><span class="label-text d-light-none">Lighter</span></label>
-            </div>
-          </div>
-          <p class="text-warning-dark font-medium"> <span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You can't update horizontal navbar appearance in this page</p>
-        </div><a class="bun btn-primary d-grid mb-3 text-white mt-5 btn btn-primary" href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/" target="_blank">Purchase template</a>
-      </div>
-    </div><a class="card setting-toggle" href="#settings-offcanvas" data-bs-toggle="offcanvas">
-      <div class="card-body d-flex align-items-center px-2 py-1">
-        <div class="position-relative rounded-start" style="height:34px;width:28px">
-          <div class="settings-popover"><span class="ripple"><span class="fa-spin position-absolute all-0 d-flex flex-center"><span class="icon-spin position-absolute all-0 d-flex flex-center">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.7369 12.3941L19.1989 12.1065C18.4459 11.7041 18.0843 10.8487 18.0843 9.99495C18.0843 9.14118 18.4459 8.28582 19.1989 7.88336L19.7369 7.59581C19.9474 7.47484 20.0316 7.23291 19.9474 7.03131C19.4842 5.57973 18.6843 4.28943 17.6738 3.20075C17.5053 3.03946 17.2527 2.99914 17.0422 3.12011L16.393 3.46714C15.6883 3.84379 14.8377 3.74529 14.1476 3.3427C14.0988 3.31422 14.0496 3.28621 14.0002 3.25868C13.2568 2.84453 12.7055 2.10629 12.7055 1.25525V0.70081C12.7055 0.499202 12.5371 0.297594 12.2845 0.257272C10.7266 -0.105622 9.16879 -0.0653007 7.69516 0.257272C7.44254 0.297594 7.31623 0.499202 7.31623 0.70081V1.23474C7.31623 2.09575 6.74999 2.8362 5.99824 3.25599C5.95774 3.27861 5.91747 3.30159 5.87744 3.32493C5.15643 3.74527 4.26453 3.85902 3.53534 3.45302L2.93743 3.12011C2.72691 2.99914 2.47429 3.03946 2.30587 3.20075C1.29538 4.28943 0.495411 5.57973 0.0322686 7.03131C-0.051939 7.23291 0.0322686 7.47484 0.242788 7.59581L0.784376 7.8853C1.54166 8.29007 1.92694 9.13627 1.92694 9.99495C1.92694 10.8536 1.54166 11.6998 0.784375 12.1046L0.242788 12.3941C0.0322686 12.515 -0.051939 12.757 0.0322686 12.9586C0.495411 14.4102 1.29538 15.7005 2.30587 16.7891C2.47429 16.9504 2.72691 16.9907 2.93743 16.8698L3.58669 16.5227C4.29133 16.1461 5.14131 16.2457 5.8331 16.6455C5.88713 16.6767 5.94159 16.7074 5.99648 16.7375C6.75162 17.1511 7.31623 17.8941 7.31623 18.7552V19.2891C7.31623 19.4425 7.41373 19.5959 7.55309 19.696C7.64066 19.7589 7.74815 19.7843 7.85406 19.8046C9.35884 20.0925 10.8609 20.0456 12.2845 19.7729C12.5371 19.6923 12.7055 19.4907 12.7055 19.2891V18.7346C12.7055 17.8836 13.2568 17.1454 14.0002 16.7312C14.0496 16.7037 14.0988 16.6757 14.1476 16.6472C14.8377 16.2446 15.6883 16.1461 16.393 16.5227L17.0422 16.8698C17.2527 16.9907 17.5053 16.9504 17.6738 16.7891C18.7264 15.7005 19.4842 14.4102 19.9895 12.9586C20.0316 12.757 19.9474 12.515 19.7369 12.3941ZM10.0109 13.2005C8.1162 13.2005 6.64257 11.7893 6.64257 9.97478C6.64257 8.20063 8.1162 6.74905 10.0109 6.74905C11.8634 6.74905 13.3792 8.20063 13.3792 9.97478C13.3792 11.7893 11.8634 13.2005 10.0109 13.2005Z" fill="#2A7BE4"></path>
-                  </svg></span></span></span></div>
-        </div>
-    </a>
 
 
-<!-- 여기를 카카오 맵 api와 연동해서 지도에서 음식점 치면 높은 별점 위주로 해당 페이지 이미지들이 카카오 api에서 가져온 이미지로 변경하게 만들기 -->
 
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="/vendors/popper/popper.min.js"></script>
-    <script src="/vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="/vendors/anchorjs/anchor.min.js"></script>
-    <script src="/vendors/is/is.min.js"></script>
-    <script src="/vendors/fontawesome/all.min.js"></script>
-    <script src="/vendors/lodash/lodash.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="/vendors/list.js/list.min.js"></script>
-    <script src="/vendors/feather-icons/feather.min.js"></script>
-    <script src="/vendors/dayjs/dayjs.min.js"></script>
-    <script src="/assets/js/phoenix.js"></script>
-    <script src="/vendors/flatpickr/flatpickr.min.js"></script>
-    <script src="/vendors/nouislider/nouislider.min.js"></script>
+					</ul>
 
-  </body>
+				</div>
+
+
+
+				<button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+
+					<span class="navbar-toggler-icon"></span>
+
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<ul class="navbar-nav me-auto mt-3 mt-lg-0">
+
+					</ul>
+
+				</div>
+
+			</nav>
+
+		</div>
+
+	</main>
+
+
+
+	<!-- ===============================================-->
+
+	<!--    Main Content-->
+
+	<!-- ===============================================-->
+
+	<main class="main" id="top">
+
+
+
+		<!-- ============================================-->
+
+		<!-- <section> begin ============================-->
+
+		<section class="py-0">
+
+
+
+
+
+			<!-- end of .container-->
+
+
+
+		</section>
+
+		<!-- <section> close ============================-->
+
+		<!-- ============================================-->
+
+
+
+
+
+
+
+
+
+
+
+		<!-- ============================================-->
+
+		<!-- <section> begin ============================-->
+
+		<section class="py-0">
+
+
+
+			<div class="container-medium">
+
+				<div class="py-6">
+
+					<div class="d-flex">
+
+						<select class="form-select w-sm-auto me-4" id="hotelSort"
+							name="Hotel sort">
+
+							<option>Sort by</option>
+
+							<option>Best reviewed and lowest price</option>
+
+							<option>Option 1</option>
+
+							<option>Option 2</option>
+
+						</select>
+
+						<button
+							class="btn btn-phoenix-secondary text-nowrap px-3 px-md-4 ms-auto me-2">
+
+							<span class="fa-solid fa-map me-md-2"></span><span
+								class="d-none d-md-inline-block">Show in map</span>
+
+						</button>
+
+						<button class="btn btn-phoenix-secondary text-nowrap px-3"
+							type="button" data-bs-toggle="offcanvas"
+							data-bs-target="#hotelFilterOffcanvas"
+							aria-controls="hotelFilterOffcanvas">
+
+							<span class="fa-solid fa-filter me-md-2"></span><span
+								class="d-none d-md-inline-block">Filters</span>
+
+						</button>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="grid-sizer"></div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838528.jpg"
+							alt="" height="300" width="150" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">반야사</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 논산시
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838268.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">꽃지해수욕장</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 태안
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040703/thm_photo_040703_0_1670982192.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">궁남로
+
+								궁남지</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 부여군 부여읍
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838342.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">안면암</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 태안
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838098.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">예당호</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 예산
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706836983.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">종합운동장</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 천안
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706836885.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">간월암</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 서산
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://tour.chungnam.go.kr/Upl/_board/photo_040702/thm_photo_040702_0_1639486657.jpg"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">은행나무길</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>아산 곡교천
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://mblogthumb-phinf.pstatic.net/MjAyMjA2MTZfMTA3/MDAxNjU1MzA4MjE3Mzk3.AH132l-3XfdsVxrwcUGcQEBLHvt35jeKT1BmRXl4jtUg.s0b_gYPZZ8_jB2DtvvNADd5_8XBcnduWBg8d-uQU854g.JPEG.whotheman/SE-0d9bbd9d-ec97-11ec-93aa-9d8ca24f0997.jpg?type=w800"
+							height="300" width="150" alt="" />
+
+						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
+
+							<button class="btn btn-wish">
+
+								<span class="far fa-heart" data-fa-transform="down-1"></span>
+
+							</button>
+
+						</div>
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">
+								아그로랜드 태신목장</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>예산군 고덕면
+
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/e8/b6/b4/lotte-resort-buyeo-located.jpg?w=300&h=300&s=1"
+							height="300" width="150" />
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">롯데리조트</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>부여군 규암면
+								백제문로 400
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/74/c4/b0/caption.jpg?w=300&h=300&s=1"
+							height="300" width="150" />
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">오엔시티호텔</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>천안시 서북구
+								불당4로 105
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/b6/39/f6/gongju-ink-tourist-hotel.jpg?w=300&h=300&s=1"
+							height="300" width="150" />
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">공주
+								INK 호텔</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>공주시 신관동
+								593-14
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/d1/8b/c1/pinocchio-pension.jpg?w=300&h=300&s=1"
+							height="300" width="150" />
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">피노키오
+								펜션</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span> 태안 소원면
+								만리포2길 184
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/9a/7b/55/caption.jpg?w=300&h=300&s=1"
+							height="300" width="150" />
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">스카이풀빌라펜션</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>서천 갯벌체험로
+								314 서면
+
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="grid-item">
+
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+
+						<img
+							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/4f/bc/06/caption.jpg?w=300&h=300&s=1"
+							height="300" width="150" />
+
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">스파피아모텔</a>
+
+							<p class="mb-2 text-secondary-lighter">
+
+								<span class="fa-solid fa-map-marker-alt me-2"></span>청양 청양읍 읍내리
+								205-6
+
+
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="grid-item">
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+						<img
+							src="https://images.trvl-media.com/lodging/72000000/71620000/71612700/71612637/d7f41d0b.jpg?impolicy=resizecrop&rw=598&ra=fit"
+							height="300" width="150" />
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">조이
+								모텔</a>
+							<p class="mb-2 text-secondary-lighter">
+								<span class="fa-solid fa-map-marker-alt me-2"></span>홍성 홍성읍 홍덕서로
+								203-11
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="grid-item">
+					///
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+						<img
+							src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStD6XhBkzmgyBEzzU7kR0HsDh1P7CXGuOWDQ&s"
+							height="300" width="150" />
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">짚라인</a>
+							<p class="mb-2 text-secondary-lighter">
+								<span class="fa-solid fa-map-marker-alt me-2"></span>금산군 진산면
+								대둔산로 8-1
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="grid-item">
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+						<img
+							src="https://cdn.imweb.me/thumbnail/20220708/c476aec928c84.jpg"
+							height="300" width="150" />
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">강경수상레져
+							</a>
+							<p class="mb-2 text-secondary-lighter">
+								<span class="fa-solid fa-map-marker-alt me-2"></span> 논산시 강경읍
+								금백로 7-49(주차장), 논산시 강경읍 황산리 27-8
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid-item">
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+						<img
+							src="https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTJfMTI1/MDAxNTk5ODcyNzI4MDMy.zw9T-XXSBBIRYXJKKMLorrV7qlTUaPOdFPcRMBnVIfIg.WpqcAmUayTDaSl0psZEGBfmnDSw-hKBm_5ExxG6EGXYg.PNG.alwaysbonas/%EB%8C%80%EC%B2%9C.png?type=w800"
+							height="300" width="150" />
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">패러글라이딩</a>
+							<p class="mb-2 text-secondary-lighter">
+								<span class="fa-solid fa-map-marker-alt me-2"></span>보령시 명청동 938
+								203-11
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="grid-item">
+					<div
+						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
+						<img
+							src="data:image/jpeg;base64,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"
+							height="300" width="150" />
+						<div
+							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
+							<a class="stretched-link fs-7 text-white fw-bold" href="#!">레일바이크</a>
+							<p class="mb-2 text-secondary-lighter">
+								<span class="fa-solid fa-map-marker-alt me-2"></span>보령시 옥마벚길 10
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+		</section>
+
+
+
+
+
+	</main>
+
+	<!-- ===============================================-->
+
+	<!--    End of Main Content-->
+
+	<!-- ===============================================-->
+
+
+
+
+
+	<div class="offcanvas offcanvas-end settings-panel border-0"
+		id="settings-offcanvas" tabindex="-1"
+		aria-labelledby="settings-offcanvas">
+
+		<div
+			class="offcanvas-header align-items-start border-bottom flex-column border-translucent">
+
+			<div
+				class="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
+
+				<div>
+
+					<h5 class="mb-2 me-2 lh-sm">
+
+						<span class="fas fa-palette me-2 fs-8"></span>Theme Customizer
+
+					</h5>
+
+					<p class="mb-0 fs-9">Explore different styles according to your
+
+						preferences</p>
+
+				</div>
+
+				<button class="btn p-1 fw-bolder" type="button"
+					data-bs-dismiss="offcanvas" aria-label="Close">
+
+					<span class="fas fa-times fs-8"> </span>
+
+				</button>
+
+			</div>
+
+			<button class="btn btn-phoenix-secondary w-100"
+				data-theme-control="reset">
+
+				<span class="fas fa-arrows-rotate me-2 fs-10"></span>Reset to
+
+				default
+
+			</button>
+
+		</div>
+
+		<div class="offcanvas-body scrollbar px-card" id="themeController">
+
+			<div class="setting-panel-item mt-0">
+
+				<h5 class="setting-panel-item-title">Color Scheme</h5>
+
+				<div class="row gx-2">
+
+					<div class="col-4">
+
+						<input class="btn-check" id="themeSwitcherLight"
+							name="theme-color" type="radio" value="light"
+							data-theme-control="phoenixTheme" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="themeSwitcherLight"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype mb-0"
+								src="/assets/img/generic/default-light.png" alt="" /></span><span
+							class="label-text">Light</span></label>
+
+					</div>
+
+					<div class="col-4">
+
+						<input class="btn-check" id="themeSwitcherDark" name="theme-color"
+							type="radio" value="dark" data-theme-control="phoenixTheme" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="themeSwitcherDark"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype mb-0"
+								src="/assets/img/generic/default-dark.png" alt="" /></span><span
+							class="label-text"> Dark</span></label>
+
+					</div>
+
+					<div class="col-4">
+
+						<input class="btn-check" id="themeSwitcherAuto" name="theme-color"
+							type="radio" value="auto" data-theme-control="phoenixTheme" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="themeSwitcherAuto"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype mb-0"
+								src="/assets/img/generic/auto.png" alt="" /></span><span
+							class="label-text"> Auto</span></label>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div
+				class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
+
+				<div class="d-flex justify-content-between align-items-center">
+
+					<h5 class="setting-panel-item-title mb-1">RTL</h5>
+
+					<div class="form-check form-switch mb-0">
+
+						<input class="form-check-input ms-auto" type="checkbox"
+							data-theme-control="phoenixIsRTL" />
+
+					</div>
+
+				</div>
+
+				<p class="mb-0 text-body-tertiary">Change text direction</p>
+
+			</div>
+
+			<div
+				class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
+
+				<div class="d-flex justify-content-between align-items-center">
+
+					<h5 class="setting-panel-item-title mb-1">Support Chat</h5>
+
+					<div class="form-check form-switch mb-0">
+
+						<input class="form-check-input ms-auto" type="checkbox"
+							data-theme-control="phoenixSupportChat" />
+
+					</div>
+
+				</div>
+
+				<p class="mb-0 text-body-tertiary">Toggle support chat</p>
+
+			</div>
+
+			<div class="setting-panel-item">
+
+				<h5 class="setting-panel-item-title">Navigation Type</h5>
+
+				<div class="row gx-2">
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarPositionVertical"
+							name="navigation-type" type="radio" value="vertical"
+							data-theme-control="phoenixNavbarPosition"
+							data-page-url="/documentation/layouts/vertical-navbar.html"
+							disabled="disabled" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarPositionVertical"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none"
+								src="/assets/img/generic/default-light.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none"
+								src="/assets/img/generic/default-dark.png" alt="" /></span><span
+							class="label-text">Vertical</span></label>
+
+					</div>
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarPositionHorizontal"
+							name="navigation-type" type="radio" value="horizontal"
+							data-theme-control="phoenixNavbarPosition"
+							data-page-url="/documentation/layouts/horizontal-navbar.html"
+							disabled="disabled" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarPositionHorizontal"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none"
+								src="/assets/img/generic/top-default.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none"
+								src="/assets/img/generic/top-default-dark.png" alt="" /></span><span
+							class="label-text"> Horizontal</span></label>
+
+					</div>
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarPositionCombo"
+							name="navigation-type" type="radio" value="combo"
+							data-theme-control="phoenixNavbarPosition" disabled="disabled"
+							data-page-url="/documentation/layouts/combo-navbar.html" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarPositionCombo"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none"
+								src="/assets/img/generic/nav-combo-light.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none"
+								src="/assets/img/generic/nav-combo-dark.png" alt="" /></span><span
+							class="label-text"> Combo</span></label>
+
+					</div>
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarPositionTopDouble"
+							name="navigation-type" type="radio" value="dual-nav"
+							data-theme-control="phoenixNavbarPosition" disabled="disabled"
+							data-page-url="/documentation/layouts/dual-nav.html" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarPositionTopDouble"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none"
+								src="/assets/img/generic/dual-light.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none"
+								src="/assets/img/generic/dual-dark.png" alt="" /></span><span
+							class="label-text"> Dual nav</span></label>
+
+					</div>
+
+				</div>
+
+				<p class="text-warning-dark font-medium">
+
+					<span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You
+
+					can't update navigation type in this page
+
+				</p>
+
+			</div>
+
+			<div class="setting-panel-item">
+
+				<h5 class="setting-panel-item-title">Vertical Navbar Appearance</h5>
+
+				<div class="row gx-2">
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbar-style-default" type="radio"
+							name="config.name" value="default"
+							data-theme-control="phoenixNavbarVerticalStyle"
+							disabled="disabled" /> <label
+							class="btn d-block w-100 btn-navbar-style fs-9"
+							for="navbar-style-default"> <img
+							class="img-fluid img-prototype d-dark-none"
+							src="/assets/img/generic/default-light.png" alt="" /><img
+							class="img-fluid img-prototype d-light-none"
+							src="/assets/img/generic/default-dark.png" alt="" /><span
+							class="label-text d-dark-none"> Default</span><span
+							class="label-text d-light-none">Default</span></label>
+
+					</div>
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbar-style-dark" type="radio"
+							name="config.name" value="darker"
+							data-theme-control="phoenixNavbarVerticalStyle"
+							disabled="disabled" /> <label
+							class="btn d-block w-100 btn-navbar-style fs-9"
+							for="navbar-style-dark"> <img
+							class="img-fluid img-prototype d-dark-none"
+							src="/assets/img/generic/vertical-darker.png" alt="" /><img
+							class="img-fluid img-prototype d-light-none"
+							src="/assets/img/generic/vertical-lighter.png" alt="" /><span
+							class="label-text d-dark-none"> Darker</span><span
+							class="label-text d-light-none">Lighter</span></label>
+
+					</div>
+
+				</div>
+
+				<p class="text-warning-dark font-medium">
+
+					<span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You
+
+					can't update vertical navbar appearance in this page
+
+				</p>
+
+			</div>
+
+			<div class="setting-panel-item">
+
+				<h5 class="setting-panel-item-title">Horizontal Navbar Shape</h5>
+
+				<div class="row gx-2">
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarShapeDefault"
+							name="navbar-shape" type="radio" value="default"
+							data-theme-control="phoenixNavbarTopShape"
+							data-page-url="/documentation/layouts/horizontal-navbar.html"
+							disabled="disabled" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarShapeDefault"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none mb-0"
+								src="/assets/img/generic/top-default.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none mb-0"
+								src="/assets/img/generic/top-default-dark.png" alt="" /></span><span
+							class="label-text">Default</span></label>
+
+					</div>
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarShapeSlim" name="navbar-shape"
+							type="radio" value="slim"
+							data-theme-control="phoenixNavbarTopShape"
+							data-page-url="/documentation/layouts/horizontal-navbar.html#horizontal-navbar-slim"
+							disabled="disabled" /> <label
+							class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarShapeSlim"> <span class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none mb-0"
+								src="/assets/img/generic/top-slim.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none mb-0"
+								src="/assets/img/generic/top-slim-dark.png" alt="" /></span><span
+							class="label-text"> Slim</span></label>
+
+					</div>
+
+				</div>
+
+				<p class="text-warning-dark font-medium">
+
+					<span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You
+
+					can't update horizontal navbar shape in this page
+
+				</p>
+
+			</div>
+
+			<div class="setting-panel-item">
+
+				<h5 class="setting-panel-item-title">Horizontal Navbar
+
+					Appearance</h5>
+
+				<div class="row gx-2">
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarTopDefault"
+							name="navbar-top-style" type="radio" value="default"
+							data-theme-control="phoenixNavbarTopStyle" disabled="disabled" />
+
+						<label class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarTopDefault"> <span
+							class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none mb-0"
+								src="/assets/img/generic/top-default.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none mb-0"
+								src="/assets/img/generic/top-style-darker.png" alt="" /></span><span
+							class="label-text">Default</span></label>
+
+					</div>
+
+					<div class="col-6">
+
+						<input class="btn-check" id="navbarTopDarker"
+							name="navbar-top-style" type="radio" value="darker"
+							data-theme-control="phoenixNavbarTopStyle" disabled="disabled" />
+
+						<label class="btn d-inline-block btn-navbar-style fs-9"
+							for="navbarTopDarker"> <span class="mb-2 rounded d-block"><img
+								class="img-fluid img-prototype d-dark-none mb-0"
+								src="/assets/img/generic/navbar-top-style-light.png" alt="" /><img
+								class="img-fluid img-prototype d-light-none mb-0"
+								src="/assets/img/generic/top-style-lighter.png" alt="" /></span><span
+							class="label-text d-dark-none">Darker</span><span
+							class="label-text d-light-none">Lighter</span></label>
+
+					</div>
+
+				</div>
+
+				<p class="text-warning-dark font-medium">
+
+					<span class="fa-solid fa-triangle-exclamation me-2 text-warning"></span>You
+
+					can't update horizontal navbar appearance in this page
+
+				</p>
+
+			</div>
+
+			<a
+				class="bun btn-primary d-grid mb-3 text-white mt-5 btn btn-primary"
+				href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
+				target="_blank">Purchase template</a>
+
+		</div>
+
+	</div>
+
+	<a class="card setting-toggle" href="#settings-offcanvas"
+		data-bs-toggle="offcanvas">
+
+		<div class="card-body d-flex align-items-center px-2 py-1">
+
+			<div class="position-relative rounded-start"
+				style="height: 34px; width: 28px">
+
+				<div class="settings-popover">
+
+					<span class="ripple"><span
+						class="fa-spin position-absolute all-0 d-flex flex-center"><span
+							class="icon-spin position-absolute all-0 d-flex flex-center">
+
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="#ffffff"
+									xmlns="http://www.w3.org/2000/svg">
+
+                    <path
+										d="M19.7369 12.3941L19.1989 12.1065C18.4459 11.7041 18.0843 10.8487 18.0843 9.99495C18.0843 9.14118 18.4459 8.28582 19.1989 7.88336L19.7369 7.59581C19.9474 7.47484 20.0316 7.23291 19.9474 7.03131C19.4842 5.57973 18.6843 4.28943 17.6738 3.20075C17.5053 3.03946 17.2527 2.99914 17.0422 3.12011L16.393 3.46714C15.6883 3.84379 14.8377 3.74529 14.1476 3.3427C14.0988 3.31422 14.0496 3.28621 14.0002 3.25868C13.2568 2.84453 12.7055 2.10629 12.7055 1.25525V0.70081C12.7055 0.499202 12.5371 0.297594 12.2845 0.257272C10.7266 -0.105622 9.16879 -0.0653007 7.69516 0.257272C7.44254 0.297594 7.31623 0.499202 7.31623 0.70081V1.23474C7.31623 2.09575 6.74999 2.8362 5.99824 3.25599C5.95774 3.27861 5.91747 3.30159 5.87744 3.32493C5.15643 3.74527 4.26453 3.85902 3.53534 3.45302L2.93743 3.12011C2.72691 2.99914 2.47429 3.03946 2.30587 3.20075C1.29538 4.28943 0.495411 5.57973 0.0322686 7.03131C-0.051939 7.23291 0.0322686 7.47484 0.242788 7.59581L0.784376 7.8853C1.54166 8.29007 1.92694 9.13627 1.92694 9.99495C1.92694 10.8536 1.54166 11.6998 0.784375 12.1046L0.242788 12.3941C0.0322686 12.515 -0.051939 12.757 0.0322686 12.9586C0.495411 14.4102 1.29538 15.7005 2.30587 16.7891C2.47429 16.9504 2.72691 16.9907 2.93743 16.8698L3.58669 16.5227C4.29133 16.1461 5.14131 16.2457 5.8331 16.6455C5.88713 16.6767 5.94159 16.7074 5.99648 16.7375C6.75162 17.1511 7.31623 17.8941 7.31623 18.7552V19.2891C7.31623 19.4425 7.41373 19.5959 7.55309 19.696C7.64066 19.7589 7.74815 19.7843 7.85406 19.8046C9.35884 20.0925 10.8609 20.0456 12.2845 19.7729C12.5371 19.6923 12.7055 19.4907 12.7055 19.2891V18.7346C12.7055 17.8836 13.2568 17.1454 14.0002 16.7312C14.0496 16.7037 14.0988 16.6757 14.1476 16.6472C14.8377 16.2446 15.6883 16.1461 16.393 16.5227L17.0422 16.8698C17.2527 16.9907 17.5053 16.9504 17.6738 16.7891C18.7264 15.7005 19.4842 14.4102 19.9895 12.9586C20.0316 12.757 19.9474 12.515 19.7369 12.3941ZM10.0109 13.2005C8.1162 13.2005 6.64257 11.7893 6.64257 9.97478C6.64257 8.20063 8.1162 6.74905 10.0109 6.74905C11.8634 6.74905 13.3792 8.20063 13.3792 9.97478C13.3792 11.7893 11.8634 13.2005 10.0109 13.2005Z"
+										fill="#2A7BE4"></path>
+
+                  </svg>
+
+						</span></span></span>
+
+				</div>
+
+			</div>
+	</a>
+
+
+
+
+
+	<!-- 여기를 카카오 맵 api와 연동해서 지도에서 음식점 치면 높은 별점 위주로 해당 페이지 이미지들이 카카오 api에서 가져온 이미지로 변경하게 만들기 -->
+
+
+
+	<!-- ===============================================-->
+
+	<!--    JavaScripts-->
+
+	<!-- ===============================================-->
+
+	<script src="/vendors/popper/popper.min.js"></script>
+
+	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
+
+	<script src="/vendors/anchorjs/anchor.min.js"></script>
+
+	<script src="/vendors/is/is.min.js"></script>
+
+	<script src="/vendors/fontawesome/all.min.js"></script>
+
+	<script src="/vendors/lodash/lodash.min.js"></script>
+
+	<script
+		src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+
+	<script src="/vendors/list.js/list.min.js"></script>
+
+	<script src="/vendors/feather-icons/feather.min.js"></script>
+
+	<script src="/vendors/dayjs/dayjs.min.js"></script>
+
+	<script src="/assets/js/phoenix.js"></script>
+
+	<script src="/vendors/flatpickr/flatpickr.min.js"></script>
+
+	<script src="/vendors/nouislider/nouislider.min.js"></script>
+
+</body>
+
+
 
 </html>
