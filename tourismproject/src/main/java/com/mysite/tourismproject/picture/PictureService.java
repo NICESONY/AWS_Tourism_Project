@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class PictureService {
 
-	private final PictureRepository pr;
+	private final PictureRepository pictureRepository;
 	private final S3Service s3service;
 	
 	public void createpicture(Picture picture, MultipartFile file1) throws IOException {
@@ -25,20 +25,20 @@ public class PictureService {
 			picture.setImage1(file1.getOriginalFilename());
 		}
 		picture.setDate(LocalDateTime.now());
-		this.pr.save(picture);
+		this.pictureRepository.save(picture);
 	}
 	public List<Picture> findallpictures(){
-		return pr.findAll();
+		return pictureRepository.findAll();
 	}
 	public Picture getpictureByid(Integer id) {
-		Optional<Picture> op = this.pr.findById(id);
+		Optional<Picture> op = this.pictureRepository.findById(id);
 		return op.get();
 	}
 	public List<Picture> findPicturesByRestaurantId(Integer restaurantId) {
 		
-		return pr.findByRestaurant_Id(restaurantId);
+		return pictureRepository.findByRestaurant_Id(restaurantId);
 	}
 	/*public List<Picture> findPicturesByLocation(String location) {
-        return pr.findByLocation(location);
+        return pictureRepository.findByLocation(location);
     }*/
 }

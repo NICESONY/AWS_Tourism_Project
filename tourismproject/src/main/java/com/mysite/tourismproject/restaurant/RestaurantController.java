@@ -1,7 +1,6 @@
 package com.mysite.tourismproject.restaurant;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,23 +30,8 @@ public class RestaurantController {
 	@GetMapping("")
 	public String Restaurant(Model model) {
 	    List<Restaurant> restaurantList = restaurantService.readlist();
-	    Map<Integer, Picture> firstPictures = new HashMap<>();
-	    
-	    for (Restaurant restaurant : restaurantList) {
-	        List<Picture> pictures = pictureService.findPicturesByRestaurantId(restaurant.getId());
-	        if (!pictures.isEmpty()) {
-	        	for(Picture pict : pictures) {
-	        		if(pict != null) {
-	                    firstPictures.put(restaurant.getId(), pict);
-	        			break;
-	        		}
-	        	}
-	        }
-	        else {
-	            firstPictures.put(restaurant.getId(), null); // 사진이 없는 경우 null 추가
-	        }
-	    }
-	    
+        Map<Integer, Picture> firstPictures = restaurantService.getFirstPicturesForRestaurants(restaurantList);
+	   	    
 	    model.addAttribute("firstPictures", firstPictures);
 	    model.addAttribute("restaurants", restaurantList);
 	    model.addAttribute("downpath", "https://" + downpath);
@@ -70,7 +54,7 @@ public class RestaurantController {
 	                            @RequestParam(name = "category", required = false) List<String> category,
 	                            @RequestParam(name = "price", required = false) List<String> price,
 	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu,
-	                			@RequestParam("file1") MultipartFile file1
+	                			@RequestParam("file111") MultipartFile file111
 	                            ) throws IOException {
 	    Restaurant restaurant = new Restaurant();
 	    restaurant.setLocationname(locationname);
@@ -92,28 +76,21 @@ public class RestaurantController {
 	        restaurant.setPrice(price);
 	    }
 	    restaurantService.locationcreate(restaurant);
-	    if (!file1.isEmpty()) {
+	    if (!file111.isEmpty()) {
 	        Picture picture = new Picture();
 	        picture.setRestaurantId(restaurant.getId());
-	        pictureService.createpicture(picture, file1);
+	        pictureService.createpicture(picture, file111);
 	    }
 	    return "redirect:/restaurant/detail/"+restaurant.getId();
 	}
 	@GetMapping("/detail/{rid}")
     public String getRestaurantPictures(Model model, @PathVariable("rid") Integer rid) {
         Restaurant restaurant = restaurantService.findById(rid);
-        List <Restaurant> restaurants = restaurantService.readlist();
-        for(Restaurant sbrestaurant :restaurants) {
-            if(rid == sbrestaurant.getId()) {
-            	model.addAttribute("restaurantId", restaurant.getId());
-            }
-        }
+       
         List<Picture> pictures = pictureService.findPicturesByRestaurantId(rid);
         model.addAttribute("restaurant", restaurant);
         model.addAttribute("pictures", pictures);
         model.addAttribute("downpath", "https://" + downpath);
         return "restaurant/restaurant";
     }
-	
-	
 }
