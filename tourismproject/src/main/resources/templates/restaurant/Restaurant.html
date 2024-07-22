@@ -1,48 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html data-navigation-type="default" data-navbar-horizontal-shape="default" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <!-- sbb CSS -->
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-color: rgba(0, 0, 0, 0.15);
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ===============================================-->
+  <!--    Document Title-->
+  <!-- ===============================================-->
+  <title>Phoenix</title>
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="/assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="/vendors/simplebar/simplebar.min.js"></script>
+  <script src="/assets/js/config.js"></script>
+
+  <!-- ===============================================-->
+  <!--    Stylesheets-->
+  <!-- ===============================================-->
+    
+  <link href="/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+  <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+  <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+  <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+  <script>
+    var phoenixIsRTL = window.config.config.phoenixIsRTL;
+    if (phoenixIsRTL) {
+      var linkDefault = document.getElementById('style-default');
+      var userLinkDefault = document.getElementById('user-style-default');
+      linkDefault.setAttribute('disabled', true);
+      userLinkDefault.setAttribute('disabled', true);
+      document.querySelector('html').setAttribute('dir', 'rtl');
+    } else {
+      var linkRTL = document.getElementById('style-rtl');
+      var userLinkRTL = document.getElementById('user-style-rtl');
+      linkRTL.setAttribute('disabled', true);
+      userLinkRTL.setAttribute('disabled', true);
+    }
+  </script>
+<style>
+
+.body {
+            margin-left: 80px;
+            margin-right: 80px;
         }
-        .Restaurant-button {
-            position: relative;
-            transform: translate(-50%, -50%);
-            transition: background-color 0.3s;
+        @media (max-width: 2000px) {
+            .body {
+                margin-left: 60px;
+                margin-right: 60px;
+            }
         }
-        .Restaurant-button-stn {
-            background-color: black;
-            color: white;
-            border-radius: 15px;
-            padding: 1%;
-            margin-right: 5px;
-            transition: background-color 0.3s;
+@media (max-width: 1008px) {
+            .body {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
         }
-        .Restaurant-button-stn:hover {
-            background-color: rgba(0, 0, 0, 0.7);
+    @media (max-width: 768px) {
+            .body {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
         }
-        .modal-dialog-centered.modal-dialog-scrollable {
+
+        @media (max-width: 576px) {
+            .body {
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+        }
+         .modal-dialog-centered.modal-dialog-scrollable {
             max-width: 90%; /* 최대 너비 설정 */
             max-height: 90%; /* 최대 높이 설정 */
         }
-        .button-group {
-            display: flex;
-            gap: 10px;
-        }
-          .file-input {
-            display: none;
-        }
-        .file-label {
+         .file-label111 {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
@@ -52,12 +97,11 @@
             color: white;
             border-radius: 5px;
         }
-        .file-label:hover {
+        .file-label111:hover {
             background-color: #0056b3;
         }
-        .preview {
-            margin-top: 10px;
-            max-width: 300px;
+         .file-input111 {
+            display: none;
         }
         .button-container {
             display: flex;
@@ -65,35 +109,19 @@
             align-items: center;
             margin-top: 20px;
         }
-    </style>
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="/vendors/simplebar/simplebar.min.js"></script>
-    <script src="/assets/js/config.js"></script>
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-    <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-    <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
-    <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+</style>
+
+        <script>
+          var navbarStyle = window.config.config.phoenixNavbarStyle;
+          if (navbarStyle && navbarStyle !== 'transparent') {
+            document.querySelector('body').classList.add(`navbar-${navbarStyle}`);
+          }
+        </script>
 </head>
+<!-- css 끝 -->
+
 <body>
-    <div layout:fragment="content" class="container my-3">
-        <main class="main" id="top" style="background-color:white">
+<main class="main" id="top" style="background-color:white">
             <div class="bg-primary-subtle py-2">
                 <div class="container-medium d-flex align-items-center justify-content-between">
                     <a class="btn btn-link p-0 text-body" href="/pages/authentication/card/sign-in.html">
@@ -154,9 +182,9 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
                             <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
-                            <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
+                            <li><a class="dropdown-item" href="/restaurant">음식점</a></li>
                             <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
-                            <li><a class="dropdown-item" href="/Restaurant/addRestaurant">장소추가</a></li>
+                            <li><a class="dropdown-item" href="/restaurant/adrrestaurant">장소추가</a></li>
                             <li><a class="dropdown-item" href="#">맛 탐정단 리뷰작성</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
@@ -197,94 +225,198 @@
                 </nav>
             </div>
         </main>
-        <div class="container">
+        
+  <div class="container-medium my-3">
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card overflow-hidden">
+          
+          <div class="card-body p-0">
+            
+
+            <div class="row g-0">
+              <div class="col-12 col-xl-5 border-end">
+                <!-- 페이지의 왼쪽 부분 -->
+                <div class="px-5 px-lg-6 py-4">
+                  <img class="img-fluid d-block mx-auto"th:if="${not #lists.isEmpty(pictures)}" th:src="|${downpath}/${pictures[0].image1}|" alt="" style="max-height: 280px;min-height: 150px;" />
+            <img class="img-fluid d-block mx-auto" th:unless="${not #lists.isEmpty(pictures)}" src="" alt="" style="max-height: 280px;min-height: 150px;" />
+            
+            <div class="row gx-0 gy-3 border-bottom px-5 px-lg-6 py-4 p-xl-0">
+              <div class="col-12 col-xl-7">
+                <div class="px-xl-6 py-xl-4">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto col-12 col-lg-auto d-flex flex-1">
+                      <!-- 사진 추가 버튼 -->
+                      <button class="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" type="button" data-bs-toggle="modal"  data-bs-target="#modal3"aria-haspopup="true" aria-expanded="false">
+                        사진 추가 <span class="fa-solid fa-plus ms-2"></span>
+                      </button>
+                      <button type="button" class="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal2">
+                        사진 모두 보기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+                  <h3 class="fw-bolder lh-sm mb-5" th:if="${not #strings.isEmpty(restaurant.locationname)}" th:text="${restaurant.locationname}"></h3>
+                  <h3 class="fw-bolder lh-sm mb-5" th:unless="${not #strings.isEmpty(restaurant.locationname)}">음식점 이름을 알 수 없습니다.</h3>
+                  
+                  
+                  <div class="mb-5">
+                    <h6 class="text-body-secondary mb-2">태그</h6>
+                    <div class="d-flex align-items-center">                      
+                      <!-- <span class="badge badge-phoenix badge-phoenix-warning fs-10 me-2">주먹밥</span>
+                      <span class="badge badge-phoenix badge-phoenix-success fs-10 me-2">맛집</span> -->
+                      <label th:if="${not #lists.isEmpty(restaurant.category)}" th:each="category : ${restaurant.category}">
+                          <span class="badge badge-phoenix badge-phoenix-info fs-10 me-2"th:if="${not #strings.isEmpty(restaurant.category)}" th:text="${category}"></span>
+                      </label>
+                           <span class="badge badge-phoenix badge-phoenix-info fs-10 me-2"th:unless="${not #strings.isEmpty(restaurant.category)}">추가된 태그가 없습니다.</span>
+                      <a class="text-body fw-bolder fs-9 lh-1 text-decoration-none" href="#!"> <span class="fa-solid fa-plus me-1"></span>태그 추가</a>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                      <h4 class="me-3">상세 정보</h4>
+                      <button class="btn btn-link p-0"><span class="fa-solid fa-pen"></span></button>
+                    </div>
+                    <p class="text-body-secondary">
+                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">
+                                <label class="text-body-highlight mb-0 me-2 lh-1"   th:if="${not #strings.isEmpty(restaurant.location)}"th:text="${restaurant.location}"></label>
+                                <label class="text-body-highlight mb-0 me-2 lh-1"  th:unless="${not #strings.isEmpty(restaurant.location)}">장소 정보가 없습니다.</label><br>
+                            
+                            <p class="text-body-secondary">
+                                <img src="/images/restaurant/globe.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">www.bongousse.net<br>
+                            </p>
+                            <p class="text-body-secondary">
+                                <img src="/images/restaurant/phone.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">
+                                <label class="text-body-highlight mb-0 me-2 lh-1"   th:if="${not #strings.isEmpty(restaurant.cphone)}"th:text="${restaurant.cphone}"></label>
+                                <label class="text-body-highlight mb-0 me-2 lh-1"  th:unless="${not #strings.isEmpty(restaurant.cphone)}">전화번호 정보가 없습니다.</label><br>
+                            </p>
+                            <p class="text-body-secondary" style="margin-bottom:10px;">
+                                <img src="/images/restaurant/clock.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">영업시간<br><p>
+                                <label>
+                                
+                                </label>
+                                <label class="text-body-highlight mb-0 me-2 lh-1"  th:if="${not #strings.isEmpty(restaurant.worktime)}" th:text="${restaurant.worktime}"></label>
+                                <label class="text-body-highlight mb-0 me-2 lh-1" th:unless="${not #strings.isEmpty(restaurant.worktime)}" >영업시간 정보가 없습니다.</label>
+                          <hr>  
+                    <p class="text-body-highlight">The female circus horse-rider is a recurring subject in Chagall’s work. In 1926 the art dealer Ambroise Vollard invited Chagall to make a project based on the circus. They visited Paris’s historic Cirque d’Hiver Bouglione together; Vollard lent Chagall his private box seats. Chagall completed 19 gouaches...<a class="fw-semibold" href="#!">see more </a></p>
+                  </div>
+                </div>
+              </div>
+              <!-- 페이지의 왼쪽 부분 끝 -->
+              <div class="col-12 col-xl-7">
+                <div class="px-5 px-lg-6 py-4">
+                  <div class="mb-7">
+                    <h4 class="mb-4">메뉴 <span class="text-body-tertiary fw-normal fs-6">(23)</span></h4>
+                    <div class="row align-items-center g-0 justify-content-between mb-3">
+                      <div class="col-12 col-sm-auto">
+                      </div>
+                      <div class="col-auto d-flex">
+                        <p class="mb-0 ms-sm-3 fs-9 text-body-tertiary fw-bold"><span class="fas fa-filter me-1 fw-extra-bold fs-10"></span>23개의 메뉴</p>
+                        <button class="btn btn-link p-0 ms-3 fs-9 text-primary fw-bold"><span class="fas fa-sort me-1 fw-extra-bold fs-10"></span>정렬</button>
+                      </div>
+                    </div>
+                    <!-- 메뉴 시작 -->
+                    <div class="row justify-content-between align-items-md-center hover-actions-trigger btn-reveal-trigger border-translucent py-3 gx-0 border-top"th:if="${not #lists.isEmpty(restaurant.productmenu)}" th:each="productmenu, stat : ${restaurant.productmenu}">
+                      <div class="col-12 col-lg-auto flex-1">
+                        <div data-todo-offcanvas-toogle="data-todo-offcanvas-toogle" data-todo-offcanvas-target="todoOffcanvas-1">
+                          <div class="form-check mb-1 mb-md-0 d-flex align-items-center lh-1">
+                            <label class="mb-0 fs-8 me-3 line-clamp-1" th:text="${productmenu}"></label>
+                            <p class="text-body-highlight mb-0 me-2 lh-1"th:text="${restaurant.price[stat.index]} + '원'"></p>
+                            <span class="badge badge-phoenix fs-10 badge-phoenix-primary"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-lg-auto">
+                        <div class="d-flex ms-4 lh-1 align-items-center">
+                          <div class="d-none d-lg-block end-0 position-absolute" style="top: 23%;">
+                            <div class="hover-actions end-0">
+                              <button class="btn btn-phoenix-secondary btn-icon me-1 fs-10 text-body px-0 me-1"><span class="fas fa-edit"></span></button>
+                              <button class="btn btn-phoenix-secondary btn-icon fs-10 text-danger px-0"><span class="fas fa-trash"></span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 메뉴 끝 -->
+                    
+                    <!-- 메뉴가 없을때 -->
+                    <div class="row justify-content-between align-items-md-center hover-actions-trigger btn-reveal-trigger border-translucent py-3 gx-0 border-top"th:unless="${not #lists.isEmpty(restaurant.productmenu)}" >
+                      <div class="col-12 col-lg-auto flex-1">
+                        <div data-todo-offcanvas-toogle="data-todo-offcanvas-toogle" data-todo-offcanvas-target="todoOffcanvas-1">
+                          <div class="form-check mb-1 mb-md-0 d-flex align-items-center lh-1">
+                            <label class="mb-0 fs-8 me-3 line-clamp-1" >메뉴 정보가 없습니다.</label>
+                            <p class="text-body-highlight mb-0 me-2 lh-1">가격 정보가 없습니다.</p>
+                            <span class="badge badge-phoenix fs-10 badge-phoenix-primary">신메뉴</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- 메뉴 끝 -->
+                    
+                    <a class="fw-bold fs-9 mt-4" href="#!"><span class="fas fa-plus me-1"></span>메뉴 추가</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 사진 모두 보기 모달 창-->
+  <!-- Vertically centered scrollable modal -->
+  <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 col-xxl-6 mb-xxl-3">
-                    <div class="card h-100">
-                        <div class="card-body pb-3">
-                            <div class="d-flex align-items-center mb-3" style="justify-content: center;">
-                                <h4 class="me-1"><strong  th:if="${not #strings.isEmpty(restaurant.locationname)}" th:text="${restaurant.locationname}"></strong></h4>
-                            </div>
-                            <!-- 음식점 사진 -->
-                            <img  th:if="${not #lists.isEmpty(pictures)}" th:src="|${downpath}/${pictures[0].image1}|" alt="Sample Image" height="100px">
-                            <div class="button-group">
-                                <!-- 다른 가게 보기 버튼 -->
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal2">
-                                    사진 모두 보기
-                                </button>
-                                  <!-- 사진 추가 버튼-->
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal3">사진 추가</button>
-                             
-                            </div>
-                            <!-- Vertically centered scrollable modal -->
-                            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <!-- Repeat the image blocks for more images -->
-                                                     <div th:if="${not #lists.isEmpty(pictures)}">
-   															 <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;" th:each="picture : ${pictures}">
-        														<div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-															            <img class="img-fluid" th:src="|${downpath}/${picture.image1}|" />
-															        </div>
-																    </div>
-																</div>
-                                                    <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;">
-                                                        <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-                                                            <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 2" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;">
-                                                        <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-                                                            <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 3" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;">
-                                                        <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-                                                            <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 1" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;">
-                                                        <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-                                                            <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 2" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;">
-                                                        <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-                                                            <img class="img-fluid" src="/assets/img/hotels/15.png" alt="Sample Image 3" />
-                                                        </div>
-                                                    </div>
-                                                    <!-- Add more images as needed -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            
-                            <!-- Vertically centered scrollable modal2 -->
+              <!-- Repeat the image blocks for more images -->
+              
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px;" th:if="${not #lists.isEmpty(pictures)}" th:each="picture : ${pictures}">
+                  <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"style="border: 2px solid #b8b8b8;">
+                    <img class="img-fluid" th:src="|${downpath}/${picture.image1}|" />
+                  </div>
+                </div>
+              
+              <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px" th:unless="${not #lists.isEmpty(pictures)}">
+                  <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"style="border: 2px solid #b8b8b8;">
+                    <img class="img-fluid" th:src="" />
+                  </div>
+                </div>
+              <!-- Add more images as needed -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+ <!-- 사진 추가 버튼 눌렀을때 모달 창-->
+  <!-- Vertically centered scrollable modal2 & -->
                             <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="container">
@@ -292,20 +424,20 @@
                                                     <!-- Repeat the image blocks for more images -->
                                                     <div  th:if="${not #strings.isEmpty(restaurant.id)}" class="container mt-5">
         <h2>이미지 업로드</h2>
-     <!--      <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
+           <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         
-            <input type="file" name="file1" class="file-input" id="file1" accept="image/*">
-            <div class="button-container">
-                <label for="file1" class="file-label">사진 선택</label>
+            <input type="file" name="file1" class="file-input111" id="file1" accept="image/*">
+            <div class="button-container111">
+                <label for="file1" class="file-label111">사진 선택</label>
                 <input th:if="${not #strings.isEmpty(restaurant.id)}"type="hidden" name="restaurantId" th:value="${restaurant.id}">
                 <input type="submit" value="저장하기" class="btn btn-primary my-2">
             </div>
             <div id="previewContainer">
-                <p>사진 추가 picture</p>
+                
             </div>
-        </form> -->
-    </div>
+        </form> 
+    
     <script>
         document.getElementById('file1').addEventListener('change', function(event) {
             const file = event.target.files[0];
@@ -331,63 +463,34 @@
             }
         });
     </script>
+    </div>
                                                     <!-- Add more images as needed -->
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <p>
-                            <!-- 주소, 전화번호 -->
-                            <div class="d-flex align-items-center mb-3">
-                                <h5 class="me-1"><strong>상세정보</strong></h5>
-                            </div>
-                            <p class="text-body-secondary">
-                                <img src="/images/restaurant/map-pin.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong  th:if="${not #strings.isEmpty(restaurant.location)}"th:text="${restaurant.location}"></strong><br>
-                            </p>
-                            <p class="text-body-secondary">
-                                <img src="/images/restaurant/globe.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">www.bongousse.net<br>
-                            </p>
-                            <p class="text-body-secondary">
-                                <img src="/images/restaurant/phone.svg" alt="Tag SVG" height="20" style="margin-right: 5px;"><strong  th:if="${not #strings.isEmpty(restaurant.cphone)}"th:text="${restaurant.cphone}"></strong><br>
-                            </p>
-                            <p class="text-body-secondary" style="margin-bottom:10px;">
-                                <img src="/images/restaurant/clock.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">영업시간<br>
-                                <h5 th:if="${not #strings.isEmpty(restaurant.worktime)}" th:text="${restaurant.worktime}"></h5>
-                            </p>
-                            <p class="text-body-secondary">
-                                <img src="/images/restaurant/tag.svg" alt="Tag SVG" height="20" style="margin-right: 5px;">카테고리<br><strong th:if="${not #strings.isEmpty(restaurant.category)}" th:text="${restaurant.category}"></strong><br>
-                            </p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-             <div class="col-12 col-md-6 col-xxl-6 mb-xxl-3">
-    <div class="card h-100">
-        <div class="card-body pb-3">
-            <div class="d-flex align-items-center mb-3" style="justify-content: center;">
-                <h5 class="me-1"><strong>메뉴</strong></h5>
-            </div>
-            <div class="text-body-secondary">
-                  <div  th:if="${not #lists.isEmpty(restaurant.productmenu)}" th:each="productmenu, stat : ${restaurant.productmenu}">
-                    <span th:text="${productmenu}"></span><p>
-                    <strong th:text="${restaurant.price[stat.index]} + '원'"></strong>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            </div>
-        </div>
-    </div>
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- ===============================================-->
+  <!--    JavaScripts-->
+  <!-- ===============================================-->
+  <script src="/vendors/popper/popper.min.js"></script>
+  <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="/vendors/anchorjs/anchor.min.js"></script>
+  <script src="/vendors/is/is.min.js"></script>
+  <script src="/vendors/fontawesome/all.min.js"></script>
+  <script src="/vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="/vendors/list.js/list.min.js"></script>
+  <script src="/vendors/feather-icons/feather.min.js"></script>
+  <script src="/vendors/dayjs/dayjs.min.js"></script>
+  <script src="/vendors/flatpickr/flatpickr.min.js"></script>
+  <script src="/assets/js/phoenix.js"></script>
+  
 </body>
+
 </html>

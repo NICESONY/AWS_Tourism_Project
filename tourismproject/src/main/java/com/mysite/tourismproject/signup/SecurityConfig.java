@@ -25,6 +25,7 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
                 .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
+                .requestMatchers(new AntPathRequestMatcher("/notice/add/**")).hasRole("ADMIN")
                 .anyRequest().permitAll())
             .formLogin((formLogin) -> formLogin
                 .loginPage("/signup/signin")
@@ -39,7 +40,7 @@ public class SecurityConfig {
 
         return http.build();
     }
-
+    	
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

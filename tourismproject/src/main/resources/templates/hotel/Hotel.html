@@ -180,7 +180,6 @@ input[type="text"], input[type="date"] {
 
 
 </head>
-
   <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
 
     <!-- ===============================================-->
@@ -222,7 +221,7 @@ input[type="text"], input[type="date"] {
             
             
             
-            </div><a class="btn btn-link text-body-tertiary p-0" href="/여기는 지도임"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
+            </div><a class="btn btn-link text-body-tertiary p-0" href="/map"><span data-feather="map-pin" style="width: 18px; height: 18px"></span></a>
             
             
             <a class="btn btn-link text-body-tertiary p-0" href="#!"><span data-feather="bell" style="width: 20px; height: 20px"></span></a>
@@ -260,9 +259,12 @@ input[type="text"], input[type="date"] {
         </ul>
       </div>
       <div class="card-footer p-0 border-top border-translucent">
+        
         <ul class="nav d-flex flex-column my-3">
-          <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-body" data-feather="user-plus"></span>Add another account</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="/admin/main"> <span class="me-2 text-body" data-feather="user-plus"></span>관리자 페이지</a></li>
         </ul>
+        
+        
         <hr />
         <div th:if="${#authentication.name == 'anonymousUser'}">
           <div class="px-3">
@@ -316,9 +318,9 @@ input[type="text"], input[type="date"] {
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
                         <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
-                        <li><a class="dropdown-item" href="/Restaurant">음식점</a></li>
+                        <li><a class="dropdown-item" href="/restaurant">음식점</a></li>
                         <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
-                        <li><a class="dropdown-item" href="/Restaurant/addRestaurant">장소추가</a></li>
+                        <li><a class="dropdown-item" href="/restaurant/addrestaurant">장소추가</a></li>
                         <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
                        
                        <li>
@@ -336,7 +338,7 @@ input[type="text"], input[type="date"] {
                         고객관리<span class="fas fa-angle-down ms-2"></span></button>
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/faq">FAQ</a></li>
-                        <li><a class="dropdown-item" href="/question_list">Q&A</a></li>
+                        <li><a class="dropdown-item" href="/question">Q&A</a></li>
                         <li><a class="dropdown-item" href="/notice">공지사항</a></li>
                         
 <!--                         <li>
