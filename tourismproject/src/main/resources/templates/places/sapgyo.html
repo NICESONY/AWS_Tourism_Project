@@ -60,10 +60,11 @@
     <!-- 모달 이미지 스타일: 사이즈 -->
   <style>
     .modal-dialog {
-      max-width: 800px;
+      max-width: 1100px;
+      max-height: 600px;
     }
     .modal-content {
-      height: 530px;
+     height: 800px;
     }
     .modal-body img {
       max-height: 100%;
@@ -332,66 +333,46 @@
             </div>
             <div class="swiper theme-slider" data-swiper='{"loop":true,"centeredSlides":true,"autoplay":true,"centeredSlidesBounds":true,"spaceBetween":16,"slidesPerView":1,"speed":1500,"breakpoints":{"576":{"slidesPerView":"auto"}}}'>
               <div class="swiper-wrapper">
-                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/1.jpg" alt="" height="220" />
-                    <div class="img-backdrop-faded">
-                      <div class="image-reveal-content mb-3">
-<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
-                          <h6 class="mb-0 text-secondary-lighter fw-semibold">17 Hotels</h6>
-                        </div>
-                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
-                          <h6 class="mb-0 text-secondary-lighter fw-semibold">22 Tour Package</h6>
-                        </div> -->
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <h4 class="mb-0 text-white"></h4>
-                      </div>
-                    </div>
-                    
-                    
-                  </a></div>
-                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/2.png" alt="" height="220" />
-                    <div class="img-backdrop-faded">
-                      <div class="image-reveal-content mb-3">
-<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
-                          <h6 class="mb-0 text-secondary-lighter fw-semibold">15 Hotels</h6>
-                        </div>
-                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
-                          <h6 class="mb-0 text-secondary-lighter fw-semibold">24 Tour Package</h6>
-                        </div> -->
-                     
-                     
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <h4 class="mb-0 text-white"></h4>
-                      </div>
-                    </div>
-                    
-                    
-                    
-                  </a></div>
-                <div class="swiper-slide w-sm-auto"><a class="position-relative rounded-3 overflow-hidden d-block" href="#!"><img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/3.jpg" alt="" height="220" />
-                    <div class="img-backdrop-faded">
-                      <div class="image-reveal-content mb-3">
-<!--                         <div class="d-flex align-items-center gap-2 mb-2"><span class="fa-solid fa-hotel text-secondary-lighter"></span>
-                          <h6 class="mb-0 text-secondary-lighter fw-semibold">44 Hotels</h6>
-                        </div>
-                        <div class="d-flex align-items-center gap-2"><span class="fa-solid fa-tree-city text-secondary-lighter"></span>
-                          <h6 class="mb-0 text-secondary-lighter fw-semibold">123 Tour Package</h6>
-                        </div> -->
-                      
-                      
-                      
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <h4 class="mb-0 text-white"></h4>
-                      </div>
-                    </div>
-                  </a></div>
-                  
-                 <!-- 모달 이미지 시범 --> 
+              
+          <!-- 모달 이미지 시범 --> 
+				<div class="swiper-slide w-sm-auto">
+				    <a class="position-relative rounded-3 overflow-hidden d-block" href="#!" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImageInModal('/assets/img/sitegallery/sapgyo/1.jpg')">
+				      <img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/1.jpg" alt="" height="220" />
+				      <div class="img-backdrop-faded">
+				        <div class="image-reveal-content mb-3">
+				          <!-- 여기 나머지 코드가 들어갑니다 -->
+				        </div>
+				      </div>
+				    </a>
+				  </div>
+           <!-- 모달 이미지 시범 --> 
 				<div class="swiper-slide w-sm-auto">
 				    <a class="position-relative rounded-3 overflow-hidden d-block" href="#!" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImageInModal('/assets/img/sitegallery/sapgyo/2.png')">
 				      <img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/2.png" alt="" height="220" />
+				      <div class="img-backdrop-faded">
+				        <div class="image-reveal-content mb-3">
+				          <!-- 여기 나머지 코드가 들어갑니다 -->
+				        </div>
+				      </div>
+				    </a>
+				  </div>
+                  
+                 <!-- 모달 이미지 시범 --> 
+				<div class="swiper-slide w-sm-auto">
+				    <a class="position-relative rounded-3 overflow-hidden d-block" href="#!" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImageInModal('/assets/img/sitegallery/sapgyo/3.jpg')">
+				      <img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/3.jpg" alt="" height="220" />
+				      <div class="img-backdrop-faded">
+				        <div class="image-reveal-content mb-3">
+				          <!-- 여기 나머지 코드가 들어갑니다 -->
+				        </div>
+				      </div>
+				    </a>
+				  </div>
+                  
+                 <!-- 모달 이미지 시범 --> 
+				<div class="swiper-slide w-sm-auto">
+				    <a class="position-relative rounded-3 overflow-hidden d-block" href="#!" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImageInModal('/assets/img/sitegallery/sapgyo/4.jpg')">
+				      <img class="w-100 w-sm-auto object-fit-cover" src="/assets/img/sitegallery/sapgyo/4.jpg" alt="" height="220" />
 				      <div class="img-backdrop-faded">
 				        <div class="image-reveal-content mb-3">
 				          <!-- 여기 나머지 코드가 들어갑니다 -->
