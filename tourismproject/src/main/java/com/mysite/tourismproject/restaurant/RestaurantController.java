@@ -54,7 +54,7 @@ public class RestaurantController {
 	                            @RequestParam(name = "category", required = false) List<String> category,
 	                            @RequestParam(name = "price", required = false) List<String> price,
 	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu,
-	                			@RequestParam("file111") MultipartFile file111
+	                			@RequestParam("addRestaurantfile") MultipartFile addRestaurantfile
 	                            ) throws IOException {
 	    Restaurant restaurant = new Restaurant();
 	    restaurant.setLocationname(locationname);
@@ -76,10 +76,10 @@ public class RestaurantController {
 	        restaurant.setPrice(price);
 	    }
 	    restaurantService.locationcreate(restaurant);
-	    if (!file111.isEmpty()) {
+	    if (!addRestaurantfile.isEmpty()) {
 	        Picture picture = new Picture();
 	        picture.setRestaurantId(restaurant.getId());
-	        pictureService.createpicture(picture, file111);
+	        pictureService.createpicture(picture, addRestaurantfile);
 	    }
 	    return "redirect:/restaurant/detail/"+restaurant.getId();
 	}
