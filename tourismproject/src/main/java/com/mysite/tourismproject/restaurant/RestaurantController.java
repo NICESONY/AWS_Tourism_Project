@@ -83,6 +83,7 @@ public class RestaurantController {
 	    }
 	    return "redirect:/restaurant/detail/"+restaurant.getId();
 	}
+	
 	@GetMapping("/detail/{rid}")
     public String getRestaurantPictures(Model model, @PathVariable("rid") Integer rid) {
         Restaurant restaurant = restaurantService.findById(rid);
