@@ -17,15 +17,16 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+   <!--  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/logo.ico">
+    <!-- <link rel="manifest" href="/assets/img/favicons/manifest.json"> -->
+<!--     <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png"> -->
     <meta name="theme-color" content="#ffffff">
     <script src="/vendors/simplebar/simplebar.min.js"></script>
     <script src="/assets/js/config.js"></script>
+
 
 
     <!-- ===============================================-->
@@ -55,7 +56,6 @@
         userLinkRTL.setAttribute('disabled', true);
       }
     </script>
-    <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
     
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -303,6 +303,7 @@
                       </ul>
                     </div>
                     </nav>
+          </div></main>
           
     <div class="container mt-5">
         <div class="modal-dialog modal-dialog-centered">
@@ -342,7 +343,7 @@
                 <label for="addRestaurantfile" class="file-label1111">사진 선택</label>
                 <input type="submit" value="저장하기" class="btn btn-primary my-2">
             </div>
-            <div id="previewContainer">
+            <div id="previewContainer111">
                 
             </div>
     <script>
@@ -351,7 +352,7 @@
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    const previewContainer = document.getElementById('previewContainer');
+                    const previewContainer = document.getElementById('previewContainer111');
                     // 기존의 미리보기 이미지가 있으면 제거
                     const existingImg = document.getElementById('imagePreview');
                     if (existingImg) {
@@ -363,8 +364,7 @@
                     img.src = e.target.result;
                     img.className = 'preview';
                     img.alt = 'Image preview...';
-                    img.height="300px";
-                    img.width="300px";
+                 
                     
                     // 미리보기 컨테이너에 이미지 추가
                     previewContainer.appendChild(img);
