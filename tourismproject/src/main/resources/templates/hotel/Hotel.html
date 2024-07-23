@@ -66,43 +66,49 @@
 <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <style>
-
-
 body {
 	background-color: #f2f2f2;
 	text-align: center;
 }
 
-
 form {
 	background-color: #fff;
 	padding: 50px;
-	border: 3px solid #ccc; 
+	border: 3px solid #ccc;
 	border-radius: 20px;
-	margin: 10px auto; 
+	margin: 10px auto;
 	max-width: 1000px;
 }
 
 .hotelName, .date {
-	margin-bottom: 50px; /* 아래 여백 */
+	margin-bottom: 50px;
 }
 
 label {
-	font-size: 30px;
-	display: block; /* 블록 요소로 표시 */
-	margin-bottom: 5px; /* 아래 여백 */
-	font-weight: bold; /* 폰트 굵기 */
-	text-align: left;
+	font-size: 18px;
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
 }
 
-input[type="text"], input[type="date"] {
-	width: calc(60% - 10px); /* 입력 필드 너비 */
-	padding: 20px; /* 내부 여백 */
-	margin-left: 250px;
-	border: 1px solid #ccc; /* 테두리 설정 */
-	border-radius: 5px; /* 모서리 둥글게 */
-	font-size: 20px; /* 폰트 크기 */
-	box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 너비 계산 */
+input[type="text"], input[type="date"], select {
+	width: calc(90% - 10px);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 #gallerywrapper {
@@ -147,7 +153,7 @@ input[type="text"], input[type="date"] {
 	padding: 5px 0;
 	margin: 0;
 	font-size: 15px;
-	line-height: 20px;
+	line-height: 15px;
 }
 
 #gallery .previous {
@@ -162,6 +168,12 @@ input[type="text"], input[type="date"] {
 	float: right;
 	margin-right: 80px;
 	text-decoration: none;
+}
+
+.gallery-row {
+	display: flex;
+	justify-content: left;
+	gap: 20px;
 }
 </style>
 
@@ -413,6 +425,7 @@ input[type="text"], input[type="date"] {
 			</nav>
 		</div>
 
+
 		<div>
 			<div>
 				<div>
@@ -442,103 +455,102 @@ input[type="text"], input[type="date"] {
 
 					</form>
 
+
 					<div id="gallerywrapper">
 						<div id="gallery">
-							<div id="pic1">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/63/c6/ab/1-1-2.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 1"> <a
-									class="previous" href="#pic8">&lt;</a> <a class="next"
-									href="#pic2">&gt;</a>
-								<h3>보령</h3>
-								<p>보령은 한국의 서해안에 위치한 작은 시입니다. 이곳은 유명한 먹거리와 아름다운 해변으로 유명합니다.
-									보령에서는 매년 해마다 유쾌한 축제가 열리며, 이곳에서만 즐길 수 있는 특별한 경험을 누릴 수 있습니다.
-									이곳에서는 수많은 해변과 산책로, 그리고 역사적인 유적지를 방문할 수 있습니다.</p>
+							<div class="gallery-row">
+								<div id="pic1">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/63/c6/ab/1-1-2.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 1"> <a
+										class="previous" href="#pic8">&lt;</a> <a class="next"
+										href="#pic2">&gt;</a>
+									<h3>보령</h3>
+									<p>보령은 한국의 서해안에 위치한 작은 시입니다. 이곳은 유명한 먹거리와 아름다운 해변으로 유명합니다.
+										보령에서는 매년 해마다 유쾌한 축제가 열리며, 이곳에서만 즐길 수 있는 특별한 경험을 누릴 수 있습니다.
+										이곳에서는 수많은 해변과 산책로, 그리고 역사적인 유적지를 방문할 수 있습니다.</p>
 
-							</div>
-							<div id="pic2">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/56/80/8b/caption.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 2"> <a
-									class="previous" href="#pic1">&lt;</a> <a class="next"
-									href="#pic3">&gt;</a>
-								<h3>천안</h3>
-								<p>천안은 대한민국 충청남도의 중심지로, 서울과 대전의 중간에 위치해 있습니다. 이 도시는 교통이 편리하고
-									역사적인 유산과 자연경관이 풍부합니다. 천안에는 많은 호텔이 있습니다.</p>
+								</div>
+								<div id="pic2">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/56/80/8b/caption.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 2"> <a
+										class="previous" href="#pic1">&lt;</a> <a class="next"
+										href="#pic3">&gt;</a>
+									<h3>천안</h3>
+									<p>천안은 대한민국 충청남도의 중심지로, 서울과 대전의 중간에 위치해 있습니다. 이 도시는 교통이
+										편리하고 역사적인 유산과 자연경관이 풍부합니다. 천안에는 많은 호텔이 있습니다.</p>
 
-							</div>
-							<div id="pic3">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/14/da/f9/hyeonchungsa-shrine.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 3"> <a
-									class="previous" href="#pic2">&lt;</a> <a class="next"
-									href="#pic4">&gt;</a>
-								<h3>부여</h3>
-								<p>부여는 대한민국 충청남도에 위치한 작은 도시입니다. 이 곳은 2000년 전통을 자랑하는 역사적인
-									장소로, 백제의 옛 수도였습니다. 부여는 한국에서 가장 아름다운 도시 중 하나로 여겨지며, 자연 경관과 역사적인
-									유산으로 유명합니다. 또한, 부여는 한국에서 가장 인기있는 골프장 중 하나인 부여 골프장이 있어 골퍼들에게
-									유명합니다.</p>
+								</div>
+								<div id="pic3">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/14/da/f9/hyeonchungsa-shrine.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 3"> <a
+										class="previous" href="#pic2">&lt;</a> <a class="next"
+										href="#pic4">&gt;</a>
+									<h3>부여</h3>
+									<p>부여는 대한민국 충청남도에 위치한 작은 도시입니다. 이 곳은 2000년 전통을 자랑하는 역사적인
+										장소로, 백제의 옛 수도였습니다. 부여는 한국에서 가장 아름다운 도시 중 하나로 여겨지며, 자연 경관과 역사적인
+										유산으로 유명합니다.</p>
 
-							</div>
-							<div id="pic4">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e9/92/0d/caption.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 4"> <a
-									class="previous" href="#pic3">&lt;</a> <a class="next"
-									href="#pic5">&gt;</a>
-								<h3>아산</h3>
-								<p>아산은 충청남도에 위치한 도시로, 유네스코 세계문화유산인 온양온천과 가까운 거리에 위치해 있습니다.
-									또한, 아산은 대한민국에서 가장 중요한 물류와 산업 중심지 중 하나입니다. 여행자들은 아산의 다양한 명소와 맛집을
-									즐길 수 있습니다.</p>
+								</div>
+								<div id="pic4">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e9/92/0d/caption.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 4"> <a
+										class="previous" href="#pic3">&lt;</a> <a class="next"
+										href="#pic5">&gt;</a>
+									<h3>아산</h3>
+									<p>아산은 충청남도에 위치한 도시로, 유네스코 세계문화유산인 온양온천과 가까운 거리에 위치해 있습니다.
+										여행자들은 아산의 다양한 명소와 맛집을 즐길 수 있습니다.</p>
 
-							</div>
-							<div id="pic5">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/1e/46/f0/caption.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 5"> <a
-									class="previous" href="#pic4">&lt;</a> <a class="next"
-									href="#pic6">&gt;</a>
-								<h3>태안</h3>
-								<p>태안은 대한민국 충청남도에 위치한 시입니다. 이곳은 아름다운 해변과 자연 경관으로 유명합니다. 태안에는
-									많은 해변과 섬이 있어서 해양 여행을 즐기기에 최적의 장소입니다. 또한, 태안에는 국립공원과 자연 보호구역이
-									있어서 자연을 즐기기에도 좋습니다. 태안은 한국의 자연 경관을 즐기기에 최적의 장소 중 하나입니다.</p>
+								</div>
+								<div id="pic5">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/1e/46/f0/caption.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 5"> <a
+										class="previous" href="#pic4">&lt;</a> <a class="next"
+										href="#pic6">&gt;</a>
+									<h3>태안</h3>
+									<p>태안은 대한민국 충청남도에 위치한 시입니다. 태안에는 많은 해변과 섬이 있어서 해양 여행을 즐기기에
+										최적의 장소입니다. 또한, 태안에는 국립공원과 자연 보호구역이 있어서 자연을 즐기기에도 좋습니다. 태안은 한국의
+										자연 경관을 즐기기에 최적의 장소 중 하나입니다.</p>
 
-							</div>
-							<div id="pic6">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/e0/31/ba/caption.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 6"> <a
-									class="previous" href="#pic5">&lt;</a> <a class="next"
-									href="#pic7">&gt;</a>
-								<h3>예산</h3>
-								<p>예산은 한국의 충청남도에 위치한 작은 도시입니다. 이곳은 조용하고 평화로운 분위기를 자랑하며, 도심에서
-									벗어나 조용한 여행을 즐길 수 있는 곳입니다. 예산에서는 다양한 체험 프로그램을 즐길 수 있습니다.</p>
+								</div>
+								<div id="pic6">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/e0/31/ba/caption.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 6"> <a
+										class="previous" href="#pic5">&lt;</a> <a class="next"
+										href="#pic7">&gt;</a>
+									<h3>예산</h3>
+									<p>예산은 한국의 충청남도에 위치한 작은 도시입니다. 이곳은 조용하고 평화로운 분위기를 자랑하며,
+										도심에서 벗어나 조용한 여행을 즐길 수 있는 곳입니다. 예산에서는 다양한 체험 프로그램을 즐길 수 있습니다.</p>
 
-							</div>
-							<div id="pic7">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/b7/de/c4/spring-water-falling.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 7"> <a
-									class="previous" href="#pic6">&lt;</a> <a class="next"
-									href="#pic8">&gt;</a>
-								<h3>공주</h3>
-								<p>공주는 한국의 중부 지방에 위치한 작은 도시입니다. 이곳은 한국의 역사와 문화를 체험할 수 있는 곳으로
-									유명합니다. 공주는 백제 왕국의 옛 수도이며, 백제 문화 유적지로 유명합니다. 공주는 국내외 관광객들에게 많은
-									사랑을 받는 도시입니다. 이곳에서는 역사와 문화를 경험할 수 있습니다.</p>
+								</div>
+								<div id="pic7">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/b7/de/c4/spring-water-falling.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 7"> <a
+										class="previous" href="#pic6">&lt;</a> <a class="next"
+										href="#pic8">&gt;</a>
+									<h3>공주</h3>
+									<p>공주는 한국의 중부 지방에 위치한 작은 도시입니다. 이곳은 한국의 역사와 문화를 체험할 수 있는
+										곳으로 유명합니다. 공주는 국내외 관광객들에게 많은 사랑을 받는 도시입니다. 이곳에서는 역사와 문화를 경험할 수
+										있습니다.</p>
 
-							</div>
-							<div id="pic8">
-								<img
-									src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/ec/de/e7/solmoe-holy-ground.jpg?w=300&h=300&"
-									height="300" width="500" alt="Image 8"> <a
-									class="previous" href="#pic7">&lt;</a> <a class="next"
-									href="#pic1">&gt;</a>
-								<h3>당진</h3>
-								<p>당진시는 대한민국 충청남도에 위치한 아름다운 도시입니다. 이곳은 대한민국에서 가장 큰 화력발전소 중
-									하나인 당진화력발전소가 있어서 대한민국의 전력 생산에 큰 역할을 합니다. 또한 이곳은 수도권과 충청 지방을
-									연결하는 중요한 교통의 요지입니다. 당진시는 산과 바다, 호수 등 다양한 자연 경관을 자랑하며, 지역적인 특산품인
-									당진배와 당진굴비 등이 유명합니다.</p>
+								</div>
+								<div id="pic8">
+									<img
+										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/ec/de/e7/solmoe-holy-ground.jpg?w=300&h=300&"
+										height="300" width="500" alt="Image 8"> <a
+										class="previous" href="#pic7">&lt;</a> <a class="next"
+										href="#pic1">&gt;</a>
+									<h3>당진</h3>
+									<p>당진시는 대한민국 충청남도에 위치한 아름다운 도시입니다. 당진시는 산과 바다, 호수 등 다양한 자연
+										경관을 자랑하며, 지역적인 특산품인 당진배와 당진굴비 등이 유명합니다.</p>
 
+								</div>
 							</div>
 						</div>
 					</div>
@@ -546,29 +558,30 @@ input[type="text"], input[type="date"] {
 			</div>
 		</div>
 
+	</main>
 
 
-		<!-- ===============================================-->
-		<!--    JavaScripts-->
-		<!-- ===============================================-->
-		<script src="/vendors/popper/popper.min.js"></script>
-		<script src="/vendors/bootstrap/bootstrap.min.js"></script>
-		<script src="/vendors/anchorjs/anchor.min.js"></script>
-		<script src="/vendors/is/is.min.js"></script>
-		<script src="/vendors/fontawesome/all.min.js"></script>
-		<script src="/vendors/lodash/lodash.min.js"></script>
-		<script
-			src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-		<script src="/vendors/list.js/list.min.js"></script>
-		<script src="/vendors/feather-icons/feather.min.js"></script>
-		<script src="/vendors/dayjs/dayjs.min.js"></script>
-		<script src="/assets/js/phoenix.js"></script>
-		<script src="/vendors/isotope-layout/isotope.pkgd.min.js"></script>
-		<script src="/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-		<script src="/vendors/isotope-packery/packery-mode.pkgd.min.js"></script>
-		<script src="/vendors/bigpicture/BigPicture.js"></script>
-		<script src="/vendors/typed.js/typed.umd.js"></script>
-		<script src="/vendors/swiper/swiper-bundle.min.js"></script>
+	<!-- ===============================================-->
+	<!--    JavaScripts-->
+	<!-- ===============================================-->
+	<script src="/vendors/popper/popper.min.js"></script>
+	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
+	<script src="/vendors/anchorjs/anchor.min.js"></script>
+	<script src="/vendors/is/is.min.js"></script>
+	<script src="/vendors/fontawesome/all.min.js"></script>
+	<script src="/vendors/lodash/lodash.min.js"></script>
+	<script
+		src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+	<script src="/vendors/list.js/list.min.js"></script>
+	<script src="/vendors/feather-icons/feather.min.js"></script>
+	<script src="/vendors/dayjs/dayjs.min.js"></script>
+	<script src="/assets/js/phoenix.js"></script>
+	<script src="/vendors/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="/vendors/isotope-packery/packery-mode.pkgd.min.js"></script>
+	<script src="/vendors/bigpicture/BigPicture.js"></script>
+	<script src="/vendors/typed.js/typed.umd.js"></script>
+	<script src="/vendors/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>

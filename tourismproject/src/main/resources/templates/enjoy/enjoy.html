@@ -73,32 +73,6 @@ body {
 	padding: 0;
 	background-color: #f4f4f4;
 }
-
-header {
-	background-color: #81F7F3;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 20px;
-}
-
-header nav {
-	display: flex;
-	gap: 20px;
-}
-
-header nav a {
-	color: white;
-	text-decoration: none;
-	font-size: 16px;
-}
-
-header .right-menu {
-	display: flex;
-	gap: 20px;
-}
-
 main {
 	padding: 1em;
 	max-width: 1200px;
@@ -123,7 +97,7 @@ main {
 .search-section input, .search-section select, .search-section button {
 	padding: 10px;
 	font-size: 16px;
-	width: 80%;
+	width: 100%;
 	max-width: 400px;
 	box-sizing: border-box;
 }
@@ -198,6 +172,11 @@ main {
 	float: right;
 	margin-right: 80px;
 	text-decoration: none;
+}
+.gallery-row {
+	display: flex;
+	justify-content: left;
+	gap: 20px;
 }
 </style>
 
@@ -456,15 +435,20 @@ main {
 
 		<h1>즐길거리</h1>
 		<div class="search-section">
-			<form onsubmit="searchActivities(event)">
+			<form onsubmit="searchActivities">
 				<input type="text" id="location" placeholder="여행지 이름을 입력하세요"
 					required> <input type="number" id="distance"
 					placeholder="거리 (km)" min="1" required> <select
 					id="facility-type" required>
 					<option value="">시설 종류 선택</option>
+					<option value="all">모두</option>
 					<option value="arboretum">수목원</option>
 					<option value="gallery">갤러리</option>
 					<option value="theme-park">테마파크</option>
+					<option value="flower-garden">정원</option>
+					<option value="flower-garden">정원</option>
+					<option value="flower-garden">정원</option>
+					<option value="flower-garden">정원</option>
 					<option value="flower-garden">정원</option>
 
 
@@ -477,6 +461,7 @@ main {
 
 		<div id="gallerywrapper">
 			<div id="gallery">
+			<div class="gallery-row">
 				<div id="pic1">
 				
 					<img
@@ -508,8 +493,7 @@ main {
 				<div id="pic4">
 					<img
 						src="http://tong.visitkorea.or.kr/cms/resource/52/2671452_image2_1.jpg?"
-						height="250" width="300" alt="Image 4"> <a class="previous"
-						href="#pic3">&lt;</a> <a class="next" href="#pic5">&gt;</a>
+						height="250" width="300" alt="Image 4">
 					<h3>부여 정림사지 오층석탑</h3>
 					<p>Text of image 4.</p>
 					<a class="previous" href="#pic3">&lt;</a> <a class="next"
@@ -523,6 +507,7 @@ main {
 					<p>Text of image 5.</p>
 					<a class="previous" href="#pic4">&lt;</a> <a class="next"
 						href="#pic1">&gt;</a>
+				</div>
 				</div>
 			</div>
 		</div>
