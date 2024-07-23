@@ -19,12 +19,13 @@ public class PictureService {
 	private final PictureRepository pictureRepository;
 	private final S3Service s3service;
 	
-	public void createpicture(Picture picture, MultipartFile file1) throws IOException {
+	public void createpicture(Picture picture, MultipartFile file1, Integer restaurantId) throws IOException {
 		if(!file1.isEmpty()) {
 			s3service.uploadFile(file1, file1.getOriginalFilename());
 			picture.setImage1(file1.getOriginalFilename());
 		}
 		picture.setDate(LocalDateTime.now());
+		picture.setRestaurantId(restaurantId);
 		this.pictureRepository.save(picture);
 	}
 	public List<Picture> findallpictures(){

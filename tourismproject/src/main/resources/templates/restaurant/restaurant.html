@@ -58,6 +58,7 @@
             margin-left: 80px;
             margin-right: 80px;
         }
+         
         @media (max-width: 2000px) {
             .body {
                 margin-left: 60px;
@@ -109,6 +110,7 @@
             align-items: center;
             margin-top: 20px;
         }
+        .map_wrap {overflow:hidden;height:330px}
 </style>
 
         <script>
@@ -257,7 +259,8 @@
                         <li><a class="dropdown-item" href="/Hotel">호텔</a></li>
                         <li><a class="dropdown-item" href="/enjoy">즐길거리</a></li>
                         <li><a class="dropdown-item" href="/restaurant">음식점</a></li>
-
+                        <li><a class="dropdown-item" href="/pictures">사진추가</a></li>
+                        <li><a class="dropdown-item" href="/restaurant/addrestaurant">장소추가</a></li>
                         <li><a class="dropdown-item" href="/review">맛 탐정단 리뷰작성</a></li>
                        
                        <li>
@@ -444,6 +447,160 @@
                     <!-- 메뉴 끝 -->
                     
                     <a class="fw-bold fs-9 mt-4" href="#!"><span class="fas fa-plus me-1"></span>메뉴 추가</a>
+                  <!-- 지도 시작 -->
+                  <div id="map" style="width:100%;height:350px;"></div>
+	<div class="map_wrap">
+    <div id="mapWrapper" style="width:50%;height:300px;float:left">
+        <div id="map1" style="width:100%;height:100%"></div> <!-- 지도를 표시할 div 입니다 -->
+    </div>
+    <div id="rvWrapper" style="width:50%;height:300px;float:left">
+        <div id="roadview" style="width:100%;height:100%"></div> <!-- 로드뷰를 표시할 div 입니다 -->
+    </div>
+</div>
+	    
+                  <!-- 지도 끝 -->
+                  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8118060c10a6518e5f79855cb17590cd&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+    
+
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch('5 Sydney Rd, Manly NSW 2095 오스트레일리아', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">5 Sydney Rd, Manly NSW 2095 오스트레일리아</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+}); 
+
+var mapWrapper = document.getElementById('mapWrapper'); //지도를 감싸고 있는 DIV태그
+
+var mapContainer1 = document.getElementById('map'), // 지도를 표시할 div 
+    mapCenter = new kakao.maps.LatLng(33.450422139819736 , 126.5709139924533), // 지도의 가운데 좌표
+    mapOption = {
+        center: mapCenter, // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map1 = new kakao.maps.Map(mapContainer1, mapOption);
+map1.addOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW); //지도 위에 로드뷰 도로 올리기
+
+var rvContainer = document.getElementById('roadview'); //로드뷰를 표시할 div
+var rv = new kakao.maps.Roadview(rvContainer); //로드뷰 객체
+var rvClient = new kakao.maps.RoadviewClient(); //좌표로부터 로드뷰 파노ID를 가져올 로드뷰 helper객체
+
+toggleRoadview(mapCenter);
+
+// 마커 이미지를 생성합니다.
+var markImage = new kakao.maps.MarkerImage(
+    'https://t1.daumcdn.net/localimg/localimages/07/2018/pc/roadview_minimap_wk_2018.png',
+    new kakao.maps.Size(26, 46),
+    {
+        // 스프라이트 이미지를 사용합니다.
+        // 스프라이트 이미지 전체의 크기를 지정하고
+        spriteSize: new kakao.maps.Size(1666, 168),
+        // 사용하고 싶은 영역의 좌상단 좌표를 입력합니다.
+        // background-position으로 지정하는 값이며 부호는 반대입니다.
+        spriteOrigin: new kakao.maps.Point(705, 114),
+        offset: new kakao.maps.Point(13, 46)
+    }
+);
+
+// 드래그가 가능한 마커를 생성합니다.
+var rvMarker = new kakao.maps.Marker({
+    image : markImage,
+    position: mapCenter,
+    draggable: true,
+    map: map1
+});
+
+//마커에 dragend 이벤트를 할당합니다
+kakao.maps.event.addListener(rvMarker, 'dragend', function(mouseEvent) {
+    var position = rvMarker.getPosition(); //현재 마커가 놓인 자리의 좌표
+    toggleRoadview(position); //로드뷰를 토글합니다
+});
+
+//지도에 클릭 이벤트를 할당합니다
+kakao.maps.event.addListener(map1, 'click', function(mouseEvent){
+    
+    // 현재 클릭한 부분의 좌표를 리턴 
+    var position = mouseEvent.latLng; 
+
+    rvMarker.setPosition(position);
+    toggleRoadview(position); //로드뷰를 토글합니다
+});
+
+geocoder.addressSearch('5 Sydney Rd, Manly NSW 2095 오스트레일리아'
+, function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map1,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: ''
+        });
+        infowindow.open(map1, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map1.setCenter(coords);
+    } 
+}); 
+//로드뷰 toggle함수
+function toggleRoadview(position){
+
+    //전달받은 좌표(position)에 가까운 로드뷰의 panoId를 추출하여 로드뷰를 띄웁니다
+    rvClient.getNearestPanoId(position, 50, function(panoId) {
+        if (panoId === null) {
+            rvContainer.style.display = 'none'; //로드뷰를 넣은 컨테이너를 숨깁니다
+            mapWrapper.style.width = '100%';
+            map1.relayout();
+        } else {
+            mapWrapper.style.width = '50%';
+            map1.relayout(); //지도를 감싸고 있는 영역이 변경됨에 따라, 지도를 재배열합니다
+            rvContainer.style.display = 'block'; //로드뷰를 넣은 컨테이너를 보이게합니다
+            rv.setPanoId(panoId, position); //panoId를 통한 로드뷰 실행
+            rv.relayout(); //로드뷰를 감싸고 있는 영역이 변경됨에 따라, 로드뷰를 재배열합니다
+        }
+    });
+}
+</script>
+                  
                   </div>
                 </div>
               </div>
@@ -476,7 +633,7 @@
               
               <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:5px" th:unless="${not #lists.isEmpty(pictures)}">
                   <div class="hover-actions-trigger mx-auto rounded-3 overflow-hidden"style="border: 2px solid #b8b8b8;">
-                    <img class="img-fluid" th:src="" />
+                    <img class="img-fluid" src="" />
                   </div>
                 </div>
               <!-- Add more images as needed -->
@@ -507,45 +664,50 @@
                                                     <!-- Repeat the image blocks for more images -->
                                                      <div class="container mt-5">
         <h2>이미지 업로드</h2>
-            <form th:if="${not #strings.isEmpty(restaurant.id)}" action="/picture/create" method="post" enctype="multipart/form-data"> 
-               <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-        
-            <input type="file" name="file111" class="file-input111" id="file111" accept="image/*">
-            <div class="button-container111">
-                <label for="file111" class="file-label111">사진 선택</label>
-                <input th:if="${not #strings.isEmpty(restaurant.id)}"type="hidden" name="restaurantId" th:value="${restaurant.id}">
-                <input type="submit" value="저장하기" class="btn btn-primary my-2">
-            </div>
-            <div id="previewContainer">
-                
-            </div>
-        </form>  
+            <form th:if="${not #strings.isEmpty(restaurant.id)}" th:action="@{/restaurant/create}" method="post" enctype="multipart/form-data"> 
+    <input type="hidden" name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     
-    <script>
-        document.getElementById('file111').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const previewContainer = document.getElementById('previewContainer');
-                    // 기존의 미리보기 이미지가 있으면 제거
-                    const existingImg = document.getElementById('imagePreview');
-                    if (existingImg) {
-                        previewContainer.removeChild(existingImg);
-                    }
-                    // 새로운 이미지 태그 생성
-                    const img = document.createElement('img');
-                    img.id = 'imagePreview';
-                    img.src = e.target.result;
-                    img.className = 'preview';
-                    img.alt = 'Image preview...';
-                    // 미리보기 컨테이너에 이미지 추가
-                    previewContainer.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+    <input type="file" name="file111" class="file-input111" id="file111" accept="image/*">
+    <div class="button-container111">
+        <label for="file111" class="file-label111">사진 선택</label>
+        <input th:if="${not #strings.isEmpty(restaurant.id)}" type="hidden" name="restaurantId" th:value="${restaurant.id}">
+        <input type="submit" value="저장하기" class="btn btn-primary my-2">
+    </div>
+    <div id="previewContainer">
+        
+    </div>
+</form>      
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('file111');
+        if (fileInput) {
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const previewContainer = document.getElementById('previewContainer');
+                        // 기존의 미리보기 이미지가 있으면 제거
+                        const existingImg = document.getElementById('imagePreview');
+                        if (existingImg) {
+                            previewContainer.removeChild(existingImg);
+                        }
+                        // 새로운 이미지 태그 생성
+                        const img = document.createElement('img');
+                        img.id = 'imagePreview';
+                        img.src = e.target.result;
+                        img.className = 'preview';
+                        img.alt = 'Image preview...';
+                        // 미리보기 컨테이너에 이미지 추가
+                        previewContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    });
+</script> 
     </div>
                                                     <!-- Add more images as needed -->
                                                 </div>

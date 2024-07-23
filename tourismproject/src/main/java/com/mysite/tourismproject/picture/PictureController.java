@@ -21,14 +21,14 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PictureController {
 	
-	private final PictureService ps;
+	private final PictureService pictureService;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
 	@GetMapping("")
 	public String showNotices(Model model) {
-		model.addAttribute("pictureList", ps.findallpictures());
+		model.addAttribute("pictureList", pictureService.findallpictures());
 		return "picture/picturelist";
 	}
 	
@@ -41,8 +41,7 @@ public class PictureController {
 	public String createpicture(@ModelAttribute Picture picture,
 			@RequestParam("file111") MultipartFile file111,
 			@RequestParam("restaurantId") Integer restaurantId) throws IOException {
-		picture.setRestaurantId(restaurantId);
-		ps.createpicture(picture, file111);
+		pictureService.createpicture(picture, file111, restaurantId);
 		
 		return "redirect:/restaurant/detail/" + restaurantId;
 	}
@@ -50,7 +49,7 @@ public class PictureController {
 	@GetMapping("/details/{restaurantId}")
 	public String showRestaurantPictures(Model model, 
 							@PathVariable("restaurantId") Integer restaurantId) {
-		List<Picture> pictures = ps.findPicturesByRestaurantId(restaurantId);
+		List<Picture> pictures = pictureService.findPicturesByRestaurantId(restaurantId);
 		model.addAttribute("pictures", pictures);
 		model.addAttribute("downpath","https://"+downpath);
 		return "restaurant/restaurant";

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mysite.tourismproject.picture.Picture;
 import com.mysite.tourismproject.picture.PictureService;
+
 @RequestMapping("/restaurant")
 @Controller
 public class RestaurantController {
@@ -34,7 +36,7 @@ public class RestaurantController {
 	   	    
 	    model.addAttribute("firstPictures", firstPictures);
 	    model.addAttribute("restaurants", restaurantList);
-	    model.addAttribute("downpath", "https://" + downpath);
+	    model.addAttribute("downpath", "http://" + downpath);
 	    return "restaurant/menu2";
 	}
 	@GetMapping("/menu2")
@@ -47,41 +49,22 @@ public class RestaurantController {
 	}
 	
 	@PostMapping("/addrestaurant")
-	public String addRestaurant(@RequestParam("locationname") String locationname,
-	                            @RequestParam("location") String location,
-	                            @RequestParam(name = "cphone", required = false) String cphone,
-	                            @RequestParam(name = "worktime", required = false) String worktime,
-	                            @RequestParam(name = "category", required = false) List<String> category,
-	                            @RequestParam(name = "price", required = false) List<String> price,
-	                            @RequestParam(name = "productmenu", required = false) List<String> productmenu,
-	                			@RequestParam("addRestaurantfile") MultipartFile addRestaurantfile
-	                            ) throws IOException {
-	    Restaurant restaurant = new Restaurant();
-	    restaurant.setLocationname(locationname);
-	    restaurant.setLocation(location);
-
-	    if (cphone != null && !cphone.isEmpty()) {
-	        restaurant.setCphone(cphone);
+	public String addRestaurant(@ModelAttribute("restaurant") Restaurant restaurant,
+	                            @RequestParam("addRestaurantfile") MultipartFile addRestaurantfile) throws IOException {
+	    try {
+	        restaurantService.addRestaurantWithPicture(restaurant, addRestaurantfile);
+	        return "redirect:/restaurant/detail/" + restaurant.getId();
+	    } catch (IllegalArgumentException e) {
+	        return "redirect:/addrestaurant?error=" + e.getMessage();
 	    }
-	    if (worktime != null && !worktime.isEmpty()) {
-	        restaurant.setWorktime(worktime);
-	    }
-	    if (category != null && !category.isEmpty()) {
-	        restaurant.setCategory(category);
-	    }
-	    if (productmenu != null && !productmenu.isEmpty()) {
-	        restaurant.setProductmenu(productmenu);
-	    }
-	    if (price != null && !price.isEmpty()) {
-	        restaurant.setPrice(price);
-	    }
-	    restaurantService.locationcreate(restaurant);
-	    if (!addRestaurantfile.isEmpty()) {
-	        Picture picture = new Picture();
-	        picture.setRestaurantId(restaurant.getId());
-	        pictureService.createpicture(picture, addRestaurantfile);
-	    }
-	    return "redirect:/restaurant/detail/"+restaurant.getId();
+	}
+	@PostMapping("/create")
+	public String createpicture(@ModelAttribute Picture picture,
+			@RequestParam("file111") MultipartFile file111,
+			@RequestParam("restaurantId") Integer restaurantId) throws IOException {
+		pictureService.createpicture(picture, file111, restaurantId);
+		
+		return "redirect:/restaurant/detail/" + restaurantId;
 	}
 	
 	@GetMapping("/detail/{rid}")
