@@ -103,4 +103,13 @@ public class ReviewNoticeController {
 		ns.update(review, file1, file2, file3);
 		return "redirect:/review";
 	}
+	
+	@GetMapping("/review/searchkw")
+	public String searchkw(Model model, @RequestParam ("kw") String kw) {
+		model.addAttribute("noticeList", ns.findByTitle(kw));
+		return "review/review";
+	}	
+	
+	
+	
 }

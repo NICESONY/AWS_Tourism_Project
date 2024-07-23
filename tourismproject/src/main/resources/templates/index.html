@@ -260,15 +260,15 @@
           <h1 class="fs-4 fs-md-1 text-white fw-normal mb-6 overflow-hidden">추천하는 충남 <span class="typed-text text-primary" data-typed-text="[&quot;&lt;span class=text-primary&gt;호텔?&lt;/span&gt;&quot;,&quot;&lt;span class=text-warning&gt;여행지?&lt;/span&gt;&quot;, &quot;&lt;span class=text-info&gt;음식점?&lt;/span&gt;&quot;, &quot;&lt;span class=text-success&gt;즐길거리?&lt;/span&gt;&quot;, &quot;&lt;span class=text-success&gt;test?&lt;/span&gt;&quot;]"></span></h1>
           <div class="input-group rounded-2 py-1 ps-2 w-lg-50 border border-light">
             <div class="form-icon-container flex-1 d-flex align-items-center" data-fa-transform="down-1"><span class="fa-solid fa-location-dot form-icon text-danger-light"></span>
-              <input class="form-control form-icon-input bg-transparent border-0 outline-none fs-8 fs-md-7 text-secondary-light" type="text" placeholder="Search Destination" />
             </div>
-            <div class="dropdown d-flex align-items-center">
-              <button class="btn py-0 bg-transparent text-secondary-light fs-8 fs-md-7 fw-semibold border-0 border-start border-light rounded-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">Flight<span class="fa-solid fa-chevron-down ms-2" data-fa-transform="down-1 shrink-4"></span></button>
-              <div class="dropdown-menu dropdown-menu-end" data-bs-theme="dark"><a class="dropdown-item" href="#!">호텔</a><a class="dropdown-item" href="#!">음식점</a><a class="dropdown-item" href="#!">즐길거리</a></div>
+            <form action = "/searchkw" class="d-flex" role="search">
+            <input class="form-control me-2" type="search"  name = "kw" placeholder="Search" aria-label="Search">
+       		<button class="btn btn-outline-success" type="submit">검색</button>
+            </form>
             </div>
           </div>
         </div>
-      </div>
+    
 
 
       <!-- ============================================-->

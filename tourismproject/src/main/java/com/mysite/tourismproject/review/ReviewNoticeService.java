@@ -66,4 +66,14 @@ public class ReviewNoticeService {
         // 기타 변화 없는 경우
         nr.save(review);
     }
+    
+    
+    public List<ReviewNotice> findByTitle(String kw){
+    	
+    	return nr.findByTitleLike("%" + kw + "%");
+    	
+    }
+    
+
+	 
 }
