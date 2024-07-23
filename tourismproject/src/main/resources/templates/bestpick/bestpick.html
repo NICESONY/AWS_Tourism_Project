@@ -1,36 +1,14 @@
 <!DOCTYPE html>
-
-
-
 <html data-navigation-type="default"
 	data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
-
-
-
 <head>
-
 <meta charset="utf-8">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-
 <!-- ===============================================-->
-
 <!--    Document Title-->
-
 <!-- ===============================================-->
-
 <title>Phoenix</title>
-
-
-
-
-
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
@@ -43,99 +21,58 @@
     <meta name="theme-color" content="#ffffff">
     <script src="/vendors/simplebar/simplebar.min.js"></script>
     <script src="/assets/js/config.js"></script>
-
-
-
-
-
 <!-- ===============================================-->
-
 <!--    Stylesheets-->
-
 <!-- ===============================================-->
-
 <link href="/vendors/flatpickr/flatpickr.min.css" rel="stylesheet">
-
 <link href="/vendors/nouislider/nouislider.min.css" rel="stylesheet">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
 <link
 	href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
 	rel="stylesheet">
-
 <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
-
 <link rel="stylesheet"
 	href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
 <link href="/assets/css/theme-rtl.min.css" type="text/css"
 	rel="stylesheet" id="style-rtl">
-
 <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet"
 	id="style-default">
-
 <link href="/assets/css/user-rtl.min.css" type="text/css"
 	rel="stylesheet" id="user-style-rtl">
-
 <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet"
 	id="user-style-default">
-
-
-
-
-
 <script ///사진 이미지 뷰어
 	src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
 <script>
 	var phoenixIsRTL = window.config.config.phoenixIsRTL;
-
 	if (phoenixIsRTL) {
-
 		var linkDefault = document.getElementById('style-default');
-
 		var userLinkDefault = document.getElementById('user-style-default');
-
 		linkDefault.setAttribute('disabled', true);
-
 		userLinkDefault.setAttribute('disabled', true);
-
 		document.querySelector('html').setAttribute('dir', 'rtl');
-
 	} else {
-
 		var linkRTL = document.getElementById('style-rtl');
-
 		var userLinkRTL = document.getElementById('user-style-rtl');
-
 		linkRTL.setAttribute('disabled', true);
-
 		userLinkRTL.setAttribute('disabled', true);
-
 	}
 </script>
-
 <style>
 .grid {
 	width: 80%
 }
-
 .grid-sizer, .grid-item {
 	width: 23%;
 }
-
 .grid-item {
 	margin-bottom: 15px;
 	border-radius: 20px;
 	overflow: hidden;
 	display: inline-block;
 }
-
 .grid-item img {
 	display: block;
 	min-width: 100%;
@@ -143,33 +80,19 @@
 	object-fit: cover;
 }
 </style>
-
 <script>
 	var msnry = new Masonry('.grid', {
-
 		itemSelector : '.grid-item',
-
 		columnWidth : '.grid-sizer',
-
 		percentPosition : true,
-
 		gutter : 20,
-
 	});
-
 	imagesLoaded('.grid').on('progress', function() {
-
 		msnry.layout();
-
 	});
 </script>
-
 </head>
-
-
-
 <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
-
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
@@ -263,9 +186,6 @@
     </div>
   </div>
 </div>
-
-
-
           
           
           </div>
@@ -296,7 +216,6 @@
                         <li><a class="dropdown-item" href="/bestpick">지역주민 Best Pick</a></li> 
                         <li><a class="dropdown-item" href="/mbti">MBTI "P" 맞춤 여행지 추천</a></li> 
                         <li><a class="dropdown-item" href="/discount">충청남도 추천 할인 관광지</a></li> 
-
                       </ul>
                     </div>
           
@@ -325,14 +244,8 @@
                         <li><a class="dropdown-item" href="/">리뷰관리</a></li>
                         <li><a class="dropdown-item" href="/">질문관리</a></li>
                         <li><a class="dropdown-item" href="/">타임라인 히스토리</a></li>
- 
-
                       </ul>
                     </div>
-          
-
-
-
           <button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mt-3 mt-lg-0">
@@ -340,637 +253,337 @@
           </div>
         </nav>
         
-
-
-
-
-
-
-
-
-
-
-
-
 				<button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
-
 					<span class="navbar-toggler-icon"></span>
-
 				</button>
-
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
 					<ul class="navbar-nav me-auto mt-3 mt-lg-0">
-
 					</ul>
-
 				</div>
-
-			</nav>
-
 		</div>
-
 	</main>
-
-
-
 	<!-- ===============================================-->
-
 	<!--    Main Content-->
-
 	<!-- ===============================================-->
-
 	<main class="main" id="top">
-
-
-
 		<!-- ============================================-->
-
 		<!-- <section> begin ============================-->
-
 		<section class="py-0">
-
-
-
-
-
 			<!-- end of .container-->
-
-
-
 		</section>
-
 		<!-- <section> close ============================-->
-
 		<!-- ============================================-->
-
-
-
-
-
-
-
-
-
-
-
 		<!-- ============================================-->
-
 		<!-- <section> begin ============================-->
-
 		<section class="py-0">
-
-
-
 			<div class="container-medium">
-
 				<div class="py-6">
-
 					<div class="d-flex">
-
 						<select class="form-select w-sm-auto me-4" id="hotelSort"
 							name="Hotel sort">
-
 							<option>Sort by</option>
-
 							<option>Best reviewed and lowest price</option>
-
 							<option>Option 1</option>
-
 							<option>Option 2</option>
-
 						</select>
-
 						<button
 							class="btn btn-phoenix-secondary text-nowrap px-3 px-md-4 ms-auto me-2">
-
 							<span class="fa-solid fa-map me-md-2"></span><span
 								class="d-none d-md-inline-block">Show in map</span>
-
 						</button>
-
 						<button class="btn btn-phoenix-secondary text-nowrap px-3"
 							type="button" data-bs-toggle="offcanvas"
 							data-bs-target="#hotelFilterOffcanvas"
 							aria-controls="hotelFilterOffcanvas">
-
 							<span class="fa-solid fa-filter me-md-2"></span><span
 								class="d-none d-md-inline-block">Filters</span>
-
 						</button>
-
 					</div>
-
 				</div>
-
-
-
 				<div class="grid-sizer"></div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838528.jpg"
 							alt="" height="300" width="150" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">반야사</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 논산시
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838268.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">꽃지해수욕장</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 태안
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040703/thm_photo_040703_0_1670982192.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">궁남로
-
 								궁남지</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 부여군 부여읍
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838342.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">안면암</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 태안
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706838098.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">예당호</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 예산
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706836983.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">종합운동장</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 천안
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040704/thm_photo_040704_0_1706836885.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">간월암</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>충남 서산
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://tour.chungnam.go.kr/Upl/_board/photo_040702/thm_photo_040702_0_1639486657.jpg"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">은행나무길</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>아산 곡교천
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://mblogthumb-phinf.pstatic.net/MjAyMjA2MTZfMTA3/MDAxNjU1MzA4MjE3Mzk3.AH132l-3XfdsVxrwcUGcQEBLHvt35jeKT1BmRXl4jtUg.s0b_gYPZZ8_jB2DtvvNADd5_8XBcnduWBg8d-uQU854g.JPEG.whotheman/SE-0d9bbd9d-ec97-11ec-93aa-9d8ca24f0997.jpg?type=w800"
 							height="300" width="150" alt="" />
-
 						<div class="hover-actions top-0 end-0 mt-4 me-4 z-5">
-
 							<button class="btn btn-wish">
-
 								<span class="far fa-heart" data-fa-transform="down-1"></span>
-
 							</button>
-
 						</div>
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">
 								아그로랜드 태신목장</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>예산군 고덕면
-
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
-
-
-
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/e8/b6/b4/lotte-resort-buyeo-located.jpg?w=300&h=300&s=1"
 							height="300" width="150" />
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">롯데리조트</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>부여군 규암면
 								백제문로 400
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/74/c4/b0/caption.jpg?w=300&h=300&s=1"
 							height="300" width="150" />
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">오엔시티호텔</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>천안시 서북구
 								불당4로 105
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/b6/39/f6/gongju-ink-tourist-hotel.jpg?w=300&h=300&s=1"
 							height="300" width="150" />
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">공주
 								INK 호텔</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>공주시 신관동
 								593-14
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/d1/8b/c1/pinocchio-pension.jpg?w=300&h=300&s=1"
 							height="300" width="150" />
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">피노키오
 								펜션</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span> 태안 소원면
 								만리포2길 184
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/9a/7b/55/caption.jpg?w=300&h=300&s=1"
 							height="300" width="150" />
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">스카이풀빌라펜션</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>서천 갯벌체험로
 								314 서면
-
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
-
-
 				<div class="grid-item">
-
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
-
 						<img
 							src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/4f/bc/06/caption.jpg?w=300&h=300&s=1"
 							height="300" width="150" />
-
 						<div
 							class="backdrop-faded backdrop-secondary-dark h-100 d-flex flex-column justify-content-end">
-
 							<a class="stretched-link fs-7 text-white fw-bold" href="#!">스파피아모텔</a>
-
 							<p class="mb-2 text-secondary-lighter">
-
 								<span class="fa-solid fa-map-marker-alt me-2"></span>청양 청양읍 읍내리
 								205-6
-
-
 							</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
-
-
 				<div class="grid-item">
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
@@ -988,10 +601,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
 				<div class="grid-item">
 					///
 					<div
@@ -1009,10 +618,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
 				<div class="grid-item">
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
@@ -1030,7 +635,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="grid-item">
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
@@ -1047,8 +651,6 @@
 						</div>
 					</div>
 				</div>
-
-
 				<div class="grid-item">
 					<div
 						class="hover-actions-trigger mx-auto rounded-3 overflow-hidden">
@@ -1064,19 +666,11 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
-
-
-
 		</section>
-
-
-
       <!-- ============================================-->
       <!-- <section> begin ============================-->
       <section class="booking-footer pb-6 pb-md-11 pt-15">
-
         <div class="container-medium">
           <div class="row gy-3 justify-content-between align-items-center">
  <!--            <div class="col-auto"><a href="/"><img src="/images/logo.png" alt="" width="70" /></a></div> -->
@@ -1099,21 +693,13 @@
           </div>
         </div>
         <!-- end of .container-->
-
       </section>
       <!-- <section> close ============================-->
       <!-- ============================================-->
-
-
-
-
-
 </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
-
-
     <div class="offcanvas offcanvas-end settings-panel border-0" id="settings-offcanvas" tabindex="-1" aria-labelledby="settings-offcanvas">
       <div class="offcanvas-header align-items-start border-bottom flex-column border-translucent">
         <div class="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
@@ -1236,13 +822,7 @@
         <!-- </div><small class="text-uppercase text-body-tertiary fw-bold py-2 pe-2 ps-1 rounded-end">customize</small>
       </div> -->
     </a>
-
-
-
-
-
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
-
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
@@ -1263,7 +843,5 @@
     <script src="/vendors/bigpicture/BigPicture.js"></script>
     <script src="/vendors/typed.js/typed.umd.js"></script>
     <script src="/vendors/swiper/swiper-bundle.min.js"></script>
-
   </body>
-
 </html>
