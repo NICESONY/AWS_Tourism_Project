@@ -21,14 +21,14 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PictureController {
 	
-	private final PictureService pictureService;
+	private final PictureService ps;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
 	@GetMapping("")
 	public String showNotices(Model model) {
-		model.addAttribute("pictureList", pictureService.findallpictures());
+		model.addAttribute("pictureList", ps.findallpictures());
 		return "picture/picturelist";
 	}
 	
@@ -36,12 +36,16 @@ public class PictureController {
 	public String addpicture() {
 		return "picture/addpicture";
 	}
-	
+	@GetMapping("/add/{id}")
+	public String addRestaurantPicture(@PathVariable("id") Integer id) {
+		return "picture/addpicture";
+	}
 	@PostMapping("/create")
 	public String createpicture(@ModelAttribute Picture picture,
 			@RequestParam("file111") MultipartFile file111,
 			@RequestParam("restaurantId") Integer restaurantId) throws IOException {
-		pictureService.createpicture(picture, file111, restaurantId);
+		picture.setRestaurantId(restaurantId);
+		ps.createpicture(picture, file111);
 		
 		return "redirect:/restaurant/detail/" + restaurantId;
 	}
@@ -49,7 +53,7 @@ public class PictureController {
 	@GetMapping("/details/{restaurantId}")
 	public String showRestaurantPictures(Model model, 
 							@PathVariable("restaurantId") Integer restaurantId) {
-		List<Picture> pictures = pictureService.findPicturesByRestaurantId(restaurantId);
+		List<Picture> pictures = ps.findPicturesByRestaurantId(restaurantId);
 		model.addAttribute("pictures", pictures);
 		model.addAttribute("downpath","https://"+downpath);
 		return "restaurant/restaurant";

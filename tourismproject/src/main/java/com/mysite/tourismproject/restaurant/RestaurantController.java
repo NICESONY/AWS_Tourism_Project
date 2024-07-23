@@ -36,7 +36,7 @@ public class RestaurantController {
 	   	    
 	    model.addAttribute("firstPictures", firstPictures);
 	    model.addAttribute("restaurants", restaurantList);
-	    model.addAttribute("downpath", "http://" + downpath);
+	    model.addAttribute("downpath", "https://" + downpath);
 	    return "restaurant/menu2";
 	}
 	@GetMapping("/menu2")
@@ -51,20 +51,20 @@ public class RestaurantController {
 	@PostMapping("/addrestaurant")
 	public String addRestaurant(@ModelAttribute("restaurant") Restaurant restaurant,
 	                            @RequestParam("addRestaurantfile") MultipartFile addRestaurantfile) throws IOException {
-	    try {
-	        restaurantService.addRestaurantWithPicture(restaurant, addRestaurantfile);
+
+	    if (restaurant.getLocationname() != null && !restaurant.getLocationname().isEmpty() &&
+	        restaurant.getLocation() != null && !restaurant.getLocation().isEmpty()) {
+	        restaurantService.create(restaurant);
+
+	        if (!addRestaurantfile.isEmpty()) {
+	            Picture picture = new Picture();
+	            picture.setRestaurantId(restaurant.getId());
+	            pictureService.createpicture(picture, addRestaurantfile);
+	        }
 	        return "redirect:/restaurant/detail/" + restaurant.getId();
-	    } catch (IllegalArgumentException e) {
-	        return "redirect:/addrestaurant?error=" + e.getMessage();
 	    }
-	}
-	@PostMapping("/create")
-	public String createpicture(@ModelAttribute Picture picture,
-			@RequestParam("file111") MultipartFile file111,
-			@RequestParam("restaurantId") Integer restaurantId) throws IOException {
-		pictureService.createpicture(picture, file111, restaurantId);
-		
-		return "redirect:/restaurant/detail/" + restaurantId;
+
+	    return "redirect:/addrestaurant?error=Missing required fields";
 	}
 	
 	@GetMapping("/detail/{rid}")

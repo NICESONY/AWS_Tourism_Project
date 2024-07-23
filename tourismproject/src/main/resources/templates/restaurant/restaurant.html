@@ -334,9 +334,9 @@
                   <div class="row g-2 align-items-center">
                     <div class="col-auto col-12 col-lg-auto d-flex flex-1">
                       <!-- 사진 추가 버튼 -->
-                      <button class="	 d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" type="button" data-bs-toggle="modal"  data-bs-target="#modal3"aria-haspopup="true" aria-expanded="false">
+                      <a class="d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" th:href="@{|/picture/add/${restaurant.id}|}">
                         사진 추가 <span class="fa-solid fa-plus ms-2"></span>
-                      </button>
+                      </a>
                       <button type="button" class="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal2">
                         사진 모두 보기
                       </button>
@@ -475,7 +475,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch('5 Sydney Rd, Manly NSW 2095 오스트레일리아', function(result, status) {
+geocoder.addressSearch('[[${restaurant.location}]]', function(result, status) {
 
     // 정상적으로 검색이 완료됐으면 
      if (status === kakao.maps.services.Status.OK) {
@@ -490,7 +490,7 @@ geocoder.addressSearch('5 Sydney Rd, Manly NSW 2095 오스트레일리아', func
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">5 Sydney Rd, Manly NSW 2095 오스트레일리아</div>'
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">[[${restaurant.location}]]</div>'
         });
         infowindow.open(map, marker);
 
@@ -501,7 +501,7 @@ geocoder.addressSearch('5 Sydney Rd, Manly NSW 2095 오스트레일리아', func
 
 var mapWrapper = document.getElementById('mapWrapper'); //지도를 감싸고 있는 DIV태그
 
-var mapContainer1 = document.getElementById('map'), // 지도를 표시할 div 
+var mapContainer1 = document.getElementById('map1'), // 지도를 표시할 div 
     mapCenter = new kakao.maps.LatLng(33.450422139819736 , 126.5709139924533), // 지도의 가운데 좌표
     mapOption = {
         center: mapCenter, // 지도의 중심좌표
@@ -557,7 +557,7 @@ kakao.maps.event.addListener(map1, 'click', function(mouseEvent){
     toggleRoadview(position); //로드뷰를 토글합니다
 });
 
-geocoder.addressSearch('5 Sydney Rd, Manly NSW 2095 오스트레일리아'
+geocoder.addressSearch('[[${restaurant.location}]]'
 , function(result, status) {
 
     // 정상적으로 검색이 완료됐으면 
@@ -649,76 +649,6 @@ function toggleRoadview(position){
   
   
   
- <!-- 사진 추가 버튼 눌렀을때 모달 창-->
-  <!-- Vertically centered scrollable modal2 & -->
-                            <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <!-- Repeat the image blocks for more images -->
-                                                     <div class="container mt-5">
-        <h2>이미지 업로드</h2>
-            <form th:if="${not #strings.isEmpty(restaurant.id)}" th:action="@{/restaurant/create}" method="post" enctype="multipart/form-data"> 
-    <input type="hidden" name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-    
-    <input type="file" name="file111" class="file-input111" id="file111" accept="image/*">
-    <div class="button-container111">
-        <label for="file111" class="file-label111">사진 선택</label>
-        <input th:if="${not #strings.isEmpty(restaurant.id)}" type="hidden" name="restaurantId" th:value="${restaurant.id}">
-        <input type="submit" value="저장하기" class="btn btn-primary my-2">
-    </div>
-    <div id="previewContainer">
-        
-    </div>
-</form>      
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const fileInput = document.getElementById('file111');
-        if (fileInput) {
-            fileInput.addEventListener('change', function(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const previewContainer = document.getElementById('previewContainer');
-                        // 기존의 미리보기 이미지가 있으면 제거
-                        const existingImg = document.getElementById('imagePreview');
-                        if (existingImg) {
-                            previewContainer.removeChild(existingImg);
-                        }
-                        // 새로운 이미지 태그 생성
-                        const img = document.createElement('img');
-                        img.id = 'imagePreview';
-                        img.src = e.target.result;
-                        img.className = 'preview';
-                        img.alt = 'Image preview...';
-                        // 미리보기 컨테이너에 이미지 추가
-                        previewContainer.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        }
-    });
-</script> 
-    </div>
-                                                    <!-- Add more images as needed -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
   <!-- ===============================================-->
   <!--    JavaScripts-->

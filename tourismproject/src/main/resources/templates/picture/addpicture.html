@@ -35,13 +35,14 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>이미지 업로드</h2>
-        <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
+  <div class="button-container">        <h2>이미지 업로드</h2>                      
+        <a class="d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" th:href="@{|/restaurant/detail/${id}|}">뒤로가기</a>
+      </div>  <form th:action="@{/picture/create}" method="post" enctype="multipart/form-data">
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-            <input type="file" name="file1" class="file-input" id="file1" accept="image/*">
+            <input type="file" name="file111" class="file-input" id="file1" accept="image/*">
             <div class="button-container">
                 <label for="file1" class="file-label">사진 선택</label>
-                <input type="hidden" name="restaurantId" th:value="7">
+                <input type="hidden" name="restaurantId" th:value="${id}">
                 <input type="submit" value="저장하기" class="btn btn-primary my-2">
             </div>
             <div id="previewContainer">
