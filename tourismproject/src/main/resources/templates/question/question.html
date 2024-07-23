@@ -26,7 +26,7 @@
         </nav>
         <h2 class="mb-5"> Q & A</h2>
                     
-                    <a class="btn btn-primary mb-3" href="/question/add">Q & A</a>
+                    <a class="btn btn-primary mb-3" href="/question/add">질문작성</a>
                     
                     <div id="tableExample4" data-list='{"valueNames":["id","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
                         <div class="row justify-content-end g-0">
@@ -50,22 +50,14 @@
                               
 	                    </thead>
 	                  
-	        <tbody>
-	       <tr th:each="question, loop : ${noticeList}">
-	       						<td th:text="${loop.count}"></td>
-	         
-	         <td>
-	           					 <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.title}"></a>
-	        										</td>
-	        										
-	        										
-	        					  <td>
-	           					 <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.author}"></a>
-	        										</td>
-	         
-	        <td th:text="${#temporals.format(question.date, 'yyyy-MM-dd HH:mm')}"></td>
-	       </tr>
-	        </tbody>
+					        <tbody>
+					       <tr th:each="question, loop : ${noticeList}">
+					       <td th:text="${loop.count}"></td>
+					       <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.title}"></a></td>
+	        			   <td><a th:text="${question.author}"></a></td>
+	         			   <td th:text="${#temporals.format(question.date, 'yyyy-MM-dd HH:mm')}"></td>
+						   </tr>
+	       				    </tbody>
 	                       
 	                  </table>
 	                </div>
