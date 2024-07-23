@@ -1,7 +1,9 @@
 <html layout:decorate="~{layout}">
-<div layout:fragment="content" class="container my-3">
+<th:block layout:fragment="content" class="container my-3">
 
+</nav>
 
+<div class="container-medium">
 	<a href="/notice" class = "btn btn-secondary my-3">공지사항 게시판</a>
 	<a th:href="@{|/update2/${notice.id}|}" class = "btn btn-success my-3">수정</a>
 	<a th:href="@{|delete/${notice.id}|}" class = "btn btn-danger my-3">삭제</a>
@@ -50,3 +52,5 @@
         <input type="submit" value="답변등록" class="btn btn-primary my-2">
     </form>
 </div>
+
+</th:block>

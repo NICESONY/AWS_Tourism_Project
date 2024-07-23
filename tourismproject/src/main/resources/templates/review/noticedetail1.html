@@ -1,7 +1,10 @@
 <html layout:decorate="~{layout}">
-<div layout:fragment="content" class="container my-3">
+<th:block layout:fragment="content" class="container my-3">
 
 
+   </nav>
+
+<div class="container-medium">
 	<a href="/review" class = "btn btn-secondary my-3">맛 탐정단 리뷰 게시판</a>
 	<a th:href="@{|/update/${review.id}|}" class = "btn btn-success my-3">수정</a>
 	<a th:href="@{|delete/${review.id}|}" class = "btn btn-danger my-3">삭제</a>
@@ -17,7 +20,7 @@
             </div>
         </div>
     </div>
-    
+   </nav>
     
     <img th:src="|${downpath}/${review.image1}|">
     <img th:src="|${downpath}/${review.image2}|">
@@ -49,4 +52,6 @@
         <textarea name="content" id="content" rows="10" class="form-control"></textarea>
         <input type="submit" value="답변등록" class="btn btn-primary my-2">
     </form>
+
 </div>
+</th:block>
