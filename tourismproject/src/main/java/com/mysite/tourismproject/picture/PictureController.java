@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,14 +20,14 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PictureController {
 	
-	private final PictureService ps;
+	private final PictureService pictureService;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
 	@GetMapping("")
 	public String showNotices(Model model) {
-		model.addAttribute("pictureList", ps.findallpictures());
+		model.addAttribute("pictureList", pictureService.findallpictures());
 		return "picture/picturelist";
 	}
 	
@@ -41,11 +40,10 @@ public class PictureController {
 		return "picture/addpicture";
 	}
 	@PostMapping("/create")
-	public String createpicture(@ModelAttribute Picture picture,
-			@RequestParam("file111") MultipartFile file111,
-			@RequestParam("restaurantId") Integer restaurantId) throws IOException {
-		picture.setRestaurantId(restaurantId);
-		ps.createpicture(picture, file111);
+	public String createpicture(@RequestParam("file111") MultipartFile file111,
+								@RequestParam("restaurantId") Integer restaurantId) throws IOException {
+		
+		pictureService.createpicture(restaurantId, file111);
 		
 		return "redirect:/restaurant/detail/" + restaurantId;
 	}
@@ -53,7 +51,7 @@ public class PictureController {
 	@GetMapping("/details/{restaurantId}")
 	public String showRestaurantPictures(Model model, 
 							@PathVariable("restaurantId") Integer restaurantId) {
-		List<Picture> pictures = ps.findPicturesByRestaurantId(restaurantId);
+		List<Picture> pictures = pictureService.findPicturesByRestaurantId(restaurantId);
 		model.addAttribute("pictures", pictures);
 		model.addAttribute("downpath","https://"+downpath);
 		return "restaurant/restaurant";

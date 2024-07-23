@@ -19,7 +19,9 @@ public class PictureService {
 	private final PictureRepository pictureRepository;
 	private final S3Service s3service;
 	
-	public void createpicture(Picture picture, MultipartFile file1) throws IOException {
+	public void createpicture(Integer id, MultipartFile file1) throws IOException {
+        Picture picture = new Picture();
+        picture.setRestaurantId(id);
 		if(!file1.isEmpty()) {
 			s3service.uploadFile(file1, file1.getOriginalFilename());
 			picture.setImage1(file1.getOriginalFilename());

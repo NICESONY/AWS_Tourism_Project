@@ -1,5 +1,6 @@
 package com.mysite.tourismproject.restaurant;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.mysite.tourismproject.picture.Picture;
 import com.mysite.tourismproject.picture.PictureService;
@@ -29,6 +31,18 @@ public class RestaurantService {
 		Optional<Restaurant>or = restaurantRepository.findById(id);
 		return or.get();
 	}
+	public void addRestaurantWithPicture(Restaurant restaurant, MultipartFile addRestaurantfile) throws IOException {
+        if (restaurant.getLocationname() == null || restaurant.getLocationname().isEmpty() ||
+            restaurant.getLocation() == null || restaurant.getLocation().isEmpty()) {
+            throw new IllegalArgumentException("Missing required fields");
+        }
+
+        create(restaurant);
+
+        if (!addRestaurantfile.isEmpty()) {
+            pictureService.createpicture(restaurant.getId(), addRestaurantfile);
+        }
+    }
 	public Map<Integer, Picture> getFirstPicturesForRestaurants(List<Restaurant> restaurantList) {
         Map<Integer, Picture> firstPictures = new HashMap<>();
         for (Restaurant restaurant : restaurantList) {

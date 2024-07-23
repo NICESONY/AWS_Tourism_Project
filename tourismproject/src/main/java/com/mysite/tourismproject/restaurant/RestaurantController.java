@@ -50,23 +50,14 @@ public class RestaurantController {
 	
 	@PostMapping("/addrestaurant")
 	public String addRestaurant(@ModelAttribute("restaurant") Restaurant restaurant,
-	                            @RequestParam("addRestaurantfile") MultipartFile addRestaurantfile) throws IOException {
-
-	    if (restaurant.getLocationname() != null && !restaurant.getLocationname().isEmpty() &&
-	        restaurant.getLocation() != null && !restaurant.getLocation().isEmpty()) {
-	        restaurantService.create(restaurant);
-
-	        if (!addRestaurantfile.isEmpty()) {
-	            Picture picture = new Picture();
-	            picture.setRestaurantId(restaurant.getId());
-	            pictureService.createpicture(picture, addRestaurantfile);
-	        }
-	        return "redirect:/restaurant/detail/" + restaurant.getId();
-	    }
-
-	    return "redirect:/addrestaurant?error=Missing required fields";
+            @RequestParam("addRestaurantfile") MultipartFile addRestaurantfile) throws IOException {
+		try {
+				restaurantService.addRestaurantWithPicture(restaurant, addRestaurantfile);
+				return "redirect:/restaurant/detail/" + restaurant.getId();
+		} catch (IllegalArgumentException e) {
+			return "redirect:/addrestaurant?error=" + e.getMessage();
+		}
 	}
-	
 	@GetMapping("/detail/{rid}")
     public String getRestaurantPictures(Model model, @PathVariable("rid") Integer rid) {
         Restaurant restaurant = restaurantService.findById(rid);
