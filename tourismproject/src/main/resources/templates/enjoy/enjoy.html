@@ -73,15 +73,18 @@ body {
 	padding: 0;
 	background-color: #f4f4f4;
 }
+
 main {
 	padding: 1em;
 	max-width: 1200px;
 	margin: 20px auto;
 	background-color: white;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
 }
 
+h1 {
+	text-align: center;
+}
 
 .search-section {
 	margin: 20px 0;
@@ -97,7 +100,7 @@ main {
 .search-section input, .search-section select, .search-section button {
 	padding: 10px;
 	font-size: 16px;
-	width: 100%;
+	width: 80%;
 	max-width: 400px;
 	box-sizing: border-box;
 }
@@ -112,8 +115,6 @@ main {
 .search-section button:hover {
 	background-color: #45a049;
 }
-
-
 
 #gallerywrapper {
 	width: 640px;
@@ -161,6 +162,7 @@ main {
 }
 
 #gallery .previous {
+	position: staic;
 	display: inline;
 	float: left;
 	margin-left: 80px;
@@ -168,11 +170,13 @@ main {
 }
 
 #gallery .next {
-	display: inline;
+	position: staic; display : inline;
 	float: right;
 	margin-right: 80px;
 	text-decoration: none;
+	display: inline;
 }
+
 .gallery-row {
 	display: flex;
 	justify-content: left;
@@ -433,6 +437,13 @@ main {
 
 
 
+
+
+
+
+		<a href="/enjoy/enjoy_map">즐길거리_지도(테스트 중)</a>
+
+
 		<h1>즐길거리</h1>
 		<div class="search-section">
 			<form onsubmit="searchActivities">
@@ -456,58 +467,58 @@ main {
 				<button type="submit">검색</button>
 			</form>
 		</div>
-		<a href="/enjoy/enjoy_map">즐길거리_지도(테스트 중)</a>
+
 
 
 		<div id="gallerywrapper">
 			<div id="gallery">
-			<div class="gallery-row">
-				<div id="pic1">
-				
-					<img
-						src="http://tong.visitkorea.or.kr/cms/resource/96/2548096_image2_1.jpg?"
-						height="250" width="300" alt="Image 1">
-					<h3>금산 하늘 물빛 정원</h3>
-					<p>Text of image 1.</p>
-					<a class="previous" href="#pic5">&lt;</a> <a class="next"
-						href="#pic2">&gt;</a>
-				</div>
-				<div id="pic2">
-					<img
-						src="http://tong.visitkorea.or.kr/cms/resource/97/1600297_image2_1.jpg?"
-						height="250" width="300" alt="Image 2">
-					<h3>논산 수락 계곡</h3>
-					<p>Text of image 2.</p>
-					<a class="previous" href="#pic1">&lt;</a> <a class="next"
-						href="#pic3">&gt;</a>
-				</div>
-				<div id="pic3">
-					<img
-						src="http://tong.visitkorea.or.kr/cms/resource/32/218932_image2_1.jpg?"
-						height="250" width="300" alt="Image 3">
-					<h3>보령 성주산자연휴양림</h3>
-					<p>Text of image 3.</p>
-					<a class="previous" href="#pic2">&lt;</a> <a class="next"
-						href="#pic4">&gt;</a>
-				</div>
-				<div id="pic4">
-					<img
-						src="http://tong.visitkorea.or.kr/cms/resource/52/2671452_image2_1.jpg?"
-						height="250" width="300" alt="Image 4">
-					<h3>부여 정림사지 오층석탑</h3>
-					<p>Text of image 4.</p>
-					<a class="previous" href="#pic3">&lt;</a> <a class="next"
-						href="#pic5">&gt;</a>
-				</div>
-				<div id="pic5">
-					<img
-						src="http://tong.visitkorea.or.kr/cms/resource/84/2495084_image2_1.jpg?"
-						height="250" width="300" alt="Image 5">
-					<h3>소노벨 천안 오션어드벤처</h3>
-					<p>Text of image 5.</p>
-					<a class="previous" href="#pic4">&lt;</a> <a class="next"
-						href="#pic1">&gt;</a>
-				</div>
+				<div class="gallery-row">
+					<div id="pic1">
+
+						<img
+							src="http://tong.visitkorea.or.kr/cms/resource/96/2548096_image2_1.jpg?"
+							height="300" width="700" alt="Image 1">
+						<h3>금산 하늘 물빛 정원</h3>
+						<p>Text of image 1.</p>
+						<a class="previous" href="#pic5">&lt;</a> <a class="next"
+							href="#pic2">&gt;</a>
+					</div>
+					<div id="pic2">
+						<img
+							src="http://tong.visitkorea.or.kr/cms/resource/97/1600297_image2_1.jpg?"
+							height="300" width="700" alt="Image 2">
+						<h3>논산 수락 계곡</h3>
+						<p>Text of image 2.</p>
+						<a class="previous" href="#pic1">&lt;</a> <a class="next"
+							href="#pic3">&gt;</a>
+					</div>
+					<div id="pic3">
+						<img
+							src="http://tong.visitkorea.or.kr/cms/resource/32/218932_image2_1.jpg?"
+							height="300" width="700" alt="Image 3">
+						<h3>보령 성주산자연휴양림</h3>
+						<p>Text of image 3.</p>
+						<a class="previous" href="#pic2">&lt;</a> <a class="next"
+							href="#pic4">&gt;</a>
+					</div>
+					<div id="pic4">
+						<img
+							src="http://tong.visitkorea.or.kr/cms/resource/52/2671452_image2_1.jpg?"
+							height="300" width="700" alt="Image 4">
+						<h3>부여 정림사지 오층석탑</h3>
+						<p>Text of image 4.</p>
+						<a class="previous" href="#pic3">&lt;</a> <a class="next"
+							href="#pic5">&gt;</a>
+					</div>
+					<div id="pic5">
+						<img
+							src="http://tong.visitkorea.or.kr/cms/resource/84/2495084_image2_1.jpg?"
+							height="300" width="700" alt="Image 5">
+						<h3>소노벨 천안 오션어드벤처</h3>
+						<p>Text of image 5.</p>
+						<a class="previous" href="#pic4">&lt;</a> <a class="next"
+							href="#pic1">&gt;</a>
+					</div>
 				</div>
 			</div>
 		</div>
