@@ -26,7 +26,8 @@
     <script src="/vendors/simplebar/simplebar.min.js"></script>
     <script src="/assets/js/config.js"></script>
 
-
+    <!-- Include Bootstrap CSS for modal -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
@@ -40,6 +41,7 @@
     <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
     <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
     <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    
     <script>
       var phoenixIsRTL = window.config.config.phoenixIsRTL;
       if (phoenixIsRTL) {
@@ -56,6 +58,7 @@
       }
     </script>
     <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
   </head>
 
 
@@ -254,6 +257,26 @@
                     
                     <a class="btn btn-primary mb-3" href="/notice/add">공지사항</a>
                     
+                     <!-- Modal -->
+			  <div class="modal fade" id="permissionModal" tabindex="-1" role="dialog" aria-labelledby="permissionModalLabel" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <h5 class="modal-title" id="permissionModalLabel">권한 없음</h5>
+			          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			          </button>
+			        </div>
+			        <div class="modal-body">
+			          공지작성을 위한 관리자 권한이 필요합니다.
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+                    
                     <div id="tableExample4" data-list='{"valueNames":["id","title","author","createdate"],"page":5,"pagination":true,"filter":{"key":"payment"}}'>
                         <div class="row justify-content-end g-0">
                           <div class="col-auto px-3">
@@ -304,6 +327,28 @@
                           <button class="page-link pe-0" data-list-pagination="next"><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg><!-- <span class="fas fa-chevron-right"></span> Font Awesome fontawesome.com --></button>
                         </div>
                       </div>
+                      
+  <!-- Include jQuery and Bootstrap JS for modal -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('addNoticeButton').addEventListener('click', () => {
+      fetch('/api/checkAdmin', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.isAdmin) {
+          window.location.href = '/notice/add';
+        } else {
+          $('#permissionModal').modal('show');
+        }
+      });
+    });
+  </script>
                                           
     <!-- ===============================================-->
     <!--    JavaScripts-->
