@@ -23,7 +23,7 @@
 
 
     <!-- Stylesheets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapidfdfs.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
@@ -71,20 +71,12 @@
                         <h3 class="text-body-highlight">Sign In</h3>
                         <p class="text-body-tertiary">Get access to your account</p>
                     </div>
-                    <button class="btn btn-phoenix-secondary w-100 mb-3">
-                        <span class="fab fa-google text-danger me-2 fs-9"></span>Sign in with Google
-                    </button>
-                    <a href="/naver">
-                    <button class="btn btn-phoenix-secondary w-100">
-                        <img src="/images/naver.png" height="15px"/>Sign in with naver
-                    </button></a>
                     <div class="position-relative">
                         <hr class="bg-body-secondary mt-5 mb-4" />
                         <div class="divider-content-center">or use email</div>
                     </div>
                     
-                    
-                    
+                  
                     <form th:action="@{/signup/signin}" method="post">
                         <div th:if="${param.error}">
                             <div class="alert alert-danger">
