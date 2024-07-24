@@ -1,10 +1,6 @@
 <html layout:decorate="~{layout}">
 
-
-
 <th:block layout:fragment="content" class="container">
-
-
 </nav>
 
 </main>
@@ -148,7 +144,7 @@
                     <a class="fw-bold fs-9 mt-4" href="#!"><span class="fas fa-plus me-1"></span>메뉴 추가</a>
                   <!-- 지도 시작 -->
                   <div id="map" style="width:100%;height:350px;"></div>
-	<div class="map_wrap">
+	<div class="map_wrap" style="overflow:hidden;">
     <div id="mapWrapper" style="width:50%;height:300px;float:left">
         <div id="map1" style="width:100%;height:100%"></div> <!-- 지도를 표시할 div 입니다 -->
     </div>
@@ -313,7 +309,7 @@ function toggleRoadview(position){
 <!-- 사진 모두 보기 모달 창-->
   <!-- Vertically centered scrollable modal -->
   <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 90%;max-height: 90%;"role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
