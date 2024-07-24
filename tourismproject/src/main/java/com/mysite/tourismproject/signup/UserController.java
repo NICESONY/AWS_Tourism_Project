@@ -36,7 +36,7 @@ public class UserController {
 
         if (!userCreateForm.getPassword1().equals(userCreateForm.getPassword2())) {
             bindingResult.rejectValue("password2", "passwordInCorrect", "2개의 패스워드가 일치하지 않습니다.");
-            return ""; // 템플릿 경로와 일치해야 함
+            return "signup/signup"; // 템플릿 경로와 일치해야 함
         }
 
         try {

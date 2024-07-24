@@ -7,6 +7,7 @@
 
 
   
+          <button class="navbar-toggler fs-8 ps-1 ps-sm-3 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mt-3 mt-lg-0">
             </ul>
@@ -68,7 +69,7 @@
 	       						<td th:text="${loop.count}"></td>
 	         
 	         <td>
-	           					 <a th:href="@{|/reviesdsdw/detail/${review.id}|}" th:text="${review.title}"></a>
+	           					 <a th:href="@{|/review/detail/${review.id}|}" th:text="${review.title}"></a>
 	        										</td>
 	        										
 	        										
