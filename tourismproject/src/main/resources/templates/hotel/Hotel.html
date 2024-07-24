@@ -72,7 +72,7 @@ body {
 }
 
 form {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255);
 	padding: 50px;
 	border: 3px solid #ccc;
 	border-radius: 20px;
@@ -110,75 +110,9 @@ button {
 	border-radius: 5px;
 	cursor: pointer;
 }
-
-#gallerywrapper {
-	width: 640px;
-	height: 450px;
-	margin: 0 auto;
-	position: relative;
-	font-family: verdana, arial, sans-serif;
-}
-
-#gallerywrapper #gallery {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 500px;
-	width: 640px;
-	overflow: hidden;
-	text-align: center;
-}
-
-#gallerywrapper #gallery div {
-	width: 640px;
-	height: 900px;
-	padding-top: 10px;
-	position: static;
-}
-
-#gallerywrapper #gallery div img {
-	clear: both;
-	display: block;
-	margin: 0 auto;
-	border: 0;
-}
-
-#gallerywrapper #gallery div h3 {
-	padding: 10px 0 0 0;
-	margin: 0;
-	font-size: 18px;
-}
-
-#gallerywrapper #gallery div p {
-	padding: 5px 0;
-	margin: 0;
-	font-size: 15px;
-	line-height: 15px;
-}
-
-#gallery .previous {
-	display: inline;
-	float: left;
-	margin-left: 80px;
-	text-decoration: none;
-}
-
-#gallery .next {
-	display: inline;
-	float: right;
-	margin-right: 80px;
-	text-decoration: none;
-}
-
-.gallery-row {
-	display: flex;
-	justify-content: left;
-	gap: 20px;
-}
-
 h2 {
 	background-image:
-		url(" https://media.istockphoto.com/id/1365312403/ko/%EC%82%AC%EC%A7%84/%EA%B0%80%EC%A3%BD-%EC%86%8C%ED%8C%8C-%EC%B1%85-%EC%84%A0%EB%B0%98-%EA%B1%B0%EC%8B%A4%EB%9F%AD%EC%85%94%EB%A6%AC-%ED%81%B4%EB%9E%98%EC%8B%9D-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4-%EB%9D%BC%EC%9A%B4%EC%A7%80-%EB%A1%9C%EB%B9%84-%EB%A6%AC%EC%85%89%EC%85%98.jpg?s=612x612&w=0&k=20&c=Zbwgf0Wtk1AfWVB0U-3mP5KpMJ3V3b6zwUMaTs1NnWI= ");
+		url("https://media.istockphoto.com/id/1365312403/ko/%EC%82%AC%EC%A7%84/%EA%B0%80%EC%A3%BD-%EC%86%8C%ED%8C%8C-%EC%B1%85-%EC%84%A0%EB%B0%98-%EA%B1%B0%EC%8B%A4%EB%9F%AD%EC%85%94%EB%A6%AC-%ED%81%B4%EB%9E%98%EC%8B%9D-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4-%EB%9D%BC%EC%9A%B4%EC%A7%80-%EB%A1%9C%EB%B9%84-%EB%A6%AC%EC%85%89%EC%85%98.jpg?s=1024x1024&w=is&k=20&c=B0ZWBWKQjOLpIXwVecohqTAtNbYBOX_knFefWVO32qM=");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -437,7 +371,8 @@ h2 {
 		<div>
 			<div>
 				<div>
-					<h2>호 텔 / 숙 소
+				<h3>호 텔 / 숙 소</h3>
+					<h2>
 
 					<form action="/hotels" method="post">
 						<div class="hotelName">
@@ -464,104 +399,82 @@ h2 {
 					</form></h2>
 
 
-					<div id="gallerywrapper">
-						<div id="gallery">
-							<div class="gallery-row">
-								<div id="pic1">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/63/c6/ab/1-1-2.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 1"> <a
-										class="previous" href="#pic8">&lt;</a> <a class="next"
-										href="#pic2">&gt;</a>
-									<h3>보령</h3>
-									<p>보령은 한국의 서해안에 위치한 작은 시입니다. 이곳은 유명한 먹거리와 아름다운 해변으로 유명합니다.
-										보령에서는 매년 해마다 유쾌한 축제가 열리며, 이곳에서만 즐길 수 있는 특별한 경험을 누릴 수 있습니다.
-										이곳에서는 수많은 해변과 산책로, 그리고 역사적인 유적지를 방문할 수 있습니다.</p>
 
-								</div>
-								<div id="pic2">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/56/80/8b/caption.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 2"> <a
-										class="previous" href="#pic1">&lt;</a> <a class="next"
-										href="#pic3">&gt;</a>
-									<h3>천안</h3>
-									<p>천안은 대한민국 충청남도의 중심지로, 서울과 대전의 중간에 위치해 있습니다. 이 도시는 교통이
-										편리하고 역사적인 유산과 자연경관이 풍부합니다. 천안에는 많은 호텔이 있습니다.</p>
+					
+					 
+					
+<section class="pb-7 pt-0 overflow-x-hidden">
+        <div class="bg-holder d-none d-xl-block" style="background-image:url(../../assets/img/bg/bg-left-31.png);background-size:22%;background-position:left;z-index:1;">
+        </div>
+        <!--/.bg-holder-->
 
-								</div>
-								<div id="pic3">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/14/da/f9/hyeonchungsa-shrine.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 3"> <a
-										class="previous" href="#pic2">&lt;</a> <a class="next"
-										href="#pic4">&gt;</a>
-									<h3>부여</h3>
-									<p>부여는 대한민국 충청남도에 위치한 작은 도시입니다. 이 곳은 2000년 전통을 자랑하는 역사적인
-										장소로, 백제의 옛 수도였습니다. 부여는 한국에서 가장 아름다운 도시 중 하나로 여겨지며, 자연 경관과 역사적인
-										유산으로 유명합니다.</p>
+        <div class="bg-holder d-none d-xl-block" style="background-image:url(../../assets/img/bg/bg-right-31.png);background-size:15%;background-position:right bottom;z-index:1;">
+        </div>
+        <!--/.bg-holder-->
 
-								</div>
-								<div id="pic4">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e9/92/0d/caption.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 4"> <a
-										class="previous" href="#pic3">&lt;</a> <a class="next"
-										href="#pic5">&gt;</a>
-									<h3>아산</h3>
-									<p>아산은 충청남도에 위치한 도시로, 유네스코 세계문화유산인 온양온천과 가까운 거리에 위치해 있습니다.
-										여행자들은 아산의 다양한 명소와 맛집을 즐길 수 있습니다.</p>
-
-								</div>
-								<div id="pic5">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/1e/46/f0/caption.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 5"> <a
-										class="previous" href="#pic4">&lt;</a> <a class="next"
-										href="#pic6">&gt;</a>
-									<h3>태안</h3>
-									<p>태안은 대한민국 충청남도에 위치한 시입니다. 태안에는 많은 해변과 섬이 있어서 해양 여행을 즐기기에
-										최적의 장소입니다. 또한, 태안에는 국립공원과 자연 보호구역이 있어서 자연을 즐기기에도 좋습니다. 태안은 한국의
-										자연 경관을 즐기기에 최적의 장소 중 하나입니다.</p>
-
-								</div>
-								<div id="pic6">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/e0/31/ba/caption.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 6"> <a
-										class="previous" href="#pic5">&lt;</a> <a class="next"
-										href="#pic7">&gt;</a>
-									<h3>예산</h3>
-									<p>예산은 한국의 충청남도에 위치한 작은 도시입니다. 이곳은 조용하고 평화로운 분위기를 자랑하며,
-										도심에서 벗어나 조용한 여행을 즐길 수 있는 곳입니다. 예산에서는 다양한 체험 프로그램을 즐길 수 있습니다.</p>
-
-								</div>
-								<div id="pic7">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/b7/de/c4/spring-water-falling.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 7"> <a
-										class="previous" href="#pic6">&lt;</a> <a class="next"
-										href="#pic8">&gt;</a>
-									<h3>공주</h3>
-									<p>공주는 한국의 중부 지방에 위치한 작은 도시입니다. 이곳은 한국의 역사와 문화를 체험할 수 있는
-										곳으로 유명합니다. 공주는 국내외 관광객들에게 많은 사랑을 받는 도시입니다. 이곳에서는 역사와 문화를 경험할 수
-										있습니다.</p>
-
-								</div>
-								<div id="pic8">
-									<img
-										src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/ec/de/e7/solmoe-holy-ground.jpg?w=300&h=300&"
-										height="300" width="700" alt="Image 8"> <a
-										class="previous" href="#pic7">&lt;</a> <a class="next"
-										href="#pic1">&gt;</a>
-									<h3>당진</h3>
-									<p>당진시는 대한민국 충청남도에 위치한 아름다운 도시입니다. 당진시는 산과 바다, 호수 등 다양한 자연
-										경관을 자랑하며, 지역적인 특산품인 당진배와 당진굴비 등이 유명합니다.</p>
-
-								</div>
-							</div>
-						</div>
-					</div>
+        <div class="bg-latest-posts"></div>
+        <div class="container-medium text-center position-relative z-2">
+          <h3 class="mb-2 text-body-emphasis">호텔 소개 </h3>
+          <p class="mb-0 text-body-tertiary mb-13">충청남도 호텔 리스트</p>
+        </div>
+        <div class="swiper-theme-container swiper-zooming-slider">
+          <div class="swiper-container theme-slider swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper="{&quot;loop&quot;:true,&quot;slidesPerView&quot;:1.3,&quot;spaceBetween&quot;:32,&quot;speed&quot;:2000,&quot;autoplay&quot;:true,&quot;centeredSlides&quot;:true,&quot;breakpoints&quot;:{&quot;540&quot;:{&quot;slidesPerView&quot;:1.5},&quot;768&quot;:{&quot;slidesPerView&quot;:1.8},&quot;1200&quot;:{&quot;slidesPerView&quot;:2},&quot;1530&quot;:{&quot;slidesPerView&quot;:2.8}}}">
+            <div class="swiper-wrapper" id="swiper-wrapper-51060886d58a85f04" aria-live="off" style="transition-duration: 2000ms; transform: translate3d(-1045.5px, 0px, 0px);">
+              
+              
+              
+              
+            <div class="swiper-slide rounded-3 overflow-hidden" role="group" aria-label="3 / 4" style="width: 665px; margin-right: 32px;" data-swiper-slide-index="2">
+                <div class="position-relative w-100 h-100"><img class="w-100 h-100 object-fit-cover" src="https://images.trvl-media.com/lodging/103000000/102280000/102278700/102278626/175295e1.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="">
+                  <div class="backdrop-faded p-4 p-md-6">
+                    <div class="d-flex align-items-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar text-secondary-lighter me-2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <h6 class="mb-0 fw-semibold text-secondary-lighter pe-3 me-3 border-end">수청5길 38, 당진시</h6><svg class="svg-inline--fa fa-star text-warning fs-9 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"></path></svg><!-- <span class="fa-solid fa-star text-warning fs-9 me-2"></span> Font Awesome fontawesome.com -->
+                      <h6 class="mb-0 text-secondary-lighter fw-semibold">9.2</h6>
+                    </div><a class="text-white fw-bold fs-7" href="#!">어반스테이</a>
+                  </div>
+                </div>
+              </div><div class="swiper-slide rounded-3 overflow-hidden swiper-slide-prev" role="group" aria-label="4 / 4" style="width: 665px; margin-right: 32px;" data-swiper-slide-index="3">
+                <div class="position-relative w-100 h-100"><img class="w-100 h-100 object-fit-cover" src="https://images.trvl-media.com/lodging/101000000/100230000/100227400/100227379/a606bc76.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="">
+                  <div class="backdrop-faded p-4 p-md-6">
+                    <div class="d-flex align-items-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar text-secondary-lighter me-2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <h6 class="mb-0 fw-semibold text-secondary-lighter pe-3 me-3 border-end">안견로 465, 서산시</h6><svg class="svg-inline--fa fa-star text-warning fs-9 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"></path></svg><!-- <span class="fa-solid fa-star text-warning fs-9 me-2"></span> Font Awesome fontawesome.com -->
+                      <h6 class="mb-0 text-secondary-lighter fw-semibold">9.2</h6>
+                    </div><a class="text-white fw-bold fs-7" href="#!">베니키아</a>
+                  </div>
+                </div>
+              </div><div class="swiper-slide rounded-3 overflow-hidden swiper-slide-active" role="group" aria-label="1 / 4" style="width: 665px; margin-right: 32px;" data-swiper-slide-index="0">
+                <div class="position-relative w-100 h-100"><img class="w-100 h-100 object-fit-cover" src="https://images.trvl-media.com/lodging/105000000/104230000/104227200/104227138/3d21ac4e.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="">
+                  <div class="backdrop-faded p-4 p-md-6">
+                    <div class="d-flex align-items-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar text-secondary-lighter me-2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <h6 class="mb-0 fw-semibold text-secondary-lighter pe-3 me-3 border-end">송악읍 북부산업로 835-25, 당진시</h6><svg class="svg-inline--fa fa-star text-warning fs-9 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"></path></svg><!-- <span class="fa-solid fa-star text-warning fs-9 me-2"></span> Font Awesome fontawesome.com -->
+                      <h6 class="mb-0 text-secondary-lighter fw-semibold">8.8</h6>
+                    </div><a class="text-white fw-bold fs-7" href="#!">큐비스트</a>
+                  </div>
+                </div>
+              </div><div class="swiper-slide rounded-3 overflow-hidden swiper-slide-next" role="group" aria-label="2 / 4" style="width: 665px; margin-right: 32px;" data-swiper-slide-index="1">
+                <div class="position-relative w-100 h-100"><img class="w-100 h-100 object-fit-cover" src="https://images.trvl-media.com/lodging/97000000/96550000/96542400/96542362/dd22991d.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="">
+                  <div class="backdrop-faded p-4 p-md-6">
+                    <div class="d-flex align-items-center mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar text-secondary-lighter me-2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <h6 class="mb-0 fw-semibold text-secondary-lighter pe-3 me-3 border-end">터미널길 24-8, 보령시</h6><svg class="svg-inline--fa fa-star text-warning fs-9 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"></path></svg><!-- <span class="fa-solid fa-star text-warning fs-9 me-2"></span> Font Awesome fontawesome.com -->
+                      <h6 class="mb-0 text-secondary-lighter fw-semibold">9.2</h6>
+                    </div><a class="text-white fw-bold fs-7" href="#!">그랜드 베이</a>
+                  </div>
+                </div>
+              </div></div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+          <div class="swiper-nav">
+            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-51060886d58a85f04"><svg class="svg-inline--fa fa-chevron-right text-primary" data-fa-transform="shrink-3" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="" style="transform-origin: 0.3125em 0.5em;"><g transform="translate(160 256)"><g transform="translate(0, 0)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z" transform="translate(-160 -256)"></path></g></g></svg><!-- <span class="fas fa-chevron-right text-primary" data-fa-transform="shrink-3"></span> Font Awesome fontawesome.com --></div>
+            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-51060886d58a85f04"><svg class="svg-inline--fa fa-chevron-left text-primary" data-fa-transform="shrink-3" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="" style="transform-origin: 0.3125em 0.5em;"><g transform="translate(160 256)"><g transform="translate(0, 0)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z" transform="translate(-160 -256)"></path></g></g></svg><!-- <span class="fas fa-chevron-left text-primary" data-fa-transform="shrink-3"></span> Font Awesome fontawesome.com --></div>
+          </div>
+        </div>
+        <div class="text-center mt-12 position-relative z-2">
+          <button class="btn btn-link p-0 fs-8">View all<svg class="svg-inline--fa fa-chevron-right ms-2" data-fa-transform="shrink-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="" style="transform-origin: 0.3125em 0.5em;"><g transform="translate(160 256)"><g transform="translate(0, 0)  scale(0.9375, 0.9375)  rotate(0 0 0)"><path fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z" transform="translate(-160 -256)"></path></g></g></svg><!-- <span class="fa-solid fa-chevron-right ms-2" data-fa-transform="shrink-1"></span> Font Awesome fontawesome.com --></button>
+        </div>
+      </section>
+					
+					
+					
+					
 				</div>
 			</div>
 		</div>
