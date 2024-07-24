@@ -1,6 +1,9 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container">
+</nav>
 
+
+<div class="container-medium">
 
     <h5 class="my-3 border-bottom pb-2">공지사항</h5>
     <form th:action="@{/notice/create}" method="post" enctype="multipart/form-data">
@@ -30,6 +33,7 @@
         </div>               
         <input type="submit" value="저장하기" class="btn btn-primary my-2">
     </form>
+    </div>
 </div>
 </html>
 
