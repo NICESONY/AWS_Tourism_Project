@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.mysite'
-version = 'tourism01'
+version = 'teamtour'
 
 java {
 	toolchain {
