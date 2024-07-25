@@ -12,43 +12,43 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class QuestionCommentController {
-	
-	
-	
-	private final QuestionCommentService cs;
-		
-	
-	
-	@PostMapping("/comment3/create/{id}")
-	public String commentCreatequestion(@RequestParam("content") String content, 
-								@PathVariable("id") Integer id) {
-		cs.create(content ,id);
-		
-		return "redirect:/question/detail/"+ id;
-	}
-	
-	@GetMapping("/comment3/delete/{nid}/{cid}")
-	public String commentDeletequestion(@PathVariable("nid") Integer nid, 
-								@PathVariable("cid") Integer cid) {
-		
-		cs.delete(cid);	
-		return "redirect:/question/detail/"+ nid;
-	}
-	
-	
-	@GetMapping("/comment3/update3/{id}")
-	public String commentFixquestion(Model model, @PathVariable("id") Integer id) {
-		model.addAttribute("comment3",cs.getComment(id));
-		return "question/commentfix3";
-	}
-	
-	
-	
-	@PostMapping("/comment3/update3/{id}")
-	public String commentUpdatequestion(@RequestParam("content") String s,@PathVariable("id") Integer id) {
-		QuestionComment c = cs.getComment(id);
-		c.setContent(s);
-		cs.update(c);
-		return "redirect:/question/detail/" + c.getQuestion().getId();
-	}
+   
+   
+   
+   private final QuestionCommentService questionCommentService;
+      
+   
+   
+   @PostMapping("/comment3/create/{id}")
+   public String commentCreatequestion(@RequestParam("content") String content, 
+                        @PathVariable("id") Integer id) {
+	   questionCommentService.create(content ,id);
+      
+      return "redirect:/question/detail/"+ id;
+   }
+   
+   @GetMapping("/comment3/delete/{nid}/{cid}")
+   public String commentDeletequestion(@PathVariable("nid") Integer nid, 
+                        @PathVariable("cid") Integer cid) {
+      
+      questionCommentService.delete(cid);   
+      return "redirect:/question/detail/"+ nid;
+   }
+   
+   
+   @GetMapping("/comment3/update3/{id}")
+   public String commentFixquestion(Model model, @PathVariable("id") Integer id) {
+      model.addAttribute("comment3",questionCommentService.getComment(id));
+      return "question/commentfix3";
+   }
+   
+   
+   
+   @PostMapping("/comment3/update3/{id}")
+   public String commentUpdatequestion(@RequestParam("content") String content,@PathVariable("id") Integer id) {
+      QuestionComment questionComment = questionCommentService.getComment(id);
+      questionComment.setContent(content);
+      questionCommentService.update(questionComment);
+      return "redirect:/question/detail/" + questionComment.getQuestionNotice().getId();
+   }
 }

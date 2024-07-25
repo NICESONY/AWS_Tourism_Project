@@ -5,39 +5,41 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.mysite.tourismproject.S3Service;
+
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor 
 @Service
 public class QuestionCommentService {
-	
-	private final QuestionCommentRepository cr;
-	private final QuestionNoticeService ns;
-	
-	public void create(String content, Integer id) {
-		QuestionComment comm = new QuestionComment();
-		comm.setContent(content);
-		comm.setDate(LocalDateTime.now());
-		
-		
-		comm.setQuestion(ns.getquestionByid(id));
-		
-		cr.save(comm);
-	}
-	
-	
-	public void delete(Integer id) {
-		cr.deleteById(id);
-	}
-	
-	
-	public QuestionComment getComment(Integer id) {
-		Optional<QuestionComment> op = cr.findById(id);
-		return op.get();
-	}
-	
-	
-	public void update(QuestionComment c) {
-		cr.save(c);
-	}
+   
+   private final QuestionCommentRepository questionCommentRepository;
+   private final QuestionNoticeService questionNoticeService;
+   
+   public void create(String content, Integer id) {
+      QuestionComment questionComment = new QuestionComment();
+      questionComment.setContent(content);
+      questionComment.setDate(LocalDateTime.now());
+      
+      
+      questionComment.setQuestionNotice(questionNoticeService.getquestionByid(id));
+      
+      questionCommentRepository.save(questionComment);
+   }
+   
+   
+   public void delete(Integer id) {
+      questionCommentRepository.deleteById(id);
+   }
+   
+   
+   public QuestionComment getComment(Integer id) {
+      Optional<QuestionComment> op = questionCommentRepository.findById(id);
+      return op.get();
+   }
+   
+   
+   public void update(QuestionComment questionComment) {
+      questionCommentRepository.save(questionComment);
+   }
 }

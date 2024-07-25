@@ -16,16 +16,15 @@ import lombok.Setter;
 @Entity
 public class QuestionComment {
 
-	@Id 
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
 
     @Column
     private String content; 
-    
 
     private LocalDateTime date; 
 
     @ManyToOne 
-    private QuestionNotice question; 
+    private QuestionNotice questionNotice;
 }
