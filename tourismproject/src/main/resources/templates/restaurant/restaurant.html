@@ -423,7 +423,7 @@ function closeRoadview() {
                         if (status === kakao.maps.services.Status.OK) {
                             var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
                             var marker = new kakao.maps.Marker({
-                                map: map,
+                                map: modalMap,
                                 position: coords
                             });
 
@@ -431,7 +431,7 @@ function closeRoadview() {
                             var infowindow = new kakao.maps.InfoWindow({
                                 content: '<div style="width:150px;text-align:center;padding:6px 0;">[[${restaurant.locationname}]]</div>'
                             });
-                            infowindow.open(map, marker)
+                            infowindow.open(modalMap, marker)
                             modalMap.setCenter(coords);
                         } 
                     });
