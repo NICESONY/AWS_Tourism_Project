@@ -4,9 +4,6 @@
 
 <th:block layout:fragment="content" class="container">
 
-
-
-   
   
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mt-3 mt-lg-0">
@@ -36,30 +33,29 @@
             <label for="author" class="form-label">작성자</label>
             <input type="text" name="author" id="author" class="form-control" th:value="${question.author}">
         </div>
-        
-        
-        
-        
+
         <div class="mb-3">
             <label for="content" class="form-label">내용</label>
             <textarea name="content" id="content" class="form-control" rows="10" th:text="${question.content}"></textarea>
         </div>   
         
         <div class="mb-3">
-        <input type="file" name = "file1">
-        [[${question.image1}]]
-        </div>
-       
-       <div class="mb-3">
-        <input type="file" name = "file2">
-        [[${question.image2}]]
-        </div>
-        
+      <input type="file" name="file1">
+      [[${question.image1}]]
+      <a th:href="@{/question/deleteImage1/{id}(id=${question.id})}" class="btn btn-danger btn-sm">삭제</a>
+    </div>
 
-       <div class="mb-3">
-        <input type="file" name = "file3">
-        [[${question.image3}]]
-        </div>
+    <div class="mb-3">
+      <input type="file" name="file2">
+      [[${question.image2}]]
+      <a th:href="@{/question/deleteImage2/{id}(id=${question.id})}" class="btn btn-danger btn-sm">삭제</a>
+    </div>
+
+    <div class="mb-3">
+      <input type="file" name="file3">
+      [[${question.image3}]]
+      <a th:href="@{/question/deleteImage3/{id}(id=${question.id})}" class="btn btn-danger btn-sm">삭제</a>
+    </div>
     
         
         <input type="submit" value="수정하기" class="btn btn-primary my-2">

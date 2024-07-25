@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.mysite.tourismproject.S3Service;
-
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor 
@@ -22,7 +20,7 @@ public class QuestionCommentService {
       questionComment.setDate(LocalDateTime.now());
       
       
-      questionComment.setQuestionNotice(questionNoticeService.getquestionByid(id));
+      questionComment.setQuestion(questionNoticeService.getquestionByid(id));
       
       questionCommentRepository.save(questionComment);
    }

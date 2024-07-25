@@ -26,5 +26,5 @@ public class QuestionComment {
     private LocalDateTime date; 
 
     @ManyToOne 
-    private QuestionNotice questionNotice;
+    private QuestionNotice question;
 }

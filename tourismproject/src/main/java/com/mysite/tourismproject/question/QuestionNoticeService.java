@@ -14,68 +14,89 @@ import com.mysite.tourismproject.S3Service;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor 
-@Service 
+@RequiredArgsConstructor
+@Service
 public class QuestionNoticeService {
 
-    private final QuestionNoticeRepository nr;
+    private final QuestionNoticeRepository questionNoticeRepository;
     private final S3Service s3Service;
 
-    
-    
     private static final Logger logger = LoggerFactory.getLogger(QuestionNoticeService.class);
 
-    
-    
     public void createnotice(QuestionNotice question, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
-        
-    	if (file1 != null && !file1.isEmpty()) {
+
+        if (file1 != null && !file1.isEmpty()) {
             s3Service.uploadFile(file1, file1.getOriginalFilename());
             question.setImage1(file1.getOriginalFilename());
         }
-    	
+
         if (file2 != null && !file2.isEmpty()) {
             s3Service.uploadFile(file2, file2.getOriginalFilename());
             question.setImage2(file2.getOriginalFilename());
         }
-        
+
         if (file3 != null && !file3.isEmpty()) {
             s3Service.uploadFile(file3, file3.getOriginalFilename());
             question.setImage3(file3.getOriginalFilename());
         }
-        
+
         question.setDate(LocalDateTime.now());
-        this.nr.save(question);
+        this.questionNoticeRepository.save(question);
     }
 
     public List<QuestionNotice> findallnotice() {
-        return nr.findAll();
+        return questionNoticeRepository.findAll();
     }
 
     public QuestionNotice getquestionByid(Integer id) {
-        Optional<QuestionNotice> op = this.nr.findById(id);
+        Optional<QuestionNotice> op = this.questionNoticeRepository.findById(id);
         return op.orElseThrow(() -> new IllegalArgumentException("Invalid question notice ID: " + id));
     }
 
     public void deleteNotice(Integer id) {
-        nr.deleteById(id);
+        questionNoticeRepository.deleteById(id);
     }
+    
 
     public void update(QuestionNotice question, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
-        if (file1 != null && !file1.isEmpty()) { 
-            s3Service.uploadFile(file1, file1.getOriginalFilename()); 
+        if (file1 != null && !file1.isEmpty()) {
+            s3Service.uploadFile(file1, file1.getOriginalFilename());
             question.setImage1(file1.getOriginalFilename());
         }
-        
-        if (file2 != null && !file2.isEmpty()) { 
-            s3Service.uploadFile(file2, file2.getOriginalFilename()); 
+
+        if (file2 != null && !file2.isEmpty()) {
+            s3Service.uploadFile(file2, file2.getOriginalFilename());
             question.setImage2(file2.getOriginalFilename());
         }
-        
-        if (file3 != null && !file3.isEmpty()) { 
-            s3Service.uploadFile(file3, file3.getOriginalFilename()); 
+
+        if (file3 != null && !file3.isEmpty()) {
+            s3Service.uploadFile(file3, file3.getOriginalFilename());
             question.setImage3(file3.getOriginalFilename());
         }
-        nr.save(question);
+        questionNoticeRepository.save(question);
     }
+    
+    public void deleteImage1(Integer id) {
+        QuestionNotice question = getquestionByid(id);
+        if (question.getImage1() != null) {
+            question.setImage1(null);
+            questionNoticeRepository.save(question);
+        }
+    }
+
+    public void deleteImage2(Integer id) {
+        QuestionNotice question = getquestionByid(id);
+        if (question.getImage2() != null) {
+            question.setImage2(null);
+            questionNoticeRepository.save(question);
+        }
+    }
+
+    public void deleteImage3(Integer id) {
+        QuestionNotice question = getquestionByid(id);
+        if (question.getImage3() != null) {
+            question.setImage3(null);
+            questionNoticeRepository.save(question);
+        }
+}
 }

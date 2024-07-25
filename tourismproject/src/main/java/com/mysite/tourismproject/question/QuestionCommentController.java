@@ -12,12 +12,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class QuestionCommentController {
-   
-   
-   
+     
    private final QuestionCommentService questionCommentService;
-      
-   
    
    @PostMapping("/comment3/create/{id}")
    public String commentCreatequestion(@RequestParam("content") String content, 
@@ -43,12 +39,11 @@ public class QuestionCommentController {
    }
    
    
-   
    @PostMapping("/comment3/update3/{id}")
    public String commentUpdatequestion(@RequestParam("content") String content,@PathVariable("id") Integer id) {
       QuestionComment questionComment = questionCommentService.getComment(id);
       questionComment.setContent(content);
       questionCommentService.update(questionComment);
-      return "redirect:/question/detail/" + questionComment.getQuestionNotice().getId();
+      return "redirect:/question/detail/" + questionComment.getQuestion().getId();
    }
 }
