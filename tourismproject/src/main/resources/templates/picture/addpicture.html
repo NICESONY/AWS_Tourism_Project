@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>이미지 업로드</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+<html layout:decorate="~{layout}">
+<th:block layout:fragment="content" class="container">
+<style>
         .file-input {
             display: none;
         }
@@ -32,8 +28,10 @@
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
+</nav>
+
+</main>
+
     <div class="container mt-5">
   <div class="button-container">        <h2>이미지 업로드</h2>                      
         <a class="d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" th:href="@{|/restaurant/detail/${id}|}">뒤로가기</a>
@@ -78,5 +76,11 @@
             }
         });
     </script>
-</body>
-</html>
+    <br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+</th:block>

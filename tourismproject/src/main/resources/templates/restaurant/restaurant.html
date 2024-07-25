@@ -12,7 +12,7 @@
     
      #modalcontainer { overflow:hidden; position:relative; }
     #modalmapWrapper { width:100%; height:500px; z-index:1; }
-    #modalrvWrapper { width:100%; height:500px; position:relative; z-index:0; margin-top: 20px; }
+    #modalrvWrapper { width:100%; height:500px; position:relative; z-index:0; margin-top: 20px; display:none; }
     #modalroadviewControl { position:absolute; top:5px; left:5px; width:42px; height:42px; z-index:1; cursor:pointer; background:url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat; }
     #modalroadviewControl.active { background-position:0 -350px; }
     #modalclose { position:absolute; padding:4px; top:5px; left:5px; cursor:pointer; background:#fff; border-radius:4px; border:1px solid #c8c8c8; box-shadow:0px 1px #888; }
@@ -345,7 +345,7 @@ function closeRoadview() {
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 90%;max-height: 90%;"role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
+          <h5 class="modal-title" id="modal2Label">[[${restaurant.locationname}]]의 사진</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -381,7 +381,7 @@ function closeRoadview() {
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 100%;max-height: 90%;"role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
+          <h5 class="modal-title" id="modal2Label">지도 크게 보기</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
          <div class="modal-body">
@@ -392,7 +392,7 @@ function closeRoadview() {
                         </div>
                         <div id="modalrvWrapper">
                             <div id="modalroadview" style="width:100%; height:100%;"></div> <!-- 로드뷰를 표시할 div 입니다 -->
-                            <div id="modalclose" title="로드뷰닫기" onclick="modalcloseRoadview()"><span class="img"></span></div>
+                     <!--        <div id="modalclose" title="로드뷰닫기" onclick="modalcloseRoadview()"><span class="img"></span></div> -->
                         </div>
                        
                     </div>
@@ -517,10 +517,12 @@ function closeRoadview() {
                             modalMarker.setMap(modalMap);
                             modalMarker.setPosition(modalMap.getCenter());
                             toggleModalRoadview(modalMap.getCenter());
+                            document.getElementById('modalrvWrapper').style.display = 'block';
                         } else {
                             modalOverlayOn = false;
                             modalMap.removeOverlayMapTypeId(kakao.maps.MapTypeId.ROADVIEW);
                             modalMarker.setMap(null);
+                            document.getElementById('modalrvWrapper').style.display = 'none';
                         }
                     }
 
@@ -537,14 +539,16 @@ function closeRoadview() {
                     }
 
                     //로드뷰에서 X버튼을 눌렀을 때 로드뷰를 지도 뒤로 숨기는 함수입니다
-                    function modalcloseRoadview() {
+/*                    function modalCloseRoadview() {
                         var position = modalMarker.getPosition();
                         toggleModalMapWrapper(true, position);
-                    }
-
+                        document.getElementById('modalrvWrapper').style.display = 'none';
+                        document.getElementById('modalroadviewControl').classList.remove('active');
+                        }
+*/
                     // Assign the setModalRoadview function to the window to make it accessible from the HTML
                     window.setModalRoadview = setModalRoadview;
-                    window.modalcloseRoadview = modalcloseRoadview;
+  /*                  window.modalCloseRoadview = modalCloseRoadview;*/
                 });
 </script>
               <!-- Add more images as needed -->
