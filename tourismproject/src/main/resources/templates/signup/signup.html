@@ -70,8 +70,8 @@
    								 <div th:replace="~{signup/form_error :: formErrorsFragment}"></div>
 
                             <div class="mb-3 text-start">
-                                <label class="form-label" for="username">사용자 ID</label>
-                                <input class="form-control" id="username" th:field="*{username}" type="text" placeholder="username" />
+                                <label class="form-label" for="username">User id</label>
+                                <input class="form-control" id="username" th:field="*{username}" type="text" placeholder="사용자" />
                             </div>
 
                             <div class="row g-3 mb-3">
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label" for="residence">거주지</label>
+                                    <label class="form-label" for="residence">Resident</label>
                                     <input class="form-control" id="residence" th:field="*{residence}" type="text" placeholder="거주지" />
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">회원가입</button>
+                            <button type="submit" class="btn btn-primary w-100 mb-3">회원가입</button>
                         </form>
 
                         <div class="text-center"><a class="fs-9 fw-bold" href="/signin">Sign in to an existing account</a></div>
