@@ -76,7 +76,7 @@
             <div class="theme-control-toggle fa-icon-wait">
               <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggleSm" />
               <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label>
-              <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label>
+              <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggleSm" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"onclick="toggleNavbarTheme()"><span class="icon" data-feather="sun"></span></label>
             
             
             
@@ -160,7 +160,7 @@
           
           </div>
           
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light"id="mainNavbar2">
   <div class="container-fluid">
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -422,7 +422,13 @@
     <script src="/vendors/bigpicture/BigPicture.js"></script>
     <script src="/vendors/typed.js/typed.umd.js"></script>
     <script src="/vendors/swiper/swiper-bundle.min.js"></script>
-
+<script>
+      function toggleNavbarTheme() {
+        var custnavbar = document.getElementById("mainNavbar");
+        custnavbar.classList.toggle("bg-white");
+        custnavbar.classList.toggle("bg-black");
+      }
+    </script>
   </body>
 
 </html>
