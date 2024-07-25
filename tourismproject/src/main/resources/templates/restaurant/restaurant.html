@@ -10,9 +10,9 @@
     #close {position: absolute;padding: 4px;top: 5px;left: 5px;cursor: pointer;background: #fff;border-radius: 4px;border: 1px solid #c8c8c8;box-shadow: 0px 1px #888;}
     #close .img {display: block;background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/rv_close.png) no-repeat;width: 14px;height: 14px;}
     
-    #modalcontainer { overflow:hidden; height:300px; position:relative; }
-        #modalmapWrapper { width:100%; height:300px; z-index:1; }
-        #modalrvWrapper { width:50%; height:300px; top:0; right:0; position:absolute; z-index:0; }
+    #modalcontainer { overflow:hidden; height:500px; position:relative; }
+        #modalmapWrapper { width:100%; height:500px; z-index:1; }
+        #modalrvWrapper { width:50%; height:500px; top:0; right:0; position:absolute; z-index:0; }
         #modalcontainer.view_roadview #modalmapWrapper { width: 50%; }
         #modalroadviewControl { position:absolute; top:5px; left:5px; width:42px; height:42px; z-index:1; cursor:pointer; background:url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat; }
         #modalroadviewControl.active { background-position:0 -350px; }
@@ -379,7 +379,7 @@ function closeRoadview() {
   <!-- 지도 크게 보기 모달 창-->
   <!-- Vertically centered scrollable modal -->
   <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 90%;max-height: 90%;"role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 100%;max-height: 90%;"role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modal2Label">봉구스 밥버거 공주대점의 사진</h5>
