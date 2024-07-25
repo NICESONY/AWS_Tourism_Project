@@ -1,5 +1,20 @@
 <html layout:decorate="~{layout}">
-<div layout:fragment="content" class="container">
+
+
+
+<th:block layout:fragment="content" class="container">
+
+
+
+
+  
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mt-3 mt-lg-0">
+            </ul>
+          </div>
+        </nav>
+        
+
     <h5 class="my-3 border-bottom pb-2">공지사항 수정</h5>
 
     <form th:action="@{/notice/update2}" method="post"  enctype="multipart/form-data">
@@ -50,4 +65,4 @@
         <input type="submit" value="수정하기" class="btn btn-primary my-2">
     </form>
 </div>
-</html>
+</th:block>
