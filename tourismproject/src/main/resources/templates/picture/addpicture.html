@@ -1,6 +1,24 @@
 <html layout:decorate="~{layout}">
+
+
+
 <th:block layout:fragment="content" class="container">
-<style>
+
+
+
+
+  
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mt-3 mt-lg-0">
+            </ul>
+          </div>
+        </nav>
+        
+     
+     
+
+<br>   
+    <style>
         .file-input {
             display: none;
         }
@@ -28,10 +46,8 @@
             margin-top: 20px;
         }
     </style>
-</nav>
-
-</main>
-
+</head>
+<body>
     <div class="container mt-5">
   <div class="button-container">        <h2>이미지 업로드</h2>                      
         <a class="d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center me-2" th:href="@{|/restaurant/detail/${id}|}">뒤로가기</a>
@@ -76,11 +92,9 @@
             }
         });
     </script>
-    <br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br>
+</body>
+<br>
+<br>
+<br>
+<br>
 </th:block>
