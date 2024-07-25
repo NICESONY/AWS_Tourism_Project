@@ -10,14 +10,13 @@
     #close {position: absolute;padding: 4px;top: 5px;left: 5px;cursor: pointer;background: #fff;border-radius: 4px;border: 1px solid #c8c8c8;box-shadow: 0px 1px #888;}
     #close .img {display: block;background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/rv_close.png) no-repeat;width: 14px;height: 14px;}
     
-    #modalcontainer { overflow:hidden; height:500px; position:relative; }
-        #modalmapWrapper { width:100%; height:500px; z-index:1; }
-        #modalrvWrapper { width:50%; height:500px; top:0; right:0; position:absolute; z-index:0; }
-        #modalcontainer.view_roadview #modalmapWrapper { width: 50%; }
-        #modalroadviewControl { position:absolute; top:5px; left:5px; width:42px; height:42px; z-index:1; cursor:pointer; background:url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat; }
-        #modalroadviewControl.active { background-position:0 -350px; }
-        #modalclose { position:absolute; padding:4px; top:5px; left:5px; cursor:pointer; background:#fff; border-radius:4px; border:1px solid #c8c8c8; box-shadow:0px 1px #888; }
-        #modalclose .img { display:block; background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/rv_close.png) no-repeat; width:14px; height:14px; }
+     #modalcontainer { overflow:hidden; position:relative; }
+    #modalmapWrapper { width:100%; height:500px; z-index:1; }
+    #modalrvWrapper { width:100%; height:500px; position:relative; z-index:0; margin-top: 20px; }
+    #modalroadviewControl { position:absolute; top:5px; left:5px; width:42px; height:42px; z-index:1; cursor:pointer; background:url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png) 0 -450px no-repeat; }
+    #modalroadviewControl.active { background-position:0 -350px; }
+    #modalclose { position:absolute; padding:4px; top:5px; left:5px; cursor:pointer; background:#fff; border-radius:4px; border:1px solid #c8c8c8; box-shadow:0px 1px #888; }
+    #modalclose .img { display:block; background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/rv_close.png) no-repeat; width:14px; height:14px; }
   </style>
 </nav>
 
@@ -387,14 +386,15 @@ function closeRoadview() {
         </div>
          <div class="modal-body">
            <div id="modalcontainer">
-                        <div id="modalrvWrapper">
-                            <div id="modalroadview" style="width:100%; height:100%;"></div> <!-- 로드뷰를 표시할 div 입니다 -->
-                            <div id="modalclose" title="로드뷰닫기" onclick="modalcloseRoadview()"><span class="img"></span></div>
-                        </div>
                         <div id="modalmapWrapper">
                             <div id="modalmap" style="width:100%; height:100%;"></div> <!-- 지도를 표시할 div 입니다 -->
                             <div id="modalroadviewControl" onclick="setModalRoadview()"></div>
                         </div>
+                        <div id="modalrvWrapper">
+                            <div id="modalroadview" style="width:100%; height:100%;"></div> <!-- 로드뷰를 표시할 div 입니다 -->
+                            <div id="modalclose" title="로드뷰닫기" onclick="modalcloseRoadview()"><span class="img"></span></div>
+                        </div>
+                       
                     </div>
                 </div>
                  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8118060c10a6518e5f79855cb17590cd&libraries=services"></script>
