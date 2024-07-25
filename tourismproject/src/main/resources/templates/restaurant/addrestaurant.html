@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>신규 장소 등록</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicons/logo.ico">
-    <script src="/vendors/simplebar/simplebar.min.js"></script>
-    <script src="/assets/js/config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-    <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<html layout:decorate="~{layout}">
+<th:block layout:fragment="content" class="container">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
         body {
             background-color: #f8f9fa;
         }
@@ -23,6 +10,9 @@
         }
         .modal-header, .modal-footer {
             border: none;
+        }
+        .setting-toggle{
+        display:none;
         }
         .modal-header {
             background-color: #f1f1f1;
@@ -75,8 +65,11 @@
         .file-label1111:hover {
             background-color: #0056b3;
         }
+        
     </style>
-  </head>
+</nav>
+</main>
+  
   <body class="bg-body-emphasis" style="--phoenix-scroll-margin-top: 1.2rem;">
     <main class="main" id="top">
       <div class="bg-primary-subtle py-2">
@@ -187,7 +180,9 @@
           </div>
         </div>
       </div>
-      <script>
+      </main>
+</body>
+<script>
         var customid = 0;
         function addProductMenu() {
           customid++;
@@ -214,24 +209,6 @@
         }
       </script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="/vendors/popper/popper.min.js"></script>
-      <script src="/vendors/bootstrap/bootstrap.min.js"></script>
-      <script src="/vendors/anchorjs/anchor.min.js"></script>
-      <script src="/vendors/is/is.min.js"></script>
-      <script src="/vendors/fontawesome/all.min.js"></script>
-      <script src="/vendors/lodash/lodash.min.js"></script>
-      <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-      <script src="/vendors/list.js/list.min.js"></script>
-      <script src="/vendors/feather-icons/feather.min.js"></script>
-      <script src="/vendors/dayjs/dayjs.min.js"></script>
-      <script src="/assets/js/phoenix.js"></script>
-      <script src="/vendors/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-      <script src="/vendors/isotope-packery/packery-mode.pkgd.min.js"></script>
-      <script src="/vendors/bigpicture/BigPicture.js"></script>
-      <script src="/vendors/typed.js/typed.umd.js"></script>
-      <script src="/vendors/swiper/swiper-bundle.min.js"></script>
-  </body>
+</th:block>
 </html>
