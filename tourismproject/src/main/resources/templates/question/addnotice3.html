@@ -1,7 +1,4 @@
 <html layout:decorate="~{layout}">
-
-    
-
 <th:block layout:fragment="content" class="container">
 
 
@@ -10,42 +7,36 @@
             </ul>
           </div>
         </nav>
-
-
-
 <div class="container-medium">
-
-
-    <h5 class="my-3 border-bottom pb-2">Q & A 작성</h5>
-    <form th:action="@{/question/create}" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="subject" class="form-label">제목</label>
-            <input type="text" name="title" id="subject" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="author" class="form-label">작성자</label>
-            <input type="text" name="author" id="author" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">내용</label>
-            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
-        </div>
-        
-        <div class="mb-3">
-        <input type="file" name = "file1">
-        </div>
+        <h5 class="my-3 border-bottom pb-2">Q & A 작성</h5>
+        <form th:action="@{/question/create}" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="subject" class="form-label">제목</label>
+                <input type="text" name="title" id="subject" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">작성자</label>
+                <input type="text" name="author" id="author" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">내용</label>
+                <textarea name="content" id="content" class="form-control" rows="10" required></textarea>
+            </div>
+            <div class="mb-3">
+            <label for="file1" class="form-label">파일 1</label>
+    		<input type="file" name="file1" id="file1" class="form-control" accept="image/*">
                 
-       <div class="mb-3">
-        <input type="file" name = "file2">
-        </div>       
-        
-      <div class="mb-3">
-        <input type="file" name = "file3">
-        </div>               
-        <input type="submit" value="저장하기" class="btn btn-primary my-2">
-    </form>
+            </div>
+            <div class="mb-3">
+                <label for="file2" class="form-label">파일 2</label>
+    			<input type="file" name="file2" id="file2" class="form-control" accept="image/*">
+            </div>
+            <div class="mb-3">
+                <label for="file3" class="form-label">파일 3</label>
+    			<input type="file" name="file3" id="file3" class="form-control" accept="image/*">
+            </div>
+            <input type="submit" value="저장하기" class="btn btn-primary my-2">
+        </form>
     </div>
-
-</th:block>
-
-
+</body>
+</html>

@@ -1,64 +1,76 @@
 <html layout:decorate="~{layout}">
 
-
-
 <th:block layout:fragment="content" class="container">
 
-  
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mt-3 mt-lg-0">
-            </ul>
-          </div>
-        </nav>
- 
-<div  class="container-medium">
-    <h5 class="my-3 border-bottom pb-2">Q & A 수정</h5>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mt-3 mt-lg-0">
+        </ul>
+    </div>
+    </nav>
 
-    <form th:action="@{/question/update3}" method="post"  enctype="multipart/form-data">
+    <div class="container-medium">
+        <h5 class="my-3 border-bottom pb-2">Q & A 수정</h5>
 
-    	<input type="hidden" name="id" th:value="${question.id}">
-	
-    	<input type="hidden" name = "image1"  th:value ="${question.image1}">
-     	<input type="hidden" name = "image2"  th:value ="${question.image2}">   
-     	<input type="hidden" name = "image3"  th:value ="${question.image3}">	
-   	
-    	<input type="hidden" name="date" th:value="${question.date}">
-        <div class="mb-3">
-            <label for="subject" class="form-label">제목</label>
-            <input type="text" name="title" id="subject" class="form-control" th:value="${question.title}">
-        </div>
-        
-        
-        <div class="mb-3">
-            <label for="author" class="form-label">작성자</label>
-            <input type="text" name="author" id="author" class="form-control" th:value="${question.author}">
-        </div>
+        <form th:action="@{/question/update3}" method="post" enctype="multipart/form-data">
 
-        <div class="mb-3">
-            <label for="content" class="form-label">내용</label>
-            <textarea name="content" id="content" class="form-control" rows="10" th:text="${question.content}"></textarea>
-        </div>   
-        
-        <div class="mb-3">
-      <input type="file" name="file1">
-      [[${question.image1}]]
-      <a th:href="@{/question/deleteImage1/{id}(id=${question.id})}" class="btn btn-danger btn-sm">삭제</a>
+            <!-- 숨겨진 필드들 -->
+            <input type="hidden" name="id" th:value="${question.id}">
+            <input type="hidden" name="date" th:value="${question.date}">
+
+            <div class="mb-3">
+                <label for="subject" class="form-label">제목</label>
+                <input type="text" name="title" id="subject" class="form-control" th:value="${question.title}">
+            </div>
+
+            <div class="mb-3">
+                <label for="author" class="form-label">작성자</label>
+                <input type="text" name="author" id="author" class="form-control" th:value="${question.author}">
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">내용</label>
+                <textarea name="content" id="content" class="form-control" rows="10" th:text="${question.content}"></textarea>
+            </div>
+
+            <!-- 파일 업로드 및 삭제 링크 -->
+            <div class="mb-3">
+                <label for="file1" class="form-label">파일 1</label>
+                <input type="file" name="file1" id="file1" class="form-control">
+                <div class="mt-2">
+                    <!-- 기존 이미지 미리보기 및 삭제 링크 -->
+                    <div th:if="${question.image1}">
+                        <img th:src="@{|${downpath}/${question.image1}|}" alt="Image 1" class="img-thumbnail" style="max-width: 100px;">
+                        <a th:href="@{/question/deleteImage1/{id}(id=${question.id})}" class="btn btn-danger btn-sm mt-2">삭제</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="file2" class="form-label">파일 2</label>
+                <input type="file" name="file2" id="file2" class="form-control">
+                <div class="mt-2">
+                    <!-- 기존 이미지 미리보기 및 삭제 링크 -->
+                    <div th:if="${question.image2}">
+                        <img th:src="@{|${downpath}/${question.image2}|}" alt="Image 2" class="img-thumbnail" style="max-width: 100px;">
+                        <a th:href="@{/question/deleteImage2/{id}(id=${question.id})}" class="btn btn-danger btn-sm mt-2">삭제</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="file3" class="form-label">파일 3</label>
+                <input type="file" name="file3" id="file3" class="form-control">
+                <div class="mt-2">
+                    <!-- 기존 이미지 미리보기 및 삭제 링크 -->
+                    <div th:if="${question.image3}">
+                        <img th:src="@{|${downpath}/${question.image3}|}" alt="Image 3" class="img-thumbnail" style="max-width: 100px;">
+                        <a th:href="@{/question/deleteImage3/{id}(id=${question.id})}" class="btn btn-danger btn-sm mt-2">삭제</a>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="수정하기" class="btn btn-primary my-2">
+        </form>
     </div>
 
-    <div class="mb-3">
-      <input type="file" name="file2">
-      [[${question.image2}]]
-      <a th:href="@{/question/deleteImage2/{id}(id=${question.id})}" class="btn btn-danger btn-sm">삭제</a>
-    </div>
-
-    <div class="mb-3">
-      <input type="file" name="file3">
-      [[${question.image3}]]
-      <a th:href="@{/question/deleteImage3/{id}(id=${question.id})}" class="btn btn-danger btn-sm">삭제</a>
-    </div>
-    
-        
-        <input type="submit" value="수정하기" class="btn btn-primary my-2">
-    </form>
-</div>
 </th:block>

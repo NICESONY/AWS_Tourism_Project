@@ -39,10 +39,7 @@ public class QuestionNotice {
     // 공지글은 여러개의 댓글을 가질 수 있으니까
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE) 
     private List<QuestionComment> commentList;
-    
-    
-    
-    
+
     
     private String author;
 }
