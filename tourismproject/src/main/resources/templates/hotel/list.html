@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+}
+</style>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- ===============================================-->
+<!--    Document Title-->
+<!-- ===============================================-->
+<title>Phoenix</title>
+
+
+<!-- ===============================================-->
+<!--    Favicons-->
+<!-- ===============================================-->
+<style type="text/css">
+host, root {
+	-fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid"; 
+	-fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular"; 
+	-fa-font-light: normal 300 1em/1 "Font Awesome 6 Light"; 
+	-fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin"; 
+	-fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone"; 
+	-fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"
+}
+
+svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
+	overflow: visible;
+	box-sizing: content-box
+}
+
+.svg-inline--fa {
+	display: var(- -fa-display, inline-block);
+	height: 1em;
+	overflow: visible;
+	vertical-align: -.125em
+}
+
+.svg-inline--fa.fa-2xs {
+	vertical-align: .1em
+}
+
+.svg-inline--fa.fa-xs {
+	vertical-align: 0
+}
+
+.svg-inline--fa.fa-sm {
+	vertical-align: -.0714285705em
+}
+
+.svg-inline--fa.fa-lg {
+	vertical-align: -.2em
+}
+
+.svg-inline--fa.fa-xl {
+	vertical-align: -.25em
+}
+
+.svg-inline--fa.fa-2xl {
+	vertical-align: -.3125em
+}
+
+.svg-inline--fa.fa-pull-left {
+	margin-right: var(- -fa-pull-margin, .3em);
+	width: auto
+}
+
+.svg-inline--fa.fa-pull-right {
+	margin-left: var(- -fa-pull-margin, .3em);
+	width: auto
+}
+
+.svg-inline--fa.fa-li {
+	width: var(- -fa-li-width, 2em);
+	top: .25em
+}
+
+.svg-inline--fa.fa-fw {
+	width: var(- -fa-fw-width, 1.25em)
+}
+
+.fa-layers svg.svg-inline--fa {
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0
+}
+
+.fa-layers-counter, .fa-layers-text {
+	display: inline-block;
+	position: absolute;
+	text-align: center
+}
+
+.fa-layers {
+	display: inline-block;
+	height: 1em;
+	position: relative;
+	text-align: center;
+	vertical-align: -.125em;
+	width: 1em
+}
+
+.fa-layers svg.svg-inline--fa {
+	-webkit-transform-origin: center center;
+	transform-origin: center center
+}
+
+.fa-layers-text {
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transform-origin: center center;
+	transform-origin: center center
+}
+
+.fa-layers-counter {
+	background-color: var(- -fa-counter-background-color, #ff253a);
+	border-radius: var(- -fa-counter-border-radius, 1em);
+	box-sizing: border-box;
+	color: var(- -fa-inverse, #fff);
+	line-height: var(- -fa-counter-line-height, 1);
+	max-width: var(- -fa-counter-max-width, 5em);
+	min-width: var(- -fa-counter-min-width, 1.5em);
+	overflow: hidden;
+	padding: var(- -fa-counter-padding, .25em .5em);
+	right: var(- -fa-right, 0);
+	text-overflow: ellipsis;
+	top: var(- -fa-top, 0);
+	-webkit-transform: scale(var(- -fa-counter-scale, .25));
+	transform: scale(var(- -fa-counter-scale, .25));
+	-webkit-transform-origin: top right;
+	transform-origin: top right
+}
+
+.fa-layers-bottom-right {
+	bottom: var(- -fa-bottom, 0);
+	right: var(- -fa-right, 0);
+	top: auto;
+	-webkit-transform: scale(var(- -fa-layers-scale, .25));
+	transform: scale(var(- -fa-layers-scale, .25));
+	-webkit-transform-origin: bottom right;
+	transform-origin: bottom right
+}
+
+.fa-layers-bottom-left {
+	bottom: var(- -fa-bottom, 0);
+	left: var(- -fa-left, 0);
+	right: auto;
+	top: auto;
+	-webkit-transform: scale(var(- -fa-layers-scale, .25));
+	transform: scale(var(- -fa-layers-scale, .25));
+	-webkit-transform-origin: bottom left;
+	transform-origin: bottom left
+}
+
+.fa-layers-top-right {
+	top: var(- -fa-top, 0);
+	right: var(- -fa-right, 0);
+	-webkit-transform: scale(var(- -fa-layers-scale, .25));
+	transform: scale(var(- -fa-layers-scale, .25));
+	-webkit-transform-origin: top right;
+	transform-origin: top right
+}
+
+.fa-layers-top-left {
+	left: var(- -fa-left, 0);
+	right: auto;
+	top: var(- -fa-top, 0);
+	-webkit-transform: scale(var(- -fa-layers-scale, .25));
+	transform: scale(var(- -fa-layers-scale, .25));
+	-webkit-transform-origin: top left;
+	transform-origin: top left
+}
+
+.fa-1x {
+	font-size: 1em
+}
+
+.fa-2x {
+	font-size: 2em
+}
+
+.fa-3x {
+	font-size: 3em
+}
+
+.fa-4x {
+	font-size: 4em
+}
+
+.fa-5x {
+	font-size: 5em
+}
+
+.fa-6x {
+	font-size: 6em
+}
+
+.fa-7x {
+	font-size: 7em
+}
+
+.fa-8x {
+	font-size: 8em
+}
+
+.fa-9x {
+	font-size: 9em
+}
+
+.fa-10x {
+	font-size: 10em
+}
+
+.fa-2xs {
+	font-size: .625em;
+	line-height: .1em;
+	vertical-align: .225em
+}
+
+.fa-xs {
+	font-size: .75em;
+	line-height: .0833333337em;
+	vertical-align: .125em
+}
+
+.fa-sm {
+	font-size: .875em;
+	line-height: .0714285718em;
+	vertical-align: .0535714295em
+}
+
+.fa-lg {
+	font-size: 1.25em;
+	line-height: .05em;
+	vertical-align: -.075em
+}
+
+.fa-xl {
+	font-size: 1.5em;
+	line-height: .0416666682em;
+	vertical-align: -.125em
+}
+
+.fa-2xl {
+	font-size: 2em;
+	line-height: .03125em;
+	vertical-align: -.1875em
+}
+
+.fa-fw {
+	text-align: center;
+	width: 1.25em
+}
+
+.fa-ul {
+	list-style-type: none;
+	margin-left: var(- -fa-li-margin, 2.5em);
+	padding-left: 0
+}
+
+.fa-ul>li {
+	position: relative
+}
+
+.fa-li {
+	left: calc(var(- -fa-li-width, 2em)* -1);
+	position: absolute;
+	text-align: center;
+	width: var(- -fa-li-width, 2em);
+	line-height: inherit
+}
+
+.fa-border {
+	border-color: var(- -fa-border-color, #eee);
+	border-radius: var(- -fa-border-radius, .1em);
+	border-style: var(- -fa-border-style, solid);
+	border-width: var(- -fa-border-width, .08em);
+	padding: var(- -fa-border-padding, .2em .25em .15em)
+}
+
+.fa-pull-left {
+	float: left;
+	margin-right: var(- -fa-pull-margin, .3em)
+}
+
+.fa-pull-right {
+	float: right;
+	margin-left: var(- -fa-pull-margin, .3em)
+}
+
+.fa-beat {
+	-webkit-animation-name: fa-beat;
+	animation-name: fa-beat;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, ease-in-out);
+	animation-timing-function: var(- -fa-animation-timing, ease-in-out)
+}
+
+.fa-bounce {
+	-webkit-animation-name: fa-bounce;
+	animation-name: fa-bounce;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, cubic-bezier(.28, .84, .42, 1));
+	animation-timing-function: var(- -fa-animation-timing, cubic-bezier(.28, .84, .42, 1))
+}
+
+.fa-fade {
+	-webkit-animation-name: fa-fade;
+	animation-name: fa-fade;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, cubic-bezier(.4, 0, .6, 1));
+	animation-timing-function: var(- -fa-animation-timing, cubic-bezier(.4, 0, .6, 1))
+}
+
+.fa-beat-fade {
+	-webkit-animation-name: fa-beat-fade;
+	animation-name: fa-beat-fade;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, cubic-bezier(.4, 0, .6, 1));
+	animation-timing-function: var(- -fa-animation-timing, cubic-bezier(.4, 0, .6, 1))
+}
+
+.fa-flip {
+	-webkit-animation-name: fa-flip;
+	animation-name: fa-flip;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, ease-in-out);
+	animation-timing-function: var(- -fa-animation-timing, ease-in-out)
+}
+
+.fa-shake {
+	-webkit-animation-name: fa-shake;
+	animation-name: fa-shake;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, linear);
+	animation-timing-function: var(- -fa-animation-timing, linear)
+}
+
+.fa-spin {
+	-webkit-animation-name: fa-spin;
+	animation-name: fa-spin;
+	-webkit-animation-delay: var(- -fa-animation-delay, 0);
+	animation-delay: var(- -fa-animation-delay, 0);
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 2s);
+	animation-duration: var(- -fa-animation-duration, 2s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, linear);
+	animation-timing-function: var(- -fa-animation-timing, linear)
+}
+
+
+.fa-pulse, .fa-spin-pulse {
+	-webkit-animation-name: fa-spin;
+	animation-name: fa-spin;
+	-webkit-animation-direction: var(- -fa-animation-direction, normal);
+	animation-direction: var(- -fa-animation-direction, normal);
+	-webkit-animation-duration: var(- -fa-animation-duration, 1s);
+	animation-duration: var(- -fa-animation-duration, 1s);
+	-webkit-animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	animation-iteration-count: var(- -fa-animation-iteration-count, infinite);
+	-webkit-animation-timing-function: var(- -fa-animation-timing, steps(8));
+	animation-timing-function: var(- -fa-animation-timing, steps(8))
+}
+
+@media ( prefers-reduced-motion :reduce) {
+	.fa-beat, .fa-beat-fade, .fa-bounce, .fa-fade, .fa-flip, .fa-pulse,
+		.fa-shake, .fa-spin, .fa-spin-pulse {
+		-webkit-animation-delay: -1ms;
+		animation-delay: -1ms;
+		-webkit-animation-duration: 1ms;
+		animation-duration: 1ms;
+		-webkit-animation-iteration-count: 1;
+		animation-iteration-count: 1;
+		transition-delay: 0s;
+		transition-duration: 0s
+	}
+}
+.fa-rotate-90 {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg)
+}
+
+.fa-rotate-180 {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg)
+}
+
+.fa-rotate-270 {
+	-webkit-transform: rotate(270deg);
+	transform: rotate(270deg)
+}
+
+.fa-flip-horizontal {
+	-webkit-transform: scale(-1, 1);
+	transform: scale(-1, 1)
+}
+
+.fa-flip-vertical {
+	-webkit-transform: scale(1, -1);
+	transform: scale(1, -1)
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+	-webkit-transform: scale(-1, -1);
+	transform: scale(-1, -1)
+}
+
+.fa-rotate-by {
+	-webkit-transform: rotate(var(- -fa-rotate-angle, none));
+	transform: rotate(var(- -fa-rotate-angle, none))
+}
+
+.fa-stack {
+	display: inline-block;
+	vertical-align: middle;
+	height: 2em;
+	position: relative;
+	width: 2.5em
+}
+
+.fa-stack-1x, .fa-stack-2x {
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: var(- -fa-stack-z-index, auto)
+}
+
+.svg-inline--fa.fa-stack-1x {
+	height: 1em;
+	width: 1.25em
+}
+
+.svg-inline--fa.fa-stack-2x {
+	height: 2em;
+	width: 2.5em
+}
+
+.fa-inverse {
+	color: var(- -fa-inverse, #fff)
+}
+
+.fa-sr-only, .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0
+}
+
+.fa-sr-only-focusable:not(:focus), .sr-only-focusable:not(:focus) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0
+}
+
+.svg-inline--fa .fa-primary {
+	fill: var(- -fa-primary-color, currentColor);
+	opacity: var(- -fa-primary-opacity, 1)
+}
+
+.svg-inline--fa .fa-secondary {
+	fill: var(- -fa-secondary-color, currentColor);
+	opacity: var(- -fa-secondary-opacity, .4)
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+	opacity: var(- -fa-secondary-opacity, .4)
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+	opacity: var(- -fa-primary-opacity, 1)
+}
+
+.svg-inline--fa mask .fa-primary, .svg-inline--fa mask .fa-secondary {
+	fill: #000
+}
+
+.fa-duotone.fa-inverse, .fad.fa-inverse {
+	color: var(- -fa-inverse, #fff)
+}
+</style>
+<link rel="apple-touch-icon" sizes="180x180"
+	href="../../../../assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="../../../../assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="../../../../assets/img/favicons/favicon-16x16.png">
+<link rel="shortcut icon" type="image/x-icon"
+	href="../../../../assets/img/favicons/favicon.ico">
+<link rel="manifest"
+	href="../../../../assets/img/favicons/manifest.json">
+<meta name="msapplication-TileImage"
+	content="../../../../assets/img/favicons/mstile-150x150.png">
+<meta name="theme-color" content="#ffffff">
+<script src="../../../../vendors/simplebar/simplebar.min.js"></script>
+<script src="../../../../assets/js/config.js"></script>
+
+
+<!-- ===============================================-->
+<!--    Stylesheets-->
+<!-- ===============================================-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link
+	href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
+	rel="stylesheet">
+<link href="../../../../vendors/simplebar/simplebar.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+<link href="../../../../assets/css/theme-rtl.min.css" type="text/css"
+	rel="stylesheet" id="style-rtl" disabled="true">
+<link href="../../../../assets/css/theme.min.css" type="text/css"
+	rel="stylesheet" id="style-default">
+<link href="../../../../assets/css/user-rtl.min.css" type="text/css"
+	rel="stylesheet" id="user-style-rtl" disabled="true">
+<link href="../../../../assets/css/user.min.css" type="text/css"
+	rel="stylesheet" id="user-style-default">
+<script>
+	var phoenixIsRTL = window.config.config.phoenixIsRTL;
+	if (phoenixIsRTL) {
+		var linkDefault = document.getElementById('style-default');
+		var userLinkDefault = document.getElementById('user-style-default');
+		linkDefault.setAttribute('disabled', true);
+		userLinkDefault.setAttribute('disabled', true);
+		document.querySelector('html').setAttribute('dir', 'rtl');
+	} else {
+		var linkRTL = document.getElementById('style-rtl');
+		var userLinkRTL = document.getElementById('user-style-rtl');
+		linkRTL.setAttribute('disabled', true);
+		userLinkRTL.setAttribute('disabled', true);
+	}
+</script>
+</head>
+</head>
+
+<body>
+
+	<p id="search-conditions"></p>
+
+	<table id="hotel-list">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>City</th>
+				<th>Checkin Date</th>
+				<th>Checkout Date</th>
+				<th>Rooms</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="hotel : ${hotels}">
+				<td th:text="${hotel.id}"></td>
+				<td th:text="${hotel.name}"></td>
+				<td th:text="${hotel.city}"></td>
+				<td th:text="${hotel.checkinDate}"></td>
+				<td th:text="${hotel.checkoutDate}"></td>
+				<td th:text="${hotel.rooms}"></td>
+		</tbody>
+	</table>
+	<div class="mb-7">
+		<div
+			data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;beds&quot;,&quot;guest&quot;,&quot;bathRooms&quot;,&quot;amenities&quot;,&quot;totalRooms&quot;],&quot;page&quot;:8}">
+			<div class="d-md-flex mt-5 mb-4">
+				<div class="d-flex gap-2 ms-md-auto mt-3 mt-md-0">
+					<div class="search-box">
+						<form class="position-relative">
+							<input class="form-control search-input search" type="search"
+								placeholder="Search products" aria-label="Search">
+							<svg class="svg-inline--fa fa-magnifying-glass search-box-icon"
+								aria-hidden="true" focusable="false" data-prefix="fas"
+								data-icon="magnifying-glass" role="img"
+								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+								data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path></svg>
+							<!-- <span class="fas fa-search search-box-icon"></span> Font Awesome fontawesome.com -->
+
+						</form>
+					</div>
+					<button class="btn btn-phoenix-primary px-3">
+						<svg class="svg-inline--fa fa-filter" data-fa-transform="down-2"
+							aria-hidden="true" focusable="false" data-prefix="fas"
+							data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 512 512" data-fa-i2svg=""
+							style="transform-origin: 0.5em 0.625em;">
+							<g transform="translate(256 256)">
+							<g transform="translate(0, 64)  scale(1, 1)  rotate(0 0 0)">
+							<path fill="currentColor"
+								d="M3.853 54.87C10.47 40.9 24.54 32 40 32H472C487.5 32 501.5 40.9 508.1 54.87C514.8 68.84 512.7 85.37 502.1 97.33L320 320.9V448C320 460.1 313.2 471.2 302.3 476.6C291.5 482 278.5 480.9 268.8 473.6L204.8 425.6C196.7 419.6 192 410.1 192 400V320.9L9.042 97.33C-.745 85.37-2.765 68.84 3.854 54.87L3.853 54.87z"
+								transform="translate(-256 -256)"></path></g></g></svg>
+						<!-- <span class="fa-solid fa-filter" data-fa-transform="down-2"></span> Font Awesome fontawesome.com -->
+					</button>
+				</div>
+			</div>
+			<div class="table-responsive scrollbar mx-n1 px-1">
+				<table class="table fs-9 mb-0">
+					<thead>
+						<tr>
+							<th class="white-space-nowrap fs-9 align-middle ps-0"
+								style="max-width: 20px; width: 18px;">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input"
+										id="checkbox-bulk-products-select" type="checkbox"
+										data-bulk-select="{&quot;body&quot;:&quot;room-listing-table-body&quot;}">
+								</div>
+							</th>
+							<th
+								class="sort text-body-tertiary align-middle white-space-nowrap"
+								scope="col" data-sort="name" style="width: 300px;">ROOM
+								INFORMATION</th>
+							<th class="sort text-body-tertiary align-middle px-4" scope="col"
+								style="width: 200px;" data-sort="beds">NO. OF BEDS</th>
+							<th class="sort text-body-tertiary align-middle px-4" scope="col"
+								data-sort="guest" style="width: 200px;">NO. OF GUESTS</th>
+							<th class="sort text-body-tertiary align-middle px-4" scope="col"
+								data-sort="bathRooms" style="width: 140px;">BATHROOM</th>
+							<th class="text-body-tertiary align-middle ps-4" scope="col"
+								data-sort="amenities" style="min-width: 450px;">AMENITIES</th>
+							<th class="sort text-body-tertiary align-middle ps-4 text-end"
+								scope="col" data-sort="totalRooms" style="width: 180px;">TOTAL
+								ROOM</th>
+							<th
+								class="sort text-body-tertiary text-end align-middle pe-0 ps-4"
+								scope="col"></th>
+						</tr>
+					</thead>
+					<tbody class="list" id="room-listing-table-body">
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Bunk Bed&quot;,&quot;category&quot;:&quot;Standard Room&quot;,&quot;price&quot;:332.67,&quot;img&quot;:&quot;/img/hotels/17.png&quot;,&quot;bedRooms&quot;:&quot;01&quot;,&quot;beds&quot;:&quot;02&quot;,&quot;guest&quot;:&quot;02&quot;,&quot;child&quot;:&quot;01&quot;,&quot;bathRooms&quot;:&quot;01&quot;,&quot;totalRooms&quot;:65,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/17000000/16560000/16556700/16556629/8e1d1c2e.jpg" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">슈바이처 도르프 호텔</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Standard Room
+										</h6>
+										<h4 class="fw-bolder mb-0">$332.67</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">02</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+7 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">65</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;King bed&quot;,&quot;category&quot;:&quot;Presidential Suite&quot;,&quot;price&quot;:450.67,&quot;img&quot;:&quot;/img/hotels/18.png&quot;,&quot;bedRooms&quot;:&quot;02&quot;,&quot;beds&quot;:&quot;03&quot;,&quot;guest&quot;:&quot;02&quot;,&quot;child&quot;:&quot;01&quot;,&quot;bathRooms&quot;:&quot;02&quot;,&quot;totalRooms&quot;:23,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/15000000/14860000/14856000/14855903/0c263270.jpg" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">오엔 시티 호텔</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Presidential Suite
+										</h6>
+										<h4 class="fw-bolder mb-0">$450.67</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">03</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+9 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">23</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Queen bed&quot;,&quot;category&quot;:&quot;Deluxe Room&quot;,&quot;price&quot;:400.5,&quot;img&quot;:&quot;/img/hotels/19.png&quot;,&quot;bedRooms&quot;:&quot;02&quot;,&quot;beds&quot;:&quot;02&quot;,&quot;guest&quot;:&quot;02&quot;,&quot;child&quot;:&quot;01&quot;,&quot;bathRooms&quot;:&quot;02&quot;,&quot;totalRooms&quot;:77,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/43000000/42240000/42235300/42235268/239ef6f1.jpg" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">안명이도이뉴펜션</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Deluxe Room
+										</h6>
+										<h4 class="fw-bolder mb-0">$400.5</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">02</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+10 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">77</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Twin bed&quot;,&quot;category&quot;:&quot;Family Room&quot;,&quot;price&quot;:600.41,&quot;img&quot;:&quot;/img/hotels/20.png&quot;,&quot;bedRooms&quot;:&quot;03&quot;,&quot;beds&quot;:&quot;05&quot;,&quot;guest&quot;:&quot;07&quot;,&quot;child&quot;:&quot;01&quot;,&quot;bathRooms&quot;:&quot;03&quot;,&quot;totalRooms&quot;:12,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/101000000/100230000/100227400/100227379/a606bc76.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">베니키아 호텔 서산</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Family Room
+										</h6>
+										<h4 class="fw-bolder mb-0">$600.41</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">03</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">05</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">07</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">03</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+3 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">12</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Single bed&quot;,&quot;category&quot;:&quot;Honeymoon Suite&quot;,&quot;price&quot;:350.8,&quot;img&quot;:&quot;/img/hotels/21.png&quot;,&quot;bedRooms&quot;:&quot;01&quot;,&quot;beds&quot;:&quot;01&quot;,&quot;guest&quot;:&quot;02&quot;,&quot;child&quot;:&quot;00&quot;,&quot;bathRooms&quot;:&quot;01&quot;,&quot;totalRooms&quot;:21,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;common area&quot;,&quot;bathtub&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/22000000/21090000/21080800/21080707/5e5d5834.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">아리아 호텔 서산</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Honeymoon Suite
+										</h6>
+										<h4 class="fw-bolder mb-0">$350.8</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">00</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+5 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">21</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Single bed&quot;,&quot;category&quot;:&quot;Loft Suite&quot;,&quot;price&quot;:200.22,&quot;img&quot;:&quot;/img/hotels/22.png&quot;,&quot;bedRooms&quot;:&quot;01&quot;,&quot;beds&quot;:&quot;01&quot;,&quot;guest&quot;:&quot;01&quot;,&quot;child&quot;:&quot;00&quot;,&quot;bathRooms&quot;:&quot;01&quot;,&quot;totalRooms&quot;:15,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/79000000/78440000/78430900/78430807/6e5282ed.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">보령 바다풍경 펜션</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Loft Suite
+										</h6>
+										<h4 class="fw-bolder mb-0">$200.22</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">00</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+7 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">15</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Double bed&quot;,&quot;category&quot;:&quot;Corner Room&quot;,&quot;price&quot;:290.55,&quot;img&quot;:&quot;/img/hotels/23.png&quot;,&quot;bedRooms&quot;:&quot;01&quot;,&quot;beds&quot;:&quot;02&quot;,&quot;guest&quot;:&quot;04&quot;,&quot;child&quot;:&quot;00&quot;,&quot;bathRooms&quot;:&quot;02&quot;,&quot;totalRooms&quot;:&quot;08&quot;,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/105000000/104230000/104227200/104227138/3d21ac4e.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">큐비스트 호텔</a>\
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Corner Room
+										</h6>
+										<h4 class="fw-bolder mb-0">$290.55</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">02</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">04</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">00</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+6 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">08</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="hover-actions-trigger btn-reveal-trigger position-static">
+							<td class="fs-9 align-middle ps-0">
+								<div class="form-check mb-0 fs-8">
+									<input class="form-check-input" type="checkbox"
+										data-bulk-select-row="{&quot;name&quot;:&quot;Twin XL bed&quot;,&quot;category&quot;:&quot;Ocean View Room&quot;,&quot;price&quot;:550.75,&quot;img&quot;:&quot;/img/hotels/24.png&quot;,&quot;bedRooms&quot;:&quot;01&quot;,&quot;beds&quot;:&quot;02&quot;,&quot;guest&quot;:&quot;04&quot;,&quot;child&quot;:&quot;01&quot;,&quot;bathRooms&quot;:&quot;02&quot;,&quot;totalRooms&quot;:&quot;06&quot;,&quot;amenities&quot;:[&quot;wifi&quot;,&quot;tv&quot;,&quot;common area&quot;,&quot;bathtub&quot;,&quot;Heating&quot;,&quot;Telephone&quot;,&quot;Television&quot;,&quot;common area&quot;,&quot;Kettle&quot;,&quot;iron&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;,&quot;Coffee maker&quot;,&quot;refrigerator&quot;,&quot;Room service&quot;]}">
+								</div>
+							</td>
+							<td class="align-middle py-4 name">
+								<div class="d-flex align-items-center gap-3">
+									<a href="#!"> <img
+										class="rounded-1 border border-translucent"
+										src="https://images.trvl-media.com/lodging/46000000/45710000/45701700/45701655/353e585a.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="" width="80"></a>
+									<div>
+										<a class="fs-8 fw-bolder text-body-emphasis text-nowrap"
+											href="#!">안면도 벨리세 펜션</a>
+										<h6 class="fw-seibold text-body text-nowrap mt-1 mb-2">
+											<svg class="svg-inline--fa fa-border-all me-2"
+												aria-hidden="true" focusable="false" data-prefix="fas"
+												data-icon="border-all" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+												data-fa-i2svg="">
+												<path fill="currentColor"
+													d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 96H256V224H384V96zM384 288H256V416H384V288zM192 224V96H64V224H192zM64 416H192V288H64V416z"></path></svg>
+											<!-- <span class="fa-solid fa-border-all me-2"></span> Font Awesome fontawesome.com -->
+											Ocean View Room
+										</h6>
+										<h4 class="fw-bolder mb-0">$550.75</h4>
+									</div>
+								</div>
+							</td>
+							<td class="align-middle px-4 beds">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-primary-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg
+											class="svg-inline--fa fa-person-shelter text-primary-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="person-shelter" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M495.9 132.2C505.8 137.9 512 148.5 512 160V480C512 497.7 497.7 512 480 512C462.3 512 448 497.7 448 480V178.6L256 68.86L64 178.6V480C64 497.7 49.67 512 32 512C14.33 512 0 497.7 0 480V160C0 148.5 6.153 137.9 16.12 132.2L240.1 4.216C249.1-1.405 262-1.405 271.9 4.216L495.9 132.2zM216 168C216 145.9 233.9 128 256 128C278.1 128 296 145.9 296 168C296 190.1 278.1 208 256 208C233.9 208 216 190.1 216 168zM224 512C210.7 512 200 501.3 200 488V313.5L173.1 363.4C166.8 375 152.3 379.4 140.6 373.1C128.1 366.8 124.6 352.3 130.9 340.6L168.7 270.3C184.1 241.8 213.9 223.1 246.2 223.1H265.8C298.1 223.1 327.9 241.8 343.3 270.3L381.1 340.6C387.4 352.3 383 366.8 371.4 373.1C359.7 379.4 345.2 375 338.9 363.4L312 313.5V488C312 501.3 301.3 512 288 512C274.7 512 264 501.3 264 488V400H248V488C248 501.3 237.3 512 224 512V512z"></path></svg>
+										<!-- <span class="fa-solid fa-person-shelter text-primary-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">01</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-success-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bed text-success-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bed" role="img" xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 640 512" data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M176 288C220.1 288 256 252.1 256 208S220.1 128 176 128S96 163.9 96 208S131.9 288 176 288zM544 128H304C295.2 128 288 135.2 288 144V320H64V48C64 39.16 56.84 32 48 32h-32C7.163 32 0 39.16 0 48v416C0 472.8 7.163 480 16 480h32C56.84 480 64 472.8 64 464V416h512v48c0 8.837 7.163 16 16 16h32c8.837 0 16-7.163 16-16V224C640 170.1 597 128 544 128z"></path></svg>
+										<!-- <span class="fa-solid fa-bed text-success-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">02</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 guest">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-warning-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-user text-warning-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="user" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg>
+										<!-- <span class="fa-solid fa-user text-warning-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">04</h5>
+									<div
+										class="d-flex align-items-center justify-content-center bg-info-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-baby text-info-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="baby" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M156.8 411.8l31.22-31.22l-60.04-53.09l-52.29 52.28C61.63 393.8 60.07 416.1 72 432l48 64C127.9 506.5 139.9 512 152 512c8.345 0 16.78-2.609 23.97-8c17.69-13.25 21.25-38.33 8-56L156.8 411.8zM224 159.1c44.25 0 79.99-35.75 79.99-79.1S268.3 0 224 0S144 35.75 144 79.1S179.8 159.1 224 159.1zM408.7 145c-12.75-18.12-37.63-22.38-55.76-9.75l-40.63 28.5c-52.63 37-124.1 37-176.8 0l-40.63-28.5C76.84 122.6 51.97 127 39.22 145C26.59 163.1 30.97 188 48.97 200.8l40.63 28.5C101.7 237.7 114.7 244.3 128 250.2L128 288h192l.0002-37.71c13.25-5.867 26.22-12.48 38.34-21.04l40.63-28.5C417.1 188 421.4 163.1 408.7 145zM320 327.4l-60.04 53.09l31.22 31.22L264 448c-13.25 17.67-9.689 42.75 8 56C279.2 509.4 287.6 512 295.1 512c12.16 0 24.19-5.516 32.03-16l48-64c11.94-15.92 10.38-38.2-3.719-52.28L320 327.4z"></path></svg>
+										<!-- <span class="fa-solid fa-baby text-info-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0">01</h5>
+								</div>
+							</td>
+							<td class="align-middle px-4 bathRooms">
+								<div class="d-flex align-items-center">
+									<div
+										class="d-flex align-items-center justify-content-center bg-danger-subtle rounded me-2"
+										style="height: 24px; width: 24px">
+										<svg class="svg-inline--fa fa-bath text-danger-darker"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="bath" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M32 384c0 28.32 12.49 53.52 32 71.09V496C64 504.8 71.16 512 80 512h32C120.8 512 128 504.8 128 496v-15.1h256V496c0 8.836 7.164 16 16 16h32c8.836 0 16-7.164 16-16v-40.9c19.51-17.57 32-42.77 32-71.09V352H32V384zM496 256H96V77.25C95.97 66.45 111 60.23 118.6 67.88L132.4 81.66C123.6 108.6 129.4 134.5 144.2 153.2C137.9 159.5 137.8 169.8 144 176l11.31 11.31c6.248 6.248 16.38 6.248 22.63 0l105.4-105.4c6.248-6.248 6.248-16.38 0-22.63l-11.31-11.31c-6.248-6.248-16.38-6.248-22.63 0C230.7 33.26 204.7 27.55 177.7 36.41L163.9 22.64C149.5 8.25 129.6 0 109.3 0C66.66 0 32 34.66 32 77.25v178.8L16 256C7.164 256 0 263.2 0 272v32C0 312.8 7.164 320 16 320h480c8.836 0 16-7.164 16-16v-32C512 263.2 504.8 256 496 256z"></path></svg>
+										<!-- <span class="fa-solid fa-bath text-danger-darker"></span> Font Awesome fontawesome.com -->
+									</div>
+									<h5 class="text-body-emphasis fw-semibold mb-0 me-3">02</h5>
+								</div>
+							</td>
+							<td class="align-middle ps-4 amenities">
+								<div class="d-flex flex-wrap gap-2">
+									<span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">wifi</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">tv</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">bathtub</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Heating</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Telephone</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Television</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">common
+										area</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Kettle</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">iron</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Coffee
+										maker</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">refrigerator</span><span
+										class="badge badge-phoenix bg-primary-subtle text-body-highlight py-1 fs-10">Room
+										service</span><a class="fw-bold fs-9" href="#!">+3 More</a>
+								</div>
+							</td>
+							<td class="align-middle text-end ps-4 totalRooms">
+								<h2 class="text-body-secondary">06</h2>
+							</td>
+							<td class="align-middle ps-4">
+								<div class="btn-reveal-trigger position-static">
+									<button
+										class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10"
+										type="button" data-bs-toggle="dropdown" data-boundary="window"
+										aria-haspopup="true" aria-expanded="false"
+										data-bs-reference="parent">
+										<svg class="svg-inline--fa fa-ellipsis fs-10"
+											aria-hidden="true" focusable="false" data-prefix="fas"
+											data-icon="ellipsis" role="img"
+											xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+											data-fa-i2svg="">
+											<path fill="currentColor"
+												d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"></path></svg>
+										<!-- <span class="fas fa-ellipsis-h fs-10"></span> Font Awesome fontawesome.com -->
+									</button>
+									<div class="dropdown-menu dropdown-menu-end py-2">
+										<a class="dropdown-item" href="#!">View</a><a
+											class="dropdown-item" href="#!">Export</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item text-danger" href="#!">Remove</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-auto d-flex">
+
+				<button class="btn btn-link px-1 me-1 disabled" type="button"
+					title="Previous" data-list-pagination="prev" disabled="">
+					<svg class="svg-inline--fa fa-chevron-left me-2" aria-hidden="true"
+						focusable="false" data-prefix="fas" data-icon="chevron-left"
+						role="img" xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 320 512" data-fa-i2svg="">
+						<path fill="currentColor"
+							d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"></path></svg>
+					<!-- <span class="fas fa-chevron-left me-2"></span> Font Awesome fontawesome.com -->
+					Previous
+				</button>
+				<button class="btn btn-link px-1 ms-1" type="button" title="Next"
+					data-list-pagination="next">
+					Next
+					<svg class="svg-inline--fa fa-chevron-right ms-2"
+						aria-hidden="true" focusable="false" data-prefix="fas"
+						data-icon="chevron-right" role="img"
+						xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+						data-fa-i2svg="">
+						<path fill="currentColor"
+							d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg>
+					<!-- <span class="fas fa-chevron-right ms-2"></span> Font Awesome fontawesome.com -->
+				</button>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+</body>
+</html>
